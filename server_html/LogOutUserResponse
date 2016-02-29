@@ -1,0 +1,5 @@
+<#if statusCode == 200>
+{}
+<#elseif statusCode == 400>
+{}
+</#if>

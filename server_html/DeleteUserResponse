@@ -1,0 +1,8 @@
+<#if statusCode == 200>
+{}
+<#elseif statusCode == 403>
+{
+  "status": 403,
+  "message": "Чужой юзер"
+}
+</#if>
