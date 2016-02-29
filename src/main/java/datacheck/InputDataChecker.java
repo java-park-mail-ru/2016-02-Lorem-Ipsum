@@ -1,7 +1,5 @@
 package datacheck;
 
-import org.jetbrains.annotations.Nullable;
-
 public class InputDataChecker {
 
     public static boolean checkSignUp(String userLogin, String userPassword, String userEmail) {

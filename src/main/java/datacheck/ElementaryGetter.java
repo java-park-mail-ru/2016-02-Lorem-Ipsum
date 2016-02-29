@@ -1,10 +1,7 @@
 package datacheck;
 
-import org.jetbrains.annotations.Nullable;
-
 public class ElementaryGetter {
 
-    @Nullable
     public static Long getLongOrNull (String sUserId) {
         if(sUserId == null)
             return null;

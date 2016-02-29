@@ -15,10 +15,10 @@ public class Main {
     public static final int STANDART_PORT = 9090;
 
     public static void main(String[] args) throws Exception {
-        int port = -1;
+        int port;
         if (args.length != 1) {
             port = STANDART_PORT;
-            System.out.append("Target port argument missed.");
+            System.out.append("Target port argument missed.\n");
         }
         else {
             try{
