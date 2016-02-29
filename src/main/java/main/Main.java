@@ -10,9 +10,6 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 import javax.servlet.Servlet;
 
-/**
- * @author v.chibrikov
- */
 public class Main {
 
     public static final int STANDART_PORT = 9090;

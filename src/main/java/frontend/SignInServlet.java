@@ -34,8 +34,7 @@ public class SignInServlet extends HttpServlet {
         Map<String, Object> pageVariables = new HashMap<>();
         int statusCode = 0;
 
-        if( isGoodData && accountService.checkUserExistsByLogin(login) /*&&
-                !accountService.checkSessionExists(sessionId)*/ ) {
+        if( isGoodData && accountService.checkUserExistsByLogin(login)) {
 
             UserProfile userProfile = accountService.getUserByLogin(login);
 
