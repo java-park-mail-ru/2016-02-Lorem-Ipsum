@@ -1,0 +1,10 @@
+<#if statusCode == 200>
+{
+  "id": "${userId}"
+}
+<#elseif statusCode == 403>
+{
+  "status": 403,
+  "message": "Чужой юзер"
+}
+</#if>
