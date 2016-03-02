@@ -1,7 +1,6 @@
 package frontend;
 
 import main.AccountService;
-import main.UserProfile;
 import datacheck.ElementaryChecker;
 import templater.PageGenerator;
 
@@ -13,32 +12,27 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IsAuthenticatedServlet extends HttpServlet {
+public class LogOutServlet extends HttpServlet {
 
     private final AccountService accountService;
 
-    public IsAuthenticatedServlet(AccountService accountService) {
+    public LogOutServlet(AccountService accountService) {
         this.accountService = accountService;
     }
 
     @Override
-    public void doGet(HttpServletRequest request,
-                       HttpServletResponse response) throws ServletException, IOException {
+    public void doDelete(HttpServletRequest request,
+                      HttpServletResponse response) throws ServletException, IOException {
 
         String sessionId = request.getSession().getId();
 
         Map<String, Object> dataToSend = new HashMap<>();
-        int statusCode;
 
         if( ElementaryChecker.checkSessionId(sessionId) && accountService.checkSessionExists(sessionId) ) {
-            UserProfile userProfile = accountService.getSessions(sessionId);
-            statusCode = HttpServletResponse.SC_OK;
-            dataToSend.put("id", userProfile.getId());
-        }
-        else {
-            statusCode = HttpServletResponse.SC_UNAUTHORIZED;
+            accountService.deleteSession(sessionId);
         }
 
+        int statusCode = HttpServletResponse.SC_OK;
         response.setStatus(statusCode);
         response.setContentType("application/json");
         Map<String, Object> pageVariables = new HashMap<>();

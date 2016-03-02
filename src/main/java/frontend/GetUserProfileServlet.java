@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class GetUserProfileServlet extends HttpServlet {
 
-    private AccountService accountService;
+    private final AccountService accountService;
 
     public GetUserProfileServlet(AccountService accountService) {
         this.accountService = accountService;
@@ -31,8 +31,8 @@ public class GetUserProfileServlet extends HttpServlet {
 
         String sessionId = request.getSession().getId();
 
-        Map<String, Object> pageVariables = new HashMap<>();
-        int statusCode = 0;
+        Map<String, Object> dataToSend = new HashMap<>();
+        int statusCode;
 
         if( ElementaryChecker.checkUserId(userId) && accountService.checkUserExistsById(userId)
                 && accountService.checkSessionExists(sessionId)) {
@@ -42,9 +42,9 @@ public class GetUserProfileServlet extends HttpServlet {
             Long idSessionProfile = sessionProfile.getId();
             if(idProfile.equals(idSessionProfile)) {
                 statusCode = HttpServletResponse.SC_OK;
-                pageVariables.put("userId", userProfile.getId());
-                pageVariables.put("userLogin", userProfile.getLogin());
-                pageVariables.put("userEmail", userProfile.getEmail());
+                dataToSend.put("id", userProfile.getId());
+                dataToSend.put("login", userProfile.getLogin());
+                dataToSend.put("email", userProfile.getEmail());
             }
             else {
                 statusCode = HttpServletResponse.SC_UNAUTHORIZED;
@@ -55,8 +55,9 @@ public class GetUserProfileServlet extends HttpServlet {
         }
 
         response.setStatus(statusCode);
-        pageVariables.put("statusCode", statusCode);
         response.setContentType("application/json");
-        response.getWriter().println(PageGenerator.getPage("GetUserProfileResponse", pageVariables));
+        Map<String, Object> pageVariables = new HashMap<>();
+        pageVariables.put("data", dataToSend);
+        response.getWriter().println(PageGenerator.getPage("Response", pageVariables));
     }
 }

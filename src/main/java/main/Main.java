@@ -14,7 +14,7 @@ public class Main {
 
     public static final int STANDART_PORT = 9090;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws InterruptedException {
         int port;
         if (args.length != 1) {
             port = STANDART_PORT;
@@ -47,7 +47,13 @@ public class Main {
         Server server = new Server(port);
         server.setHandler(handlers);
 
-        server.start();
+        try {
+            server.start();
+        } catch (Exception e) {
+            System.out.append("Server wasn't started.\n");
+            return;
+        }
+
         server.join();
     }
 }

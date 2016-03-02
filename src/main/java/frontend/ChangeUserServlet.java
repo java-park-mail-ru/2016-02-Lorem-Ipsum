@@ -15,14 +15,14 @@ import java.util.Map;
 
 public class ChangeUserServlet extends HttpServlet {
 
-    private AccountService accountService;
+    private final AccountService accountService;
 
     public ChangeUserServlet(AccountService accountService) {
         this.accountService = accountService;
     }
 
     @Override
-    public void doPut(HttpServletRequest request,
+    public void doPost(HttpServletRequest request,
                        HttpServletResponse response) throws ServletException, IOException {
 
         String login = request.getParameter("login");
@@ -32,26 +32,36 @@ public class ChangeUserServlet extends HttpServlet {
 
         Boolean isGoodData = InputDataChecker.checkChangeUser(login, password, email);
 
-        Map<String, Object> pageVariables = new HashMap<>();
-        int statusCode = 0;
+        Map<String, Object> dataToSend = new HashMap<>();
+        int statusCode;
 
-        if( isGoodData && accountService.checkSessionExists(sessionId)
-                && !accountService.checkUserExistsByLogin(login)) {
+        if( isGoodData && accountService.checkSessionExists(sessionId)) {
             UserProfile userProfile = accountService.getSessions(sessionId);
-            statusCode = HttpServletResponse.SC_OK;
-            userProfile.setLogin(login);
-            userProfile.setPassword(password);
-            userProfile.setEmail(email);
-            pageVariables.put("userId", userProfile.getId());
+            if(!accountService.checkUserExistsByLogin(login) || userProfile.getLogin().equals(login)) {
+                statusCode = HttpServletResponse.SC_OK;
+                userProfile.setLogin(login);
+                userProfile.setPassword(password);
+                userProfile.setEmail(email);
+                dataToSend.put("id", userProfile.getId());
+            }
+            else {
+                statusCode = HttpServletResponse.SC_FORBIDDEN;
+            }
         }
         else {
             statusCode = HttpServletResponse.SC_FORBIDDEN;
         }
 
+        if(statusCode == HttpServletResponse.SC_FORBIDDEN) {
+            dataToSend.put("status", statusCode);
+            dataToSend.put("message", "Чужой юзер.");
+        }
+
         response.setStatus(statusCode);
-        pageVariables.put("statusCode", statusCode);
         response.setContentType("application/json");
-        response.getWriter().println(PageGenerator.getPage("ChangeUserResponse", pageVariables));
+        Map<String, Object> pageVariables = new HashMap<>();
+        pageVariables.put("data", dataToSend);
+        response.getWriter().println(PageGenerator.getPage("Response", pageVariables));
     }
 
 }

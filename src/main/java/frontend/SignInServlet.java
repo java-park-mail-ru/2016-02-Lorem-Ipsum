@@ -15,14 +15,14 @@ import java.util.Map;
 
 public class SignInServlet extends HttpServlet {
 
-    private AccountService accountService;
+    private final AccountService accountService;
 
     public SignInServlet(AccountService accountService) {
         this.accountService = accountService;
     }
 
     @Override
-    public void doPost(HttpServletRequest request,
+    public void doPut(HttpServletRequest request,
                        HttpServletResponse response) throws ServletException, IOException {
 
         String login = request.getParameter("login");
@@ -31,8 +31,8 @@ public class SignInServlet extends HttpServlet {
 
         Boolean isGoodData = InputDataChecker.checkSignIn(login, password, sessionId);
 
-        Map<String, Object> pageVariables = new HashMap<>();
-        int statusCode = 0;
+        Map<String, Object> dataToSend = new HashMap<>();
+        int statusCode;
 
         if( isGoodData && accountService.checkUserExistsByLogin(login)) {
 
@@ -43,7 +43,7 @@ public class SignInServlet extends HttpServlet {
                 if(accountService.checkSessionExists(sessionId))
                     accountService.deleteSession(sessionId);
                 accountService.addSessions(sessionId, userProfile);
-                pageVariables.put("userId", userProfile.getId());
+                dataToSend.put("id", userProfile.getId());
             }
             else {
                 statusCode = HttpServletResponse.SC_BAD_REQUEST;
@@ -55,8 +55,9 @@ public class SignInServlet extends HttpServlet {
         }
 
         response.setStatus(statusCode);
-        pageVariables.put("statusCode", statusCode);
         response.setContentType("application/json");
-        response.getWriter().println(PageGenerator.getPage("SignInResponse", pageVariables));
+        Map<String, Object> pageVariables = new HashMap<>();
+        pageVariables.put("data", dataToSend);
+        response.getWriter().println(PageGenerator.getPage("Response", pageVariables));
     }
 }

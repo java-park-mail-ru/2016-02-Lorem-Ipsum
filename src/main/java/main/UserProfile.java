@@ -1,19 +1,19 @@
 package main;
 
 public class UserProfile {
-    private long id;
+    private final long userId;
     private String login;
     private String password;
     private String email;
 
     public UserProfile(long id, String login, String password, String email) {
-        this.id = id;
+        this.userId = id;
         this.login = login;
         this.password = password;
         this.email = email;
     }
 
-    public long getId() { return id; }
+    public long getId() { return userId; }
 
     public String getLogin() {
         return login;

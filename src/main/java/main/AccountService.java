@@ -6,9 +6,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class AccountService {
 
-    private ConcurrentMap<String, Long> usersIDs = new ConcurrentHashMap<>();
-    private ConcurrentMap<Long, UserProfile> users = new ConcurrentHashMap<>();
-    private ConcurrentMap<String, UserProfile> sessions = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, Long> usersIDs = new ConcurrentHashMap<>();
+    private final ConcurrentMap<Long, UserProfile> users = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, UserProfile> sessions = new ConcurrentHashMap<>();
 
     public boolean checkUserExistsByLogin(String userLogin){
         return usersIDs.containsKey(userLogin);
@@ -22,10 +22,9 @@ public class AccountService {
         return users.containsKey(userId);
     }
 
-    public boolean addUser(UserProfile userProfile) {
+    public void addUser(UserProfile userProfile) {
         usersIDs.put(userProfile.getLogin(), userProfile.getId());
         users.put(userProfile.getId(), userProfile);
-        return true;
     }
 
     public void deleteUser(String sessionId, UserProfile userProfile) {

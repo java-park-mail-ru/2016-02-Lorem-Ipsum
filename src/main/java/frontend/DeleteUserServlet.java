@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class DeleteUserServlet extends HttpServlet {
 
-    private AccountService accountService;
+    private final AccountService accountService;
 
     public DeleteUserServlet(AccountService accountService) {
         this.accountService = accountService;
@@ -26,8 +26,8 @@ public class DeleteUserServlet extends HttpServlet {
 
         String sessionId = request.getSession().getId();
 
-        Map<String, Object> pageVariables = new HashMap<>();
-        int statusCode = 0;
+        Map<String, Object> dataToSend = new HashMap<>();
+        int statusCode;
 
         if( accountService.checkSessionExists(sessionId)) {
             UserProfile userProfile = accountService.getSessions(sessionId);
@@ -36,11 +36,14 @@ public class DeleteUserServlet extends HttpServlet {
         }
         else {
             statusCode = HttpServletResponse.SC_UNAUTHORIZED;
+            dataToSend.put("status", statusCode);
+            dataToSend.put("message", "Чужой юзер.");
         }
 
         response.setStatus(statusCode);
-        pageVariables.put("statusCode", statusCode);
         response.setContentType("application/json");
-        response.getWriter().println(PageGenerator.getPage("DeleteUserResponse", pageVariables));
+        Map<String, Object> pageVariables = new HashMap<>();
+        pageVariables.put("data", dataToSend);
+        response.getWriter().println(PageGenerator.getPage("Response", pageVariables));
     }
 }
