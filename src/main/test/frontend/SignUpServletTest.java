@@ -23,7 +23,6 @@ public class SignUpServletTest {
     private FakeAccountService fakeAccountServiceToRegister;
     private FakeAccountService fakeAccountServiceToGenerate;
     private Set<Long> fakeUsersIdsOfRegistered;
-    private Set<Long> fakeUsersIdsOfGenerated;
     private Set<String> fakeSessionIdsOfRegistered;
     private Set<String> fakeSessionIdsOfGenerated;
     private SignUpServlet signUpServlet;
@@ -35,7 +34,7 @@ public class SignUpServletTest {
         fakeAccountServiceToGenerate = TestGenerator.generateFakeAccountService();
         fakeAccountServiceToRegister = new FakeAccountService();
         signUpServlet = new SignUpServlet(fakeAccountServiceToRegister);
-        fakeUsersIdsOfGenerated = fakeAccountServiceToGenerate.getUsersIds();
+        Set<Long> fakeUsersIdsOfGenerated = fakeAccountServiceToGenerate.getUsersIds();
         fakeSessionIdsOfGenerated = fakeAccountServiceToGenerate.getSessionsIds();
         LOGGER.info("SignUpServletTest inited.");
     }

@@ -34,7 +34,7 @@ public class LogOutServlet extends HttpServlet {
 
         Map<String, Object> dataToSend = new HashMap<>();
 
-        LOGGER.debug("LogOut request got with params: session:\"{}\"", sessionId);;
+        LOGGER.debug("LogOut request got with params: session:\"{}\"", sessionId);
 
         try {
             if(!ElementaryChecker.checkSessionId(sessionId))

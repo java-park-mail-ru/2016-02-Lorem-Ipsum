@@ -22,7 +22,6 @@ import static org.junit.Assert.*;
 public class SignInServletTest {
 
     private FakeAccountService fakeAccountService;
-    private Set<Long> fakeUsersIds;
     private Set<String> fakeSessionIds;
     private SignInServlet signInServlet;
 
@@ -32,7 +31,7 @@ public class SignInServletTest {
     public void init() {
         fakeAccountService = TestGenerator.generateFakeAccountService();
         signInServlet = new SignInServlet(fakeAccountService);
-        fakeUsersIds = fakeAccountService.getUsersIds();
+        Set<Long> fakeUsersIds = fakeAccountService.getUsersIds();
         fakeSessionIds = fakeAccountService.getSessionsIds();
         LOGGER.info("SignInServletTest inited.");
     }

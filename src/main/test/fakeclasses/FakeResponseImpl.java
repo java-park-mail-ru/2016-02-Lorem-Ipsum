@@ -4,20 +4,21 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Collection;
 import java.util.Locale;
 
 /**
- * Created by Installed on 19.03.2016.
+ * Created by Installed on 20.03.2016.
  */
 public class FakeResponseImpl extends FakeResponse implements HttpServletResponse {
-
     public FakeResponseImpl() {super();}
 
     @Override
     public void addCookie(Cookie cookie) {
 
     }
+
     @Override
     public boolean containsHeader(String s) {
         return false;

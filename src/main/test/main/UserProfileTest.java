@@ -14,7 +14,7 @@ public class UserProfileTest {
     private static final String NEW_LOGIN = "login1";
     private static final String NEW_PASSWORD = "password1";
     private static final String NEW_EMAIL = "email1@x.y";
-    private UserProfile userProfile0 = new UserProfile(ORIGINAL_ID, ORIGINAL_LOGIN,
+    private final UserProfile userProfile0 = new UserProfile(ORIGINAL_ID, ORIGINAL_LOGIN,
                                                         ORIGINAL_PASSWORD, ORIGINAL_EMAIL);
     private UserProfile userProfile1 = new UserProfile(ORIGINAL_ID, ORIGINAL_LOGIN,
             ORIGINAL_PASSWORD, ORIGINAL_EMAIL);

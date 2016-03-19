@@ -9,7 +9,7 @@ public class FakeWriter extends PrintWriter {
         super(out);
     }
 
-    private StringBuilder data = new StringBuilder();
+    private final StringBuilder data = new StringBuilder();
 
     public void println (String input) {
         data.append(input);

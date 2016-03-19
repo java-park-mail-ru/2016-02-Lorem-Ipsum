@@ -22,7 +22,6 @@ import static org.junit.Assert.*;
 public class LogOutServletTest {
 
     private FakeAccountService fakeAccountService;
-    private Set<Long> fakeUsersIds;
     private Set<String> fakeSessionIds;
     private LogOutServlet logOutServlet;
 
@@ -32,7 +31,7 @@ public class LogOutServletTest {
     public void init() {
         fakeAccountService = TestGenerator.generateFakeAccountService();
         logOutServlet = new LogOutServlet(fakeAccountService);
-        fakeUsersIds = fakeAccountService.getUsersIds();
+        Set<Long> fakeUsersIds = fakeAccountService.getUsersIds();
         fakeSessionIds = fakeAccountService.getSessionsIds();
         LOGGER.info("LogOutServletTest inited.");
     }
@@ -48,7 +47,7 @@ public class LogOutServletTest {
                     userProfileGenerated.getPassword(),
                     userProfileGenerated.getEmail(),
                     sId,
-                    logOutServlet.REQUEST_URI
+                    LogOutServlet.REQUEST_URI
             );
 
             LOGGER.info("Created request: {}", request.toJSON());

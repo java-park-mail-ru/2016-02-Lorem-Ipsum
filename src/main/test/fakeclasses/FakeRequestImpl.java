@@ -20,6 +20,11 @@ public class FakeRequestImpl extends FakeRequest implements HttpServletRequest {
     }
 
     @Override
+    public StringBuffer getRequestURL() {
+        return null;
+    }
+
+    @Override
     public String getAuthType() {
         return null;
     }

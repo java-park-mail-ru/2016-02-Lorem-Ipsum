@@ -10,29 +10,22 @@ public class FakeResponse {
 
     private int statusCode;
     private String contentType;
-    private FakeWriter writer;
-    private ByteArrayOutputStream out;
+    private final FakeWriter writer;
 
     public FakeResponse() {
-        out = new ByteArrayOutputStream();
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
         writer = new FakeWriter(out);
-    }
-
-    public void setStatus(int statusCode) {
-        this.statusCode = statusCode;
-    }
-
-    public void setContentType(String contentType) {
-        this.contentType = contentType;
     }
 
     public int getStatusCode() {return statusCode;}
 
+    public void setStatus(int status) {statusCode = status;}
+
     public String getContentType() { return contentType; }
 
-    public FakeWriter getWriter() {
-        return writer;
-    }
+    public void setContentType(String contentT) { contentType = contentT; }
 
     public String getContent() { return writer.getData(); }
+
+    public FakeWriter getWriter() { return writer; }
 }

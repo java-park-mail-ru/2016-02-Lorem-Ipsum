@@ -7,22 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04d10ad-3945-42ac-a7e3-c7c3e6aa1ca4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log4j2.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2016-02-Lorem-Ipsum.iml" afterPath="$PROJECT_DIR$/2016-02-Lorem-Ipsum.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/DeleteUserServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/DeleteUserServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/GetUserProfileServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/GetUserProfileServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/server.log" afterPath="$PROJECT_DIR$/output/server.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/test.log" afterPath="$PROJECT_DIR$/output/test.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/SignUpServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/SignUpServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/AccountService.java" afterPath="$PROJECT_DIR$/src/main/java/main/AccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/UserProfile.java" afterPath="$PROJECT_DIR$/src/main/java/main/UserProfile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java" />
@@ -30,6 +25,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/UserProfileTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/UserProfileTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/utils/TestGenerator.java" afterPath="$PROJECT_DIR$/src/main/test/utils/TestGenerator.java" />
     </list>
     <ignored path="L1.2.iws" />
@@ -103,11 +102,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SignUpServletTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java">
+      <file leaf-file-name="FakeResponse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogOutServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FakeWriter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,87 +136,67 @@
         <entry file="file://$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IsAuthenticatedServletTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/test/frontend/IsAuthenticatedServletTest.java">
+      <file leaf-file-name="SignInServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/test/utils/TestGenerator.java">
+      <file leaf-file-name="ReflectiveCallable.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
+            <state vertical-scroll-proportion="-4.4444447">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChangeUserServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java">
+      <file leaf-file-name="ParentRunner.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state vertical-scroll-proportion="-9.037037">
+              <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output/test.log">
+      <file leaf-file-name="FakeResponseImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="137" column="69" selection-start-line="137" selection-start-column="69" selection-end-line="137" selection-end-column="69" />
+            <state vertical-scroll-proportion="-5.137931">
+              <caret line="139" column="5" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountServiceDelTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log4j2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.log" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/output/server.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="90.877144">
-              <caret line="2316" column="44" selection-start-line="2316" selection-start-column="44" selection-end-line="2316" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2320" column="24" selection-start-line="2320" selection-start-column="24" selection-end-line="2320" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.log" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/output/test.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5342857">
+              <caret line="147" column="18" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -223,55 +222,55 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/datacheck/ElementaryGetter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/test/main/MainTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeClasses/FakeSession.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeClasses/FakeRequest.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeClasses/FakeWriter.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeClasses/FakeResponse.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakegenerators/AccountServiceFakeGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/test/main/UserProfileTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceTestGetters.java" />
         <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceTestAddDel.java" />
-        <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/runners/RunAllTests.java" />
         <option value="$PROJECT_DIR$/src/main/test/runners/RunFrontendTests.java" />
         <option value="$PROJECT_DIR$/src/main/test/utils/FakeAccountServiceGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeAccountService.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest2.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest2Impl.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSession.java" />
-        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java" />
         <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java" />
-        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/frontend/IsAuthenticatedServletTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/UserProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/AccountService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/frontend/GetUserProfileServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/frontend/SignUpServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/frontend/DeleteUserServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java" />
         <option value="$PROJECT_DIR$/output/server.log" />
         <option value="$PROJECT_DIR$/output/test.log" />
+        <option value="$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java" />
         <option value="$PROJECT_DIR$/src/main/test/utils/TestGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/test/main/UserProfileTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/main/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/frontend/IsAuthenticatedServletTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java" />
       </list>
     </option>
   </component>
@@ -785,32 +784,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.RunAllTests">
-    <configuration default="false" name="ChangeUserServletTest.testDoPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="frontend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="2016-02-Lorem-Ipsum" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="frontend" />
-      <option name="MAIN_CLASS_NAME" value="frontend.ChangeUserServletTest" />
-      <option name="METHOD_NAME" value="testDoPost" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="RunAllTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -895,6 +868,32 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="runners" />
       <option name="MAIN_CLASS_NAME" value="runners.RunFrontendTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SignInServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="frontend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="2016-02-Lorem-Ipsum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="frontend" />
+      <option name="MAIN_CLASS_NAME" value="frontend.SignInServletTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1148,19 +1147,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.RunAllTests" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ChangeUserServletTest.testDoPost" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RunAllTests (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SignUpServletTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.RunFrontendTests" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RunAllTests (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SignUpServletTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RunFrontendTests" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.SignInServletTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RunAllTests (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RunFrontendTests" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SignUpServletTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ChangeUserServletTest.testDoPost" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SignInServletTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RunAllTests (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RunFrontendTests" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SignUpServletTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1175,35 +1174,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RunAllTests - 2016.03.20 at 00h 23m 23s.xml">
+    <history-entry file="RunAllTests - 2016.03.20 at 01h 32m 35s.xml">
       <configuration name="RunAllTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.20 at 00h 23m 42s.xml">
+    <history-entry file="RunAllTests - 2016.03.20 at 01h 32m 45s.xml">
       <configuration name="RunAllTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.20 at 00h 23m 48s.xml">
-      <configuration name="RunAllTests" configurationId="JUnit" />
+    <history-entry file="SignInServletTest - 2016.03.20 at 01h 25m 49s.xml">
+      <configuration name="SignInServletTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.20 at 00h 23m 55s.xml">
-      <configuration name="RunAllTests" configurationId="JUnit" />
+    <history-entry file="SignInServletTest - 2016.03.20 at 01h 27m 32s.xml">
+      <configuration name="SignInServletTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.20 at 00h 37m 09s.xml">
-      <configuration name="RunAllTests" configurationId="JUnit" />
+    <history-entry file="SignInServletTest - 2016.03.20 at 01h 28m 06s.xml">
+      <configuration name="SignInServletTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.20 at 00h 39m 07s.xml">
-      <configuration name="RunAllTests" configurationId="JUnit" />
+    <history-entry file="SignInServletTest - 2016.03.20 at 01h 28m 20s.xml">
+      <configuration name="SignInServletTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests_(1) - 2016.03.20 at 00h 16m 20s.xml">
-      <configuration name="RunAllTests (1)" configurationId="JUnit" />
+    <history-entry file="SignInServletTest - 2016.03.20 at 01h 29m 02s.xml">
+      <configuration name="SignInServletTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests_(1) - 2016.03.20 at 00h 23m 12s.xml">
-      <configuration name="RunAllTests (1)" configurationId="JUnit" />
+    <history-entry file="SignInServletTest - 2016.03.20 at 01h 30m 12s.xml">
+      <configuration name="SignInServletTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunFrontendTests - 2016.03.19 at 22h 22m 48s.xml">
-      <configuration name="RunFrontendTests" configurationId="JUnit" />
+    <history-entry file="SignInServletTest - 2016.03.20 at 01h 30m 26s.xml">
+      <configuration name="SignInServletTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunFrontendTests - 2016.03.19 at 22h 40m 25s.xml">
-      <configuration name="RunFrontendTests" configurationId="JUnit" />
+    <history-entry file="SignInServletTest - 2016.03.20 at 01h 32m 25s.xml">
+      <configuration name="SignInServletTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1216,7 +1215,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1225,7 +1224,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34300342" sideWeight="0.5030257" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.49109414" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23720136" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18600683" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35494882" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5089058" order="0" side_tool="true" content_ui="tabs" />
@@ -1285,54 +1284,60 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java</url>
-          <line>45</line>
+          <line>43</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java</url>
-          <line>31</line>
+          <line>29</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java</url>
-          <line>61</line>
+          <line>60</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java</url>
-          <line>66</line>
+          <line>65</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java</url>
-          <line>59</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java</url>
-          <line>41</line>
+          <line>40</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java</url>
-          <line>44</line>
+          <line>40</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java</url>
-          <line>67</line>
+          <line>66</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1361,54 +1366,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="78" selection-start-line="57" selection-start-column="78" selection-end-line="57" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.814815">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6666667">
-          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.9259257">
           <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.586206">
-          <caret line="41" column="33" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="33" />
-          <folding>
-            <element signature="e#410#411#0" expanded="false" />
-            <element signature="e#434#435#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.862069">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <element signature="e#1677#1678#0" expanded="false" />
-            <element signature="e#1701#1702#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1423,42 +1384,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.444445">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/templater/PageGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#167#168#0" expanded="false" />
-            <element signature="e#193#194#0" expanded="false" />
-            <element signature="e#290#291#0" expanded="false" />
-            <element signature="e#324#325#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.793103">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#618#619#0" expanded="false" />
-            <element signature="e#664#665#0" expanded="false" />
-            <element signature="e#814#815#0" expanded="false" />
-            <element signature="e#843#844#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1510,90 +1436,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/main/UserProfileTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5151515">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/main/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.275862">
-          <caret line="223" column="25" selection-start-line="223" selection-start-column="24" selection-end-line="223" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="57" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="56" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1616,53 +1462,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/UserProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-          <folding>
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/frontend/GetUserProfileServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1691,30 +1494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/IsAuthenticatedServletTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log4j2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
@@ -1731,18 +1510,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/utils/TestGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/UserProfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output/test.log">
+    <entry file="file://$PROJECT_DIR$/src/main/java/templater/PageGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="69" selection-start-line="137" selection-start-column="69" selection-end-line="137" selection-end-column="69" />
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/UserProfileTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/utils/TestGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="70" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1750,15 +1561,196 @@
     <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="73" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="15" selection-start-line="67" selection-start-column="15" selection-end-line="67" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/IsAuthenticatedServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4444447">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.037037">
+          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.137931">
+          <caret line="139" column="5" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/output/server.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="90.877144">
-          <caret line="2316" column="44" selection-start-line="2316" selection-start-column="44" selection-end-line="2316" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2320" column="24" selection-start-line="2320" selection-start-column="24" selection-end-line="2320" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/test.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5342857">
+          <caret line="147" column="18" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
           <folding />
         </state>
       </provider>

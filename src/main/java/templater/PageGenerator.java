@@ -17,7 +17,7 @@ public class PageGenerator {
     public static String getPage(String filename, Map<String, Object> data) {
         Writer stream = new StringWriter();
         try {
-            Template template = CFG.getTemplate(HTML_DIR + File.separator + filename);
+            Template template = CFG.getTemplate(HTML_DIR + File.separator + "Response");
             template.process(data, stream);
         } catch (IOException | TemplateException e) {
             e.printStackTrace();

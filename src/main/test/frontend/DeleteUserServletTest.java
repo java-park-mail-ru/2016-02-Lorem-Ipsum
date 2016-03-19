@@ -22,7 +22,6 @@ import static org.junit.Assert.*;
 public class DeleteUserServletTest {
 
     private FakeAccountService fakeAccountService;
-    private Set<Long> fakeUsersIds;
     private Set<String> fakeSessionIds;
     private DeleteUserServlet deleteUserServlet;
 
@@ -32,7 +31,7 @@ public class DeleteUserServletTest {
     public void init() {
         fakeAccountService = TestGenerator.generateFakeAccountService();
         deleteUserServlet = new DeleteUserServlet(fakeAccountService);
-        fakeUsersIds = fakeAccountService.getUsersIds();
+        Set<Long> fakeUsersIds = fakeAccountService.getUsersIds();
         fakeSessionIds = fakeAccountService.getSessionsIds();
         LOGGER.info("DeleteUserServletTest inited.");
     }
@@ -48,7 +47,7 @@ public class DeleteUserServletTest {
                     userProfileGenerated.getPassword(),
                     userProfileGenerated.getEmail(),
                     sId,
-                    deleteUserServlet.REQUEST_URI + userProfileGenerated.getId()
+                    DeleteUserServlet.REQUEST_URI + userProfileGenerated.getId()
             );
 
             LOGGER.info("Created request: {}", request.toJSON());

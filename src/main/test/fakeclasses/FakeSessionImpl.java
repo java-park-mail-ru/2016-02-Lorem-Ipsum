@@ -14,6 +14,9 @@ public class FakeSessionImpl extends FakeSession implements HttpSession {
     }
 
     @Override
+    public HttpSessionContext getSessionContext() {return null;}
+
+    @Override
     public long getCreationTime() {
         return 0;
     }
@@ -22,7 +25,6 @@ public class FakeSessionImpl extends FakeSession implements HttpSession {
     public long getLastAccessedTime() {
         return 0;
     }
-
     @Override
     public ServletContext getServletContext() {
         return null;
@@ -36,11 +38,6 @@ public class FakeSessionImpl extends FakeSession implements HttpSession {
     @Override
     public int getMaxInactiveInterval() {
         return 0;
-    }
-
-    @Override
-    public HttpSessionContext getSessionContext() {
-        return null;
     }
 
     @Override

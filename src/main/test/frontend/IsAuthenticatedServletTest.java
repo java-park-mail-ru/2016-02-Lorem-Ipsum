@@ -22,7 +22,6 @@ import static org.junit.Assert.*;
 public class IsAuthenticatedServletTest {
 
     private FakeAccountService fakeAccountService;
-    private Set<Long> fakeUsersIds;
     private Set<String> fakeSessionIds;
     private IsAuthenticatedServlet isAuthenticatedServlet;
 
@@ -32,7 +31,7 @@ public class IsAuthenticatedServletTest {
     public void init() {
         fakeAccountService = TestGenerator.generateFakeAccountService();
         isAuthenticatedServlet = new IsAuthenticatedServlet(fakeAccountService);
-        fakeUsersIds = fakeAccountService.getUsersIds();
+        Set<Long> fakeUsersIds = fakeAccountService.getUsersIds();
         fakeSessionIds = fakeAccountService.getSessionsIds();
         LOGGER.info("IsAuthenticatedServletTest inited.");
     }
@@ -48,7 +47,7 @@ public class IsAuthenticatedServletTest {
                     userProfileGenerated.getPassword(),
                     userProfileGenerated.getEmail(),
                     sId,
-                    isAuthenticatedServlet.REQUEST_URI
+                    IsAuthenticatedServlet.REQUEST_URI
             );
 
             LOGGER.info("Created request: {}", request.toJSON());

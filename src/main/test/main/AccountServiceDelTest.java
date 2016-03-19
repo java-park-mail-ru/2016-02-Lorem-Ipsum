@@ -14,14 +14,11 @@ public class AccountServiceDelTest {
     private AccountService accountService;
     private FakeAccountService fakeAccountService;
     private Set<String> fakeSessionIds;
-    private Set<Long> fakeUsersIds;
 
     private static final long ID_OF_NOT_EXISTING_USER = -1;
     private static final String LOGIN_OF_NOT_EXISTING_USER = "login";
     private static final String PASSWORD_OF_NOT_EXISTING_USER = "password";
     private static final String EMAIL_OF_NOT_EXISTING_USER = "email@x.y";
-    private UserProfile userProfileOfNotExistingUser = new UserProfile(ID_OF_NOT_EXISTING_USER, LOGIN_OF_NOT_EXISTING_USER,
-            PASSWORD_OF_NOT_EXISTING_USER, EMAIL_OF_NOT_EXISTING_USER);
 
     private static final String NOT_EXISTING_SESSION = "session";
 
@@ -29,7 +26,7 @@ public class AccountServiceDelTest {
     public void init() {
         accountService = new AccountService();
         fakeAccountService = TestGenerator.generateFakeAccountService();
-        fakeUsersIds = fakeAccountService.getUsersIds();
+        Set<Long> fakeUsersIds = fakeAccountService.getUsersIds();
         for (Long uId : fakeUsersIds) {
             accountService.addUser(fakeAccountService.getUserById(uId));
         }

@@ -22,8 +22,6 @@ public class AccountServiceGettersTest {
     private static final String LOGIN_OF_NOT_EXISTING_USER = "login";
     private static final String PASSWORD_OF_NOT_EXISTING_USER = "password";
     private static final String EMAIL_OF_NOT_EXISTING_USER = "email@x.y";
-    private UserProfile userProfileOfNotExistingUser = new UserProfile(ID_OF_NOT_EXISTING_USER, LOGIN_OF_NOT_EXISTING_USER,
-                                                                PASSWORD_OF_NOT_EXISTING_USER, EMAIL_OF_NOT_EXISTING_USER);
 
     private static final String NOT_EXISTING_SESSION = "session";
 

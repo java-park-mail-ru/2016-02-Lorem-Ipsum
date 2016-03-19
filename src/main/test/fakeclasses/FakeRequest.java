@@ -21,21 +21,14 @@ public class FakeRequest {
         setRequestURI(reqURI);
     }
 
-    public String getParameter(String key) {
-        return params.get(key);
-    }
+    public FakeSessionImpl getSession() {return session;}
 
-    public String getRequestURI() { return requestURI; }
+    public String getParameter(String param) { return params.get(param); }
 
-    public StringBuffer getRequestURL() { return new StringBuffer(requestURI); }
-
+    public String getRequestURI() {return requestURI;}
 
     public void setParameter(String key, String value) {
         params.put(key, value);
-    }
-
-    public HttpSession getSession() {
-        return session;
     }
 
     public void setSession(String sessionId) {

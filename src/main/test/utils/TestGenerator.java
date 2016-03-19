@@ -55,7 +55,7 @@ public class TestGenerator {
                                                        String filePath, boolean areAuthenticated) {
         String strUsers = readJSONFromFile(filePath);
         if(strUsers == null)
-            return;;
+            return;
         JSONArray arrWithUsers = new JSONArray(strUsers);
         Iterator<Object> it = arrWithUsers.iterator();
         while(it.hasNext()) {

@@ -22,7 +22,6 @@ import static org.junit.Assert.*;
 public class GetUserProfileServletTest {
 
     private FakeAccountService fakeAccountService;
-    private Set<Long> fakeUsersIds;
     private Set<String> fakeSessionIds;
     private GetUserProfileServlet getUserProfileServlet;
 
@@ -32,7 +31,7 @@ public class GetUserProfileServletTest {
     public void init() {
         fakeAccountService = TestGenerator.generateFakeAccountService();
         getUserProfileServlet = new GetUserProfileServlet(fakeAccountService);
-        fakeUsersIds = fakeAccountService.getUsersIds();
+        Set<Long> fakeUsersIds = fakeAccountService.getUsersIds();
         fakeSessionIds = fakeAccountService.getSessionsIds();
         LOGGER.info("GetUserProfileServletTest inited.");
     }
@@ -48,7 +47,7 @@ public class GetUserProfileServletTest {
                     userProfileGenerated.getPassword(),
                     userProfileGenerated.getEmail(),
                     sId,
-                    getUserProfileServlet.REQUEST_URI + userProfileGenerated.getId()
+                    GetUserProfileServlet.REQUEST_URI + userProfileGenerated.getId()
             );
 
             LOGGER.info("Created request: {}", request.toJSON());

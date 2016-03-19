@@ -2383,3 +2383,1205 @@
 [03-20 00:39:07,189] [DEBUG] main.AccountService            [] : Checked existance of session with session6
 [03-20 00:39:07,189] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
 [03-20 00:39:07,189] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:13:32,190] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:13:32,192] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:13:32,192] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:13:32,192] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:13:32,193] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:13:32,193] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,193] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,193] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,193] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,193] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,194] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,194] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,194] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,194] [DEBUG] main.AccountService            [] : Session got by id: session9
+[03-20 01:13:32,194] [DEBUG] main.AccountService            [] : Session got by id: session8
+[03-20 01:13:32,194] [DEBUG] main.AccountService            [] : Session got by id: session7
+[03-20 01:13:32,194] [DEBUG] main.AccountService            [] : Session got by id: session6
+[03-20 01:13:32,197] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:13:32,197] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:13:32,197] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:13:32,197] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:13:32,197] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:13:32,198] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,198] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,198] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,198] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,198] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,198] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,198] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,198] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login0
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login1
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login2
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login3
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login4
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login6
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login7
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login8
+[03-20 01:13:32,199] [DEBUG] main.AccountService            [] : User got by login: login9
+[03-20 01:13:32,203] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:13:32,203] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:13:32,203] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,204] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,205] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,205] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:13:32,205] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:13:32,205] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:13:32,205] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:13:32,205] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:13:32,209] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,210] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 0
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 3
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 4
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:13:32,211] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:13:32,213] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:13:32,213] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:13:32,213] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:13:32,213] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,214] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 0
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 3
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 4
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 6
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 7
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 8
+[03-20 01:13:32,215] [DEBUG] main.AccountService            [] : User got by id: 9
+[03-20 01:13:32,221] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:13:32,222] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:13:32,222] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:13:32,222] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:13:32,222] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:13:32,222] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,222] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,222] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,223] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,223] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,223] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,223] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,223] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login0
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login1
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login2
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login3
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login4
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login6
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login7
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login8
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login9
+[03-20 01:13:32,224] [DEBUG] main.AccountService            [] : Checked existance of user with login login
+[03-20 01:13:32,243] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login9new", password:"password9new", email:"email9@email.comnew", session:"session9"
+[03-20 01:13:32,245] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,245] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":9,"login":"login9new","email":"email9@email.comnew"}
+[03-20 01:13:32,476] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session9"
+[03-20 01:13:32,476] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session9. User deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,494] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session9", if of user to change: "9" 
+[03-20 01:13:32,494] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User requested: {"id":9,"login":"login9","email":"email9@email.com"}. User changed: {}
+[03-20 01:13:32,514] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session9"
+[03-20 01:13:32,514] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User: {}
+[03-20 01:13:32,518] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session9"
+[03-20 01:13:32,518] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session9
+[03-20 01:13:32,523] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:13:32,523] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,527] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login9", password:"password9", email:"email9@email.com", session:"session9"
+[03-20 01:13:32,527] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":0,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,532] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@x.y"}
+[03-20 01:13:32,532] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:13:32,532] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:13:32,532] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:13:32,532] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:13:32,532] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:13:32,533] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:13:32,533] [DEBUG] main.AccountService            [] : User with session session2 was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:13:32,533] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:13:32,533] [DEBUG] main.AccountService            [] : Checked existance of session with session2
+[03-20 01:13:32,534] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:13:32,534] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:13:32,534] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:13:32,534] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : Session deleted, id session9
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : Session deleted, id session8
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : Session deleted, id session7
+[03-20 01:13:32,535] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:13:32,536] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:13:32,536] [DEBUG] main.AccountService            [] : Session deleted, id session6
+[03-20 01:13:32,536] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:13:32,536] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:13:32,537] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:13:32,538] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User with session session9 was deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User with session session8 was deleted: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User with session session7 was deleted: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : User with session session6 was deleted: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:13:32,539] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:13:32,540] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:15:05,335] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:15:05,337] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:15:05,337] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:15:05,337] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:15:05,337] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:15:05,337] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,337] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : Session got by id: session9
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : Session got by id: session8
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : Session got by id: session7
+[03-20 01:15:05,338] [DEBUG] main.AccountService            [] : Session got by id: session6
+[03-20 01:15:05,347] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:15:05,347] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:15:05,348] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:15:05,348] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:15:05,348] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:15:05,348] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,349] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,349] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,350] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,350] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,350] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,350] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,350] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,350] [DEBUG] main.AccountService            [] : User got by login: login0
+[03-20 01:15:05,351] [DEBUG] main.AccountService            [] : User got by login: login1
+[03-20 01:15:05,351] [DEBUG] main.AccountService            [] : User got by login: login2
+[03-20 01:15:05,351] [DEBUG] main.AccountService            [] : User got by login: login3
+[03-20 01:15:05,351] [DEBUG] main.AccountService            [] : User got by login: login4
+[03-20 01:15:05,351] [DEBUG] main.AccountService            [] : User got by login: login6
+[03-20 01:15:05,351] [DEBUG] main.AccountService            [] : User got by login: login7
+[03-20 01:15:05,351] [DEBUG] main.AccountService            [] : User got by login: login8
+[03-20 01:15:05,351] [DEBUG] main.AccountService            [] : User got by login: login9
+[03-20 01:15:05,356] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:15:05,356] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:15:05,356] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:15:05,356] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:15:05,357] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:15:05,358] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,358] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,358] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,359] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,360] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,360] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,362] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,362] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,363] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:15:05,363] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:15:05,363] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:15:05,363] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:15:05,363] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:15:05,364] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:15:05,364] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:15:05,364] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:15:05,364] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:15:05,364] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 0
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 3
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 4
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:15:05,365] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User got by id: 0
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:15:05,367] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:15:05,368] [DEBUG] main.AccountService            [] : User got by id: 3
+[03-20 01:15:05,368] [DEBUG] main.AccountService            [] : User got by id: 4
+[03-20 01:15:05,368] [DEBUG] main.AccountService            [] : User got by id: 6
+[03-20 01:15:05,368] [DEBUG] main.AccountService            [] : User got by id: 7
+[03-20 01:15:05,368] [DEBUG] main.AccountService            [] : User got by id: 8
+[03-20 01:15:05,368] [DEBUG] main.AccountService            [] : User got by id: 9
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,369] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login0
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login1
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login2
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login3
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login4
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login6
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login7
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login8
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login9
+[03-20 01:15:05,370] [DEBUG] main.AccountService            [] : Checked existance of user with login login
+[03-20 01:15:05,387] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login9new", password:"password9new", email:"email9@email.comnew", session:"session9"
+[03-20 01:15:05,401] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,402] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":9,"login":"login9new","email":"email9@email.comnew"}
+[03-20 01:15:05,759] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session9"
+[03-20 01:15:05,759] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session9. User deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,784] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session9", if of user to change: "9" 
+[03-20 01:15:05,786] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User requested: {"id":9,"login":"login9","email":"email9@email.com"}. User changed: {}
+[03-20 01:15:05,799] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session9"
+[03-20 01:15:05,799] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User: {}
+[03-20 01:15:05,802] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session9"
+[03-20 01:15:05,802] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session9
+[03-20 01:15:05,805] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:15:05,805] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,812] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login9", password:"password9", email:"email9@email.com", session:"session9"
+[03-20 01:15:05,812] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":0,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@x.y"}
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : User with session session2 was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:15:05,821] [DEBUG] main.AccountService            [] : Checked existance of session with session2
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Session deleted, id session9
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Session deleted, id session8
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Session deleted, id session7
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Session deleted, id session6
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:15:05,826] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : User with session session9 was deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:15:05,828] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : User with session session8 was deleted: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : User with session session7 was deleted: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : User with session session6 was deleted: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:15:05,829] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:17:28,800] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:17:41,068] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,585] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:20:36,587] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:20:36,587] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:20:36,587] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:20:36,587] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:20:36,587] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,588] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,588] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,588] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,588] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,588] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,588] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,589] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,589] [DEBUG] main.AccountService            [] : Session got by id: session9
+[03-20 01:20:36,589] [DEBUG] main.AccountService            [] : Session got by id: session8
+[03-20 01:20:36,589] [DEBUG] main.AccountService            [] : Session got by id: session7
+[03-20 01:20:36,589] [DEBUG] main.AccountService            [] : Session got by id: session6
+[03-20 01:20:36,594] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:20:36,594] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:20:36,594] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:20:36,594] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,595] [DEBUG] main.AccountService            [] : User got by login: login0
+[03-20 01:20:36,596] [DEBUG] main.AccountService            [] : User got by login: login1
+[03-20 01:20:36,596] [DEBUG] main.AccountService            [] : User got by login: login2
+[03-20 01:20:36,596] [DEBUG] main.AccountService            [] : User got by login: login3
+[03-20 01:20:36,596] [DEBUG] main.AccountService            [] : User got by login: login4
+[03-20 01:20:36,596] [DEBUG] main.AccountService            [] : User got by login: login6
+[03-20 01:20:36,596] [DEBUG] main.AccountService            [] : User got by login: login7
+[03-20 01:20:36,596] [DEBUG] main.AccountService            [] : User got by login: login8
+[03-20 01:20:36,596] [DEBUG] main.AccountService            [] : User got by login: login9
+[03-20 01:20:36,607] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:20:36,607] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:20:36,607] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:20:36,608] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:20:36,608] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:20:36,608] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,609] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,609] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,609] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,609] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,609] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,610] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,610] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,610] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:20:36,610] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:20:36,610] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:20:36,610] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:20:36,610] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:20:36,611] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:20:36,612] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:20:36,612] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:20:36,612] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:20:36,612] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:20:36,612] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,612] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,614] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,615] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,615] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,615] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,615] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,628] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,628] [DEBUG] main.AccountService            [] : Checked existance of user with id 0
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id 3
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id 4
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:20:36,629] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:20:36,630] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:20:36,630] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:20:36,631] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:20:36,631] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:20:36,631] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:20:36,631] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,631] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 0
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 3
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 4
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 6
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 7
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 8
+[03-20 01:20:36,632] [DEBUG] main.AccountService            [] : User got by id: 9
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,634] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login0
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login1
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login2
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login3
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login4
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login6
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login7
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login8
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login9
+[03-20 01:20:36,635] [DEBUG] main.AccountService            [] : Checked existance of user with login login
+[03-20 01:20:36,684] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login9new", password:"password9new", email:"email9@email.comnew", session:"session9"
+[03-20 01:20:36,685] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:36,686] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":9,"login":"login9new","email":"email9@email.comnew"}
+[03-20 01:20:37,034] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:20:37,046] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session9"
+[03-20 01:20:37,046] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session9. User deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:37,047] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:20:37,063] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session9", if of user to change: "9" 
+[03-20 01:20:37,063] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User requested: {"id":9,"login":"login9","email":"email9@email.com"}. User changed: {}
+[03-20 01:20:37,064] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 9,  "login": "login9",  "email": "email9@email.com"}
+[03-20 01:20:37,067] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session9"
+[03-20 01:20:37,067] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User: {}
+[03-20 01:20:37,068] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:20:37,078] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session9"
+[03-20 01:20:37,078] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session9
+[03-20 01:20:37,078] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:20:37,084] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:20:37,084] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:37,084] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:20:37,089] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login9", password:"password9", email:"email9@email.com", session:"session9"
+[03-20 01:20:37,089] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":0,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:37,089] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 0}
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@x.y"}
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : User with session session2 was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:20:37,093] [DEBUG] main.AccountService            [] : Checked existance of session with session2
+[03-20 01:20:37,095] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:20:37,095] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:20:37,095] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:20:37,095] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:20:37,095] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:20:37,095] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:37,095] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:37,095] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:37,096] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:37,096] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:37,096] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:37,096] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:37,096] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Session deleted, id session9
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Session deleted, id session8
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Session deleted, id session7
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Session deleted, id session6
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:20:37,097] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:37,100] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : User with session session9 was deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : User with session session8 was deleted: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : User with session session7 was deleted: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : User with session session6 was deleted: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:20:37,101] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:21:26,842] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:21:35,457] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:21:53,072] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:24:19,634] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:25:14,000] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:27:31,813] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:27:31,814] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:27:32,179] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:27:55,006] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:27:58,726] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:28:19,943] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:28:19,944] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:28:20,192] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:28:36,541] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:28:39,478] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:28:46,733] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:30:11,993] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:30:11,994] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:30:12,230] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:30:25,381] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:30:25,388] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:30:26,263] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:30:40,110] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:30:41,692] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:30:51,970] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:32:24,870] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:32:24,875] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:25,185] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:32:25,186] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login8", password:"password8", session:"session8"
+[03-20 01:32:25,186] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:25,187] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 8}
+[03-20 01:32:25,187] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login7", password:"password7", session:"session7"
+[03-20 01:32:25,187] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:25,187] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 7}
+[03-20 01:32:25,188] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login6", password:"password6", session:"session6"
+[03-20 01:32:25,188] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:25,190] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 6}
+[03-20 01:32:34,480] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:34,482] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:34,482] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:34,482] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:34,482] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:34,482] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,483] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,483] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,483] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,488] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,489] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,489] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,489] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,489] [DEBUG] main.AccountService            [] : Session got by id: session9
+[03-20 01:32:34,489] [DEBUG] main.AccountService            [] : Session got by id: session8
+[03-20 01:32:34,489] [DEBUG] main.AccountService            [] : Session got by id: session7
+[03-20 01:32:34,489] [DEBUG] main.AccountService            [] : Session got by id: session6
+[03-20 01:32:34,494] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:34,494] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:34,494] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:34,494] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:34,494] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,495] [DEBUG] main.AccountService            [] : User got by login: login0
+[03-20 01:32:34,496] [DEBUG] main.AccountService            [] : User got by login: login1
+[03-20 01:32:34,496] [DEBUG] main.AccountService            [] : User got by login: login2
+[03-20 01:32:34,496] [DEBUG] main.AccountService            [] : User got by login: login3
+[03-20 01:32:34,496] [DEBUG] main.AccountService            [] : User got by login: login4
+[03-20 01:32:34,496] [DEBUG] main.AccountService            [] : User got by login: login6
+[03-20 01:32:34,496] [DEBUG] main.AccountService            [] : User got by login: login7
+[03-20 01:32:34,496] [DEBUG] main.AccountService            [] : User got by login: login8
+[03-20 01:32:34,498] [DEBUG] main.AccountService            [] : User got by login: login9
+[03-20 01:32:34,500] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:34,500] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:34,500] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:34,500] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:34,500] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:34,500] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,500] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,500] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:32:34,501] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:32:34,502] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,503] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 0
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 3
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 4
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:32:34,504] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,506] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 0
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 3
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 4
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 6
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 7
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 8
+[03-20 01:32:34,507] [DEBUG] main.AccountService            [] : User got by id: 9
+[03-20 01:32:34,508] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:34,508] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:34,508] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:34,508] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : Checked existance of user with login login0
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : Checked existance of user with login login1
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : Checked existance of user with login login2
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : Checked existance of user with login login3
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : Checked existance of user with login login4
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : Checked existance of user with login login6
+[03-20 01:32:34,509] [DEBUG] main.AccountService            [] : Checked existance of user with login login7
+[03-20 01:32:34,510] [DEBUG] main.AccountService            [] : Checked existance of user with login login8
+[03-20 01:32:34,510] [DEBUG] main.AccountService            [] : Checked existance of user with login login9
+[03-20 01:32:34,510] [DEBUG] main.AccountService            [] : Checked existance of user with login login
+[03-20 01:32:34,548] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login9new", password:"password9new", email:"email9@email.comnew", session:"session9"
+[03-20 01:32:34,551] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,551] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":9,"login":"login9new","email":"email9@email.comnew"}
+[03-20 01:32:34,891] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:32:34,892] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login8new", password:"password8new", email:"email8@email.comnew", session:"session8"
+[03-20 01:32:34,892] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,892] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":8,"login":"login8new","email":"email8@email.comnew"}
+[03-20 01:32:34,893] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 8}
+[03-20 01:32:34,893] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login7new", password:"password7new", email:"email7@email.comnew", session:"session7"
+[03-20 01:32:34,893] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,893] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":7,"login":"login7new","email":"email7@email.comnew"}
+[03-20 01:32:34,894] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 7}
+[03-20 01:32:34,894] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login6new", password:"password6new", email:"email6@email.comnew", session:"session6"
+[03-20 01:32:34,894] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,894] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":6,"login":"login6new","email":"email6@email.comnew"}
+[03-20 01:32:34,894] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 6}
+[03-20 01:32:34,898] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session9"
+[03-20 01:32:34,898] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session9. User deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,899] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:34,899] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session8"
+[03-20 01:32:34,899] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session8. User deleted: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,899] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:34,900] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session7"
+[03-20 01:32:34,900] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session7. User deleted: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,900] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:34,901] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session6"
+[03-20 01:32:34,901] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session6. User deleted: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,901] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:34,912] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session9", if of user to change: "9" 
+[03-20 01:32:34,912] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User requested: {"id":9,"login":"login9","email":"email9@email.com"}. User changed: {}
+[03-20 01:32:34,913] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 9,  "login": "login9",  "email": "email9@email.com"}
+[03-20 01:32:34,913] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session8", if of user to change: "8" 
+[03-20 01:32:34,914] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":8,"login":"login8","email":"email8@email.com"}. User requested: {"id":8,"login":"login8","email":"email8@email.com"}. User changed: {}
+[03-20 01:32:34,914] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 8,  "login": "login8",  "email": "email8@email.com"}
+[03-20 01:32:34,916] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session7", if of user to change: "7" 
+[03-20 01:32:34,917] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":7,"login":"login7","email":"email7@email.com"}. User requested: {"id":7,"login":"login7","email":"email7@email.com"}. User changed: {}
+[03-20 01:32:34,917] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 7,  "login": "login7",  "email": "email7@email.com"}
+[03-20 01:32:34,917] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session6", if of user to change: "6" 
+[03-20 01:32:34,918] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":6,"login":"login6","email":"email6@email.com"}. User requested: {"id":6,"login":"login6","email":"email6@email.com"}. User changed: {}
+[03-20 01:32:34,918] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 6,  "login": "login6",  "email": "email6@email.com"}
+[03-20 01:32:34,925] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session9"
+[03-20 01:32:34,926] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User: {}
+[03-20 01:32:34,933] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:32:34,935] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session8"
+[03-20 01:32:34,935] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":8,"login":"login8","email":"email8@email.com"}. User: {}
+[03-20 01:32:34,935] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 8}
+[03-20 01:32:34,936] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session7"
+[03-20 01:32:34,936] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":7,"login":"login7","email":"email7@email.com"}. User: {}
+[03-20 01:32:34,936] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 7}
+[03-20 01:32:34,936] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session6"
+[03-20 01:32:34,936] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":6,"login":"login6","email":"email6@email.com"}. User: {}
+[03-20 01:32:34,936] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 6}
+[03-20 01:32:34,939] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session9"
+[03-20 01:32:34,939] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session9
+[03-20 01:32:34,940] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:34,940] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session8"
+[03-20 01:32:34,940] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session8
+[03-20 01:32:34,940] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:34,940] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session7"
+[03-20 01:32:34,945] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session7
+[03-20 01:32:34,945] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:34,945] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session6"
+[03-20 01:32:34,945] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session6
+[03-20 01:32:34,946] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:34,951] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:32:34,951] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,952] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:32:34,952] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login8", password:"password8", session:"session8"
+[03-20 01:32:34,952] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,952] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 8}
+[03-20 01:32:34,952] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login7", password:"password7", session:"session7"
+[03-20 01:32:34,952] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,953] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 7}
+[03-20 01:32:34,953] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login6", password:"password6", session:"session6"
+[03-20 01:32:34,953] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,955] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 6}
+[03-20 01:32:34,962] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login9", password:"password9", email:"email9@email.com", session:"session9"
+[03-20 01:32:34,962] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":0,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,962] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 0}
+[03-20 01:32:34,963] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login8", password:"password8", email:"email8@email.com", session:"session8"
+[03-20 01:32:34,963] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":1,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,964] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 1}
+[03-20 01:32:34,964] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login7", password:"password7", email:"email7@email.com", session:"session7"
+[03-20 01:32:34,964] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":2,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,965] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 2}
+[03-20 01:32:34,966] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login6", password:"password6", email:"email6@email.com", session:"session6"
+[03-20 01:32:34,966] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":3,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,966] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 3}
+[03-20 01:32:34,972] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@x.y"}
+[03-20 01:32:34,972] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:32:34,972] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:32:34,972] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:32:34,972] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:32:34,972] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:32:34,973] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:32:34,973] [DEBUG] main.AccountService            [] : User with session session2 was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:32:34,973] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:32:34,973] [DEBUG] main.AccountService            [] : Checked existance of session with session2
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Session deleted, id session9
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Session deleted, id session8
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Session deleted, id session7
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Session deleted, id session6
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:32:34,975] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:32:34,978] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User with session session9 was deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User with session session8 was deleted: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : User with session session7 was deleted: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:34,979] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:32:34,980] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:32:34,980] [DEBUG] main.AccountService            [] : User with session session6 was deleted: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:34,980] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:32:34,980] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:32:34,980] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:32:44,403] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:44,405] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:44,405] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:44,405] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:44,405] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:44,405] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,405] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : Session got by id: session9
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : Session got by id: session8
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : Session got by id: session7
+[03-20 01:32:44,408] [DEBUG] main.AccountService            [] : Session got by id: session6
+[03-20 01:32:44,410] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:44,410] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:44,410] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User got by login: login0
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User got by login: login1
+[03-20 01:32:44,411] [DEBUG] main.AccountService            [] : User got by login: login2
+[03-20 01:32:44,412] [DEBUG] main.AccountService            [] : User got by login: login3
+[03-20 01:32:44,412] [DEBUG] main.AccountService            [] : User got by login: login4
+[03-20 01:32:44,412] [DEBUG] main.AccountService            [] : User got by login: login6
+[03-20 01:32:44,412] [DEBUG] main.AccountService            [] : User got by login: login7
+[03-20 01:32:44,412] [DEBUG] main.AccountService            [] : User got by login: login8
+[03-20 01:32:44,412] [DEBUG] main.AccountService            [] : User got by login: login9
+[03-20 01:32:44,424] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:44,424] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,425] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,426] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,426] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,426] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:32:44,426] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:32:44,426] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:32:44,426] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:32:44,427] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:32:44,429] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:44,429] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:44,429] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:44,429] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:44,430] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:44,430] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,430] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,430] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,430] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,430] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,431] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,431] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,431] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,431] [DEBUG] main.AccountService            [] : Checked existance of user with id 0
+[03-20 01:32:44,431] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:32:44,431] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:32:44,432] [DEBUG] main.AccountService            [] : Checked existance of user with id 3
+[03-20 01:32:44,432] [DEBUG] main.AccountService            [] : Checked existance of user with id 4
+[03-20 01:32:44,432] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:32:44,432] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:32:44,432] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:32:44,432] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:32:44,432] [DEBUG] main.AccountService            [] : Checked existance of user with id -1
+[03-20 01:32:44,434] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:44,434] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:44,434] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:44,434] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:44,434] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:44,435] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,435] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,435] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,435] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,435] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,435] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,435] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,436] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,436] [DEBUG] main.AccountService            [] : User got by id: 0
+[03-20 01:32:44,436] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:32:44,436] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:32:44,436] [DEBUG] main.AccountService            [] : User got by id: 3
+[03-20 01:32:44,436] [DEBUG] main.AccountService            [] : User got by id: 4
+[03-20 01:32:44,436] [DEBUG] main.AccountService            [] : User got by id: 6
+[03-20 01:32:44,437] [DEBUG] main.AccountService            [] : User got by id: 7
+[03-20 01:32:44,437] [DEBUG] main.AccountService            [] : User got by id: 8
+[03-20 01:32:44,437] [DEBUG] main.AccountService            [] : User got by id: 9
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,439] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login0
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login1
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login2
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login3
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login4
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login6
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login7
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login8
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login9
+[03-20 01:32:44,440] [DEBUG] main.AccountService            [] : Checked existance of user with login login
+[03-20 01:32:44,473] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login9new", password:"password9new", email:"email9@email.comnew", session:"session9"
+[03-20 01:32:44,475] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,476] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":9,"login":"login9new","email":"email9@email.comnew"}
+[03-20 01:32:44,755] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:32:44,756] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login8new", password:"password8new", email:"email8@email.comnew", session:"session8"
+[03-20 01:32:44,756] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,757] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":8,"login":"login8new","email":"email8@email.comnew"}
+[03-20 01:32:44,757] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 8}
+[03-20 01:32:44,758] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login7new", password:"password7new", email:"email7@email.comnew", session:"session7"
+[03-20 01:32:44,758] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,761] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":7,"login":"login7new","email":"email7@email.comnew"}
+[03-20 01:32:44,762] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 7}
+[03-20 01:32:44,762] [DEBUG] frontend.ChangeUserServlet     [] : ChangeUser request got with params: login:"login6new", password:"password6new", email:"email6@email.comnew", session:"session6"
+[03-20 01:32:44,763] [DEBUG] frontend.ChangeUserServlet     [] : User before change: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,763] [DEBUG] frontend.ChangeUserServlet     [] : Success. Changed user: {"id":6,"login":"login6new","email":"email6@email.comnew"}
+[03-20 01:32:44,763] [DEBUG] frontend.ChangeUserServlet     [] : Servlet finished with code 200, response body: {  "id": 6}
+[03-20 01:32:44,768] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session9"
+[03-20 01:32:44,768] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session9. User deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,768] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:44,768] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session8"
+[03-20 01:32:44,768] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session8. User deleted: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,771] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:44,771] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session7"
+[03-20 01:32:44,771] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session7. User deleted: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,771] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:44,771] [DEBUG] frontend.DeleteUserServlet     [] : DeleteUser request got with params: session:"session6"
+[03-20 01:32:44,771] [DEBUG] frontend.DeleteUserServlet     [] : Success. SessionId: session6. User deleted: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,774] [DEBUG] frontend.DeleteUserServlet     [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:44,778] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session9", if of user to change: "9" 
+[03-20 01:32:44,778] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User requested: {"id":9,"login":"login9","email":"email9@email.com"}. User changed: {}
+[03-20 01:32:44,779] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 9,  "login": "login9",  "email": "email9@email.com"}
+[03-20 01:32:44,784] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session8", if of user to change: "8" 
+[03-20 01:32:44,784] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":8,"login":"login8","email":"email8@email.com"}. User requested: {"id":8,"login":"login8","email":"email8@email.com"}. User changed: {}
+[03-20 01:32:44,785] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 8,  "login": "login8",  "email": "email8@email.com"}
+[03-20 01:32:44,785] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session7", if of user to change: "7" 
+[03-20 01:32:44,785] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":7,"login":"login7","email":"email7@email.com"}. User requested: {"id":7,"login":"login7","email":"email7@email.com"}. User changed: {}
+[03-20 01:32:44,786] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 7,  "login": "login7",  "email": "email7@email.com"}
+[03-20 01:32:44,788] [DEBUG] frontend.GetUserProfileServlet [] : GetUserProfile request got with params: session:"session6", if of user to change: "6" 
+[03-20 01:32:44,789] [DEBUG] frontend.GetUserProfileServlet [] : Success. SessionId: {"id":6,"login":"login6","email":"email6@email.com"}. User requested: {"id":6,"login":"login6","email":"email6@email.com"}. User changed: {}
+[03-20 01:32:44,792] [DEBUG] frontend.GetUserProfileServlet [] : Servlet finished with code 200, response body: {  "id": 6,  "login": "login6",  "email": "email6@email.com"}
+[03-20 01:32:44,796] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session9"
+[03-20 01:32:44,796] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":9,"login":"login9","email":"email9@email.com"}. User: {}
+[03-20 01:32:44,797] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:32:44,797] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session8"
+[03-20 01:32:44,797] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":8,"login":"login8","email":"email8@email.com"}. User: {}
+[03-20 01:32:44,798] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 8}
+[03-20 01:32:44,798] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session7"
+[03-20 01:32:44,798] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":7,"login":"login7","email":"email7@email.com"}. User: {}
+[03-20 01:32:44,798] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 7}
+[03-20 01:32:44,798] [DEBUG] rontend.IsAuthenticatedServlet [] : IsAuthenticated request got with params: session:"session6"
+[03-20 01:32:44,799] [DEBUG] rontend.IsAuthenticatedServlet [] : Success. SessionId: {"id":6,"login":"login6","email":"email6@email.com"}. User: {}
+[03-20 01:32:44,799] [DEBUG] rontend.IsAuthenticatedServlet [] : Servlet finished with code 200, response body: {  "id": 6}
+[03-20 01:32:44,808] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session9"
+[03-20 01:32:44,808] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session9
+[03-20 01:32:44,808] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:44,809] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session8"
+[03-20 01:32:44,809] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session8
+[03-20 01:32:44,809] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:44,809] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session7"
+[03-20 01:32:44,809] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session7
+[03-20 01:32:44,809] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:44,809] [DEBUG] frontend.LogOutServlet         [] : LogOut request got with params: session:"session6"
+[03-20 01:32:44,809] [DEBUG] frontend.LogOutServlet         [] : Success. SessionId: session6
+[03-20 01:32:44,811] [DEBUG] frontend.LogOutServlet         [] : Servlet finished with code 200, response body: {}
+[03-20 01:32:44,818] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login9", password:"password9", session:"session9"
+[03-20 01:32:44,818] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,818] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 9}
+[03-20 01:32:44,820] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login8", password:"password8", session:"session8"
+[03-20 01:32:44,820] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,821] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 8}
+[03-20 01:32:44,821] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login7", password:"password7", session:"session7"
+[03-20 01:32:44,821] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,821] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 7}
+[03-20 01:32:44,822] [DEBUG] frontend.SignInServlet         [] : SignInServlet request got with params: login:"login6", password:"password6", session:"session6"
+[03-20 01:32:44,822] [DEBUG] frontend.SignInServlet         [] : Success. Logged in user: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,822] [DEBUG] frontend.SignInServlet         [] : Servlet finished with code 200, response body: {  "id": 6}
+[03-20 01:32:44,824] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login9", password:"password9", email:"email9@email.com", session:"session9"
+[03-20 01:32:44,824] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":0,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,824] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 0}
+[03-20 01:32:44,829] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login8", password:"password8", email:"email8@email.com", session:"session8"
+[03-20 01:32:44,829] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":1,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,829] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 1}
+[03-20 01:32:44,830] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login7", password:"password7", email:"email7@email.com", session:"session7"
+[03-20 01:32:44,830] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":2,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,830] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 2}
+[03-20 01:32:44,830] [DEBUG] frontend.SignUpServlet         [] : SignUpServlet request got with params: login:"login6", password:"password6", email:"email6@email.com", session:"session6"
+[03-20 01:32:44,830] [DEBUG] frontend.SignUpServlet         [] : Success. New user: {"id":3,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,830] [DEBUG] frontend.SignUpServlet         [] : Servlet finished with code 200, response body: {  "id": 3}
+[03-20 01:32:44,838] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@x.y"}
+[03-20 01:32:44,839] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:32:44,839] [DEBUG] main.AccountService            [] : Checked existance of user with id 1
+[03-20 01:32:44,839] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:32:44,839] [DEBUG] main.AccountService            [] : User got by id: 1
+[03-20 01:32:44,839] [DEBUG] main.AccountService            [] : User got by id: 2
+[03-20 01:32:44,842] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:32:44,842] [DEBUG] main.AccountService            [] : User with session session2 was added: {"id":2,"login":"login2","email":"email2@x.y"}
+[03-20 01:32:44,842] [DEBUG] main.AccountService            [] : Checked existance of user with id 2
+[03-20 01:32:44,842] [DEBUG] main.AccountService            [] : Checked existance of session with session2
+[03-20 01:32:44,845] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:44,845] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:44,847] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : Session deleted, id session9
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : Session deleted, id session8
+[03-20 01:32:44,849] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:32:44,850] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:32:44,850] [DEBUG] main.AccountService            [] : Session deleted, id session7
+[03-20 01:32:44,850] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:32:44,850] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:32:44,850] [DEBUG] main.AccountService            [] : Session deleted, id session6
+[03-20 01:32:44,850] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:32:44,850] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:32:44,850] [DEBUG] main.AccountService            [] : Checked existance of session with session
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":0,"login":"login0","email":"email0@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":1,"login":"login1","email":"email1@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":2,"login":"login2","email":"email2@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":3,"login":"login3","email":"email3@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":4,"login":"login4","email":"email4@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User with session session9 was added: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User with session session8 was added: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User with session session7 was added: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User with session session6 was added: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User with session session9 was deleted: {"id":9,"login":"login9","email":"email9@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : Checked existance of session with session9
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : Checked existance of user with id 9
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : User with session session8 was deleted: {"id":8,"login":"login8","email":"email8@email.com"}
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : Checked existance of session with session8
+[03-20 01:32:44,851] [DEBUG] main.AccountService            [] : Checked existance of user with id 8
+[03-20 01:32:44,852] [DEBUG] main.AccountService            [] : User with session session7 was deleted: {"id":7,"login":"login7","email":"email7@email.com"}
+[03-20 01:32:44,852] [DEBUG] main.AccountService            [] : Checked existance of session with session7
+[03-20 01:32:44,852] [DEBUG] main.AccountService            [] : Checked existance of user with id 7
+[03-20 01:32:44,852] [DEBUG] main.AccountService            [] : User with session session6 was deleted: {"id":6,"login":"login6","email":"email6@email.com"}
+[03-20 01:32:44,852] [DEBUG] main.AccountService            [] : Checked existance of session with session6
+[03-20 01:32:44,852] [DEBUG] main.AccountService            [] : Checked existance of user with id 6
+[03-20 01:32:44,852] [DEBUG] main.AccountService            [] : Checked existance of user with id -1

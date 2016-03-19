@@ -18,11 +18,7 @@ import static org.junit.Assert.*;
 
 public class ChangeUserServletTest {
 
-    private FakeAccountService fakeAccountServiceToPutChanged;
     private FakeAccountService fakeAccountServiceToGenerate;
-    private Set<Long> fakeUsersIdsOfChanged;
-    private Set<Long> fakeUsersIdsOfGenerated;
-    private Set<String> fakeSessionIdsOfChanged;
     private Set<String> fakeSessionIdsOfGenerated;
     private ChangeUserServlet changeUserServlet;
 
@@ -31,9 +27,9 @@ public class ChangeUserServletTest {
     @Before
     public void init() {
         fakeAccountServiceToGenerate = TestGenerator.generateFakeAccountService();
-        fakeAccountServiceToPutChanged = new FakeAccountService();
+        FakeAccountService fakeAccountServiceToPutChanged = new FakeAccountService();
         changeUserServlet = new ChangeUserServlet(fakeAccountServiceToGenerate);
-        fakeUsersIdsOfGenerated = fakeAccountServiceToGenerate.getUsersIds();
+        Set<Long> fakeUsersIdsOfGenerated = fakeAccountServiceToGenerate.getUsersIds();
         fakeSessionIdsOfGenerated = fakeAccountServiceToGenerate.getSessionsIds();
         LOGGER.info("ChangeUserServletTest inited.");
     }
