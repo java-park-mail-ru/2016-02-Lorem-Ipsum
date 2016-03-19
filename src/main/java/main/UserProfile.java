@@ -1,5 +1,7 @@
 package main;
 
+import org.json.JSONStringer;
+
 public class UserProfile {
     private final long userId;
     private String login;
@@ -39,6 +41,17 @@ public class UserProfile {
     public boolean semanticEqual(UserProfile second) {
         return this.getLogin().equals(second.getLogin()) &&
                 this.getPassword().equals(second.getPassword()) && this.getEmail().equals(second.getEmail());
+    }
+
+    public String toJSON() {
+        JSONStringer jsonStringer = new JSONStringer();
+        jsonStringer.
+                object()
+                .key("id").value(getId())
+                .key("login").value(getLogin())
+                .key("email").value(getEmail());
+        jsonStringer.endObject();
+        return jsonStringer.toString();
     }
 
 }

@@ -2,6 +2,8 @@ package frontend;
 
 import fakeclasses.*;
 import main.UserProfile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,6 +28,8 @@ public class SignUpServletTest {
     private Set<String> fakeSessionIdsOfGenerated;
     private SignUpServlet signUpServlet;
 
+    public static final Logger LOGGER = LogManager.getLogger("TestLogger");
+
     @Before
     public void init() {
         fakeAccountServiceToGenerate = TestGenerator.generateFakeAccountService();
@@ -33,11 +37,14 @@ public class SignUpServletTest {
         signUpServlet = new SignUpServlet(fakeAccountServiceToRegister);
         fakeUsersIdsOfGenerated = fakeAccountServiceToGenerate.getUsersIds();
         fakeSessionIdsOfGenerated = fakeAccountServiceToGenerate.getSessionsIds();
+        LOGGER.info("SignUpServletTest inited.");
     }
 
     @Test
     public void testDoPut() throws Exception {
+
         for (String sId : fakeSessionIdsOfGenerated) {
+
             UserProfile userProfileGenerated = fakeAccountServiceToGenerate.getSession(sId);
             FakeRequestImpl request = new FakeRequestImpl(
                         userProfileGenerated.getLogin(),
@@ -46,6 +53,8 @@ public class SignUpServletTest {
                         sId,
                         SignUpServlet.REQUEST_URI
                     );
+            LOGGER.info("Created request: {}", request.toJSON());
+
             FakeResponseImpl response = new FakeResponseImpl();
 
             signUpServlet.doPut(request, response);
@@ -56,6 +65,8 @@ public class SignUpServletTest {
             assertTrue(response.getContentType().equals("application/json"));
 
             String responseContentStr = response.getContent();
+            String stringToLog = responseContentStr.replace("\r\n", "");
+            LOGGER.info("Got response: {}", stringToLog);
             JSONObject responseContentJSON = new JSONObject(responseContentStr);
             Number id = (Number) responseContentJSON.get("id");
             assertTrue(id.longValue() == userProfileRegistered.getId());

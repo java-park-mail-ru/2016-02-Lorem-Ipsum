@@ -5,6 +5,8 @@ import main.AccountService;
 import main.IAccountService;
 import main.UserProfile;
 import datacheck.InputDataChecker;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import templater.PageGenerator;
 
 import javax.servlet.ServletException;
@@ -18,7 +20,9 @@ import java.util.Map;
 public class ChangeUserServlet extends HttpServlet {
 
     private final IAccountService accountService;
-    public static final String REQUEST_URI = "/user/*";
+    public static final String REQUEST_URI = "/user/";
+
+    public static final Logger LOGGER = LogManager.getLogger(ChangeUserServlet.class);
 
     public ChangeUserServlet(IAccountService accountService) {
         this.accountService = accountService;
@@ -33,39 +37,47 @@ public class ChangeUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String sessionId = request.getSession().getId();
 
+        LOGGER.debug("ChangeUser request got with params: login:\"{}\", password:\"{}\", email:\"{}\", session:\"{}\"",
+                login, password, email, sessionId);
+
         Boolean isGoodData = InputDataChecker.checkChangeUser(login, password, email)
                 && ElementaryChecker.checkSessionId(sessionId);
 
         Map<String, Object> dataToSend = new HashMap<>();
         int statusCode;
 
-        if( isGoodData && accountService.checkSessionExists(sessionId)) {
-            UserProfile userProfile = accountService.getSession(sessionId);
-            if(!accountService.checkUserExistsByLogin(login) || userProfile.getLogin().equals(login)) {
-                statusCode = HttpServletResponse.SC_OK;
-                userProfile.setLogin(login);
-                userProfile.setPassword(password);
-                userProfile.setEmail(email);
-                dataToSend.put("id", userProfile.getId());
-            }
-            else {
-                statusCode = HttpServletResponse.SC_FORBIDDEN;
-            }
-        }
-        else {
-            statusCode = HttpServletResponse.SC_FORBIDDEN;
-        }
+        try {
+            if(!isGoodData)
+                throw new Exception("Bad data.");
+            if(!accountService.checkSessionExists(sessionId))
+                throw new Exception("User is not logged in.");
 
-        if(statusCode == HttpServletResponse.SC_FORBIDDEN) {
+            UserProfile userProfile = accountService.getSession(sessionId);
+
+            if(accountService.checkUserExistsByLogin(login) && !userProfile.getLogin().equals(login))
+                throw new Exception("Assumption to change another user");
+
+            LOGGER.debug("User before change: {}", userProfile.toJSON());
+            statusCode = HttpServletResponse.SC_OK;
+            userProfile.setLogin(login);
+            userProfile.setPassword(password);
+            userProfile.setEmail(email);
+            dataToSend.put("id", userProfile.getId());
+            LOGGER.debug("Success. Changed user: {}", userProfile.toJSON());
+        }
+        catch (Exception e) {
+            statusCode = HttpServletResponse.SC_FORBIDDEN;
             dataToSend.put("status", statusCode);
             dataToSend.put("message", "Чужой юзер.");
+            LOGGER.debug("Denied. SessionId: {}. Reason: {}", sessionId, e.getMessage());
         }
 
         response.setStatus(statusCode);
         response.setContentType("application/json");
         Map<String, Object> pageVariables = new HashMap<>();
         pageVariables.put("data", dataToSend);
-        response.getWriter().println(PageGenerator.getPage("Response", pageVariables));
+        String responseContent = PageGenerator.getPage("Response", pageVariables);
+        response.getWriter().println(responseContent);
+        LOGGER.debug("Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));
     }
-
 }

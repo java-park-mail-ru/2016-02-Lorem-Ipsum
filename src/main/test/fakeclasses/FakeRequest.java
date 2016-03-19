@@ -1,6 +1,8 @@
 package fakeclasses;
 
 
+import org.json.JSONStringer;
+
 import javax.servlet.http.HttpSession;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -44,4 +46,14 @@ public class FakeRequest {
         requestURI = reqURI;
     }
 
+    public String toJSON() {
+        JSONStringer jsonStringer = new JSONStringer();
+        jsonStringer.object();
+        for (String param : params.keySet()) {
+            jsonStringer.key(param).value(params.get(param));
+        }
+        jsonStringer.key("session").value(session.getId());
+        jsonStringer.endObject();
+        return jsonStringer.toString();
+    }
 }

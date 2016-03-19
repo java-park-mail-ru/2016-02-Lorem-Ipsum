@@ -4,6 +4,8 @@ import fakeclasses.FakeAccountService;
 import fakeclasses.FakeRequestImpl;
 import fakeclasses.FakeResponseImpl;
 import main.UserProfile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,12 +26,15 @@ public class SignInServletTest {
     private Set<String> fakeSessionIds;
     private SignInServlet signInServlet;
 
+    public static final Logger LOGGER = LogManager.getLogger("TestLogger");
+
     @Before
     public void init() {
         fakeAccountService = TestGenerator.generateFakeAccountService();
         signInServlet = new SignInServlet(fakeAccountService);
         fakeUsersIds = fakeAccountService.getUsersIds();
         fakeSessionIds = fakeAccountService.getSessionsIds();
+        LOGGER.info("SignInServletTest inited.");
     }
 
     @Test
@@ -46,6 +51,8 @@ public class SignInServletTest {
                     SignUpServlet.REQUEST_URI
             );
 
+            LOGGER.info("Created request: {}", request.toJSON());
+
             FakeResponseImpl response = new FakeResponseImpl();
 
             fakeAccountService.deleteSession(sId);
@@ -59,6 +66,8 @@ public class SignInServletTest {
             assertTrue(response.getContentType().equals("application/json"));
 
             String responseContentStr = response.getContent();
+            String stringToLog = responseContentStr.replace("\r\n", "");
+            LOGGER.info("Got response: {}", stringToLog);
             JSONObject responseContentJSON = new JSONObject(responseContentStr);
             Number id = (Number) responseContentJSON.get("id");
             assertTrue(id.longValue() == userProfileLoggedIn.getId());

@@ -6,10 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Iterator;
 
 /**
@@ -57,6 +54,8 @@ public class TestGenerator {
     public static void parseAccountServiceFromJSONFile(FakeAccountService fakeAccountService,
                                                        String filePath, boolean areAuthenticated) {
         String strUsers = readJSONFromFile(filePath);
+        if(strUsers == null)
+            return;;
         JSONArray arrWithUsers = new JSONArray(strUsers);
         Iterator<Object> it = arrWithUsers.iterator();
         while(it.hasNext()) {
@@ -82,15 +81,21 @@ public class TestGenerator {
                 file.createNewFile();
             }
 
-            PrintWriter printWriter = new PrintWriter(file.getAbsoluteFile());
-            printWriter.print(text);
-            printWriter.close();
-            return true;
+            try(PrintWriter printWriter = new PrintWriter(file.getAbsoluteFile()))
+            {
+                printWriter.print(text);
+                printWriter.close();
+                return true;
+            }
+            catch (FileNotFoundException e) {
+                System.out.append(e.getMessage());
+            }
         }
         catch (IOException e) {
-            System.out.append(e.getMessage() + "\n");
+            System.out.append(e.getMessage());
             return false;
         }
+        return true;
     }
 
     public static String readJSONFromFile(String filePath) {
@@ -102,12 +107,18 @@ public class TestGenerator {
             }
 
             char[] buffer = new char[(int)file.length()];
-            FileReader fileReader = new FileReader(file);
-            fileReader.read(buffer);
-            return new String(buffer);
+            try(FileReader fileReader = new FileReader(file))
+            {
+                fileReader.read(buffer);
+                return new String(buffer);
+            }
+            catch (FileNotFoundException e){
+                System.out.append(e.getMessage());
+                return null;
+            }
         }
         catch (IOException e) {
-            System.out.append(e.getMessage() + "\n");
+            System.out.append(e.getMessage());
             return null;
         }
     }
