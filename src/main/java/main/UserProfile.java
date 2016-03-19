@@ -31,4 +31,14 @@ public class UserProfile {
 
     public void setEmail(String email) { this.email = email; }
 
+    public boolean equal(UserProfile second) {
+        return this.getId() == second.getId() && this.getLogin().equals(second.getLogin()) &&
+                this.getPassword().equals(second.getPassword()) && this.getEmail().equals(second.getEmail());
+    }
+
+    public boolean semanticEqual(UserProfile second) {
+        return this.getLogin().equals(second.getLogin()) &&
+                this.getPassword().equals(second.getPassword()) && this.getEmail().equals(second.getEmail());
+    }
+
 }

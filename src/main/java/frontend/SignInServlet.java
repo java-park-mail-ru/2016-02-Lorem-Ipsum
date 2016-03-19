@@ -1,6 +1,7 @@
 package frontend;
 
 import main.AccountService;
+import main.IAccountService;
 import main.UserProfile;
 import datacheck.InputDataChecker;
 import templater.PageGenerator;
@@ -15,9 +16,10 @@ import java.util.Map;
 
 public class SignInServlet extends HttpServlet {
 
-    private final AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/session";
 
-    public SignInServlet(AccountService accountService) {
+    public SignInServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -42,7 +44,7 @@ public class SignInServlet extends HttpServlet {
                 statusCode = HttpServletResponse.SC_OK;
                 if(accountService.checkSessionExists(sessionId))
                     accountService.deleteSession(sessionId);
-                accountService.addSessions(sessionId, userProfile);
+                accountService.addSession(sessionId, userProfile);
                 dataToSend.put("id", userProfile.getId());
             }
             else {

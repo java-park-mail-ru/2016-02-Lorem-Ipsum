@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="app:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/app_jar</output-path>
+    <root id="archive" name="app_jar.jar">
+      <element id="archive" name="2016-02-Lorem-Ipsum.jar">
+        <element id="module-output" name="2016-02-Lorem-Ipsum" />
+      </element>
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-xml:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-util:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-servlet:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-io:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-security:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-http:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.20" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-webapp:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-rewrite:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-client:9.3.0.M0" />
+      <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-server:9.3.0.M0" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

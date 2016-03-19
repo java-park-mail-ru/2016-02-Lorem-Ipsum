@@ -2,6 +2,7 @@ package frontend;
 
 import datacheck.*;
 import main.AccountService;
+import main.IAccountService;
 import main.UserProfile;
 import templater.PageGenerator;
 
@@ -15,9 +16,10 @@ import java.util.Map;
 
 public class GetUserProfileServlet extends HttpServlet {
 
-    private final AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/user/*";
 
-    public GetUserProfileServlet(AccountService accountService) {
+    public GetUserProfileServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -37,7 +39,7 @@ public class GetUserProfileServlet extends HttpServlet {
         if( ElementaryChecker.checkUserId(userId) && accountService.checkUserExistsById(userId)
                 && accountService.checkSessionExists(sessionId)) {
             UserProfile userProfile = accountService.getUserById(userId);
-            UserProfile sessionProfile = accountService.getSessions(sessionId);
+            UserProfile sessionProfile = accountService.getSession(sessionId);
             Long idProfile = userProfile.getId();
             Long idSessionProfile = sessionProfile.getId();
             if(idProfile.equals(idSessionProfile)) {

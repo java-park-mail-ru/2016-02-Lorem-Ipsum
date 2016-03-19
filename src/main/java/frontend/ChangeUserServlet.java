@@ -1,6 +1,8 @@
 package frontend;
 
+import datacheck.ElementaryChecker;
 import main.AccountService;
+import main.IAccountService;
 import main.UserProfile;
 import datacheck.InputDataChecker;
 import templater.PageGenerator;
@@ -15,9 +17,10 @@ import java.util.Map;
 
 public class ChangeUserServlet extends HttpServlet {
 
-    private final AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/user/*";
 
-    public ChangeUserServlet(AccountService accountService) {
+    public ChangeUserServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -30,13 +33,14 @@ public class ChangeUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String sessionId = request.getSession().getId();
 
-        Boolean isGoodData = InputDataChecker.checkChangeUser(login, password, email);
+        Boolean isGoodData = InputDataChecker.checkChangeUser(login, password, email)
+                && ElementaryChecker.checkSessionId(sessionId);
 
         Map<String, Object> dataToSend = new HashMap<>();
         int statusCode;
 
         if( isGoodData && accountService.checkSessionExists(sessionId)) {
-            UserProfile userProfile = accountService.getSessions(sessionId);
+            UserProfile userProfile = accountService.getSession(sessionId);
             if(!accountService.checkUserExistsByLogin(login) || userProfile.getLogin().equals(login)) {
                 statusCode = HttpServletResponse.SC_OK;
                 userProfile.setLogin(login);

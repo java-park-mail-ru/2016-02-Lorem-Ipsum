@@ -1,6 +1,7 @@
 package frontend;
 
 import main.AccountService;
+import main.IAccountService;
 import main.UserProfile;
 import templater.PageGenerator;
 
@@ -14,9 +15,10 @@ import java.util.Map;
 
 public class DeleteUserServlet extends HttpServlet {
 
-    private final AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/user/*";
 
-    public DeleteUserServlet(AccountService accountService) {
+    public DeleteUserServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -30,7 +32,7 @@ public class DeleteUserServlet extends HttpServlet {
         int statusCode;
 
         if( accountService.checkSessionExists(sessionId)) {
-            UserProfile userProfile = accountService.getSessions(sessionId);
+            UserProfile userProfile = accountService.getSession(sessionId);
             statusCode = HttpServletResponse.SC_OK;
             accountService.deleteUser(sessionId, userProfile);
         }

@@ -1,6 +1,8 @@
 package frontend;
 
+import datacheck.ElementaryChecker;
 import main.AccountService;
+import main.IAccountService;
 import main.UserProfile;
 import datacheck.InputDataChecker;
 import templater.PageGenerator;
@@ -17,9 +19,10 @@ import java.util.concurrent.atomic.AtomicLong;
 public class SignUpServlet extends HttpServlet {
 
     private static final AtomicLong ID_GENERATOR = new AtomicLong(0);
-    private final AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/user";
 
-    public SignUpServlet(AccountService accountService) {
+    public SignUpServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -30,13 +33,16 @@ public class SignUpServlet extends HttpServlet {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
+        String sessionId = request.getSession().getId();
 
-        Boolean isGoodData = InputDataChecker.checkSignUp(login, password, email);
+        Boolean isGoodData = InputDataChecker.checkSignUp(login, password, email) &&
+                ElementaryChecker.checkSessionId(sessionId);
 
         Map<String, Object> dataToSend = new HashMap<>();
         int statusCode;
 
-        if( isGoodData && !accountService.checkUserExistsByLogin(login) ) {
+        if( isGoodData && !accountService.checkUserExistsByLogin(login)
+                && !accountService.checkSessionExists(sessionId)) {
             Long userId = ID_GENERATOR.getAndIncrement();
             UserProfile userProfile = new UserProfile(userId, login, password, email);
             statusCode = HttpServletResponse.SC_OK;

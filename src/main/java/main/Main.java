@@ -1,5 +1,6 @@
 package main;
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import frontend.RoutingServlet;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
@@ -47,13 +48,14 @@ public class Main {
         Server server = new Server(port);
         server.setHandler(handlers);
 
+
+
         try {
             server.start();
         } catch (Exception e) {
             System.out.append("Server wasn't started.\n");
             return;
         }
-
         server.join();
     }
 }
