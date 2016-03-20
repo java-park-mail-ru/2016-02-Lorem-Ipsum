@@ -1,9 +1,11 @@
 package main;
 
+import database.DbConnector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.String;
+import java.sql.Connection;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -14,6 +16,32 @@ public class AccountService implements IAccountService {
     private final ConcurrentMap<String, UserProfile> sessions = new ConcurrentHashMap<>();
 
     public static final Logger LOGGER = LogManager.getLogger(AccountService.class);
+
+    private String hostname;
+    private String port;
+    private String dbName;
+    private String login;
+    private String password;
+
+    public AccountService() {
+        this.hostname = Main.STANDART_MYSQL_HOST;
+        this.port = Main.STANDART_MYSQL_PORT;
+        this.dbName = Main.STANDART_MYSQL_DB_NAME;
+        this.login = Main.STANDART_MYSQL_LOGIN;
+        this.password = Main.STANDART_MYSQL_PASSWORD;
+    }
+
+    public AccountService(String hostname, String port, String dbName, String login, String password) {
+        this.hostname = hostname;
+        this.port = port;
+        this.dbName = dbName;
+        this.login = login;
+        this.password = password;
+    }
+
+    private Connection getConnection() {
+        return DbConnector.getConnectionFromPool(hostname, port, dbName, login, password);
+    }
 
     @Override
     public boolean checkUserExistsByLogin(String userLogin){

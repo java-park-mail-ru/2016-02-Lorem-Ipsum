@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS users (
+                    id INT(11) NOT NULL AUTO_INCREMENT,
+                    login VARCHAR(25) NOT NULL,
+                    password VARCHAR(25) NOT NULL,
+                    email VARCHAR(50) NOT NULL,
+                    creationTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    modificationTime DATETIME ON UPDATE CURRENT_TIMESTAMP,
+                    PRIMARY KEY(id),
+                    KEY loginIndex(login)
+);

@@ -31,6 +31,15 @@
             <DefaultRolloverStrategy max="20"/>
         </RollingFile>
 
+        <RollingFile name="ROLLING_FILE_DB" fileName="${LOG_DIR}/db.log"
+                     filePattern="${ARCHIVE}/test/db.log.%d{yyyy-MM-dd-hh-mm}.gz">
+            <PatternLayout pattern="${PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
         <Async name="ASYNC_FILE">
             <AppenderRef ref="ROLLING_FILE"/>
         </Async>
@@ -39,18 +48,29 @@
             <AppenderRef ref="ROLLING_FILE_TEST"/>
         </Async>
 
+        <Async name="ASYNC_FILE_DB">
+            <AppenderRef ref="ROLLING_FILE_DB"/>
+        </Async>
+
         <Async name="ASYNC_CONSOLE">
             <AppenderRef ref="STDOUT"/>
         </Async>
 
     </Appenders>
     <Loggers>
+
         <Root level="DEBUG">
             <AppenderRef ref="ASYNC_FILE"/>
             <AppenderRef ref="ASYNC_CONSOLE"/>
         </Root>
+
         <Logger name="TestLogger" level="DEBUG" additivity="false">
             <AppenderRef ref="ASYNC_FILE_TEST"/>
         </Logger>
+
+        <Logger name="DbLogger" level="DEBUG" additivity="false">
+            <AppenderRef ref="ASYNC_FILE_DB"/>
+        </Logger>
+
     </Loggers>
 </Configuration>

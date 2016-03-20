@@ -1,6 +1,8 @@
 package main;
 
 //import com.sun.javafx.scene.control.skin.VirtualFlow;
+import database.DbConnector;
+import database.DbRebuilder;
 import frontend.RoutingServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,15 +14,33 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
 import javax.servlet.Servlet;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Connection;
 
 public class Main {
 
     public static final int STANDART_PORT = 9090;
+    public static final String STANDART_MYSQL_HOST = "localhost";
+    public static final String STANDART_MYSQL_PORT = "3306";
+    public static final String STANDART_MYSQL_DB_NAME = "dbJava";
+    public static final String STANDART_MYSQL_LOGIN = "test";
+    public static final String STANDART_MYSQL_PASSWORD = "test";
 
     public static final Logger MAIN_LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws InterruptedException {
         int port;
+        /*Connection connection = DbConnector.getConnectionFromPool(
+                    Main.STANDART_MYSQL_HOST,
+                    Main.STANDART_MYSQL_PORT,
+                    Main.STANDART_MYSQL_DB_NAME,
+                    Main.STANDART_MYSQL_LOGIN,
+                    Main.STANDART_MYSQL_PASSWORD
+        );*/
+
         if (args.length != 1) {
             port = STANDART_PORT;
             System.out.append("Target port argument missed.\n");
@@ -63,4 +83,30 @@ public class Main {
         }
         server.join();
     }
+
+    public static String readFromFile(String filePath) {
+        File file = new File(filePath);
+        try {
+
+            if (!file.exists()) {
+                return null;
+            }
+
+            char[] buffer = new char[(int)file.length()];
+            try(FileReader fileReader = new FileReader(file))
+            {
+                fileReader.read(buffer);
+                return new String(buffer);
+            }
+            catch (FileNotFoundException e){
+                System.out.append(e.getMessage());
+                return null;
+            }
+        }
+        catch (IOException e) {
+            System.out.append(e.getMessage());
+            return null;
+        }
+    }
+
 }
