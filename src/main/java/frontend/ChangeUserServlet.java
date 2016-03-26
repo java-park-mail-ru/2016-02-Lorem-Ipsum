@@ -62,7 +62,8 @@ public class ChangeUserServlet extends HttpServlet {
             userProfile.setLogin(login);
             userProfile.setPassword(password);
             userProfile.setEmail(email);
-            dataToSend.put("id", userProfile.getId());
+            accountService.changeUser(userProfile);
+            dataToSend.put("id", userProfile.getUserId());
             LOGGER.debug("Success. Changed user: {}", userProfile.toJSON());
         }
         catch (Exception e) {

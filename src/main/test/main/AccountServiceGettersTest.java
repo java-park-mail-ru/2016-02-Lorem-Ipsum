@@ -1,11 +1,15 @@
 package main;
 
+import database.DbService;
+import database.IDbService;
 import fakeclasses.FakeAccountService;
 import fakeclasses.FakeSession;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import utils.TestGenerator;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -13,10 +17,11 @@ import static org.junit.Assert.*;
 
 public class AccountServiceGettersTest {
 
-    private AccountService accountService;
+    private IDbService accountService;
     private FakeAccountService fakeAccountService;
     private Set<String> fakeSessionIds;
     private Set<Long> fakeUsersIds;
+    private Map<Long, Long> generatedIds;
 
     private static final long ID_OF_NOT_EXISTING_USER = -1;
     private static final String LOGIN_OF_NOT_EXISTING_USER = "login";
@@ -27,15 +32,28 @@ public class AccountServiceGettersTest {
 
     @Before
     public void init() {
-        accountService = new AccountService();
+        accountService = new DbService(
+                Main.STANDART_MYSQL_HOST,
+                Main.STANDART_MYSQL_PORT,
+                Main.STANDART_MYSQL_DB_NAME,
+                Main.STANDART_MYSQL_DRIVER,
+                Main.STANDART_MYSQL_LOGIN,
+                Main.STANDART_MYSQL_PASSWORD
+        );
         fakeAccountService = TestGenerator.generateFakeAccountService();
         fakeUsersIds = fakeAccountService.getUsersIds();
+        generatedIds = new HashMap<>();
         for (Long uId : fakeUsersIds) {
-            accountService.addUser(fakeAccountService.getUserById(uId));
+            UserProfile userToAdd = fakeAccountService.getUserById(uId);
+            Long generatedId = accountService.addUser(userToAdd);
+            generatedIds.put(uId, generatedId);
         }
         fakeSessionIds = fakeAccountService.getSessionsIds();
         for (String sId : fakeSessionIds) {
-            accountService.addSession(sId, fakeAccountService.getSession(sId));
+            UserProfile userFake = fakeAccountService.getSession(sId);
+            UserProfile userToAdd = userFake.clone();
+            userToAdd.setUserId(generatedIds.get(userFake.getUserId()));
+            accountService.addSession(sId, userToAdd);
         }
     }
 
@@ -59,7 +77,7 @@ public class AccountServiceGettersTest {
     @Test
     public void testCheckUserExistsById() throws Exception {
         for (Long uId : fakeUsersIds) {
-            assertTrue(accountService.checkUserExistsById(uId));
+            assertTrue(accountService.checkUserExistsById(generatedIds.get(uId)));
         }
         assertFalse(accountService.checkUserExistsById(ID_OF_NOT_EXISTING_USER));
     }
@@ -67,18 +85,19 @@ public class AccountServiceGettersTest {
     @Test
     public void testGetUserByLogin() throws Exception {
         for (Long uId : fakeUsersIds) {
-            UserProfile userFromAccountService = accountService.getUserByLogin(fakeAccountService.getUserById(uId).getLogin());
+            UserProfile userFromAccountService = accountService.getUserByLogin(
+                    fakeAccountService.getUserById(uId).getLogin());
             UserProfile userFromFakeAccountService = fakeAccountService.getUserById(uId);
-            assertTrue(userFromAccountService.equal(userFromFakeAccountService));
+            assertTrue(userFromAccountService.semanticEqual(userFromFakeAccountService));
         }
     }
 
     @Test
     public void testGetUserById() throws Exception {
         for (Long uId : fakeUsersIds) {
-            UserProfile userFromAccountService = accountService.getUserById(uId);
+            UserProfile userFromAccountService = accountService.getUserById(generatedIds.get(uId));
             UserProfile userFromFakeAccountService = fakeAccountService.getUserById(uId);
-            assertTrue(userFromAccountService.equal(userFromFakeAccountService));
+            assertTrue(userFromAccountService.semanticEqual(userFromFakeAccountService));
         }
     }
 
@@ -87,8 +106,13 @@ public class AccountServiceGettersTest {
         for (String sId : fakeSessionIds) {
             UserProfile userFromAccountService = accountService.getSession(sId);
             UserProfile userFromFakeAccountService = fakeAccountService.getSession(sId);
-            assertTrue(userFromAccountService.equal(userFromFakeAccountService));
+            assertTrue(userFromAccountService.semanticEqual(userFromFakeAccountService));
         }
+    }
+
+    @After
+    public void close() {
+        accountService.close();
     }
 
 }

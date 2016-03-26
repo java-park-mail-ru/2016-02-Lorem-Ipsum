@@ -57,11 +57,11 @@ public class SignUpServlet extends HttpServlet {
             if(accountService.checkSessionExists(sessionId))
                 throw new Exception("User is logged in.");
 
-            Long userId = ID_GENERATOR.getAndIncrement();
-            UserProfile userProfile = new UserProfile(userId, login, password, email);
+            //Long userId = ID_GENERATOR.getAndIncrement();
+            UserProfile userProfile = new UserProfile(-1, login, password, email);
             statusCode = HttpServletResponse.SC_OK;
-            accountService.addUser(userProfile);
-            dataToSend.put("id", userProfile.getId());
+            Long userId = accountService.addUser(userProfile);
+            dataToSend.put("id", userId);
             LOGGER.debug("Success. New user: {}", userProfile.toJSON());
         }
         catch (Exception e) {

@@ -68,7 +68,7 @@ public class SignUpServletTest {
             LOGGER.info("Got response: {}", stringToLog);
             JSONObject responseContentJSON = new JSONObject(responseContentStr);
             Number id = (Number) responseContentJSON.get("id");
-            assertTrue(id.longValue() == userProfileRegistered.getId());
+            assertTrue(id.longValue() == userProfileRegistered.getUserId());
         }
     }
 }

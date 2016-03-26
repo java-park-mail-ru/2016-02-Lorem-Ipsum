@@ -6,6 +6,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 import main.IAccountService;
+import main.IAccountServiceOld;
 import main.UserProfile;
 
 
@@ -27,15 +28,16 @@ public class FakeAccountService implements IAccountService {
         return users.containsKey(userId);
     }
 
-    public void addUser(UserProfile userProfile) {
-        usersIDs.put(userProfile.getLogin(), userProfile.getId());
-        users.put(userProfile.getId(), userProfile);
+    public long addUser(UserProfile userProfile) {
+        usersIDs.put(userProfile.getLogin(), userProfile.getUserId());
+        users.put(userProfile.getUserId(), userProfile);
+        return -1;
     }
 
     public void deleteUser(String sessionId, UserProfile userProfile) {
         sessions.remove(sessionId);
         usersIDs.remove(userProfile.getLogin());
-        users.remove(userProfile.getId());
+        users.remove(userProfile.getUserId());
     }
 
     public void deleteSession(String sessionId) {
@@ -61,5 +63,7 @@ public class FakeAccountService implements IAccountService {
     public Set<Long> getUsersIds() {return users.keySet();}
 
     public Set<String> getSessionsIds() {return sessions.keySet();}
+
+    public void changeUser(UserProfile userProfile) { users.put(userProfile.getUserId(), userProfile); }
 
 }

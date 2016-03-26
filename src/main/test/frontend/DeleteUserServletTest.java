@@ -47,7 +47,7 @@ public class DeleteUserServletTest {
                     userProfileGenerated.getPassword(),
                     userProfileGenerated.getEmail(),
                     sId,
-                    DeleteUserServlet.REQUEST_URI + userProfileGenerated.getId()
+                    DeleteUserServlet.REQUEST_URI + userProfileGenerated.getUserId()
             );
 
             LOGGER.info("Created request: {}", request.toJSON());
@@ -57,7 +57,7 @@ public class DeleteUserServletTest {
             deleteUserServlet.doDelete(request, response);
 
             assertFalse(fakeAccountService.checkSessionExists(sId));
-            assertFalse(fakeAccountService.checkUserExistsById(userProfileGenerated.getId()));
+            assertFalse(fakeAccountService.checkUserExistsById(userProfileGenerated.getUserId()));
             assertTrue(response.getStatusCode() == HttpServletResponse.SC_OK);
             assertTrue(response.getContentType().equals("application/json"));
 

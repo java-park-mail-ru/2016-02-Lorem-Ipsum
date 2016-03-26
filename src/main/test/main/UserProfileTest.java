@@ -21,7 +21,7 @@ public class UserProfileTest {
 
     @Test
     public void testGetId() throws Exception {
-        assertEquals(ORIGINAL_ID, userProfile0.getId());
+        assertEquals(ORIGINAL_ID, userProfile0.getUserId());
     }
 
     @Test

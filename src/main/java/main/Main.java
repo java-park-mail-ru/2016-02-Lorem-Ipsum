@@ -1,8 +1,7 @@
 package main;
 
 //import com.sun.javafx.scene.control.skin.VirtualFlow;
-import database.DbConnector;
-import database.DbRebuilder;
+import database.DbService;
 import frontend.RoutingServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +17,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
 
 public class Main {
 
@@ -28,6 +26,7 @@ public class Main {
     public static final String STANDART_MYSQL_DB_NAME = "dbJava";
     public static final String STANDART_MYSQL_LOGIN = "test";
     public static final String STANDART_MYSQL_PASSWORD = "test";
+    public static final String STANDART_MYSQL_DRIVER = "com.mysql.jdbc.Driver";
 
     public static final Logger MAIN_LOGGER = LogManager.getLogger(Main.class);
 
@@ -56,9 +55,22 @@ public class Main {
             }
         }
 
-        System.out.append("Starting at port: ").append(String.valueOf(port)).append('\n');
-
-        AccountService accountService = new AccountService();
+        IAccountService accountService;
+        try {
+            accountService = new DbService(
+                    Main.STANDART_MYSQL_HOST,
+                    Main.STANDART_MYSQL_PORT,
+                    Main.STANDART_MYSQL_DB_NAME,
+                    Main.STANDART_MYSQL_DRIVER,
+                    Main.STANDART_MYSQL_LOGIN,
+                    Main.STANDART_MYSQL_PASSWORD
+            );
+        }
+        catch (RuntimeException e) {
+            MAIN_LOGGER.error("Unable to init dbService. Reason: {}", e.getMessage());
+            return;
+        }
+        //AccountService accountService = new AccountService();
         Servlet routingServlet = new RoutingServlet(accountService);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
@@ -75,6 +87,7 @@ public class Main {
         server.setHandler(handlers);
 
         try {
+            System.out.append("Starting at port: ").append(String.valueOf(port)).append('\n');
             server.start();
         } catch (Exception e) {
             System.out.append("Server wasn't started.\n");

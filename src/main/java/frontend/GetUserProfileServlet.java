@@ -53,14 +53,14 @@ public class GetUserProfileServlet extends HttpServlet {
 
             UserProfile userProfile = accountService.getUserById(userId);
             UserProfile sessionProfile = accountService.getSession(sessionId);
-            Long idProfile = userProfile.getId();
-            Long idSessionProfile = sessionProfile.getId();
+            Long idProfile = userProfile.getUserId();
+            Long idSessionProfile = sessionProfile.getUserId();
 
             if(!idProfile.equals(idSessionProfile))
                 throw new Exception("Assumption to get information about another user profile.");
 
             statusCode = HttpServletResponse.SC_OK;
-            dataToSend.put("id", userProfile.getId());
+            dataToSend.put("id", userProfile.getUserId());
             dataToSend.put("login", userProfile.getLogin());
             dataToSend.put("email", userProfile.getEmail());
             LOGGER.debug("Success. SessionId: {}. User requested: {}. User changed: {}",

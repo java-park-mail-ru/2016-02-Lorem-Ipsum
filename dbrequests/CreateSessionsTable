@@ -1,8 +1,0 @@
-CREATE TABLE IF NOT EXISTS sessions (
-                        sessionId CHAR(255) NOT NULL,
-                        userId INT(11) NOT NULL,
-                        PRIMARY KEY(sessionId),
-			            UNIQUE KEY userIdIndex (userId),
-                        FOREIGN KEY (userId) REFERENCES users (id)
-                        ON DELETE CASCADE ON UPDATE CASCADE
-);

@@ -3,7 +3,7 @@ package main;
 import org.json.JSONStringer;
 
 public class UserProfile {
-    private final long userId;
+    private long userId;
     private String login;
     private String password;
     private String email;
@@ -15,7 +15,13 @@ public class UserProfile {
         this.email = email;
     }
 
-    public long getId() { return userId; }
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
 
     public String getLogin() {
         return login;
@@ -34,7 +40,7 @@ public class UserProfile {
     public void setEmail(String email) { this.email = email; }
 
     public boolean equal(UserProfile second) {
-        return this.getId() == second.getId() && this.getLogin().equals(second.getLogin()) &&
+        return this.getUserId() == second.getUserId() && this.getLogin().equals(second.getLogin()) &&
                 this.getPassword().equals(second.getPassword()) && this.getEmail().equals(second.getEmail());
     }
 
@@ -43,11 +49,15 @@ public class UserProfile {
                 this.getPassword().equals(second.getPassword()) && this.getEmail().equals(second.getEmail());
     }
 
+    public UserProfile clone() {
+        return new UserProfile(userId, login, password, email);
+    }
+
     public String toJSON() {
         JSONStringer jsonStringer = new JSONStringer();
         jsonStringer.
                 object()
-                .key("id").value(getId())
+                .key("id").value(getUserId())
                 .key("login").value(getLogin())
                 .key("email").value(getEmail());
         jsonStringer.endObject();

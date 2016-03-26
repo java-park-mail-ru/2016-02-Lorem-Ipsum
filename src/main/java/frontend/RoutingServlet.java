@@ -1,6 +1,8 @@
 package frontend;
 
 import main.AccountService;
+import main.IAccountService;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +19,7 @@ public class RoutingServlet extends HttpServlet {
     private final DeleteUserServlet deleteUserServlet;
     private final LogOutServlet logOutServlet;
 
-    public RoutingServlet(AccountService accountService) {
+    public RoutingServlet(IAccountService accountService) {
         signInServlet = new SignInServlet(accountService);
         signUpServlet = new SignUpServlet(accountService);
         isAuthenticatedServlet = new IsAuthenticatedServlet(accountService);

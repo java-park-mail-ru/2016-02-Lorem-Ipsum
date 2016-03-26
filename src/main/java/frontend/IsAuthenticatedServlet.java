@@ -46,7 +46,7 @@ public class IsAuthenticatedServlet extends HttpServlet {
 
             UserProfile userProfile = accountService.getSession(sessionId);
             statusCode = HttpServletResponse.SC_OK;
-            dataToSend.put("id", userProfile.getId());
+            dataToSend.put("id", userProfile.getUserId());
             LOGGER.debug("Success. SessionId: {}. User: {}", userProfile.toJSON());
         }
         catch (Exception e) {

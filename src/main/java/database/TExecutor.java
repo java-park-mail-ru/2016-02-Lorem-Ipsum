@@ -37,14 +37,18 @@ public class TExecutor {
         }
     }
 
-    public static void execUpdate(Connection connection, PreparedStatement[] updates) {
+    public static void execUpdate(Connection connection, String queryString, Object[] params) {
         try {
+            PreparedStatement ps = connection.prepareStatement(queryString);
             connection.setAutoCommit(false);
-            for (PreparedStatement update : updates) {
-                update.executeUpdate();
-                LOGGER.debug("Executed prepared statement with connection " + DbConnector.getConnectionInfo(connection));
+            for (int i = 0; i < params.length; i++) {
+                ps.setObject(i + 1, params[i]);
             }
+            LOGGER.debug("Executing prepared statement with connection " + DbConnector.getConnectionInfo(connection));
+            ps.executeUpdate();
             connection.commit();
+            ps.close();
+            connection.setAutoCommit(true);
         }
         catch (SQLException e) {
             try {
@@ -52,10 +56,9 @@ public class TExecutor {
                         + " in connection " + DbConnector.getConnectionInfo(connection));
                 connection.rollback();
                 LOGGER.debug("Transaction is rolled back in" + DbConnector.getConnectionInfo(connection));
-                connection.setAutoCommit(true);
             }
             catch (SQLException ignore) {
-                LOGGER.debug("Failed to finish transaction. Error: " + ignore.getMessage());
+                LOGGER.debug("Failed to finish transaction. Error: " + ignore.getMessage().replace("\r\n", ""));
             }
         }
     }

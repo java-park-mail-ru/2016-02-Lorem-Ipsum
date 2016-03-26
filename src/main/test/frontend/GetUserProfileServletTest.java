@@ -47,7 +47,7 @@ public class GetUserProfileServletTest {
                     userProfileGenerated.getPassword(),
                     userProfileGenerated.getEmail(),
                     sId,
-                    GetUserProfileServlet.REQUEST_URI + userProfileGenerated.getId()
+                    GetUserProfileServlet.REQUEST_URI + userProfileGenerated.getUserId()
             );
 
             LOGGER.info("Created request: {}", request.toJSON());
@@ -67,7 +67,7 @@ public class GetUserProfileServletTest {
             Number id = (Number) responseContentJSON.get("id");
             String login = (String)responseContentJSON.get("login");
             String email = (String)responseContentJSON.get("email");
-            assertEquals(id.longValue(), userProfileGenerated.getId());
+            assertEquals(id.longValue(), userProfileGenerated.getUserId());
             assertEquals(login, userProfileGenerated.getLogin());
             assertEquals(email, userProfileGenerated.getEmail());
         }

@@ -22,6 +22,7 @@ public class AccountService implements IAccountService {
     private String dbName;
     private String login;
     private String password;
+    private String driver;
 
     public AccountService() {
         this.hostname = Main.STANDART_MYSQL_HOST;
@@ -29,19 +30,21 @@ public class AccountService implements IAccountService {
         this.dbName = Main.STANDART_MYSQL_DB_NAME;
         this.login = Main.STANDART_MYSQL_LOGIN;
         this.password = Main.STANDART_MYSQL_PASSWORD;
+        this.driver = Main.STANDART_MYSQL_DRIVER;
     }
 
-    public AccountService(String hostname, String port, String dbName, String login, String password) {
+    public AccountService(String hostname, String port, String dbName, String driver, String login, String password) {
         this.hostname = hostname;
         this.port = port;
         this.dbName = dbName;
         this.login = login;
         this.password = password;
+        this.driver = driver;
     }
 
-    private Connection getConnection() {
-        return DbConnector.getConnectionFromPool(hostname, port, dbName, login, password);
-    }
+    //private Connection getConnection() {
+        //return DbConnector.getConnectionFromPool(hostname, port, dbName, driver, login, password);
+    //}
 
     @Override
     public boolean checkUserExistsByLogin(String userLogin){
@@ -62,17 +65,18 @@ public class AccountService implements IAccountService {
     }
 
     @Override
-    public void addUser(UserProfile userProfile) {
-        usersIDs.put(userProfile.getLogin(), userProfile.getId());
-        users.put(userProfile.getId(), userProfile);
+    public long addUser(UserProfile userProfile) {
+        usersIDs.put(userProfile.getLogin(), userProfile.getUserId());
+        users.put(userProfile.getUserId(), userProfile);
         LOGGER.debug("User was added: {}", userProfile.toJSON());
+        return -1;
     }
 
     @Override
     public void deleteUser(String sessionId, UserProfile userProfile) {
         sessions.remove(sessionId);
         usersIDs.remove(userProfile.getLogin());
-        users.remove(userProfile.getId());
+        users.remove(userProfile.getUserId());
         LOGGER.debug("User with session {} was deleted: {}", sessionId, userProfile.toJSON());
     }
 
@@ -105,6 +109,8 @@ public class AccountService implements IAccountService {
         LOGGER.debug("Session got by id: {}", sessionId);
         return sessions.get(sessionId);
     }
+
+    public void changeUser(UserProfile userProfile) {return;}
 
 
 }

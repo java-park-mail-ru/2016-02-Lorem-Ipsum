@@ -61,7 +61,7 @@ public class SignInServlet extends HttpServlet {
                 LOGGER.debug("[To improve?] Session existed. Just relogin.");
             }
             accountService.addSession(sessionId, userProfile);
-            dataToSend.put("id", userProfile.getId());
+            dataToSend.put("id", userProfile.getUserId());
             LOGGER.debug("Success. Logged in user: {}", userProfile.toJSON());
         }
         catch (Exception e) {

@@ -3,7 +3,10 @@ package database;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.tomcat.jdbc.pool.PoolProperties;
+import org.hibernate.cfg.Environment;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -16,37 +19,47 @@ public class DbConnector {
 
     public static final Logger LOGGER = LogManager.getLogger("DbLogger");
 
-    private static BasicDataSource connectionPool = null;
+    private static org.apache.tomcat.jdbc.pool.DataSource connectionPoolRes = null;
 
-    public static Connection getConnectionFromPool(String hostname, String port, String dbName, String login, String password) {
+    public DbConnector(String hostname, String port, String dbName, String driverName,
+                                                   String login, String password) {
         try {
-            LOGGER.debug("Trying to connect to db from pool");
-            if(connectionPool != null)
-                return connectionPool.getConnection();
+            LOGGER.debug("Trying to init tomcat pool");
+            if(connectionPoolRes != null)
+                return;
             LOGGER.debug("Pool does not exist. Trying to create new one.");
-            connectionPool = new BasicDataSource();
-            connectionPool.setDriverClassName("com.mysql.jdbc.Driver");
+            PoolProperties poolProperties = new PoolProperties();
             StringBuilder url = new StringBuilder();
             url.
                     append("jdbc:mysql://").
                     append(hostname).append(":").
                     append(port).append("/").
                     append(dbName);
-            connectionPool.setUrl(url.toString());
-            connectionPool.setUsername(login);
-            connectionPool.setPassword(password);
+            poolProperties.setUrl(url.toString());
+            poolProperties.setDriverClassName(driverName);
+            poolProperties.setUsername(login);
+            poolProperties.setPassword(password);
+            connectionPoolRes = new org.apache.tomcat.jdbc.pool.DataSource();
+            connectionPoolRes.setPoolProperties(poolProperties);
             LOGGER.debug("Pool configured. Login: {}, Password: {}, URL: {}.", login, password, url.toString());
-            return connectionPool.getConnection();
         }
-        catch (SQLException e) {
-            LOGGER.debug("Failed to connect to db from pool. Reason:" + e.getMessage());
+        catch (Exception e) {
+            LOGGER.debug("Failed to init connection pool. Reason:" + e.getMessage());
         }
-        return null;
     }
 
-    public static Connection getConnection(String hostname, String port, String dbName, String login, String password) {
+    public Connection getConnectionFromPool() throws SQLException {
+        return connectionPoolRes.getConnection();
+    }
+
+    public DataSource getDataSource() {
+        return connectionPoolRes;
+    }
+
+    public static Connection getSingleConnection(String hostname, String port, String dbName, String driverName,
+                                           String login, String password) {
         try {
-            DriverManager.registerDriver((Driver) Class.forName("com.mysql.jdbc.Driver").newInstance());
+            DriverManager.registerDriver((Driver) Class.forName(driverName).newInstance());
 
             StringBuilder url = new StringBuilder();
 

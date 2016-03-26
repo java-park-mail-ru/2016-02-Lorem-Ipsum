@@ -49,7 +49,7 @@ public class ChangeUserServletTest {
                     newPassword,
                     newEmail,
                     sId,
-                    ChangeUserServlet.REQUEST_URI + userProfileGenerated.getId()
+                    ChangeUserServlet.REQUEST_URI + userProfileGenerated.getUserId()
             );
 
             LOGGER.info("Created request: {}", request.toJSON());

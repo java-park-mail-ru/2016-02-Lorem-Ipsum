@@ -10,9 +10,11 @@ public interface IAccountService {
 
     boolean checkUserExistsById(Long userId);
 
-    void addUser(UserProfile userProfile);
+    long addUser(UserProfile userProfile);
 
     void deleteUser(String sessionId, UserProfile userProfile);
+
+    void changeUser(UserProfile userProfile);
 
     void deleteSession(String sessionId);
 
