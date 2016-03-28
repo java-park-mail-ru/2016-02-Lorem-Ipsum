@@ -1,6 +1,5 @@
 package main;
 
-//import com.sun.javafx.scene.control.skin.VirtualFlow;
 import database.DbService;
 import frontend.RoutingServlet;
 import org.apache.logging.log4j.LogManager;
@@ -32,13 +31,6 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         int port;
-        /*Connection connection = DbConnector.getConnectionFromPool(
-                    Main.STANDART_MYSQL_HOST,
-                    Main.STANDART_MYSQL_PORT,
-                    Main.STANDART_MYSQL_DB_NAME,
-                    Main.STANDART_MYSQL_LOGIN,
-                    Main.STANDART_MYSQL_PASSWORD
-        );*/
 
         if (args.length != 1) {
             port = STANDART_PORT;
@@ -70,7 +62,7 @@ public class Main {
             MAIN_LOGGER.error("Unable to init dbService. Reason: {}", e.getMessage());
             return;
         }
-        //AccountService accountService = new AccountService();
+
         Servlet routingServlet = new RoutingServlet(accountService);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
