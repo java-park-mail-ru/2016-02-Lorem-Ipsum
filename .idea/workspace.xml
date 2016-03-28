@@ -6,56 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04d10ad-3945-42ac-a7e3-c7c3e6aa1ca4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/database/ITResultHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/database/TExecutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/main/AccountService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/main/IAccountServiceOld.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/main/MainTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testData/artificialUsers.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/db.log" afterPath="$PROJECT_DIR$/output/db.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/server.log" afterPath="$PROJECT_DIR$/output/server.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/test.log" afterPath="$PROJECT_DIR$/output/test.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/DbConnector.java" afterPath="$PROJECT_DIR$/src/main/java/database/DbConnector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/DbService.java" afterPath="$PROJECT_DIR$/src/main/java/database/DbService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/IDbService.java" afterPath="$PROJECT_DIR$/src/main/java/database/IDbService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/dao/StatusDataSetDAO.java" afterPath="$PROJECT_DIR$/src/main/java/database/dao/StatusDataSetDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/dao/UserDataSetDAO.java" afterPath="$PROJECT_DIR$/src/main/java/database/dao/UserDataSetDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/datasets/GameResultDataSet.java" afterPath="$PROJECT_DIR$/src/main/java/database/datasets/GameResultDataSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/datasets/UserDataSet.java" afterPath="$PROJECT_DIR$/src/main/java/database/datasets/UserDataSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/datasets/UserStatusDataSet.java" afterPath="$PROJECT_DIR$/src/main/java/database/datasets/UserStatusDataSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/DeleteUserServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/DeleteUserServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/GetUserProfileServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/GetUserProfileServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/SignUpServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/SignUpServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/UserProfile.java" afterPath="$PROJECT_DIR$/src/main/java/main/UserProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeClasses/FakeAccountService.java" afterPath="$PROJECT_DIR$/src/main/test/fakeClasses/FakeAccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSession.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/IsAuthenticatedServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/IsAuthenticatedServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java" afterPath="$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/UserProfileTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/UserProfileTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/runners/RunAllTests.java" afterPath="$PROJECT_DIR$/src/main/test/runners/RunAllTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/utils/TestGenerator.java" afterPath="$PROJECT_DIR$/src/main/test/utils/TestGenerator.java" />
-    </list>
+    <list default="true" id="f04d10ad-3945-42ac-a7e3-c7c3e6aa1ca4" name="Default" comment="" />
     <ignored path="L1.2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -155,7 +106,7 @@
       <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
               <folding />
             </state>
@@ -165,7 +116,7 @@
       <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log4j2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
               <folding />
             </state>
@@ -178,7 +129,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
               <folding>
-                <element signature="e#595#632#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -190,7 +141,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
               <folding>
-                <element signature="e#902#939#0" expanded="true" />
                 <element signature="e#985#986#0" expanded="true" />
                 <element signature="e#1061#1062#0" expanded="true" />
               </folding>
@@ -204,7 +154,9 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
               <folding>
-                <element signature="e#904#943#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#2827#2828#0" expanded="false" />
+                <element signature="e#2865#2866#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -213,11 +165,9 @@
       <file leaf-file-name="UserProfileTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/test/main/UserProfileTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3314285">
+            <state vertical-scroll-proportion="0.03046595">
               <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding>
-                <element signature="e#75#106#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -228,7 +178,11 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
               <folding>
-                <element signature="e#2587#2638#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1222#1223#0" expanded="false" />
+                <element signature="e#1269#1270#0" expanded="false" />
+                <element signature="e#1338#1339#0" expanded="false" />
+                <element signature="e#1387#1388#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -250,7 +204,9 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
               <folding>
-                <element signature="e#316#352#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#3291#3292#0" expanded="false" />
+                <element signature="e#3329#3330#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -261,7 +217,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -453,6 +411,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -622,10 +581,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fakeclasses" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -939,7 +894,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1386,32 +1340,32 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23903178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5045386" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3343419" sideWeight="0.47089946" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43003413" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35494882" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1452345" sideWeight="0.52910054" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23903178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.49546143" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40273038" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43003413" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35494882" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1452345" sideWeight="0.52910054" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.49546143" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40273038" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1542,6 +1496,28 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3291#3292#0" expanded="false" />
+            <element signature="e#3329#3330#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/runners/RunAllTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.692307">
@@ -1554,7 +1530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1605,17 +1580,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeAccountService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeClasses/FakeAccountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#1836#1837#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1623,7 +1594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="233" column="86" selection-start-line="233" selection-start-column="86" selection-end-line="233" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1631,7 +1601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2390" column="25" selection-start-line="2390" selection-start-column="25" selection-end-line="2390" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1639,7 +1608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="76" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1647,7 +1615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1655,23 +1622,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeClasses/FakeWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeSession.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeClasses/FakeSession.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1695,15 +1659,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeClasses/FakeRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1715,11 +1677,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeClasses/FakeResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,27 +1698,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeSessionImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeClasses/FakeSessionImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeClasses/FakeResponseImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding>
-            <element signature="e#363#409#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1765,7 +1719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1773,10 +1726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="e#2987#2988#0" expanded="true" />
-            <element signature="e#3053#3054#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1784,7 +1733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1800,10 +1748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1812,7 +1756,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding>
-            <element signature="e#548#585#0" expanded="true" />
+            <element signature="e#548#585#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1821,9 +1765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-          <folding>
-            <element signature="e#595#632#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1831,9 +1772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-          <folding>
-            <element signature="e#595#632#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1841,9 +1779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-          <folding>
-            <element signature="e#595#632#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1852,7 +1787,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
           <folding>
-            <element signature="e#595#632#0" expanded="true" />
+            <element signature="e#595#632#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1862,7 +1797,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
           <folding>
-            <element signature="e#505#542#0" expanded="true" />
+            <element signature="e#505#542#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1879,16 +1814,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3334#3372#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
           <folding />
         </state>
@@ -1896,7 +1827,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log4j2.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
           <folding />
         </state>
@@ -1907,7 +1838,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
           <folding>
-            <element signature="e#595#632#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1917,7 +1848,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
           <folding>
-            <element signature="e#902#939#0" expanded="true" />
             <element signature="e#985#986#0" expanded="true" />
             <element signature="e#1061#1062#0" expanded="true" />
           </folding>
@@ -1929,7 +1859,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
           <folding>
-            <element signature="e#2587#2638#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1222#1223#0" expanded="false" />
+            <element signature="e#1269#1270#0" expanded="false" />
+            <element signature="e#1338#1339#0" expanded="false" />
+            <element signature="e#1387#1388#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1947,7 +1881,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding>
-            <element signature="e#316#352#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3291#3292#0" expanded="false" />
+            <element signature="e#3329#3330#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1956,7 +1892,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1965,18 +1903,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
           <folding>
-            <element signature="e#904#943#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2827#2828#0" expanded="false" />
+            <element signature="e#2865#2866#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/main/UserProfileTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3314285">
+        <state vertical-scroll-proportion="0.03046595">
           <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#75#106#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
