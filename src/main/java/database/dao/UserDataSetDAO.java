@@ -10,7 +10,7 @@ import org.hibernate.criterion.Restrictions;
  */
 public class UserDataSetDAO {
 
-    private Session session;
+    private final Session session;
 
     public UserDataSetDAO(Session session) {this.session = session;}
 
@@ -32,14 +32,13 @@ public class UserDataSetDAO {
     }
 
     public UserDataSet getUserById(long id) {
-        return (UserDataSet) session.get(UserDataSet.class, id);
+        return session.get(UserDataSet.class, id);
     }
 
     public UserDataSet getUserByLogin(String login) {
         Criteria criteria = session.createCriteria(UserDataSet.class);
         criteria.add(Restrictions.eq("login", login));
-        UserDataSet userDataSet = (UserDataSet) criteria.uniqueResult();
-        return userDataSet;
+        return (UserDataSet) criteria.uniqueResult();
     }
 
     public boolean checkUserExistsById(long id) {

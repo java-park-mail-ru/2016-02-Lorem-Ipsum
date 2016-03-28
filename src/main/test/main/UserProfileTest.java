@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
+@SuppressWarnings("CanBeFinal")
 public class UserProfileTest {
     private static final long ORIGINAL_ID = 0;
     private static final String ORIGINAL_LOGIN = "login0";

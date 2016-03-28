@@ -6,12 +6,15 @@ import fakeclasses.FakeResponseImpl;
 import main.UserProfile;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import utils.TestGenerator;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Set;
 
 import static org.junit.Assert.*;
@@ -19,6 +22,7 @@ import static org.junit.Assert.*;
 /**
  * Created by Installed on 12.03.2016.
  */
+@SuppressWarnings("UnusedAssignment")
 public class DeleteUserServletTest {
 
     private FakeAccountService fakeAccountService;
@@ -37,7 +41,7 @@ public class DeleteUserServletTest {
     }
 
     @Test
-    public void testDoDelete() throws Exception {
+    public void testDoDelete() throws ServletException, IOException, JSONException {
         for (String sId : fakeSessionIds) {
 
             UserProfile userProfileGenerated = fakeAccountService.getSession(sId);

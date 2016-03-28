@@ -12,6 +12,7 @@ import java.io.Serializable;
 @Table(name = "status")
 public class UserStatusDataSet implements Serializable {
 
+    @SuppressWarnings("InstanceVariableNamingConvention")
     @Id
     @Column(name = "id", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

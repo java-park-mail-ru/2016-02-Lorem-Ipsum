@@ -1,6 +1,5 @@
 package frontend;
 
-import main.AccountService;
 import main.IAccountService;
 import main.UserProfile;
 import datacheck.ElementaryChecker;

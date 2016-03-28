@@ -13,6 +13,7 @@ public class FakeSessionImpl extends FakeSession implements HttpSession {
         super(id);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public HttpSessionContext getSessionContext() {return null;}
 

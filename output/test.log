@@ -1140,3 +1140,66 @@
 [03-28 20:18:58,397] [INFO ] TestLogger                     [] : Got response: {  "id": -1}
 [03-28 20:18:58,397] [INFO ] TestLogger                     [] : Created request: {"password":"password6","login":"login6","email":"email6@email.com","session":"session6"}
 [03-28 20:18:58,398] [INFO ] TestLogger                     [] : Got response: {  "id": -1}
+[03-28 21:30:32,057] [INFO ] TestLogger                     [] : ChangeUserServletTest inited.
+[03-28 21:30:32,070] [INFO ] TestLogger                     [] : Created request: {"password":"password9new","login":"login9new","email":"email9@email.comnew","session":"session9"}
+[03-28 21:30:32,501] [INFO ] TestLogger                     [] : Got response: {  "id": 9}
+[03-28 21:30:32,502] [INFO ] TestLogger                     [] : Created request: {"password":"password8new","login":"login8new","email":"email8@email.comnew","session":"session8"}
+[03-28 21:30:32,504] [INFO ] TestLogger                     [] : Got response: {  "id": 8}
+[03-28 21:30:32,504] [INFO ] TestLogger                     [] : Created request: {"password":"password7new","login":"login7new","email":"email7@email.comnew","session":"session7"}
+[03-28 21:30:32,505] [INFO ] TestLogger                     [] : Got response: {  "id": 7}
+[03-28 21:30:32,505] [INFO ] TestLogger                     [] : Created request: {"password":"password6new","login":"login6new","email":"email6@email.comnew","session":"session6"}
+[03-28 21:30:32,506] [INFO ] TestLogger                     [] : Got response: {  "id": 6}
+[03-28 21:30:32,512] [INFO ] TestLogger                     [] : DeleteUserServletTest inited.
+[03-28 21:30:32,512] [INFO ] TestLogger                     [] : Created request: {"password":"password9","login":"login9","email":"email9@email.com","session":"session9"}
+[03-28 21:30:32,517] [INFO ] TestLogger                     [] : Got response: {}
+[03-28 21:30:32,517] [INFO ] TestLogger                     [] : Created request: {"password":"password8","login":"login8","email":"email8@email.com","session":"session8"}
+[03-28 21:30:32,518] [INFO ] TestLogger                     [] : Got response: {}
+[03-28 21:30:32,518] [INFO ] TestLogger                     [] : Created request: {"password":"password7","login":"login7","email":"email7@email.com","session":"session7"}
+[03-28 21:30:32,519] [INFO ] TestLogger                     [] : Got response: {}
+[03-28 21:30:32,519] [INFO ] TestLogger                     [] : Created request: {"password":"password6","login":"login6","email":"email6@email.com","session":"session6"}
+[03-28 21:30:32,527] [INFO ] TestLogger                     [] : Got response: {}
+[03-28 21:30:32,529] [INFO ] TestLogger                     [] : GetUserProfileServletTest inited.
+[03-28 21:30:32,529] [INFO ] TestLogger                     [] : Created request: {"password":"password9","login":"login9","email":"email9@email.com","session":"session9"}
+[03-28 21:30:32,531] [INFO ] TestLogger                     [] : Got response: {  "id": 9,  "login": "login9",  "email": "email9@email.com"}
+[03-28 21:30:32,531] [INFO ] TestLogger                     [] : Created request: {"password":"password8","login":"login8","email":"email8@email.com","session":"session8"}
+[03-28 21:30:32,532] [INFO ] TestLogger                     [] : Got response: {  "id": 8,  "login": "login8",  "email": "email8@email.com"}
+[03-28 21:30:32,532] [INFO ] TestLogger                     [] : Created request: {"password":"password7","login":"login7","email":"email7@email.com","session":"session7"}
+[03-28 21:30:32,533] [INFO ] TestLogger                     [] : Got response: {  "id": 7,  "login": "login7",  "email": "email7@email.com"}
+[03-28 21:30:32,533] [INFO ] TestLogger                     [] : Created request: {"password":"password6","login":"login6","email":"email6@email.com","session":"session6"}
+[03-28 21:30:32,535] [INFO ] TestLogger                     [] : Got response: {  "id": 6,  "login": "login6",  "email": "email6@email.com"}
+[03-28 21:30:32,544] [INFO ] TestLogger                     [] : IsAuthenticatedServletTest inited.
+[03-28 21:30:32,544] [INFO ] TestLogger                     [] : Created request: {"password":"password9","login":"login9","email":"email9@email.com","session":"session9"}
+[03-28 21:30:32,546] [INFO ] TestLogger                     [] : Got response: {  "id": 9}
+[03-28 21:30:32,546] [INFO ] TestLogger                     [] : Created request: {"password":"password8","login":"login8","email":"email8@email.com","session":"session8"}
+[03-28 21:30:32,547] [INFO ] TestLogger                     [] : Got response: {  "id": 8}
+[03-28 21:30:32,547] [INFO ] TestLogger                     [] : Created request: {"password":"password7","login":"login7","email":"email7@email.com","session":"session7"}
+[03-28 21:30:32,547] [INFO ] TestLogger                     [] : Got response: {  "id": 7}
+[03-28 21:30:32,547] [INFO ] TestLogger                     [] : Created request: {"password":"password6","login":"login6","email":"email6@email.com","session":"session6"}
+[03-28 21:30:32,548] [INFO ] TestLogger                     [] : Got response: {  "id": 6}
+[03-28 21:30:32,551] [INFO ] TestLogger                     [] : LogOutServletTest inited.
+[03-28 21:30:32,552] [INFO ] TestLogger                     [] : Created request: {"password":"password9","login":"login9","email":"email9@email.com","session":"session9"}
+[03-28 21:30:32,552] [INFO ] TestLogger                     [] : Got response: {}
+[03-28 21:30:32,552] [INFO ] TestLogger                     [] : Created request: {"password":"password8","login":"login8","email":"email8@email.com","session":"session8"}
+[03-28 21:30:32,553] [INFO ] TestLogger                     [] : Got response: {}
+[03-28 21:30:32,553] [INFO ] TestLogger                     [] : Created request: {"password":"password7","login":"login7","email":"email7@email.com","session":"session7"}
+[03-28 21:30:32,553] [INFO ] TestLogger                     [] : Got response: {}
+[03-28 21:30:32,554] [INFO ] TestLogger                     [] : Created request: {"password":"password6","login":"login6","email":"email6@email.com","session":"session6"}
+[03-28 21:30:32,554] [INFO ] TestLogger                     [] : Got response: {}
+[03-28 21:30:32,556] [INFO ] TestLogger                     [] : SignInServletTest inited.
+[03-28 21:30:32,557] [INFO ] TestLogger                     [] : Created request: {"password":"password9","login":"login9","email":"email9@email.com","session":"session9"}
+[03-28 21:30:32,558] [INFO ] TestLogger                     [] : Got response: {  "id": 9}
+[03-28 21:30:32,558] [INFO ] TestLogger                     [] : Created request: {"password":"password8","login":"login8","email":"email8@email.com","session":"session8"}
+[03-28 21:30:32,559] [INFO ] TestLogger                     [] : Got response: {  "id": 8}
+[03-28 21:30:32,559] [INFO ] TestLogger                     [] : Created request: {"password":"password7","login":"login7","email":"email7@email.com","session":"session7"}
+[03-28 21:30:32,559] [INFO ] TestLogger                     [] : Got response: {  "id": 7}
+[03-28 21:30:32,559] [INFO ] TestLogger                     [] : Created request: {"password":"password6","login":"login6","email":"email6@email.com","session":"session6"}
+[03-28 21:30:32,560] [INFO ] TestLogger                     [] : Got response: {  "id": 6}
+[03-28 21:30:32,562] [INFO ] TestLogger                     [] : SignUpServletTest inited.
+[03-28 21:30:32,562] [INFO ] TestLogger                     [] : Created request: {"password":"password9","login":"login9","email":"email9@email.com","session":"session9"}
+[03-28 21:30:32,563] [INFO ] TestLogger                     [] : Got response: {  "id": -1}
+[03-28 21:30:32,564] [INFO ] TestLogger                     [] : Created request: {"password":"password8","login":"login8","email":"email8@email.com","session":"session8"}
+[03-28 21:30:32,564] [INFO ] TestLogger                     [] : Got response: {  "id": -1}
+[03-28 21:30:32,564] [INFO ] TestLogger                     [] : Created request: {"password":"password7","login":"login7","email":"email7@email.com","session":"session7"}
+[03-28 21:30:32,565] [INFO ] TestLogger                     [] : Got response: {  "id": -1}
+[03-28 21:30:32,565] [INFO ] TestLogger                     [] : Created request: {"password":"password6","login":"login6","email":"email6@email.com","session":"session6"}
+[03-28 21:30:32,566] [INFO ] TestLogger                     [] : Got response: {  "id": -1}

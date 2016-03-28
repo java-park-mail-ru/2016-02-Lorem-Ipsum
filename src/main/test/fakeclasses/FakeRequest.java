@@ -3,7 +3,6 @@ package fakeclasses;
 
 import org.json.JSONStringer;
 
-import javax.servlet.http.HttpSession;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -18,7 +17,7 @@ public class FakeRequest {
         setParameter("password", password);
         setParameter("email", email);
         setSession(sessionId);
-        setRequestURI(reqURI);
+        this.requestURI = reqURI;
     }
 
     public FakeSessionImpl getSession() {return session;}

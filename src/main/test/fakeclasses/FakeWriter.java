@@ -11,6 +11,7 @@ public class FakeWriter extends PrintWriter {
 
     private final StringBuilder data = new StringBuilder();
 
+    @Override
     public void println (String input) {
         data.append(input);
     }

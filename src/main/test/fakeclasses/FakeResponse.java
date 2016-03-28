@@ -1,20 +1,21 @@
 package fakeclasses;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 
 public class FakeResponse {
 
     private int statusCode;
     private String contentType;
-    private final FakeWriter writer;
+    private FakeWriter writer;
 
     public FakeResponse() {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        writer = new FakeWriter(out);
+        try(ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+            writer = new FakeWriter(out);
+        }
+        catch (IOException e) {
+            writer = null;
+        }
     }
 
     public int getStatusCode() {return statusCode;}

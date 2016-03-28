@@ -2,8 +2,6 @@ package database.dao;
 
 import database.datasets.UserDataSet;
 import database.datasets.UserStatusDataSet;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -13,7 +11,7 @@ import org.hibernate.criterion.Restrictions;
  */
 public class StatusDataSetDAO {
 
-    private Session session;
+    private final Session session;
 
     public StatusDataSetDAO(Session session) {this.session = session;}
 
@@ -49,9 +47,7 @@ public class StatusDataSetDAO {
 
     public boolean checkIfUserIsActiveBySessionId(String sessionId) {
         UserStatusDataSet userStatusDataSet = getUserStatusBySessionId(sessionId);
-        if(userStatusDataSet == null)
-            return false;
-        return userStatusDataSet.isActive();
+        return userStatusDataSet != null && userStatusDataSet.isActive();
     }
 
     public void setUserStatusAsActive(long userId, String sessionId) {
@@ -73,6 +69,7 @@ public class StatusDataSetDAO {
         updateStatus(userStatusDataSet);
     }
 
+    @SuppressWarnings("InstanceMethodNamingConvention")
     public void setUserStatusAsNotActiveBySessionId(String sessionId) {
         UserStatusDataSet userStatusDataSet = getUserStatusBySessionId(sessionId);
         setUserStatusAsNotActive(userStatusDataSet);

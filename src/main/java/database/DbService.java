@@ -16,7 +16,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-import org.junit.runner.RunWith;
 
 import java.util.Date;
 
@@ -26,10 +25,10 @@ import java.util.Date;
 public class DbService implements IDbService {
 
     private SessionFactory sessionFactory;
-    private DbConnector dbConnector;
 
     public static final Logger LOGGER = LogManager.getLogger("DbLogger");
 
+    @SuppressWarnings("SameParameterValue")
     public DbService(String hostname, String port, String dbName, String driverName,
                      String login, String password) {
 
@@ -39,8 +38,8 @@ public class DbService implements IDbService {
             StringBuilder url = new StringBuilder();
             url.
                     append("jdbc:mysql://").
-                    append(hostname).append(":").
-                    append(port).append("/").
+                    append(hostname).append(':').
+                    append(port).append('/').
                     append(dbName);
 
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
@@ -48,14 +47,13 @@ public class DbService implements IDbService {
             configuration.setProperty("hibernate.connection.url", url.toString());
             configuration.setProperty("hibernate.connection.username", login);
             configuration.setProperty("hibernate.connection.password", password);
-            //configuration.setProperty("hibernate.show_sql", "true");
             configuration.setProperty("hibernate.hbm2ddl.auto", "create");
 
             configuration.addAnnotatedClass(UserDataSet.class);
             configuration.addAnnotatedClass(UserStatusDataSet.class);
             configuration.addAnnotatedClass(GameResultDataSet.class);
 
-            dbConnector = new DbConnector(hostname, port, dbName, driverName, login, password);
+            DbConnector dbConnector = new DbConnector(hostname, port, dbName, driverName, login, password);
 
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
             builder.applySettings(configuration.getProperties());
@@ -70,16 +68,16 @@ public class DbService implements IDbService {
 
     }
 
+    @Override
     public void close() {
         sessionFactory.close();
     }
 
+    @Override
     public boolean checkUserExistsByLogin(String userLogin) {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
-            boolean exists = userDataSetDAO.checkUserExistsByLogin(userLogin);
-            //session.close();
-            return exists;
+            return userDataSetDAO.checkUserExistsByLogin(userLogin);
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
@@ -87,12 +85,11 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public boolean checkSessionExists(String sessionId) {
         try(Session session = sessionFactory.openSession()) {
             StatusDataSetDAO statusDataSetDAO = new StatusDataSetDAO(session);
-            boolean exists = statusDataSetDAO.checkIfUserIsActiveBySessionId(sessionId);
-            //session.close();
-            return exists;
+            return statusDataSetDAO.checkIfUserIsActiveBySessionId(sessionId);
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
@@ -100,12 +97,11 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public boolean checkUserExistsById(Long userId) {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
-            boolean exists = userDataSetDAO.checkUserExistsById(userId);
-            //session.close();
-            return exists;
+            return userDataSetDAO.checkUserExistsById(userId);
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
@@ -113,6 +109,7 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public long addUser(UserProfile userProfile) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
@@ -135,7 +132,8 @@ public class DbService implements IDbService {
         }
         catch (HibernateException e) {
             try {
-                transaction.rollback();
+                if(transaction != null)
+                    transaction.rollback();
                 LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
                 return -1;
             }
@@ -146,6 +144,7 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public void deleteUser(String sessionId, UserProfile userProfile) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
@@ -156,7 +155,8 @@ public class DbService implements IDbService {
         }
         catch (HibernateException e) {
             try {
-                transaction.rollback();
+                if(transaction != null)
+                    transaction.rollback();
                 LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
             }
             catch (NullPointerException e2) {
@@ -165,6 +165,7 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public void changeUser(UserProfile userProfile) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
@@ -183,7 +184,8 @@ public class DbService implements IDbService {
         }
         catch (HibernateException e) {
             try {
-                transaction.rollback();
+                if(transaction != null)
+                    transaction.rollback();
                 LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
             }
             catch (NullPointerException e2) {
@@ -192,6 +194,7 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public void deleteSession(String sessionId) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
@@ -203,7 +206,8 @@ public class DbService implements IDbService {
         }
         catch (HibernateException e) {
             try {
-                transaction.rollback();
+                if(transaction != null)
+                    transaction.rollback();
                 LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
             }
             catch (NullPointerException e2) {
@@ -212,6 +216,7 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public void addSession(String sessionId, UserProfile userProfile) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
@@ -224,7 +229,8 @@ public class DbService implements IDbService {
         }
         catch (HibernateException e) {
             try {
-                transaction.rollback();
+                if(transaction != null)
+                    transaction.rollback();
                 LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
             }
             catch (NullPointerException e2) {
@@ -233,6 +239,7 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public UserProfile getUserByLogin(String userLogin) {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
@@ -245,6 +252,7 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public UserProfile getUserById(Long userId) {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
@@ -257,6 +265,7 @@ public class DbService implements IDbService {
         }
     }
 
+    @Override
     public UserProfile getSession(String sessionId) {
         try(Session session = sessionFactory.openSession()) {
             StatusDataSetDAO statusDataSetDAO = new StatusDataSetDAO(session);

@@ -39,16 +39,18 @@ public class UserProfile {
 
     public void setEmail(String email) { this.email = email; }
 
+    @SuppressWarnings("MisspelledEquals")
     public boolean equal(UserProfile second) {
-        return this.getUserId() == second.getUserId() && this.getLogin().equals(second.getLogin()) &&
-                this.getPassword().equals(second.getPassword()) && this.getEmail().equals(second.getEmail());
+        return this.userId == second.userId && semanticEqual(second);
     }
 
     public boolean semanticEqual(UserProfile second) {
-        return this.getLogin().equals(second.getLogin()) &&
-                this.getPassword().equals(second.getPassword()) && this.getEmail().equals(second.getEmail());
+        return this.login.equals(second.login) &&
+                this.password.equals(second.password) && this.email.equals(second.email);
     }
 
+    @SuppressWarnings("CloneDoesntCallSuperClone")
+    @Override
     public UserProfile clone() {
         return new UserProfile(userId, login, password, email);
     }
@@ -57,9 +59,9 @@ public class UserProfile {
         JSONStringer jsonStringer = new JSONStringer();
         jsonStringer.
                 object()
-                .key("id").value(getUserId())
-                .key("login").value(getLogin())
-                .key("email").value(getEmail());
+                .key("id").value(this.userId)
+                .key("login").value(this.login)
+                .key("email").value(this.email);
         jsonStringer.endObject();
         return jsonStringer.toString();
     }

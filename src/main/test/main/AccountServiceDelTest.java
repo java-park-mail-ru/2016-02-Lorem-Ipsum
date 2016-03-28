@@ -9,12 +9,12 @@ import org.junit.Test;
 import utils.TestGenerator;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 import static org.junit.Assert.*;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class AccountServiceDelTest {
 
     private IDbService accountService;

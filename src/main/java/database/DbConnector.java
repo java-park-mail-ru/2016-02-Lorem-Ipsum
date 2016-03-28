@@ -1,10 +1,8 @@
 package database;
 
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
-import org.hibernate.cfg.Environment;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -32,8 +30,8 @@ public class DbConnector {
             StringBuilder url = new StringBuilder();
             url.
                     append("jdbc:mysql://").
-                    append(hostname).append(":").
-                    append(port).append("/").
+                    append(hostname).append(':').
+                    append(port).append('/').
                     append(dbName);
             poolProperties.setUrl(url.toString());
             poolProperties.setDriverClassName(driverName);
@@ -43,7 +41,7 @@ public class DbConnector {
             connectionPoolRes.setPoolProperties(poolProperties);
             LOGGER.debug("Pool configured. Login: {}, Password: {}, URL: {}.", login, password, url.toString());
         }
-        catch (Exception e) {
+        catch (RuntimeException e) {
             LOGGER.debug("Failed to init connection pool. Reason:" + e.getMessage());
         }
     }
@@ -65,22 +63,22 @@ public class DbConnector {
 
             url.
                     append("jdbc:mysql://").        //db type
-                    append(hostname).append(":").            //host name
-                    append(port).append("/").                //port
-                    append(dbName).append("?").           //db name
-                    append("user=").append(login).append("&").            //login
+                    append(hostname).append(':').            //host name
+                    append(port).append('/').                //port
+                    append(dbName).append('?').           //db name
+                    append("user=").append(login).append('&').            //login
                     append("password=").append(password);        //password
 
-            LOGGER.debug("Trying to connect to db by url: " + url.toString());
+            LOGGER.debug("Trying to connect to db by url: " + url);
 
             Connection connection = DriverManager.getConnection(url.toString());
 
-            LOGGER.debug("Success. Connection info: " + getConnectionInfo(connection).toString());
+            LOGGER.debug("Success. Connection info: " + getConnectionInfo(connection));
 
             return connection;
 
         }
-        catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+        catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException | NullPointerException e) {
             LOGGER.error("Failed to connect to database. Reason: " + e.getMessage());
         }
         return null;
@@ -89,11 +87,11 @@ public class DbConnector {
     public static StringBuilder getConnectionInfo(Connection connection) {
         StringBuilder output = new StringBuilder();
         try {
-            output.append(" Autocommit: ").append(connection.getAutoCommit()).append(";")
-                    .append(" DbName: ").append(connection.getMetaData().getDatabaseProductName()).append(";")
-                    .append(" DbVersion: ").append(connection.getMetaData().getDatabaseProductVersion()).append(";")
-                    .append(" DriverName: ").append(connection.getMetaData().getDriverName()).append(";")
-                    .append(" DriverVersion: ").append(connection.getMetaData().getDriverVersion()).append(";")
+            output.append(" Autocommit: ").append(connection.getAutoCommit()).append(';')
+                    .append(" DbName: ").append(connection.getMetaData().getDatabaseProductName()).append(';')
+                    .append(" DbVersion: ").append(connection.getMetaData().getDatabaseProductVersion()).append(';')
+                    .append(" DriverName: ").append(connection.getMetaData().getDriverName()).append(';')
+                    .append(" DriverVersion: ").append(connection.getMetaData().getDriverVersion()).append(';')
                     .append(" UserName: ").append(connection.getMetaData().getUserName());
         }
         catch (SQLException e) {

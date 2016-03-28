@@ -17,8 +17,7 @@ import org.junit.runners.Suite;
         AccountServiceAddTest.class,
         AccountServiceDelTest.class,
         AccountServiceGettersTest.class,
-        UserProfileTest.class,
-        MainTest.class
+        UserProfileTest.class
 })
 
 /**

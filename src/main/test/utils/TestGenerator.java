@@ -7,7 +7,6 @@ import org.json.JSONObject;
 import org.json.JSONStringer;
 
 import java.io.*;
-import java.util.Iterator;
 
 /**
  * Created by Installed on 18.03.2016.
@@ -21,7 +20,7 @@ public class TestGenerator {
     public static final Long FIRST_ID_OF_AUTHENTICATED = 6L;
     public static final Long LAST_ID_OF_AUTHENTICATED = 10L;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         generateUsers(FIRST_ID_OF_NOT_AUTHENTICATED, LAST_ID_OF_NOT_AUTHENTICATED, false, FILE_PATH_OF_NOT_AUTHENTICATED);
         generateUsers(FIRST_ID_OF_AUTHENTICATED, LAST_ID_OF_AUTHENTICATED, true, FILE_PATH_OF_AUTHENTICATED);
     }
@@ -33,8 +32,8 @@ public class TestGenerator {
         return fakeAccountService;
     }
 
-    public static boolean generateUsers(Long startId, Long endId,
-                                                     boolean areAuthenticated, String filePath) {
+    public static void generateUsers(Long startId, Long endId,
+                                     boolean areAuthenticated, String filePath) {
         JSONStringer jsonStringer = new JSONStringer();
         jsonStringer.array();
         for (Long id = startId; id < endId; ++id) {
@@ -48,7 +47,7 @@ public class TestGenerator {
                     jsonStringer.endObject();
         }
         jsonStringer.endArray();
-        return writeJSONToFile(filePath, jsonStringer.toString());
+        writeJSONToFile(filePath, jsonStringer.toString());
     }
 
     public static void parseAccountServiceFromJSONFile(FakeAccountService fakeAccountService,
@@ -57,28 +56,30 @@ public class TestGenerator {
         if(strUsers == null)
             return;
         JSONArray arrWithUsers = new JSONArray(strUsers);
-        Iterator<Object> it = arrWithUsers.iterator();
-        while(it.hasNext()) {
-            JSONObject userJSON = (JSONObject) it.next();
+        for (Object arrWithUserEl : arrWithUsers) {
+            JSONObject userJSON = (JSONObject) arrWithUserEl;
             Number id = (Number) userJSON.get("id");
-            String login = (String)userJSON.get("login");
-            String password = (String)userJSON.get("password");
-            String email = (String)userJSON.get("email");
+            String login = (String) userJSON.get("login");
+            String password = (String) userJSON.get("password");
+            String email = (String) userJSON.get("email");
             UserProfile userProfile = new UserProfile(id.longValue(), login, password, email);
             fakeAccountService.addUser(userProfile);
-            if(areAuthenticated) {
-                String session = (String)userJSON.get("session");
+            if (areAuthenticated) {
+                String session = (String) userJSON.get("session");
                 fakeAccountService.addSession(session, userProfile);
             }
         }
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean writeJSONToFile(String filePath, String text) {
         File file = new File(filePath);
         try {
 
             if (!file.exists()) {
-                file.createNewFile();
+                if(file.createNewFile()) {
+                    throw new IOException("Unable to create a file. Filepath: " + filePath);
+                }
             }
 
             try(PrintWriter printWriter = new PrintWriter(file.getAbsoluteFile()))

@@ -15,6 +15,7 @@ import java.util.List;
 @Table(name = "users")
 public class UserDataSet implements Serializable {
 
+    @SuppressWarnings("InstanceVariableNamingConvention")
     @Id
     @Column(name = "id", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -97,7 +98,6 @@ public class UserDataSet implements Serializable {
     }
 
     public UserProfile toUserProfile() {
-        UserProfile userProfile = new UserProfile(id, login, password, email);
-        return userProfile;
+        return new UserProfile(id, login, password, email);
     }
 }

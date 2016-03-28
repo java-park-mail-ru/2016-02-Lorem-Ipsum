@@ -329,3 +329,15 @@
 [03-28 20:19:38,511] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
 [03-28 20:19:44,893] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
 [03-28 20:19:51,135] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:30:33,998] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:30:33,999] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[03-28 21:30:34,056] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[03-28 21:30:56,648] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:31:01,049] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:31:06,677] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:31:11,720] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:31:17,143] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:31:22,454] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:31:27,290] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:31:32,071] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[03-28 21:31:38,291] [DEBUG] DbLogger                       [] : Trying to init tomcat pool

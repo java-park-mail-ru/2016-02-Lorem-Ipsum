@@ -1,7 +1,6 @@
 package database.datasets;
 
 import javax.persistence.*;
-import java.util.Date;
 
 /**
  * Created by Installed on 26.03.2016.
@@ -10,6 +9,7 @@ import java.util.Date;
 @Table(name = "gameResults")
 public class GameResultDataSet {
 
+    @SuppressWarnings("InstanceVariableNamingConvention")
     @Id
     @Column(name = "id", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

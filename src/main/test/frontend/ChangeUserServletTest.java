@@ -6,16 +6,20 @@ import fakeclasses.FakeResponseImpl;
 import main.UserProfile;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import utils.TestGenerator;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Set;
 
 import static org.junit.Assert.*;
 
+@SuppressWarnings("UnusedAssignment")
 public class ChangeUserServletTest {
 
     private FakeAccountService fakeAccountServiceToGenerate;
@@ -35,7 +39,7 @@ public class ChangeUserServletTest {
     }
 
     @Test
-    public void testDoPost() throws Exception {
+    public void testDoPost() throws ServletException, IOException, JSONException {
         for (String sId : fakeSessionIdsOfGenerated) {
 
             UserProfile userProfileGenerated = fakeAccountServiceToGenerate.getSession(sId);

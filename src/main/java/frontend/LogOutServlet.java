@@ -1,9 +1,7 @@
 package frontend;
 
-import main.AccountService;
 import datacheck.ElementaryChecker;
 import main.IAccountService;
-import main.UserProfile;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import templater.PageGenerator;
@@ -32,8 +30,6 @@ public class LogOutServlet extends HttpServlet {
                       HttpServletResponse response) throws ServletException, IOException {
         String sessionId = request.getSession().getId();
 
-        Map<String, Object> dataToSend = new HashMap<>();
-
         LOGGER.debug("LogOut request got with params: session:\"{}\"", sessionId);
 
         try {
@@ -53,7 +49,7 @@ public class LogOutServlet extends HttpServlet {
         response.setStatus(statusCode);
         response.setContentType("application/json");
         Map<String, Object> pageVariables = new HashMap<>();
-        pageVariables.put("data", dataToSend);
+        pageVariables.put("data", new HashMap<>());
         String responseContent = PageGenerator.getPage("Response", pageVariables);
         response.getWriter().println(responseContent);
         LOGGER.debug("Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));

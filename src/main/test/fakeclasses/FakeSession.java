@@ -1,7 +1,5 @@
 package fakeclasses;
 
-import javax.servlet.http.HttpSession;
-
 public class FakeSession {
 
     private String sessionId;
