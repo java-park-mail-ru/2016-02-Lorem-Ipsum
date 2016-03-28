@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" monitorInterval="30">
+
+    <Properties>
+        <Property name="LOG_DIR">output</Property>
+        <Property name="ARCHIVE">${LOG_DIR}/archive</Property>
+        <Property name="PATTERN">[%d{MM-dd HH:mm:ss,SSS}] [%-5p] %-30.30c %x : %m%n</Property>
+    </Properties>
+
+    <Appenders>
+
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${PATTERN}"/>
+        </Console>
+
+        <RollingFile name="ROLLING_FILE" fileName="${LOG_DIR}/server.log"
+                     filePattern="${ARCHIVE}/server/server.log.%d{yyyy-MM-dd-hh-mm}.gz">
+            <PatternLayout pattern="${PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+        <RollingFile name="ROLLING_FILE_TEST" fileName="${LOG_DIR}/test.log"
+                     filePattern="${ARCHIVE}/test/test.log.%d{yyyy-MM-dd-hh-mm}.gz">
+            <PatternLayout pattern="${PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+        <RollingFile name="ROLLING_FILE_DB" fileName="${LOG_DIR}/db.log"
+                     filePattern="${ARCHIVE}/test/db.log.%d{yyyy-MM-dd-hh-mm}.gz">
+            <PatternLayout pattern="${PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+        <Async name="ASYNC_FILE">
+            <AppenderRef ref="ROLLING_FILE"/>
+        </Async>
+
+        <Async name="ASYNC_FILE_TEST">
+            <AppenderRef ref="ROLLING_FILE_TEST"/>
+        </Async>
+
+        <Async name="ASYNC_FILE_DB">
+            <AppenderRef ref="ROLLING_FILE_DB"/>
+        </Async>
+
+        <Async name="ASYNC_CONSOLE">
+            <AppenderRef ref="STDOUT"/>
+        </Async>
+
+    </Appenders>
+    <Loggers>
+
+        <Root level="DEBUG">
+            <AppenderRef ref="ASYNC_FILE"/>
+            <AppenderRef ref="ASYNC_CONSOLE"/>
+        </Root>
+
+        <Logger name="TestLogger" level="DEBUG" additivity="false">
+            <AppenderRef ref="ASYNC_FILE_TEST"/>
+        </Logger>
+
+        <Logger name="DbLogger" level="DEBUG" additivity="false">
+            <AppenderRef ref="ASYNC_FILE_DB"/>
+        </Logger>
+
+    </Loggers>
+</Configuration>

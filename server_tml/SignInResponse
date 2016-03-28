@@ -1,7 +1,0 @@
-<#if statusCode == 200>
-{
-  "id": ${userId}
-}
-<#elseif statusCode == 400>
-{}
-</#if>
