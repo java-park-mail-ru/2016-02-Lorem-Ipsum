@@ -1,9 +1,0 @@
-<#if statusCode == 200>
-{
-  "id": ${userId},
-  "login": "${userLogin}",
-  "email": "${userEmail}"
-}
-<#elseif statusCode == 401>
-{}
-</#if>

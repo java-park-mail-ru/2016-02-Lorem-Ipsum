@@ -1,7 +1,10 @@
 package frontend;
 
-import main.AccountService;
+import datacheck.ElementaryChecker;
+import main.IAccountService;
 import main.UserProfile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import templater.PageGenerator;
 
 import javax.servlet.ServletException;
@@ -14,9 +17,12 @@ import java.util.Map;
 
 public class DeleteUserServlet extends HttpServlet {
 
-    private AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/user/";
 
-    public DeleteUserServlet(AccountService accountService) {
+    public static final Logger LOGGER = LogManager.getLogger(DeleteUserServlet.class);
+
+    public DeleteUserServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -26,21 +32,37 @@ public class DeleteUserServlet extends HttpServlet {
 
         String sessionId = request.getSession().getId();
 
-        Map<String, Object> pageVariables = new HashMap<>();
-        int statusCode = 0;
+        LOGGER.debug("DeleteUser request got with params: session:\"{}\"", sessionId);
 
-        if( accountService.checkSessionExists(sessionId)) {
-            UserProfile userProfile = accountService.getSessions(sessionId);
+        Map<String, Object> dataToSend = new HashMap<>();
+        int statusCode;
+
+        try {
+            if(!ElementaryChecker.checkSessionId(sessionId))
+                throw new Exception("Bad data");
+            if(!accountService.checkSessionExists(sessionId))
+                throw new Exception("Request from unauthorized user.");
+
+            UserProfile userProfile = accountService.getSession(sessionId);
             statusCode = HttpServletResponse.SC_OK;
             accountService.deleteUser(sessionId, userProfile);
+
+            LOGGER.debug("Success. SessionId: {}. User deleted: {}",
+                    sessionId, userProfile.toJSON());
         }
-        else {
+        catch (Exception e) {
             statusCode = HttpServletResponse.SC_UNAUTHORIZED;
+            dataToSend.put("status", statusCode);
+            dataToSend.put("message", "Чужой юзер.");
+            LOGGER.debug("Denied. SessionId: {}. Reason: {}", sessionId, e.getMessage());
         }
 
         response.setStatus(statusCode);
-        pageVariables.put("statusCode", statusCode);
         response.setContentType("application/json");
-        response.getWriter().println(PageGenerator.getPage("DeleteUserResponse", pageVariables));
+        Map<String, Object> pageVariables = new HashMap<>();
+        pageVariables.put("data", dataToSend);
+        String responseContent = PageGenerator.getPage("Response", pageVariables);
+        response.getWriter().println(responseContent);
+        LOGGER.debug("Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));
     }
 }

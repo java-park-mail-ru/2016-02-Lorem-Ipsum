@@ -1,8 +1,10 @@
 package frontend;
 
 import datacheck.*;
-import main.AccountService;
+import main.IAccountService;
 import main.UserProfile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import templater.PageGenerator;
 
 import javax.servlet.ServletException;
@@ -15,9 +17,12 @@ import java.util.Map;
 
 public class GetUserProfileServlet extends HttpServlet {
 
-    private AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/user/";
 
-    public GetUserProfileServlet(AccountService accountService) {
+    public static final Logger LOGGER = LogManager.getLogger(GetUserProfileServlet.class);
+
+    public GetUserProfileServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -31,32 +36,46 @@ public class GetUserProfileServlet extends HttpServlet {
 
         String sessionId = request.getSession().getId();
 
-        Map<String, Object> pageVariables = new HashMap<>();
-        int statusCode = 0;
+        LOGGER.debug("GetUserProfile request got with params: session:\"{}\", if of user to change: \"{}\" ",
+                sessionId, userId);
 
-        if( ElementaryChecker.checkUserId(userId) && accountService.checkUserExistsById(userId)
-                && accountService.checkSessionExists(sessionId)) {
+        Map<String, Object> dataToSend = new HashMap<>();
+        int statusCode;
+
+        try {
+            if(!ElementaryChecker.checkUserId(userId))
+                throw new Exception("Bad data");
+            if(!accountService.checkUserExistsById(userId))
+                throw new Exception("Such user does not exist.");
+            if(!accountService.checkSessionExists(sessionId))
+                throw new Exception("Request from unauthorized user.");
+
             UserProfile userProfile = accountService.getUserById(userId);
-            UserProfile sessionProfile = accountService.getSessions(sessionId);
-            Long idProfile = userProfile.getId();
-            Long idSessionProfile = sessionProfile.getId();
-            if(idProfile.equals(idSessionProfile)) {
-                statusCode = HttpServletResponse.SC_OK;
-                pageVariables.put("userId", userProfile.getId());
-                pageVariables.put("userLogin", userProfile.getLogin());
-                pageVariables.put("userEmail", userProfile.getEmail());
-            }
-            else {
-                statusCode = HttpServletResponse.SC_UNAUTHORIZED;
-            }
+            UserProfile sessionProfile = accountService.getSession(sessionId);
+            Long idProfile = userProfile.getUserId();
+            Long idSessionProfile = sessionProfile.getUserId();
+
+            if(!idProfile.equals(idSessionProfile))
+                throw new Exception("Assumption to get information about another user profile.");
+
+            statusCode = HttpServletResponse.SC_OK;
+            dataToSend.put("id", userProfile.getUserId());
+            dataToSend.put("login", userProfile.getLogin());
+            dataToSend.put("email", userProfile.getEmail());
+            LOGGER.debug("Success. SessionId: {}. User requested: {}. User changed: {}",
+                    sessionProfile.toJSON(), userProfile.toJSON());
         }
-        else {
+        catch (Exception e) {
             statusCode = HttpServletResponse.SC_UNAUTHORIZED;
+            LOGGER.debug("Denied. SessionId: {}. Reason: {}", sessionId, e.getMessage());
         }
 
         response.setStatus(statusCode);
-        pageVariables.put("statusCode", statusCode);
         response.setContentType("application/json");
-        response.getWriter().println(PageGenerator.getPage("GetUserProfileResponse", pageVariables));
+        Map<String, Object> pageVariables = new HashMap<>();
+        pageVariables.put("data", dataToSend);
+        String responseContent = PageGenerator.getPage("Response", pageVariables);
+        response.getWriter().println(responseContent);
+        LOGGER.debug("Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));
     }
 }

@@ -1,8 +1,10 @@
 package frontend;
 
-import main.AccountService;
+import main.IAccountService;
 import main.UserProfile;
 import datacheck.InputDataChecker;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import templater.PageGenerator;
 
 import javax.servlet.ServletException;
@@ -15,48 +17,63 @@ import java.util.Map;
 
 public class SignInServlet extends HttpServlet {
 
-    private AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/session";
 
-    public SignInServlet(AccountService accountService) {
+    public static final Logger LOGGER = LogManager.getLogger(SignInServlet.class);
+
+    public SignInServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
     @Override
-    public void doPost(HttpServletRequest request,
+    public void doPut(HttpServletRequest request,
                        HttpServletResponse response) throws ServletException, IOException {
 
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         String sessionId = request.getSession().getId();
 
+        LOGGER.debug("SignInServlet request got with params: login:\"{}\", password:\"{}\", session:\"{}\"",
+                login, password, sessionId);
+
         Boolean isGoodData = InputDataChecker.checkSignIn(login, password, sessionId);
 
-        Map<String, Object> pageVariables = new HashMap<>();
-        int statusCode = 0;
+        Map<String, Object> dataToSend = new HashMap<>();
 
-        if( isGoodData && accountService.checkUserExistsByLogin(login)) {
+        int statusCode;
+
+        try {
+            if(!isGoodData)
+                throw new Exception("Bad data.");
+            if(!accountService.checkUserExistsByLogin(login))
+                throw new Exception("User with such login does not exist.");
 
             UserProfile userProfile = accountService.getUserByLogin(login);
 
-            if(password.equals(userProfile.getPassword())) {
-                statusCode = HttpServletResponse.SC_OK;
-                if(accountService.checkSessionExists(sessionId))
-                    accountService.deleteSession(sessionId);
-                accountService.addSessions(sessionId, userProfile);
-                pageVariables.put("userId", userProfile.getId());
-            }
-            else {
-                statusCode = HttpServletResponse.SC_BAD_REQUEST;
-            }
+            if(!password.equals(userProfile.getPassword()))
+                throw new Exception("Incorrect password.");
 
+            statusCode = HttpServletResponse.SC_OK;
+            if(accountService.checkSessionExists(sessionId)) {
+                accountService.deleteSession(sessionId);
+                LOGGER.debug("[To improve?] Session existed. Just relogin.");
+            }
+            accountService.addSession(sessionId, userProfile);
+            dataToSend.put("id", userProfile.getUserId());
+            LOGGER.debug("Success. Logged in user: {}", userProfile.toJSON());
         }
-        else {
-            statusCode = HttpServletResponse.SC_BAD_REQUEST;
+        catch (Exception e) {
+            statusCode = HttpServletResponse.SC_FORBIDDEN;
+            LOGGER.debug("Denied. SessionId: {}. Reason: {}", sessionId, e.getMessage());
         }
 
         response.setStatus(statusCode);
-        pageVariables.put("statusCode", statusCode);
         response.setContentType("application/json");
-        response.getWriter().println(PageGenerator.getPage("SignInResponse", pageVariables));
+        Map<String, Object> pageVariables = new HashMap<>();
+        pageVariables.put("data", dataToSend);
+        String responseContent = PageGenerator.getPage("Response", pageVariables);
+        response.getWriter().println(responseContent);
+        LOGGER.debug("Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));
     }
 }

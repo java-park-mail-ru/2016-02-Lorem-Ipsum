@@ -1,8 +1,11 @@
 package frontend;
 
-import main.AccountService;
+import datacheck.ElementaryChecker;
+import main.IAccountService;
 import main.UserProfile;
 import datacheck.InputDataChecker;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import templater.PageGenerator;
 
 import javax.servlet.ServletException;
@@ -15,14 +18,17 @@ import java.util.Map;
 
 public class ChangeUserServlet extends HttpServlet {
 
-    private AccountService accountService;
+    private final IAccountService accountService;
+    public static final String REQUEST_URI = "/user/";
 
-    public ChangeUserServlet(AccountService accountService) {
+    public static final Logger LOGGER = LogManager.getLogger(ChangeUserServlet.class);
+
+    public ChangeUserServlet(IAccountService accountService) {
         this.accountService = accountService;
     }
 
     @Override
-    public void doPut(HttpServletRequest request,
+    public void doPost(HttpServletRequest request,
                        HttpServletResponse response) throws ServletException, IOException {
 
         String login = request.getParameter("login");
@@ -30,28 +36,48 @@ public class ChangeUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String sessionId = request.getSession().getId();
 
-        Boolean isGoodData = InputDataChecker.checkChangeUser(login, password, email);
+        LOGGER.debug("ChangeUser request got with params: login:\"{}\", password:\"{}\", email:\"{}\", session:\"{}\"",
+                login, password, email, sessionId);
 
-        Map<String, Object> pageVariables = new HashMap<>();
-        int statusCode = 0;
+        Boolean isGoodData = InputDataChecker.checkChangeUser(login, password, email)
+                && ElementaryChecker.checkSessionId(sessionId);
 
-        if( isGoodData && accountService.checkSessionExists(sessionId)
-                && !accountService.checkUserExistsByLogin(login)) {
-            UserProfile userProfile = accountService.getSessions(sessionId);
+        Map<String, Object> dataToSend = new HashMap<>();
+        int statusCode;
+
+        try {
+            if(!isGoodData)
+                throw new Exception("Bad data.");
+            if(!accountService.checkSessionExists(sessionId))
+                throw new Exception("User is not logged in.");
+
+            UserProfile userProfile = accountService.getSession(sessionId);
+
+            if(accountService.checkUserExistsByLogin(login) && !userProfile.getLogin().equals(login))
+                throw new Exception("Assumption to change another user");
+
+            LOGGER.debug("User before change: {}", userProfile.toJSON());
             statusCode = HttpServletResponse.SC_OK;
             userProfile.setLogin(login);
             userProfile.setPassword(password);
             userProfile.setEmail(email);
-            pageVariables.put("userId", userProfile.getId());
+            accountService.changeUser(userProfile);
+            dataToSend.put("id", userProfile.getUserId());
+            LOGGER.debug("Success. Changed user: {}", userProfile.toJSON());
         }
-        else {
+        catch (Exception e) {
             statusCode = HttpServletResponse.SC_FORBIDDEN;
+            dataToSend.put("status", statusCode);
+            dataToSend.put("message", "Чужой юзер.");
+            LOGGER.debug("Denied. SessionId: {}. Reason: {}", sessionId, e.getMessage());
         }
 
         response.setStatus(statusCode);
-        pageVariables.put("statusCode", statusCode);
         response.setContentType("application/json");
-        response.getWriter().println(PageGenerator.getPage("ChangeUserResponse", pageVariables));
+        Map<String, Object> pageVariables = new HashMap<>();
+        pageVariables.put("data", dataToSend);
+        String responseContent = PageGenerator.getPage("Response", pageVariables);
+        response.getWriter().println(responseContent);
+        LOGGER.debug("Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));
     }
-
 }
