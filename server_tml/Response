@@ -1,0 +1,10 @@
+<#if data?has_content>
+{
+<#list data?keys as k>
+  <#assign v = data[k]>
+  "${k}": <#if v?is_string>"${v}"<#else>${v}</#if><#if k_has_next>,</#if>
+</#list>
+}
+<#else>
+{}
+</#if>
