@@ -1,5 +1,6 @@
 package frontend;
 
+import database.DbService;
 import main.IAccountService;
 
 import javax.servlet.ServletException;
@@ -17,8 +18,10 @@ public class RoutingServlet extends HttpServlet {
     private final ChangeUserServlet changeUserServlet;
     private final DeleteUserServlet deleteUserServlet;
     private final LogOutServlet logOutServlet;
+    private final SaveGameScoreServlet saveGameScoreServlet;
+    private final GetBestResultsServlet getBestResultsServlet;
 
-    public RoutingServlet(IAccountService accountService) {
+    public RoutingServlet(DbService accountService) {
         signInServlet = new SignInServlet(accountService);
         signUpServlet = new SignUpServlet(accountService);
         isAuthenticatedServlet = new IsAuthenticatedServlet(accountService);
@@ -26,6 +29,8 @@ public class RoutingServlet extends HttpServlet {
         changeUserServlet = new ChangeUserServlet(accountService);
         deleteUserServlet = new DeleteUserServlet(accountService);
         logOutServlet = new LogOutServlet(accountService);
+        saveGameScoreServlet = new SaveGameScoreServlet(accountService);
+        getBestResultsServlet = new GetBestResultsServlet(accountService);
     }
 
     @Override
@@ -35,7 +40,11 @@ public class RoutingServlet extends HttpServlet {
         sId = sId.substring(sId.lastIndexOf('/') + 1, sId.length());
         if(sId.equals("session")) {
             isAuthenticatedServlet.doGet(request, response);
-        } else {
+        }
+        else if(sId.equals("score")) {
+            getBestResultsServlet.doGet(request, response);
+        }
+        else {
             getUserProgileServlet.doGet(request, response);
         }
     }
@@ -55,6 +64,8 @@ public class RoutingServlet extends HttpServlet {
             signUpServlet.doPut(request, response);
         } else if(sId.equals("session")) {
             signInServlet.doPut(request, response);
+        } else if(sId.equals("score")) {
+            saveGameScoreServlet.doPut(request, response);
         }
     }
 

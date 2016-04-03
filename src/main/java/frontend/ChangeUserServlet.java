@@ -1,11 +1,13 @@
 package frontend;
 
 import datacheck.ElementaryChecker;
+import frontend.utils.RequestParser;
 import main.IAccountService;
 import main.UserProfile;
 import datacheck.InputDataChecker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONObject;
 import templater.PageGenerator;
 
 import javax.servlet.ServletException;
@@ -30,10 +32,10 @@ public class ChangeUserServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response) throws ServletException, IOException {
-
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
+        JSONObject jsonBody = RequestParser.parseRequestBody(request.getReader());
+        String login = jsonBody.getString("login");
+        String password = jsonBody.getString("password");
+        String email = jsonBody.getString("email");
         String sessionId = request.getSession().getId();
 
         LOGGER.debug("ChangeUser request got with params: login:\"{}\", password:\"{}\", email:\"{}\", session:\"{}\"",

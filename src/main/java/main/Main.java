@@ -1,6 +1,7 @@
 package main;
 
 import database.DbService;
+import database.utils.FakeDbGenerator;
 import frontend.RoutingServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,7 +33,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         int port;
 
-        if (args.length != 1) {
+        if (args.length < 1) {
             port = STANDART_PORT;
             System.out.append("Target port argument missed.\n");
             MAIN_LOGGER.warn("Target port argument missed. Start at port: {}", STANDART_PORT);
@@ -47,7 +48,7 @@ public class Main {
             }
         }
 
-        IAccountService accountService;
+        DbService accountService;
         try {
             accountService = new DbService(
                     Main.STANDART_MYSQL_HOST,
@@ -57,6 +58,9 @@ public class Main {
                     Main.STANDART_MYSQL_LOGIN,
                     Main.STANDART_MYSQL_PASSWORD
             );
+            if(args.length >= 2 && args[1].equals("fake")) {
+                FakeDbGenerator.generateDb(accountService);
+            }
         }
         catch (RuntimeException e) {
             MAIN_LOGGER.error("Unable to init dbService. Reason: {}", e.getMessage());

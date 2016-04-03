@@ -1,0 +1,46 @@
+[
+  {
+    "login": "login1",
+    "score": 5
+  },
+  {
+    "login": "login1",
+    "score": 7
+  },
+  {
+    "login": "login1",
+    "score": 10
+  },
+  {
+    "login": "login1",
+    "score": 3
+  },
+  {
+    "login": "login3",
+    "score": 10
+  },
+  {
+    "login": "login3",
+    "score": 2
+  },
+  {
+    "login": "login3",
+    "score": 9
+  },
+  {
+    "login": "login2",
+    "score": 1
+  },
+  {
+    "login": "login2",
+    "score": 18
+  },
+  {
+    "login": "login2",
+    "score": 82
+  },
+  {
+    "login": "login2",
+    "score": 82
+  }
+]

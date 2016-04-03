@@ -1,10 +1,12 @@
 package database;
 
+import database.dao.GameResultDataSetDAO;
 import database.dao.StatusDataSetDAO;
 import database.dao.UserDataSetDAO;
 import database.datasets.GameResultDataSet;
 import database.datasets.UserDataSet;
 import database.datasets.UserStatusDataSet;
+import main.IGame;
 import main.UserProfile;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,11 +20,12 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Installed on 26.03.2016.
  */
-public class DbService implements IDbService {
+public class DbService implements IDbService, IGame {
 
     private SessionFactory sessionFactory;
 
@@ -277,5 +280,54 @@ public class DbService implements IDbService {
             return null;
         }
     }
+
+    @Override
+    public void saveGameResultByUserId(long userId, long score) {
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+            UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
+            GameResultDataSetDAO gameResultDataSetDAO = new GameResultDataSetDAO(session);
+            UserDataSet userDataSet = userDataSetDAO.getUserById(userId);
+            gameResultDataSetDAO.saveGameResult(userDataSet, score);
+            transaction.commit();
+        }
+        catch (HibernateException e) {
+            try {
+                if(transaction != null)
+                    transaction.rollback();
+                LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
+            }
+            catch (NullPointerException e2) {
+                LOGGER.debug("Failed db operation. Failed to roll back. Reason: {}" , e2.getMessage());
+            }
+        }
+    }
+
+    public void saveGameResultByUserLogin(String userLogin, long score) {
+        try(Session session = sessionFactory.openSession()) {
+            UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
+            UserDataSet userDataSet = userDataSetDAO.getUserByLogin(userLogin);
+            GameResultDataSetDAO gameResultDataSetDAO = new GameResultDataSetDAO(session);
+            gameResultDataSetDAO.saveGameResult(userDataSet, score);
+        }
+        catch (HibernateException e) {
+            LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
+        }
+    }
+
+    @Override
+    public List<GameResultDataSet> getBestResults(int limit) {
+        try(Session session = sessionFactory.openSession()) {
+            GameResultDataSetDAO gameResultDataSetDAO = new GameResultDataSetDAO(session);
+            return gameResultDataSetDAO.getBestResults(limit);
+        }
+        catch (HibernateException e) {
+            LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
+            return null;
+        }
+    }
+
+
 
 }

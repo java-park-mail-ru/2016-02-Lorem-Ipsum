@@ -1,5 +1,9 @@
 package database.datasets;
 
+import database.dao.UserDataSetDAO;
+import org.json.JSONObject;
+import org.json.JSONStringer;
+
 import javax.persistence.*;
 
 /**
@@ -15,7 +19,7 @@ public class GameResultDataSet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId")
     private UserDataSet user;
 
@@ -30,7 +34,24 @@ public class GameResultDataSet {
 
     public UserDataSet getUser() { return user; }
 
+    public void setUser(UserDataSet user) {
+        this.user = user;
+    }
+
     public long getScore() { return score; }
 
     public void setScore(long score) { this.score = score; }
+
+    public JSONObject toJSONObject() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("id", this.id);
+        jsonObject.put("login", this.user.getLogin());
+        jsonObject.put("score", this.score);
+        return jsonObject;
+    }
+
+    public GameResultDataSet(JSONObject initObj) {
+        this.id = -1;
+    }
+
 }

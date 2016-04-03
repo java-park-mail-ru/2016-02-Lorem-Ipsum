@@ -1,10 +1,12 @@
 package frontend;
 
+import frontend.utils.RequestParser;
 import main.IAccountService;
 import main.UserProfile;
 import datacheck.InputDataChecker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONObject;
 import templater.PageGenerator;
 
 import javax.servlet.ServletException;
@@ -29,9 +31,9 @@ public class SignInServlet extends HttpServlet {
     @Override
     public void doPut(HttpServletRequest request,
                        HttpServletResponse response) throws ServletException, IOException {
-
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
+        JSONObject jsonBody = RequestParser.parseRequestBody(request.getReader());
+        String login = jsonBody.getString("login");
+        String password = jsonBody.getString("password");
         String sessionId = request.getSession().getId();
 
         LOGGER.debug("SignInServlet request got with params: login:\"{}\", password:\"{}\", session:\"{}\"",
