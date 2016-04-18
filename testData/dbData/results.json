@@ -1,46 +1,50 @@
 [
   {
-    "login": "login1",
-    "score": 5
+    "loginFirst": "login1",
+    "scoreFirst": 300,
+    "loginSecond": "login2",
+    "scoreSecond": 500
   },
   {
-    "login": "login1",
-    "score": 7
+    "loginFirst": "login2",
+    "scoreFirst": 500,
+    "loginSecond": "login3",
+    "scoreSecond": 1000
   },
   {
-    "login": "login1",
-    "score": 10
+    "loginFirst": "login3",
+    "scoreFirst": 1000,
+    "loginSecond": "login2",
+    "scoreSecond": 250
   },
   {
-    "login": "login1",
-    "score": 3
+    "loginFirst": "login2",
+    "scoreFirst": 700,
+    "loginSecond": "login1",
+    "scoreSecond": 300
   },
   {
-    "login": "login3",
-    "score": 10
+    "loginFirst": "login1",
+    "scoreFirst": 800,
+    "loginSecond": "login2",
+    "scoreSecond": 900
   },
   {
-    "login": "login3",
-    "score": 2
+    "loginFirst": "login1",
+    "scoreFirst": 900,
+    "loginSecond": "login2",
+    "scoreSecond": 1000
   },
   {
-    "login": "login3",
-    "score": 9
+    "loginFirst": "login2",
+    "scoreFirst": 1500,
+    "loginSecond": "login3",
+    "scoreSecond": 1800
   },
   {
-    "login": "login2",
-    "score": 1
-  },
-  {
-    "login": "login2",
-    "score": 18
-  },
-  {
-    "login": "login2",
-    "score": 82
-  },
-  {
-    "login": "login2",
-    "score": 82
+    "loginFirst": "login1",
+    "scoreFirst": 1500,
+    "loginSecond": "login2",
+    "scoreSecond": 1000
   }
 ]

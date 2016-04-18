@@ -20,11 +20,21 @@ public class GameResultDataSet {
     private long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "userId")
-    private UserDataSet user;
+    @JoinColumn(name = "userIdFirst")
+    private UserDataSet userFirst;
 
-    @Column(name = "score")
-    private long score;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "userIdSecond")
+    private UserDataSet userSecond;
+
+    @Column(name = "scoreFirst")
+    private long scoreFirst;
+
+    @Column(name = "scoreSecond")
+    private long scoreSecond;
+
+    @Column(name = "scoreWinner")
+    private long scoreWinner;
 
     public GameResultDataSet() { this.id = -1; }
 
@@ -32,21 +42,38 @@ public class GameResultDataSet {
 
     public void setId(long id) { this.id = id; }
 
-    public UserDataSet getUser() { return user; }
+    public UserDataSet getUserFirst() { return userFirst; }
 
-    public void setUser(UserDataSet user) {
-        this.user = user;
+    public UserDataSet getUserSecond() { return userSecond; }
+
+    public void setUserFirst(UserDataSet user) {
+        this.userFirst = user;
     }
 
-    public long getScore() { return score; }
+    public void setUserSecond(UserDataSet user) {
+        this.userSecond = user;
+    }
 
-    public void setScore(long score) { this.score = score; }
+    public long getScoreFirst() { return scoreFirst; }
+
+    public long getScoreSecond() { return scoreSecond; }
+
+    public long getScoreWinner() { return scoreWinner; }
+
+    public void setScoreFirst(long score) { this.scoreFirst = score; }
+
+    public void setScoreSecond(long score) { this.scoreSecond = score; }
+
+    public void setScoreWinner(long score) { this.scoreWinner = score; }
 
     public JSONObject toJSONObject() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("id", this.id);
-        jsonObject.put("login", this.user.getLogin());
-        jsonObject.put("score", this.score);
+        jsonObject.put("userIdFirst", this.userFirst.getId());
+        jsonObject.put("userIdSecond", this.userSecond.getId());
+        jsonObject.put("scoreWinner", this.scoreWinner);
+        jsonObject.put("scoreFirst", this.scoreFirst);
+        jsonObject.put("scoreSecond", this.scoreSecond);
         return jsonObject;
     }
 

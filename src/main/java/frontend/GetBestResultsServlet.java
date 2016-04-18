@@ -26,7 +26,7 @@ public class GetBestResultsServlet extends HttpServlet {
     private final IGame gameService;
     public static final String REQUEST_URI = "/score";
 
-    public static final Logger LOGGER = LogManager.getLogger(SaveGameScoreServlet.class);
+    public static final Logger LOGGER = LogManager.getLogger(GetBestResultsServlet.class);
 
     public GetBestResultsServlet(IGame accountService) {
         this.gameService = accountService;

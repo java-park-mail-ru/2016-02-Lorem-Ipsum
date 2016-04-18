@@ -19,16 +19,24 @@ public class GameResultDataSetDAO {
 
     public void saveResult(GameResultDataSet resultDataSet) {session.save(resultDataSet);}
 
-    public void saveGameResult(UserDataSet userDataSet, long score) {
+    public void saveGameResult(UserDataSet userDataSetFirst, UserDataSet userDataSetSecond, long scoreFirst, long scoreSecond) {
         GameResultDataSet gameResultDataSet = new GameResultDataSet();
-        gameResultDataSet.setUser(userDataSet);
-        gameResultDataSet.setScore(score);
+        gameResultDataSet.setScoreFirst(scoreFirst);
+        gameResultDataSet.setScoreSecond(scoreSecond);
+        gameResultDataSet.setUserFirst(userDataSetFirst);
+        gameResultDataSet.setUserSecond(userDataSetSecond);
+        if(scoreFirst < scoreSecond) {
+            gameResultDataSet.setScoreWinner(scoreSecond);
+        }
+        else {
+            gameResultDataSet.setScoreWinner(scoreFirst);
+        }
         saveResult(gameResultDataSet);
     }
 
     public List<GameResultDataSet> getBestResults(int limit) {
         Criteria criteria = session.createCriteria(GameResultDataSet.class);
-        criteria.addOrder(Order.desc("score"));
+        criteria.addOrder(Order.desc("scoreWinner"));
         criteria.setMaxResults(limit);
         return (List<GameResultDataSet>) criteria.list();
     }

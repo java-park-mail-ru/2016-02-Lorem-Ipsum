@@ -3,12 +3,14 @@ package main;
 import database.DbService;
 import database.utils.FakeDbGenerator;
 import frontend.RoutingServlet;
+import game.websocket.WebSocketGameServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
+import org.eclipse.jetty.server.session.SessionHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
@@ -71,6 +73,8 @@ public class Main {
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.addServlet(new ServletHolder(routingServlet), "/api/v1/*");
+        context.addServlet(new ServletHolder(new WebSocketGameServlet(accountService, accountService)), "/gameplay");
+
 
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setDirectoriesListed(true);

@@ -282,14 +282,15 @@ public class DbService implements IDbService, IGame {
     }
 
     @Override
-    public void saveGameResultByUserId(long userId, long score) {
+    public void saveGameResultByUserId(long userIdFirst, long scoreFirst, long userIdSecond, long scoreSecond) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
             GameResultDataSetDAO gameResultDataSetDAO = new GameResultDataSetDAO(session);
-            UserDataSet userDataSet = userDataSetDAO.getUserById(userId);
-            gameResultDataSetDAO.saveGameResult(userDataSet, score);
+            UserDataSet userDataSetFirst = userDataSetDAO.getUserById(userIdFirst);
+            UserDataSet userDataSetSecond = userDataSetDAO.getUserById(userIdSecond);
+            gameResultDataSetDAO.saveGameResult(userDataSetFirst, userDataSetSecond, scoreFirst, scoreSecond);
             transaction.commit();
         }
         catch (HibernateException e) {
@@ -304,12 +305,13 @@ public class DbService implements IDbService, IGame {
         }
     }
 
-    public void saveGameResultByUserLogin(String userLogin, long score) {
+    public void saveGameResultByUserLogin(String userLoginFirst, long scoreFirst, String userLoginSecond, long scoreSecond) {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
-            UserDataSet userDataSet = userDataSetDAO.getUserByLogin(userLogin);
+            UserDataSet userDataSetFirst = userDataSetDAO.getUserByLogin(userLoginFirst);
+            UserDataSet userDataSetSecond = userDataSetDAO.getUserByLogin(userLoginSecond);
             GameResultDataSetDAO gameResultDataSetDAO = new GameResultDataSetDAO(session);
-            gameResultDataSetDAO.saveGameResult(userDataSet, score);
+            gameResultDataSetDAO.saveGameResult(userDataSetFirst, userDataSetSecond, scoreFirst, scoreSecond);
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());

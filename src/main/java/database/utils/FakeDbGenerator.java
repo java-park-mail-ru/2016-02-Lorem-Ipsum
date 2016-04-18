@@ -27,9 +27,11 @@ public class FakeDbGenerator {
             }
             for (Object result : resultsJSONArray) {
                 JSONObject resultJSONObj = (JSONObject) result;
-                String userLogin = resultJSONObj.getString("login");
-                long score = resultJSONObj.getLong("score");
-                dbService.saveGameResultByUserLogin(userLogin, score);
+                String userLoginFirst = resultJSONObj.getString("loginFirst");
+                long scoreFirst = resultJSONObj.getLong("scoreFirst");
+                String userLoginSecond = resultJSONObj.getString("loginSecond");
+                long scoreSecond = resultJSONObj.getLong("scoreSecond");
+                dbService.saveGameResultByUserLogin(userLoginFirst, scoreFirst, userLoginSecond, scoreSecond);
             }//for
         }//if
     }//func

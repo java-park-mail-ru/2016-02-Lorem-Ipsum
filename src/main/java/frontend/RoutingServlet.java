@@ -18,7 +18,6 @@ public class RoutingServlet extends HttpServlet {
     private final ChangeUserServlet changeUserServlet;
     private final DeleteUserServlet deleteUserServlet;
     private final LogOutServlet logOutServlet;
-    private final SaveGameScoreServlet saveGameScoreServlet;
     private final GetBestResultsServlet getBestResultsServlet;
 
     public RoutingServlet(DbService accountService) {
@@ -29,7 +28,6 @@ public class RoutingServlet extends HttpServlet {
         changeUserServlet = new ChangeUserServlet(accountService);
         deleteUserServlet = new DeleteUserServlet(accountService);
         logOutServlet = new LogOutServlet(accountService);
-        saveGameScoreServlet = new SaveGameScoreServlet(accountService);
         getBestResultsServlet = new GetBestResultsServlet(accountService);
     }
 
@@ -64,8 +62,6 @@ public class RoutingServlet extends HttpServlet {
             signUpServlet.doPut(request, response);
         } else if(sId.equals("session")) {
             signInServlet.doPut(request, response);
-        } else if(sId.equals("score")) {
-            saveGameScoreServlet.doPut(request, response);
         }
     }
 
