@@ -15,16 +15,17 @@ import java.io.FileWriter;
  */
 public class InstanceRunner implements Runnable {
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
-    ScriptEngine engine;
-    JSONObject entry;
-    Thread thread;
-    String path;
+    final ScriptEngine engine;
+    final JSONObject entry;
+    final Thread thread;
+    final String path;
 
     public InstanceRunner(String name, String pathToScript, String pathToOutput, ScriptEngine engine, JSONObject entry) {
         thread = new Thread(this, name);
         this.path = pathToScript;
         this.engine = engine;
         this.entry = entry;
+        //noinspection OverlyBroadCatchBlock
         try {
             ScriptContext context = engine.getContext();
             context.setWriter(new FileWriter(pathToOutput));
@@ -38,10 +39,12 @@ public class InstanceRunner implements Runnable {
         thread.start();
     }
 
+    @Override
     public void run() {
+        //noinspection OverlyBroadCatchBlock
         try {
             Invocable invoker = (Invocable) engine;
-            Object res = entry.has(InvocationConvention.ARGS_NAME_PARAMETER) ?
+            @SuppressWarnings("UnusedAssignment") Object res = entry.has(InvocationConvention.ARGS_NAME_PARAMETER) ?
                     invoker.invokeFunction(entry.getString(InvocationConvention.FUNCTION_NAME_PARAMETER),
                             entry.getJSONObject(InvocationConvention.ARGS_NAME_PARAMETER).toString()) :
                     invoker.invokeFunction(entry.getString(InvocationConvention.FUNCTION_NAME_PARAMETER),

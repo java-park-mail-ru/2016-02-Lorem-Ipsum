@@ -1,7 +1,6 @@
 package frontend;
 
 import database.DbService;
-import main.IAccountService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,14 +35,16 @@ public class RoutingServlet extends HttpServlet {
                       HttpServletResponse response) throws ServletException, IOException {
         String sId = request.getRequestURI();
         sId = sId.substring(sId.lastIndexOf('/') + 1, sId.length());
-        if(sId.equals("session")) {
-            isAuthenticatedServlet.doGet(request, response);
-        }
-        else if(sId.equals("score")) {
-            getBestResultsServlet.doGet(request, response);
-        }
-        else {
-            getUserProfileServlet.doGet(request, response);
+        switch (sId) {
+            case "session":
+                isAuthenticatedServlet.doGet(request, response);
+                break;
+            case "score":
+                getBestResultsServlet.doGet(request, response);
+                break;
+            default:
+                getUserProfileServlet.doGet(request, response);
+                break;
         }
     }
 

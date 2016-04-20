@@ -7,5 +7,5 @@ import game.gameinternal.GameException;
  */
 public interface Stopable {
 
-    public void stop() throws GameException;
+    void stop() throws GameException;
 }

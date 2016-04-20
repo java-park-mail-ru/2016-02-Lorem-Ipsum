@@ -2,7 +2,6 @@ package database.datasets;
 
 import datacheck.Constraints;
 import main.UserProfile;
-import org.json.JSONObject;
 
 import javax.persistence.*;
 import java.io.Serializable;

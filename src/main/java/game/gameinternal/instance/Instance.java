@@ -1,6 +1,5 @@
 package game.gameinternal.instance;
 
-import game.websocket.GameWebSocket;
 import org.json.JSONObject;
 
 import javax.script.ScriptEngine;
@@ -9,12 +8,14 @@ import javax.script.ScriptEngineManager;
 /**
  * Created by Installed on 17.04.2016.
  */
+@SuppressWarnings("PublicField")
 public class Instance {
 
-    private ScriptEngine scriptEngine;
-    private String name;
-    public InstanceRunner instanceRunner;
-    public InstanceOperator instanceOperator;
+    @SuppressWarnings("FieldCanBeLocal")
+    private final ScriptEngine scriptEngine;
+    private final String name;
+    public final InstanceRunner instanceRunner;
+    public final InstanceOperator instanceOperator;
     public InstanceChecker instanceChecker;
 
     public Instance(String name, String path, String pathToOutput, JSONObject entry) {
@@ -25,12 +26,14 @@ public class Instance {
         instanceChecker = null;
     }
 
+    @SuppressWarnings("deprecation")
     public void setInstanceChecker(JSONObject entry, Stopable stopable) {
         if(instanceChecker != null && instanceChecker.getThread().isAlive())
             instanceChecker.getThread().stop();
         instanceChecker = new InstanceChecker( this.name + "checker",instanceOperator, entry, stopable);
     }
 
+    @SuppressWarnings("deprecation")
     public void close() {
         instanceRunner.getThread().stop();
         if(instanceChecker != null) {

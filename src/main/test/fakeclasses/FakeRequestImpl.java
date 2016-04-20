@@ -116,6 +116,7 @@ public class FakeRequestImpl extends FakeRequest implements HttpServletRequest {
 
 
     //@Override
+    @Override
     public String changeSessionId() {
         return null;
     }
@@ -166,6 +167,7 @@ public class FakeRequestImpl extends FakeRequest implements HttpServletRequest {
     }
 
     //@Override
+    @Override
     public <T extends HttpUpgradeHandler> T upgrade(Class<T> aClass) throws IOException, ServletException {
         return null;
     }
@@ -196,6 +198,7 @@ public class FakeRequestImpl extends FakeRequest implements HttpServletRequest {
     }
 
     //@Override
+    @Override
     public long getContentLengthLong() {
         return 0;
     }

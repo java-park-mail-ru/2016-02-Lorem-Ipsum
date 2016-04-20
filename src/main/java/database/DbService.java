@@ -38,6 +38,7 @@ public class DbService implements IDbService, IGame {
         try {
             Configuration configuration = new Configuration();
 
+            //noinspection StringBufferReplaceableByString
             StringBuilder url = new StringBuilder();
             url.
                     append("jdbc:mysql://").

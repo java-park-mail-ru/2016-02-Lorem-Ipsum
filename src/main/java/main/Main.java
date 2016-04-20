@@ -10,7 +10,6 @@ import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
-import org.eclipse.jetty.server.session.SessionHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
@@ -30,6 +29,7 @@ public class Main {
 
     public static final Logger MAIN_LOGGER = LogManager.getLogger(Main.class);
 
+    @SuppressWarnings("OverlyComplexMethod")
     public static void main(String[] args) throws InterruptedException {
         int port;
         Properties serverProperties = readProperties("cfg/server.properties");
@@ -105,6 +105,7 @@ public class Main {
     }
 
     public static Properties readProperties(String path) {
+        //noinspection OverlyBroadCatchBlock
         try (final FileInputStream fis = new FileInputStream(path)) {
             final Properties properties = new Properties();
             properties.load(fis);

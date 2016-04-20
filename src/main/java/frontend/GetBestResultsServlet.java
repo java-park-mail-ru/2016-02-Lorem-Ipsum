@@ -1,22 +1,17 @@
 package frontend;
 
 import database.datasets.GameResultDataSet;
-import frontend.utils.RequestParser;
 import main.IGame;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
-import org.json.JSONObject;
-import templater.PageGenerator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Installed on 03.04.2016.
@@ -43,6 +38,7 @@ public class GetBestResultsServlet extends HttpServlet {
         int statusCode;
         JSONArray bestResultsArray = null;
 
+        //noinspection OverlyBroadCatchBlock
         try {
             List<GameResultDataSet> gameResultDataSets = gameService.getBestResults(7);
             bestResultsArray = new JSONArray();

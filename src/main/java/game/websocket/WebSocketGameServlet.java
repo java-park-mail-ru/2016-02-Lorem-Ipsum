@@ -1,6 +1,5 @@
 package game.websocket;
 
-import game.gameinternal.GamePool;
 import main.IAccountService;
 import main.IGame;
 import org.eclipse.jetty.websocket.servlet.WebSocketServlet;
@@ -13,12 +12,13 @@ import javax.servlet.annotation.WebServlet;
  */
 @WebServlet(name = "WebSocketGameServlet", urlPatterns = {"/gameplay"})
 public class WebSocketGameServlet extends WebSocketServlet {
-    private final static int IDLE_TIME = 60 * 100000;
-    private IAccountService accountService;
-    private IGame dbService;
-    private String pathToMechanic;
-    private String pathToOutput;
+    private static final int IDLE_TIME = 60 * 100000;
+    private final IAccountService accountService;
+    private final IGame dbService;
+    private final String pathToMechanic;
+    private final String pathToOutput;
 
+    @SuppressWarnings("SameParameterValue")
     public WebSocketGameServlet(
             IAccountService accountService,
             IGame dbService,

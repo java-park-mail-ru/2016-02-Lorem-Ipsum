@@ -14,7 +14,7 @@ public class InstanceOperator {
 
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
 
-    ScriptEngine engine;
+    final ScriptEngine engine;
 
     public InstanceOperator(ScriptEngine engine) {
         this.engine = engine;
@@ -34,6 +34,7 @@ public class InstanceOperator {
     }*/
 
     public JSONObject performGet(JSONObject entry) {
+        //noinspection OverlyBroadCatchBlock
         try {
             Invocable invoker = (Invocable) engine;
             Object res = entry.has(InvocationConvention.ARGS_NAME_PARAMETER) ?

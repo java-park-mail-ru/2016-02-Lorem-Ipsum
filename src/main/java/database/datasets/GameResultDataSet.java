@@ -1,8 +1,6 @@
 package database.datasets;
 
-import database.dao.UserDataSetDAO;
 import org.json.JSONObject;
-import org.json.JSONStringer;
 
 import javax.persistence.*;
 
@@ -77,7 +75,7 @@ public class GameResultDataSet {
         return jsonObject;
     }
 
-    public GameResultDataSet(JSONObject initObj) {
+    public GameResultDataSet(@SuppressWarnings("UnusedParameters") JSONObject initObj) {
         this.id = -1;
     }
 

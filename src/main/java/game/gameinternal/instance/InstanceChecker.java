@@ -12,10 +12,10 @@ import java.util.Date;
 public class InstanceChecker implements Runnable {
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
     private static final int SLEEP_PERIOD = 10000;
-    private InstanceOperator instanceOperator;
-    JSONObject entry;
-    Thread thread;
-    Stopable toStop;
+    private final InstanceOperator instanceOperator;
+    final JSONObject entry;
+    final Thread thread;
+    final Stopable toStop;
 
     public InstanceChecker(String name, InstanceOperator instanceOperator, JSONObject entry, Stopable toStop) {
         thread = new Thread(this, name);
@@ -25,7 +25,9 @@ public class InstanceChecker implements Runnable {
         thread.start();
     }
 
+    @Override
     public void run() {
+        //noinspection OverlyBroadCatchBlock
         try {
             JSONObject res = instanceOperator.performGet(entry);
             while (!res.getBoolean(InvocationConvention.CHECKER_NAME_PARAMETER) && !thread.isInterrupted()) {

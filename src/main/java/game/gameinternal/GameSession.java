@@ -1,7 +1,5 @@
 package game.gameinternal;
 
-import database.DbService;
-import database.IDbService;
 import game.MessageConvention;
 import game.gameinternal.instance.Instance;
 import game.gameinternal.instance.InvocationConvention;
@@ -36,6 +34,7 @@ public class GameSession {
         isInited = false;
     }
 
+    @SuppressWarnings("ParameterHidesMemberVariable")
     public void init(@NotNull Long firstUserId,
                      @NotNull Long secondUserId,
                      @NotNull GameWebSocket firstWebSocket,
@@ -113,24 +112,21 @@ public class GameSession {
         }
     }
 
-    public Integer stop(JSONObject entryFirst, JSONObject entrySecond, IGame dbService) throws GameException {
+    public void stop(JSONObject entryFirst, JSONObject entrySecond, IGame dbService) throws GameException {
         if(isStarted && isInited) {
-            int winner = 0;
             String win = MessageConvention.OutputMessageConvention.PARAMETER_NAME_WIN;
-            String type = MessageConvention.OutputMessageConvention.PARAMETER_NAME_OUTPUT_TYPE;
-            String stop = MessageConvention.OutputMessageConvention.PARAMETER_NAME_TYPE_STOP_GAME;
             Long scoreFirst = getScore(firstUserId);
             Long scoreSecond = getScore(secondUserId);
             if(scoreFirst < scoreSecond) {
                 entryFirst.put(win, false);
                 entrySecond.put(win, true);
-                winner = 0;
             }
             else {
                 entryFirst.put(win, true);
                 entrySecond.put(win, false);
-                winner = 1;
             }
+            String type = MessageConvention.OutputMessageConvention.PARAMETER_NAME_OUTPUT_TYPE;
+            String stop = MessageConvention.OutputMessageConvention.PARAMETER_NAME_TYPE_STOP_GAME;
             entryFirst.put(type, stop);
             entrySecond.put(type, stop);
             firstWebSocket.sendMessage(entryFirst);
@@ -139,7 +135,6 @@ public class GameSession {
             isStarted = false;
             firstInstance.close();
             secondInstance.close();
-            return winner;
         }
         else {
             throw new GameException("Unable to stop game, improper condition.");
@@ -150,8 +145,7 @@ public class GameSession {
         JSONObject entry = new JSONObject();
         entry.put(InvocationConvention.FUNCTION_NAME_PARAMETER, MessageConvention.OutputMessageConvention.SCORE_FUNCTION);
         JSONObject res = performAction(userId, entry);
-        Long score = res.getLong(MessageConvention.OutputMessageConvention.SCORE_PARAMETER);
-        return score;
+        return res.getLong(MessageConvention.OutputMessageConvention.SCORE_PARAMETER);
     }
 
     public JSONObject performAction(Long userId, JSONObject entry) throws GameException {

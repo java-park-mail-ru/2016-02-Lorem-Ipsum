@@ -90,6 +90,7 @@ public class SignInServlet extends HttpServlet {
 
         Boolean isGoodData = InputDataChecker.checkSignIn(login, password, sessionId);
 
+        //noinspection OverlyBroadCatchBlock
         try {
             if(!isGoodData)
                 throw new Exception("Bad data.");

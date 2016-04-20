@@ -4,8 +4,6 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Installed on 03.04.2016.
@@ -18,7 +16,7 @@ public class RequestParser {
         StringBuilder stringBuffer = new StringBuilder();
         char[] charBuffer = new char[STRING_BUFFER_SIZE];
 
-        int nBytesReaded = 0;
+        int nBytesReaded;
         while ((nBytesReaded = bfReader.read(charBuffer)) != -1) {
             stringBuffer.append(charBuffer, 0, nBytesReaded);
         }

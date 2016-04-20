@@ -38,6 +38,7 @@ public class GameResultDataSetDAO {
         Criteria criteria = session.createCriteria(GameResultDataSet.class);
         criteria.addOrder(Order.desc("scoreWinner"));
         criteria.setMaxResults(limit);
+        //noinspection unchecked
         return (List<GameResultDataSet>) criteria.list();
     }
 }

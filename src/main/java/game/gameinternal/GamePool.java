@@ -1,7 +1,5 @@
 package game.gameinternal;
 
-import database.DbService;
-import database.IDbService;
 import game.MessageConvention;
 import game.gameinternal.instance.InvocationConvention;
 import game.websocket.GameWebSocket;
@@ -15,8 +13,6 @@ import org.json.JSONObject;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Installed on 17.04.2016.
@@ -24,16 +20,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class GamePool {
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
     //private static final AtomicInteger ID_GENERATOR = new AtomicInteger(0);
-    private Map<Long, GameWebSocket> connectedUsers = new ConcurrentHashMap<>();
-    private Set<Long> freeUsers = new ConcurrentHashSet<>();
-    private Map<Long, GameSession> games = new ConcurrentHashMap<>();
-    private IGame dbService;
+    private final Map<Long, GameWebSocket> connectedUsers = new ConcurrentHashMap<>();
+    private final Set<Long> freeUsers = new ConcurrentHashSet<>();
+    private final Map<Long, GameSession> games = new ConcurrentHashMap<>();
+    private final IGame dbService;
     private static String pathToMechanic;
     private static String pathToOutput;
 
-    public GamePool(String _pathToMechanic, String _pathToOutput, IGame dbService) {
-        pathToMechanic = _pathToMechanic;
-        pathToOutput = _pathToOutput;
+    public GamePool(String pathToMechanic, String pathToOutput, IGame dbService) {
+        GamePool.pathToMechanic = pathToMechanic;
+        GamePool.pathToOutput = pathToOutput;
         this.dbService = dbService;
     }
 
@@ -90,20 +86,18 @@ public class GamePool {
         JSONObject entryMessageFirst = new JSONObject();
         JSONObject entryMessageSecond = new JSONObject();
         JSONObject entryToStop = new JSONObject();
+        //noinspection OverlyComplexBooleanExpression
         if(connectedUsers.containsKey(userIdStarter) && connectedUsers.containsKey(userIdSecond)
                 && freeUsers.contains(userIdStarter) && freeUsers.contains(userIdSecond)
                 && !userIdStarter.equals(userIdSecond)) {
 
             String function = InvocationConvention.FUNCTION_NAME_PARAMETER;
-            String type = MessageConvention.OutputMessageConvention.PARAMETER_NAME_OUTPUT_TYPE;
-            String startMessageType = MessageConvention.OutputMessageConvention.PARAMETER_NAME_TYPE_START_GAME;
             String startFunction = MessageConvention.OutputMessageConvention.START_FUNCTION;
-            String checkFunction = MessageConvention.OutputMessageConvention.CHECK_FUNCTION;
-            String args = InvocationConvention.ARGS_NAME_PARAMETER;
 
             entryFirst.put(function, startFunction);
             entryArgsFirst.put("myId", userIdStarter);
             entryArgsFirst.put("enemyId", userIdSecond);
+            String args = InvocationConvention.ARGS_NAME_PARAMETER;
             entryFirst.put(args, entryArgsFirst);
 
             entrySecond.put(function, startFunction);
@@ -111,9 +105,12 @@ public class GamePool {
             entryArgsSecond.put("enemyId", userIdStarter);
             entrySecond.put(args, entryArgsSecond);
 
+            String checkFunction = MessageConvention.OutputMessageConvention.CHECK_FUNCTION;
             entryToStop.put(function, checkFunction);
             entryToStop.put(args, new JSONObject());
 
+            String type = MessageConvention.OutputMessageConvention.PARAMETER_NAME_OUTPUT_TYPE;
+            String startMessageType = MessageConvention.OutputMessageConvention.PARAMETER_NAME_TYPE_START_GAME;
             entryMessageFirst.put(type, startMessageType);
             entryMessageFirst.put("id", userIdStarter);
             entryMessageFirst.put("enemyId", userIdSecond);

@@ -29,7 +29,7 @@ public class GameWebSocket implements Stopable {
     private GamePool gamePool;
     private GameSession gameSession;
     private GameWebSocket enemySocket;
-    private Handlers handlers;
+    private final Handlers handlers;
 
     public GameWebSocket(Long myId, GamePool gamePool) {
         this.myId = myId;
@@ -40,7 +40,7 @@ public class GameWebSocket implements Stopable {
     }
 
     @OnWebSocketConnect
-    public void onOpen(@NotNull Session session) {
+    public void onOpen(@SuppressWarnings("ParameterHidesMemberVariable") @NotNull Session session) {
         try {
             this.session = session;
             this.gamePool.connectUser(myId, this);
@@ -53,7 +53,7 @@ public class GameWebSocket implements Stopable {
     @OnWebSocketMessage
     public void onMessage(String data) {
         JSONObject input = new JSONObject(data);
-        JSONObject output = new JSONObject();
+        //noinspection OverlyBroadCatchBlock
         try {
             String type;
             if (input.has(MessageConvention.InputMessageConvention.PARAMETER_NAME_INPUT_TYPE)) {
@@ -88,6 +88,7 @@ public class GameWebSocket implements Stopable {
         }
     }
 
+    @SuppressWarnings("UnusedParameters")
     @OnWebSocketClose
     public void onClose(int closeCode, String closeReason) {
         try {
@@ -105,9 +106,8 @@ public class GameWebSocket implements Stopable {
     private class Handlers {
 
         public void gameAction(JSONObject input) throws GameException {
-            JSONObject output = new JSONObject();
             if(gameSession != null && gameSession.getStarted()) {
-                output = gameSession.performAction(myId, input);
+                JSONObject output = gameSession.performAction(myId, input);
                 sendMessage(output);
                 if (output.has(MessageConvention.OutputMessageConvention.PARAMETER_NAME_SEND_TO_ENEMY)) {
                     if (output.getBoolean(MessageConvention.OutputMessageConvention.PARAMETER_NAME_SEND_TO_ENEMY)) {
@@ -145,7 +145,7 @@ public class GameWebSocket implements Stopable {
 
     }
     /***************************************************************/
-    public void sendMessageWithSession(Session session, JSONObject output) {
+    public void sendMessageWithSession(@SuppressWarnings("ParameterHidesMemberVariable") Session session, JSONObject output) {
         if(output == null)
             return;
         try  {
@@ -157,8 +157,9 @@ public class GameWebSocket implements Stopable {
         }
     }
 
+    @Override
     public void stop() throws GameException {
-        Long enemyId = enemySocket.getMyId();
+        @SuppressWarnings("CallToSimpleGetterFromWithinClass") Long enemyId = enemySocket.getMyId();
         gamePool.stopGame(myId, enemyId);
     }
 
