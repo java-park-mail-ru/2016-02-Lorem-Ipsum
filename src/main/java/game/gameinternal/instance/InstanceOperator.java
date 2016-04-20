@@ -20,7 +20,7 @@ public class InstanceOperator {
         this.engine = engine;
     }
 
-    public void performSet(JSONObject entry) {
+    /*public void performSet(JSONObject entry) {
         try {
             Invocable invoker = (Invocable) engine;
             Object res = entry.has("args") ?
@@ -31,14 +31,16 @@ public class InstanceOperator {
         catch (Exception ex) {
             LOGGER.debug(ex.getMessage());
         }
-    }
+    }*/
 
     public JSONObject performGet(JSONObject entry) {
         try {
             Invocable invoker = (Invocable) engine;
-            Object res = entry.has("args") ?
-                    invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString()) :
-                    invoker.invokeFunction(entry.getString("function"), new JSONObject().toString());
+            Object res = entry.has(InvocationConvention.ARGS_NAME_PARAMETER) ?
+                    invoker.invokeFunction(entry.getString(InvocationConvention.FUNCTION_NAME_PARAMETER),
+                            entry.getJSONObject(InvocationConvention.ARGS_NAME_PARAMETER).toString()) :
+                    invoker.invokeFunction(entry.getString(InvocationConvention.FUNCTION_NAME_PARAMETER),
+                            new JSONObject().toString());
             LOGGER.debug("Res of performGet : {}", (String) res);
             return new JSONObject((String)res);
         }

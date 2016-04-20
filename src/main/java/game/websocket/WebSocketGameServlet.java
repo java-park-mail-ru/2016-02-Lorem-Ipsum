@@ -16,16 +16,24 @@ public class WebSocketGameServlet extends WebSocketServlet {
     private final static int IDLE_TIME = 60 * 100000;
     private IAccountService accountService;
     private IGame dbService;
+    private String pathToMechanic;
+    private String pathToOutput;
 
-    public WebSocketGameServlet(IAccountService accountService,
-                                IGame dbService) {
+    public WebSocketGameServlet(
+            IAccountService accountService,
+            IGame dbService,
+            String pathToMechanic,
+            String pathToOutput
+    ) {
         this.accountService = accountService;
         this.dbService = dbService;
+        this.pathToMechanic = pathToMechanic;
+        this.pathToOutput = pathToOutput;
     }
 
     @Override
     public void configure(WebSocketServletFactory factory) {
         factory.getPolicy().setIdleTimeout(IDLE_TIME);
-        factory.setCreator(new GameWebSocketCreator(accountService, dbService));
+        factory.setCreator(new GameWebSocketCreator(accountService, dbService, pathToMechanic, pathToOutput));
     }
 }

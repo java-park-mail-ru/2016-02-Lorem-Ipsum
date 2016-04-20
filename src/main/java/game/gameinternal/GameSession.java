@@ -2,7 +2,9 @@ package game.gameinternal;
 
 import database.DbService;
 import database.IDbService;
+import game.MessageConvention;
 import game.gameinternal.instance.Instance;
+import game.gameinternal.instance.InvocationConvention;
 import game.websocket.GameWebSocket;
 import main.IGame;
 import org.apache.logging.log4j.LogManager;
@@ -114,20 +116,23 @@ public class GameSession {
     public Integer stop(JSONObject entryFirst, JSONObject entrySecond, IGame dbService) throws GameException {
         if(isStarted && isInited) {
             int winner = 0;
+            String win = MessageConvention.OutputMessageConvention.PARAMETER_NAME_WIN;
+            String type = MessageConvention.OutputMessageConvention.PARAMETER_NAME_OUTPUT_TYPE;
+            String stop = MessageConvention.OutputMessageConvention.PARAMETER_NAME_TYPE_STOP_GAME;
             Long scoreFirst = getScore(firstUserId);
             Long scoreSecond = getScore(secondUserId);
             if(scoreFirst < scoreSecond) {
-                entryFirst.put("win", false);
-                entrySecond.put("win", true);
+                entryFirst.put(win, false);
+                entrySecond.put(win, true);
                 winner = 0;
             }
             else {
-                entryFirst.put("win", true);
-                entrySecond.put("win", false);
+                entryFirst.put(win, true);
+                entrySecond.put(win, false);
                 winner = 1;
             }
-            entryFirst.put("type", "stopGame");
-            entrySecond.put("type", "stopGame");
+            entryFirst.put(type, stop);
+            entrySecond.put(type, stop);
             firstWebSocket.sendMessage(entryFirst);
             secondWebSocket.sendMessage(entrySecond);
             dbService.saveGameResultByUserId(firstUserId, scoreFirst, secondUserId, scoreSecond);
@@ -143,9 +148,9 @@ public class GameSession {
 
     public Long getScore(Long userId) throws GameException {
         JSONObject entry = new JSONObject();
-        entry.put("function", "score");
+        entry.put(InvocationConvention.FUNCTION_NAME_PARAMETER, MessageConvention.OutputMessageConvention.SCORE_FUNCTION);
         JSONObject res = performAction(userId, entry);
-        Long score = res.getLong("score");
+        Long score = res.getLong(MessageConvention.OutputMessageConvention.SCORE_PARAMETER);
         return score;
     }
 

@@ -2,6 +2,8 @@ package game.gameinternal;
 
 import database.DbService;
 import database.IDbService;
+import game.MessageConvention;
+import game.gameinternal.instance.InvocationConvention;
 import game.websocket.GameWebSocket;
 import main.IGame;
 import org.apache.logging.log4j.LogManager;
@@ -92,23 +94,30 @@ public class GamePool {
                 && freeUsers.contains(userIdStarter) && freeUsers.contains(userIdSecond)
                 && !userIdStarter.equals(userIdSecond)) {
 
-            entryFirst.put("function", "start");
+            String function = InvocationConvention.FUNCTION_NAME_PARAMETER;
+            String type = MessageConvention.OutputMessageConvention.PARAMETER_NAME_OUTPUT_TYPE;
+            String startMessageType = MessageConvention.OutputMessageConvention.PARAMETER_NAME_TYPE_START_GAME;
+            String startFunction = MessageConvention.OutputMessageConvention.START_FUNCTION;
+            String checkFunction = MessageConvention.OutputMessageConvention.CHECK_FUNCTION;
+            String args = InvocationConvention.ARGS_NAME_PARAMETER;
+
+            entryFirst.put(function, startFunction);
             entryArgsFirst.put("myId", userIdStarter);
             entryArgsFirst.put("enemyId", userIdSecond);
-            entryFirst.put("args", entryArgsFirst);
+            entryFirst.put(args, entryArgsFirst);
 
-            entrySecond.put("function", "start");
+            entrySecond.put(function, startFunction);
             entryArgsSecond.put("myId", userIdSecond);
             entryArgsSecond.put("enemyId", userIdStarter);
-            entrySecond.put("args", entryArgsSecond);
+            entrySecond.put(args, entryArgsSecond);
 
-            entryToStop.put("function", "check");
-            entryToStop.put("args", new JSONObject());
+            entryToStop.put(function, checkFunction);
+            entryToStop.put(args, new JSONObject());
 
-            entryMessageFirst.put("type", "startGame");
+            entryMessageFirst.put(type, startMessageType);
             entryMessageFirst.put("id", userIdStarter);
             entryMessageFirst.put("enemyId", userIdSecond);
-            entryMessageSecond.put("type", "startGame");
+            entryMessageSecond.put(type, startMessageType);
             entryMessageSecond.put("id", userIdSecond);
             entryMessageSecond.put("enemyId", userIdStarter);
 

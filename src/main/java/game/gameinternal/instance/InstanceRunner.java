@@ -9,7 +9,6 @@ import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.StringWriter;
 
 /**
  * Created by Installed on 17.04.2016.
@@ -42,9 +41,11 @@ public class InstanceRunner implements Runnable {
     public void run() {
         try {
             Invocable invoker = (Invocable) engine;
-            Object res = entry.has("args") ?
-                    invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString()) :
-                    invoker.invokeFunction(entry.getString("function"), new JSONObject().toString());
+            Object res = entry.has(InvocationConvention.ARGS_NAME_PARAMETER) ?
+                    invoker.invokeFunction(entry.getString(InvocationConvention.FUNCTION_NAME_PARAMETER),
+                            entry.getJSONObject(InvocationConvention.ARGS_NAME_PARAMETER).toString()) :
+                    invoker.invokeFunction(entry.getString(InvocationConvention.FUNCTION_NAME_PARAMETER),
+                            new JSONObject().toString());
         }
         catch (Exception e) {
             LOGGER.debug(e.getMessage());

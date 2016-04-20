@@ -1,12 +1,9 @@
 package game.gameinternal.instance;
 
-import javafx.scene.paint.Stop;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
 import java.util.Date;
 
 /**
@@ -31,7 +28,7 @@ public class InstanceChecker implements Runnable {
     public void run() {
         try {
             JSONObject res = instanceOperator.performGet(entry);
-            while (!res.getBoolean("res") && !thread.isInterrupted()) {
+            while (!res.getBoolean(InvocationConvention.CHECKER_NAME_PARAMETER) && !thread.isInterrupted()) {
                 res = instanceOperator.performGet(entry);
                 Thread.sleep(SLEEP_PERIOD);
                 LOGGER.debug("Res of check " + String.valueOf(res) + ' ' + String.valueOf(new Date(System.currentTimeMillis())));

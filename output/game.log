@@ -5625,3 +5625,157 @@
 [04-20 18:17:17,223] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 18:17:17 GMT+03:00 2016
 [04-20 18:17:18,212] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
 [04-20 18:17:27,430] [DEBUG] GameLogger                     [] : sleep interrupted
+[04-20 23:04:12,271] [DEBUG] GameLogger                     [] : New game session. entryStartFirst: {"args":{"myId":1,"enemyId":2},"function":"start"}. entryStartSecond: {"args":{"myId":2,"enemyId":1},"function":"start"}, entryToStop: {"args":{},"function":"check"}
+[04-20 23:04:12,309] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:12,310] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:12,311] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:12,311] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:22,452] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:04:22 GMT+03:00 2016
+[04-20 23:04:22,453] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:04:22 GMT+03:00 2016
+[04-20 23:04:22,455] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:22,455] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:32,455] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:04:32 GMT+03:00 2016
+[04-20 23:04:32,455] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:32,456] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:04:32 GMT+03:00 2016
+[04-20 23:04:32,457] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:34,637] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":5,"score":2.137825178590489,"sendToEnemy":true}
+[04-20 23:04:42,456] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:04:42 GMT+03:00 2016
+[04-20 23:04:42,456] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:42,458] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:04:42 GMT+03:00 2016
+[04-20 23:04:42,458] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:52,467] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:04:52 GMT+03:00 2016
+[04-20 23:04:52,467] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:52,468] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:04:52 GMT+03:00 2016
+[04-20 23:04:52,468] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:04:57,271] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":5.3368715823953226}
+[04-20 23:04:59,020] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":1.3973599877490805}
+[04-20 23:04:59,973] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":3.309263368119418}
+[04-20 23:05:00,403] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":8.242110601901786}
+[04-20 23:05:00,551] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":8.369931795877388}
+[04-20 23:05:00,729] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":8.78596434130602}
+[04-20 23:05:00,865] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":2.802346249914114}
+[04-20 23:05:01,014] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":8.262792819893598}
+[04-20 23:05:01,178] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":9.927606611420948}
+[04-20 23:05:01,351] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":7.483628184499675}
+[04-20 23:05:01,492] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":4.124445693009068}
+[04-20 23:05:01,681] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":1.949102978701207}
+[04-20 23:05:01,837] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":4.079671261258109}
+[04-20 23:05:01,999] [DEBUG] GameLogger                     [] : Res of performGet : {"myId":2,"enemyId":1,"x":0,"score":0,"random":9.435285390235128}
+[04-20 23:05:02,468] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:05:02 GMT+03:00 2016
+[04-20 23:05:02,468] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:05:02,470] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:05:02 GMT+03:00 2016
+[04-20 23:05:02,470] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:05:07,545] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":10,"score":8.934899377131252,"sendToEnemy":true}
+[04-20 23:05:09,826] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":15,"score":17.125867203302946,"sendToEnemy":true}
+[04-20 23:05:12,477] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:05:12 GMT+03:00 2016
+[04-20 23:05:12,479] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:05:12,477] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:05:12 GMT+03:00 2016
+[04-20 23:05:12,480] [DEBUG] GameLogger                     [] : Res of performGet : {"res":true}
+[04-20 23:05:14,725] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":20,"score":24.481582284743403,"sendToEnemy":true}
+[04-20 23:05:22,479] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:05:22 GMT+03:00 2016
+[04-20 23:05:22,479] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:05:22,480] [DEBUG] GameLogger                     [] : Res of check {"res":true} Wed Apr 20 23:05:22 GMT+03:00 2016
+[04-20 23:05:22,488] [DEBUG] GameLogger                     [] : Res of performGet : {"score":24.481582284743403}
+[04-20 23:05:22,517] [DEBUG] GameLogger                     [] : Res of performGet : {"score":0}
+[04-20 23:05:22,655] [DEBUG] GameLogger                     [] : sleep interrupted
+[04-20 23:05:55,620] [DEBUG] GameLogger                     [] : New game session. entryStartFirst: {"args":{"myId":1,"enemyId":2},"function":"start"}. entryStartSecond: {"args":{"myId":2,"enemyId":1},"function":"start"}, entryToStop: {"args":{},"function":"check"}
+[04-20 23:05:55,636] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:05:55,639] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:05:55,716] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:05:55,717] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:06:05,646] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:06:05 GMT+03:00 2016
+[04-20 23:06:05,647] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:06:05,719] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:06:05 GMT+03:00 2016
+[04-20 23:06:05,719] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:06:09,353] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":5,"score":5.058951863937731,"sendToEnemy":true}
+[04-20 23:06:10,082] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":10,"score":7.447175685045203,"sendToEnemy":true}
+[04-20 23:06:11,629] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":15,"score":14.403494747241197,"sendToEnemy":true}
+[04-20 23:06:12,557] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":20,"score":18.364359891188627,"sendToEnemy":true}
+[04-20 23:06:12,957] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":25,"score":21.027371538912718,"sendToEnemy":true}
+[04-20 23:06:13,106] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":30,"score":27.90450572844747,"sendToEnemy":true}
+[04-20 23:06:13,241] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":35,"score":34.23210920216808,"sendToEnemy":true}
+[04-20 23:06:13,371] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":40,"score":44.12063140084767,"sendToEnemy":true}
+[04-20 23:06:13,498] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":45,"score":51.99668245446005,"sendToEnemy":true}
+[04-20 23:06:13,684] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":50,"score":58.58346414807532,"sendToEnemy":true}
+[04-20 23:06:13,797] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":55,"score":62.13350603543896,"sendToEnemy":true}
+[04-20 23:06:13,946] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":60,"score":66.97742916617463,"sendToEnemy":true}
+[04-20 23:06:14,110] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":65,"score":74.2386965374422,"sendToEnemy":true}
+[04-20 23:06:14,254] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":70,"score":82.56027584269026,"sendToEnemy":true}
+[04-20 23:06:14,396] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":75,"score":90.62168888774531,"sendToEnemy":true}
+[04-20 23:06:14,544] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":80,"score":98.80043096122976,"sendToEnemy":true}
+[04-20 23:06:14,709] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":85,"score":100.65020879295747,"sendToEnemy":true}
+[04-20 23:06:14,873] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":90,"score":108.69043046286474,"sendToEnemy":true}
+[04-20 23:06:15,038] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":95,"score":118.35735018281895,"sendToEnemy":true}
+[04-20 23:06:15,187] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":100,"score":122.31712404725069,"sendToEnemy":true}
+[04-20 23:06:15,352] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":105,"score":130.53410852202106,"sendToEnemy":true}
+[04-20 23:06:15,516] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":110,"score":134.29313289433043,"sendToEnemy":true}
+[04-20 23:06:15,647] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:06:15 GMT+03:00 2016
+[04-20 23:06:15,647] [DEBUG] GameLogger                     [] : Res of performGet : {"res":true}
+[04-20 23:06:15,667] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":115,"score":135.03336333296164,"sendToEnemy":true}
+[04-20 23:06:15,719] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:06:15 GMT+03:00 2016
+[04-20 23:06:15,719] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:06:15,826] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":120,"score":142.09690613447466,"sendToEnemy":true}
+[04-20 23:06:15,980] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":125,"score":143.77560984806976,"sendToEnemy":true}
+[04-20 23:06:16,130] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":130,"score":143.78562266206941,"sendToEnemy":true}
+[04-20 23:06:16,279] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":135,"score":145.4118459372304,"sendToEnemy":true}
+[04-20 23:06:16,435] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":140,"score":152.1215217030376,"sendToEnemy":true}
+[04-20 23:06:16,606] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":145,"score":159.83033360936145,"sendToEnemy":true}
+[04-20 23:06:16,742] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":150,"score":160.57319960571232,"sendToEnemy":true}
+[04-20 23:06:16,891] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":155,"score":163.3933915860009,"sendToEnemy":true}
+[04-20 23:06:17,057] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":160,"score":171.04339613678968,"sendToEnemy":true}
+[04-20 23:06:17,192] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":165,"score":172.86532185744082,"sendToEnemy":true}
+[04-20 23:06:17,369] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":170,"score":177.69135741293138,"sendToEnemy":true}
+[04-20 23:06:17,562] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":175,"score":187.2823213337934,"sendToEnemy":true}
+[04-20 23:06:17,699] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":180,"score":187.9693582201979,"sendToEnemy":true}
+[04-20 23:06:17,878] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":185,"score":188.12391089794858,"sendToEnemy":true}
+[04-20 23:06:18,043] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":190,"score":189.3626060486889,"sendToEnemy":true}
+[04-20 23:06:18,205] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":195,"score":198.32537510828539,"sendToEnemy":true}
+[04-20 23:06:18,385] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":200,"score":203.20786942379087,"sendToEnemy":true}
+[04-20 23:06:18,549] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":205,"score":205.94702949007666,"sendToEnemy":true}
+[04-20 23:06:18,718] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":210,"score":206.3065942320818,"sendToEnemy":true}
+[04-20 23:06:18,878] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":215,"score":206.55803109971396,"sendToEnemy":true}
+[04-20 23:06:19,056] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":220,"score":216.36566314690705,"sendToEnemy":true}
+[04-20 23:06:19,220] [DEBUG] GameLogger                     [] : Res of performGet : {"id":1,"x":225,"score":218.36799613460542,"sendToEnemy":true}
+[04-20 23:06:25,648] [DEBUG] GameLogger                     [] : Res of check {"res":true} Wed Apr 20 23:06:25 GMT+03:00 2016
+[04-20 23:06:25,654] [DEBUG] GameLogger                     [] : Res of performGet : {"score":218.36799613460542}
+[04-20 23:06:25,660] [DEBUG] GameLogger                     [] : Res of performGet : {"score":0}
+[04-20 23:06:25,764] [DEBUG] GameLogger                     [] : Res of check {"res":false} Wed Apr 20 23:06:25 GMT+03:00 2016
+[04-20 23:06:25,765] [DEBUG] GameLogger                     [] : Res of performGet : {"res":false}
+[04-20 23:06:25,837] [DEBUG] GameLogger                     [] : sleep interrupted
+[04-20 23:06:31,279] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:33,672] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:34,772] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:34,937] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:35,087] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:35,221] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:35,390] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:35,535] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:35,669] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:35,834] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:35,984] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:36,149] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:36,319] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:36,477] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:36,626] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:36,791] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:36,970] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:37,134] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:37,314] [DEBUG] GameLogger                     [] : Unable to perform action, improper condition.
+[04-20 23:06:40,997] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:42,476] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:43,065] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:43,537] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:43,760] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:43,895] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:44,058] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:44,207] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:44,387] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:44,539] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:44,701] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:44,909] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:45,703] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:46,114] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:46,509] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:46,822] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:47,148] [DEBUG] GameLogger                     [] : Unknown action.
+[04-20 23:06:47,486] [DEBUG] GameLogger                     [] : Unknown action.

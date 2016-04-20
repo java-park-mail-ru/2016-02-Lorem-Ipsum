@@ -73,7 +73,8 @@ public class Main {
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.addServlet(new ServletHolder(routingServlet), "/api/v1/*");
-        context.addServlet(new ServletHolder(new WebSocketGameServlet(accountService, accountService)), "/gameplay");
+        context.addServlet(new ServletHolder(new WebSocketGameServlet(accountService, accountService,
+                "static/gameMechanic.js", "static/output.txt")), "/gameplay");
 
 
         ResourceHandler resourceHandler = new ResourceHandler();

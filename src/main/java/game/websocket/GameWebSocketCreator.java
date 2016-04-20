@@ -20,10 +20,15 @@ public class GameWebSocketCreator implements WebSocketCreator {
     private IAccountService accountService;
     private GamePool gamePool;
 
-    public GameWebSocketCreator(IAccountService accountService,
-                                IGame dbService) {
+    public GameWebSocketCreator(
+            IAccountService accountService,
+            IGame dbService,
+            String pathToMechanic,
+            String pathToOutput
+    ) {
         this.accountService = accountService;
-        this.gamePool = new GamePool("static/gameMechanic.js", "static/output.txt", dbService);
+        /*"static/gameMechanic.js", "static/output.txt"*/
+        this.gamePool = new GamePool(pathToMechanic, pathToOutput, dbService);
     }
 
     @Override
