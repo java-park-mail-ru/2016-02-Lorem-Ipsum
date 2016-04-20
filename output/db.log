@@ -685,3 +685,18 @@
 [04-20 23:02:23,214] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
 [04-20 23:02:23,215] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
 [04-20 23:02:23,226] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-21 02:11:09,677] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-21 02:11:09,677] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-21 02:11:09,861] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-21 02:11:32,888] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-21 02:11:32,888] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-21 02:11:32,914] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-21 02:12:08,285] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-21 02:12:08,285] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-21 02:12:08,301] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-21 02:14:28,506] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-21 02:14:28,506] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-21 02:14:28,600] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-21 02:15:02,473] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-21 02:15:02,474] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-21 02:15:02,496] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
