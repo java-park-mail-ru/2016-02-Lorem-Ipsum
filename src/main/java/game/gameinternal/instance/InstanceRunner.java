@@ -22,7 +22,7 @@ public class InstanceRunner implements Runnable {
     String path;
 
     public InstanceRunner(String name, String pathToScript, String pathToOutput, ScriptEngine engine, JSONObject entry) {
-        thread = new Thread(this);
+        thread = new Thread(this, name);
         this.path = pathToScript;
         this.engine = engine;
         this.entry = entry;
@@ -41,8 +41,10 @@ public class InstanceRunner implements Runnable {
 
     public void run() {
         try {
-            Invocable invoceFunc = (Invocable) engine;
-            invoceFunc.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString());
+            Invocable invoker = (Invocable) engine;
+            Object res = entry.has("args") ?
+                    invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString()) :
+                    invoker.invokeFunction(entry.getString("function"), new JSONObject().toString());
         }
         catch (Exception e) {
             LOGGER.debug(e.getMessage());

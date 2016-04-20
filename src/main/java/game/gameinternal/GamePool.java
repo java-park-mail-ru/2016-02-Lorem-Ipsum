@@ -4,6 +4,8 @@ import database.DbService;
 import database.IDbService;
 import game.websocket.GameWebSocket;
 import main.IGame;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.util.ConcurrentHashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,7 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by Installed on 17.04.2016.
  */
 public class GamePool {
-
+    public static final Logger LOGGER = LogManager.getLogger("GameLogger");
     //private static final AtomicInteger ID_GENERATOR = new AtomicInteger(0);
     private Map<Long, GameWebSocket> connectedUsers = new ConcurrentHashMap<>();
     private Set<Long> freeUsers = new ConcurrentHashSet<>();
@@ -69,18 +71,39 @@ public class GamePool {
     public void startGame(Long userIdStarter, Long userIdSecond) {
         JSONObject entryFirst = new JSONObject();
         JSONObject entrySecond = new JSONObject();
+        JSONObject entryArgsFirst = new JSONObject();
+        JSONObject entryArgsSecond = new JSONObject();
+        JSONObject entryMessageFirst = new JSONObject();
+        JSONObject entryMessageSecond = new JSONObject();
+        JSONObject entryToStop = new JSONObject();
         if(connectedUsers.containsKey(userIdStarter) && connectedUsers.containsKey(userIdSecond)
                 && freeUsers.contains(userIdStarter) && freeUsers.contains(userIdSecond)
                 && !userIdStarter.equals(userIdSecond)) {
+
             entryFirst.put("function", "start");
-            entryFirst.put("id", userIdStarter);
+            entryArgsFirst.put("myId", userIdStarter);
+            entryArgsFirst.put("enemyId", userIdSecond);
+            entryFirst.put("args", entryArgsFirst);
+
             entrySecond.put("function", "start");
-            entrySecond.put("id", userIdSecond);
+            entryArgsSecond.put("myId", userIdSecond);
+            entryArgsSecond.put("enemyId", userIdStarter);
+            entrySecond.put("args", entryArgsSecond);
+
+            entryToStop.put("function", "check");
+            entryToStop.put("args", new JSONObject());
+
+            entryMessageFirst.put("id", userIdStarter);
+            entryMessageFirst.put("enemyId", userIdSecond);
+            entryMessageSecond.put("id", userIdSecond);
+            entryMessageSecond.put("enemyId", userIdStarter);
+
             GameSession gameSession = new GameSession();
             GameWebSocket webSocketStarter = connectedUsers.get(userIdStarter);
             GameWebSocket webSocketSecond = connectedUsers.get(userIdSecond);
             gameSession.init(userIdStarter, userIdSecond, webSocketStarter, webSocketSecond);
-            gameSession.start(pathToMechanic, pathToOutput, entryFirst, entrySecond);
+            gameSession.start(pathToMechanic, pathToOutput, entryFirst,
+                    entrySecond, entryMessageFirst, entryMessageSecond, entryToStop);
             freeUsers.remove(userIdStarter);
             freeUsers.remove(userIdSecond);
             games.put(userIdStarter, gameSession);
@@ -88,9 +111,9 @@ public class GamePool {
         }
     }
 
-    public JSONArray getConnectedUsers() {
+    public JSONArray getFreeUsersArray() {
         JSONArray res = new JSONArray();
-        for( Long id : connectedUsers.keySet() ) {
+        for( Long id : freeUsers ) {
             res.put(id);
         }
         return res;

@@ -78,4 +78,47 @@ public class SignInServlet extends HttpServlet {
         response.getWriter().println(responseContent);
         LOGGER.debug("Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));
     }
+
+    @Override
+    public void doPost(HttpServletRequest request,
+                      HttpServletResponse response) throws ServletException, IOException {
+
+        Map<String, Object> pageVariables = new HashMap<>();
+        String login = request.getParameter("login");
+        String password = request.getParameter("password");
+        String sessionId = request.getSession().getId();
+
+        Boolean isGoodData = InputDataChecker.checkSignIn(login, password, sessionId);
+
+        try {
+            if(!isGoodData)
+                throw new Exception("Bad data.");
+            if(!accountService.checkUserExistsByLogin(login))
+                throw new Exception("User with such login does not exist.");
+
+            UserProfile userProfile = accountService.getUserByLogin(login);
+
+            if(!password.equals(userProfile.getPassword()))
+                throw new Exception("Incorrect password.");
+
+            if(accountService.checkSessionExists(sessionId)) {
+                accountService.deleteSession(sessionId);
+                LOGGER.debug("Session existed. Just relogin.");
+            }
+
+            response.setStatus(HttpServletResponse.SC_OK);
+            accountService.addSession(sessionId, userProfile);
+            pageVariables.put("myName", userProfile.getLogin());
+            response.getWriter().println(PageGenerator.getPage("game.html", pageVariables));
+            LOGGER.debug("Success. Logged in user: {}", userProfile.toJSON());
+        }
+        catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            response.getWriter().println(PageGenerator.getPage("index.html", pageVariables));
+            LOGGER.debug("Denied. SessionId: {}. Reason: {}", sessionId, e.getMessage());
+        }
+
+        response.setContentType("text/html;charset=utf-8");
+    }
+
 }

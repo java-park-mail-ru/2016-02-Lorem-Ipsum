@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Game</title>
+    <script type="text/javascript">
+        var ws;
+
+        var myName = "${myName}";
+
+        init = function () {
+            ws = new WebSocket("ws://" + window.location.hostname + ":" + window.location.port + "/gameplay");;
+
+            ws.onopen = function (event) {
+
+            }
+
+            ws.onmessage = function (event) {
+                document.getElementById("serverMessage").value = event.data;
+            }
+
+            ws.onclose = function (event) {
+
+            }
+
+        };
+
+
+        function sendMessage() {
+            var message = document.getElementById("myMessage").value;
+            ws.send(message);
+        }
+
+        function setListActive() {
+            document.getElementById("myMessage").value = "{ \"type\" : \"gameInfo\" }";
+        }
+
+        function setStartGame() {
+            document.getElementById("myMessage").value = "{ \"type\" : \"gameStart\", \"enemyId\" : ? }";
+        }
+
+        function setPerformAction() {
+            document.getElementById("myMessage").value = "{\n\"type\" : \"gameAction\", \n\"function\" : \"?\", \n\"args\" : ? \n}";
+        }
+
+    </script>
+</head>
+<body onload="init();">
+<div id="body">
+    <div id="hello">
+        <p>Hello, ${myName}!</p>
+    </div>
+
+    <div id="gameplay">
+        <form name="gamePlay" action="">
+            <p>
+                <input type="button" name="submit" value="setListActive" onclick="setListActive();"/>
+                <input type="button" name="submit" value="setStartGame" onclick="setStartGame();"/>
+                <input type="button" name="submit" value="setPerformAction" onclick="setPerformAction();"/>
+            </p>
+            <p>
+                <textarea id="myMessage" rows="10" cols="45" name="text"></textarea>
+                <input type="button" name="submit" value="Press to send" onclick="sendMessage();"/>
+            </p>
+            <p>
+                <textarea id="serverMessage" rows="10" cols="45" name="text"></textarea>
+            </p>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

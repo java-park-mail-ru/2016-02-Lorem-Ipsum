@@ -23,7 +23,9 @@ public class InstanceOperator {
     public void performSet(JSONObject entry) {
         try {
             Invocable invoker = (Invocable) engine;
-            invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString());
+            Object res = entry.has("args") ?
+                    invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString()) :
+                    invoker.invokeFunction(entry.getString("function"), new JSONObject().toString());
         }
         catch (Exception ex) {
             LOGGER.debug(ex.getMessage());
@@ -33,7 +35,9 @@ public class InstanceOperator {
     public JSONObject performGet(JSONObject entry) {
         try {
             Invocable invoker = (Invocable) engine;
-            Object res = invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString());
+            Object res = entry.has("args") ?
+                    invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString()) :
+                    invoker.invokeFunction(entry.getString("function"), new JSONObject().toString());
             return new JSONObject((String)res);
         }
         catch (Exception ex) {

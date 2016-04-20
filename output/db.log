@@ -535,3 +535,84 @@
 [04-18 05:17:42,002] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
 [04-18 05:17:42,002] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
 [04-18 05:17:42,013] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-18 15:39:24,681] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-18 15:39:24,681] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-18 15:39:24,695] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-18 23:59:32,894] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-18 23:59:32,894] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-18 23:59:32,910] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-19 00:07:46,395] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-19 00:07:46,395] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-19 00:07:46,407] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-19 01:44:41,780] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-19 01:44:41,780] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-19 01:44:41,914] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 01:16:21,968] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 01:16:21,968] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 01:16:22,113] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 01:29:58,997] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 01:29:58,998] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 01:29:59,018] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 01:34:09,386] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 01:34:09,386] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 01:34:09,400] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 02:15:29,766] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 02:15:29,766] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 02:15:29,780] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 02:26:03,995] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 02:26:03,995] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 02:26:04,009] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 02:38:31,394] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 02:38:31,394] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 02:38:31,415] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 02:51:46,194] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 02:51:46,194] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 02:51:46,208] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 03:05:29,901] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 03:05:29,901] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 03:05:29,916] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 03:16:36,585] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 03:16:36,585] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 03:16:36,597] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 03:30:31,482] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 03:30:31,482] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 03:30:31,496] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 03:32:04,809] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 03:32:04,809] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 03:32:04,824] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 03:49:38,975] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 03:49:38,975] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 03:49:38,988] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 03:56:29,170] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 03:56:29,171] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 03:56:29,183] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:00:41,097] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:00:41,097] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:00:41,109] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:04:35,127] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:04:35,127] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:04:35,141] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:06:20,878] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:06:20,878] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:06:20,890] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:09:43,114] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:09:43,114] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:09:43,125] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:21:25,589] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:21:25,589] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:21:25,602] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:30:38,028] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:30:38,028] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:30:38,043] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:43:22,163] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:43:22,163] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:43:22,174] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:46:00,550] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:46:00,550] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:46:00,567] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:51:28,242] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:51:28,243] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:51:28,258] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.
+[04-20 04:56:30,293] [DEBUG] DbLogger                       [] : Trying to init tomcat pool
+[04-20 04:56:30,293] [DEBUG] DbLogger                       [] : Pool does not exist. Trying to create new one.
+[04-20 04:56:30,301] [DEBUG] DbLogger                       [] : Pool configured. Login: test, Password: test, URL: jdbc:mysql://localhost:3306/dbJava.

@@ -3,6 +3,7 @@ package game.websocket;
 import database.IDbService;
 import game.gameinternal.GamePool;
 import game.gameinternal.GameSession;
+import game.gameinternal.instance.Stopable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.websocket.api.Session;
@@ -20,7 +21,7 @@ import java.io.IOException;
  * Created by Installed on 17.04.2016.
  */
 @WebSocket
-public class GameWebSocket {
+public class GameWebSocket implements Stopable {
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
     private Long myId;
     private Session session;
@@ -52,17 +53,22 @@ public class GameWebSocket {
         if(type.equals("gameAction") && gameSession != null && gameSession.getStarted()) {
             output = gameSession.performAction(myId, input);
             sendMessage(output);
+            if(output.has("sendToEnemy")) {
+                if(output.getBoolean("sendToEnemy")){
+                    enemySocket.sendMessage(output);
+                }
+            }
         }
         if(type.equals("gameStart") && input.has("enemyId")) {
             Long enemyId = input.getLong("enemyId");
-            gamePool.startGame(myId, enemyId);
+            if(!enemyId.equals(myId))
+                gamePool.startGame(myId, enemyId);
         }
         if(type.equals("gameStop")) {
-            Long enemyId = enemySocket.getMyId();
-            gamePool.startGame(myId, enemyId);
+            stop();
         }
         if(type.equals("gameInfo")) {
-            JSONArray arr = gamePool.getConnectedUsers();
+            JSONArray arr = gamePool.getFreeUsersArray();
             JSONObject res = new JSONObject();
             res.put("users", arr);
             sendMessage(res);
@@ -72,7 +78,7 @@ public class GameWebSocket {
     @OnWebSocketClose
     public void onClose(int closeCode, String closeReason) {
         Long enemyId = enemySocket.getMyId();
-        gamePool.startGame(myId, enemyId);
+        gamePool.stopGame(myId, enemyId);
     }
 
     public void setGameSession(GameSession gameSession) {
@@ -107,15 +113,28 @@ public class GameWebSocket {
         this.myId = myId;
     }
 
+    public void setSession(Session session) {this.session = session;}
+
+    public Session getSession() {return session;}
+
     public void sendMessage(JSONObject output) {
+        sendMessageWithSession(session, output);
+    }
+
+    public void sendMessageWithSession(Session session, JSONObject output) {
         if(output == null)
             return;
         try  {
             if(session != null && session.isOpen()) {
-                session.getRemote().sendString(output.toString());
+                session.getRemote().sendString(output.toString(4));
             }
         } catch (IOException e) {
             LOGGER.debug(e.getMessage());
         }
+    }
+
+    public void stop() {
+        Long enemyId = enemySocket.getMyId();
+        gamePool.stopGame(myId, enemyId);
     }
 }

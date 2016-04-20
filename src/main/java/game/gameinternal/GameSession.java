@@ -5,6 +5,8 @@ import database.IDbService;
 import game.gameinternal.instance.Instance;
 import game.websocket.GameWebSocket;
 import main.IGame;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
@@ -12,7 +14,7 @@ import org.json.JSONObject;
  * Created by Installed on 17.04.2016.
  */
 public class GameSession {
-
+    public static final Logger LOGGER = LogManager.getLogger("GameLogger");
     Instance firstInstance;
     Instance secondInstance;
 
@@ -84,34 +86,41 @@ public class GameSession {
         return secondUserId;
     }
 
-    public void start(String pathToMechanic, String pathToOutput, JSONObject entryFirst, JSONObject entrySecond) {
+    public void start(String pathToMechanic, String pathToOutput,
+                      JSONObject entryStartFirst, JSONObject entryStartSecond,
+                      JSONObject entryMessageFirst, JSONObject entryMessageSecond,
+                      JSONObject entryToStop) {
         if(!isStarted && isInited) {
             isStarted = true;
-            firstInstance = new Instance("1", pathToMechanic, pathToOutput, entryFirst);
-            secondInstance = new Instance("2", pathToMechanic, pathToOutput, entrySecond);
+            firstInstance = new Instance(String.valueOf(firstUserId), pathToMechanic, pathToOutput, entryStartFirst);
+            secondInstance = new Instance(String.valueOf(secondUserId), pathToMechanic, pathToOutput, entryStartSecond);
+            firstInstance.setInstanceChecker(entryToStop, firstWebSocket);
+            secondInstance.setInstanceChecker(entryToStop, secondWebSocket);
             firstWebSocket.setGameSession(this);
             secondWebSocket.setGameSession(this);
             firstWebSocket.setEnemySocket(secondWebSocket);
             secondWebSocket.setEnemySocket(firstWebSocket);
-            firstWebSocket.sendMessage(entryFirst);
-            secondWebSocket.sendMessage(entrySecond);
+            firstWebSocket.sendMessage(entryMessageFirst);
+            secondWebSocket.sendMessage(entryMessageSecond);
+
+            LOGGER.debug("New game session. entryStartFirst: {}. entryStartSecond: {}, entryToStop: {}",
+                    entryStartFirst.toString(), entryStartSecond.toString(), entryToStop.toString());
         }
     }
 
     public Integer stop(JSONObject entryFirst, JSONObject entrySecond, IGame dbService) {
         if(isStarted && isInited) {
-            isStarted = false;
             int winner = 0;
             Long scoreFirst = getScore(firstUserId);
             Long scoreSecond = getScore(secondUserId);
             if(scoreFirst < scoreSecond) {
-                entryFirst.put("win", true);
-                entrySecond.put("win", false);
+                entryFirst.put("win", false);
+                entrySecond.put("win", true);
                 winner = 0;
             }
             else {
-                entryFirst.put("win", false);
-                entrySecond.put("win", true);
+                entryFirst.put("win", true);
+                entrySecond.put("win", false);
                 winner = 1;
             }
             firstInstance.close();
@@ -119,6 +128,8 @@ public class GameSession {
             firstWebSocket.sendMessage(entryFirst);
             secondWebSocket.sendMessage(entrySecond);
             dbService.saveGameResultByUserId(firstUserId, scoreFirst, secondUserId, scoreSecond);
+            isStarted = false;
+            return winner;
         }
         return null;
     }

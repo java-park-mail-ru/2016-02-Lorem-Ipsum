@@ -67,8 +67,6 @@ var condition = {
     enemyId : 0,
     x : 0,
     score : 0,
-    enemyX : 100,
-    enemyScore : 0,
     random : 0
 };
 
@@ -94,13 +92,37 @@ var start = function(data) {
 
 var move = function() {
     condition.x += 5;
-    condition.score += 1;
+    condition.score += Math.random() * 10;
+    var result = {
+            x : condition.x,
+            score : condition.score,
+            message : "enemy movement",
+            sendToEnemy : true
+        };
+    return JSON.stringify(result);
+
 }
 
 var score = function() {
-    res = {
+    result = {
         score : condition.score
     };
-    return JSON.stringify(res);
+    return JSON.stringify(result);
+}
+
+var check = function(data) {
+    var input = JSON.parse(data);
+    var enemyScore = input["score"];
+    var won;
+    if(condition.score > 15) {
+        won = true;
+    }
+    else {
+        won = false;
+    }
+    var result = {
+        "res" : won
+    }
+    return JSON.stringify(result);
 }
 
