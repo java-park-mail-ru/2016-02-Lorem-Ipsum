@@ -33,8 +33,11 @@ public class Instance {
 
     public void close() {
         instanceRunner.getThread().stop();
-        if(instanceChecker.getThread().isAlive()) {
-            instanceChecker.getThread().stop();
+        if(instanceChecker != null) {
+            Thread instanceCheckerthread = instanceChecker.getThread();
+            if(!instanceCheckerthread.equals(Thread.currentThread()) && instanceCheckerthread.isAlive()) {
+                instanceChecker.stop();
+            }
         }
     }
 }

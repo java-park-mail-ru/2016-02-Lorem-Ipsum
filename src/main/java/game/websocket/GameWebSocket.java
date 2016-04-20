@@ -1,6 +1,7 @@
 package game.websocket;
 
 import database.IDbService;
+import game.gameinternal.GameException;
 import game.gameinternal.GamePool;
 import game.gameinternal.GameSession;
 import game.gameinternal.instance.Stopable;
@@ -38,47 +39,79 @@ public class GameWebSocket implements Stopable {
 
     @OnWebSocketConnect
     public void onOpen(@NotNull Session session) {
-        this.session = session;
-        this.gamePool.connectUser(myId, this);
+        try {
+            this.session = session;
+            this.gamePool.connectUser(myId, this);
+        }
+        catch (GameException ex) {
+            LOGGER.debug(ex.getMessage());
+        }
     }
 
     @OnWebSocketMessage
     public void onMessage(String data) {
         JSONObject input = new JSONObject(data);
         JSONObject output = new JSONObject();
-        String type = "none";
-        if(input.has("type")) {
-            type = input.getString("type");
-        }
-        if(type.equals("gameAction") && gameSession != null && gameSession.getStarted()) {
-            output = gameSession.performAction(myId, input);
-            sendMessage(output);
-            if(output.has("sendToEnemy")) {
-                if(output.getBoolean("sendToEnemy")){
-                    enemySocket.sendMessage(output);
-                }
+        try {
+            String type;
+            if (input.has("type")) {
+                type = input.getString("type");
             }
-        }
-        if(type.equals("gameStart") && input.has("enemyId")) {
-            Long enemyId = input.getLong("enemyId");
-            if(!enemyId.equals(myId))
+            else
+                throw new GameException("Type parameter missing.");
+
+            if (type.equals("gameAction")) {
+                if(gameSession != null && gameSession.getStarted()) {
+                    output = gameSession.performAction(myId, input);
+                    sendMessage(output);
+                    if (output.has("sendToEnemy")) {
+                        if (output.getBoolean("sendToEnemy")) {
+                            enemySocket.sendMessage(output);
+                        }
+                    }
+                }
+                else {
+                    throw new GameException("Unable to perform action, improper condition.");
+                }
+                return;
+            }
+            if (type.equals("gameStart") && input.has("enemyId")) {
+                Long enemyId = input.getLong("enemyId");
                 gamePool.startGame(myId, enemyId);
+                return;
+            }
+            if (type.equals("gameStop")) {
+                stop();
+                return;
+            }
+            if (type.equals("gameInfo")) {
+                JSONArray arr = gamePool.getFreeUsersArray();
+                JSONObject res = new JSONObject();
+                res.put("users", arr);
+                sendMessage(res);
+                return;
+            }
+            throw new GameException("Unknown action.");
+        }//try
+        catch (GameException ex) {
+            LOGGER.debug(ex.getMessage());
+            JSONObject errJSON = new JSONObject();
+            errJSON.put("error", ex.getMessage());
+            sendMessage(errJSON);
         }
-        if(type.equals("gameStop")) {
-            stop();
-        }
-        if(type.equals("gameInfo")) {
-            JSONArray arr = gamePool.getFreeUsersArray();
-            JSONObject res = new JSONObject();
-            res.put("users", arr);
-            sendMessage(res);
+        catch (Exception ex) {
+            LOGGER.debug(ex.getMessage());
         }
     }
 
     @OnWebSocketClose
     public void onClose(int closeCode, String closeReason) {
-        Long enemyId = enemySocket.getMyId();
-        gamePool.stopGame(myId, enemyId);
+        try {
+            gamePool.disconnectUser(myId);
+        }
+        catch (GameException ex) {
+            LOGGER.debug(ex.getMessage());
+        }
     }
 
     public void setGameSession(GameSession gameSession) {
@@ -133,7 +166,7 @@ public class GameWebSocket implements Stopable {
         }
     }
 
-    public void stop() {
+    public void stop() throws GameException {
         Long enemyId = enemySocket.getMyId();
         gamePool.stopGame(myId, enemyId);
     }

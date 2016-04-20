@@ -4,22 +4,30 @@
     <title>Game</title>
     <script type="text/javascript">
         var ws;
-
+        var data;
         var myName = "${myName}";
 
         init = function () {
             ws = new WebSocket("ws://" + window.location.hostname + ":" + window.location.port + "/gameplay");;
 
             ws.onopen = function (event) {
-
+                document.getElementById("state").innerHTML = "websocet opened";
             }
 
             ws.onmessage = function (event) {
+                data = JSON.parse(event.data);
                 document.getElementById("serverMessage").value = event.data;
+
+                if(data.type === "startGame") {
+                    document.getElementById("state").innerHTML = "game started";
+                }
+                if(data.type === "stopGame") {
+                    document.getElementById("state").innerHTML = "game stopped";
+                }
             }
 
             ws.onclose = function (event) {
-
+                document.getElementById("state").innerHTML = "websocet closed";
             }
 
         };
@@ -42,6 +50,10 @@
             document.getElementById("myMessage").value = "{\n\"type\" : \"gameAction\", \n\"function\" : \"?\", \n\"args\" : ? \n}";
         }
 
+        function setStopGame() {
+            document.getElementById("myMessage").value = "{ \"type\" : \"gameStop\" }";
+        }
+
     </script>
 </head>
 <body onload="init();">
@@ -56,6 +68,7 @@
                 <input type="button" name="submit" value="setListActive" onclick="setListActive();"/>
                 <input type="button" name="submit" value="setStartGame" onclick="setStartGame();"/>
                 <input type="button" name="submit" value="setPerformAction" onclick="setPerformAction();"/>
+                <input type="button" name="submit" value="setStopGame" onclick="setStopGame();"/>
             </p>
             <p>
                 <textarea id="myMessage" rows="10" cols="45" name="text"></textarea>
@@ -65,6 +78,9 @@
                 <textarea id="serverMessage" rows="10" cols="45" name="text"></textarea>
             </p>
         </form>
+        <div>
+            <p>State: <strong id="state">none</strong></p>
+        </div>
     </div>
 
 </div>

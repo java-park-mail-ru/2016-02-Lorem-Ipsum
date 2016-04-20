@@ -35,23 +35,35 @@ public class GamePool {
         this.dbService = dbService;
     }
 
-    public void connectUser(Long userId, GameWebSocket gameWebSocket) {
+    public void connectUser(Long userId, GameWebSocket gameWebSocket) throws GameException {
         if(userId != null && gameWebSocket != null) {
             connectedUsers.put(userId, gameWebSocket);
             freeUsers.add(userId);
             gameWebSocket.setGamePool(this);
         }
-    }
-
-    public void disconnectUser(Long userId) {
-        if(userId != null) {
-            if(!connectedUsers.containsKey(userId))
-                connectedUsers.remove(userId);
-            freeUsers.add(userId);
+        else {
+            throw new GameException("Cannot connect user, improper condition.");
         }
     }
 
-    public void stopGame(Long userIdFirst, Long userIdSecond) {
+    public void disconnectUser(Long userId) throws GameException {
+        if(userId != null) {
+            if(connectedUsers.containsKey(userId))
+                connectedUsers.remove(userId);
+
+            if(freeUsers.contains(userId))
+                freeUsers.remove(userId);
+
+            if(games.containsKey(userId)) {
+                games.get(userId).getFirstWebSocket().stop();
+            }
+        }
+        else {
+            throw new GameException("Cannot disconnect user, improper condition.");
+        }
+    }
+
+    public void stopGame(Long userIdFirst, Long userIdSecond) throws GameException {
         Long starterId = null;
         if(games.containsKey(userIdFirst))
             starterId = userIdFirst;
@@ -68,7 +80,7 @@ public class GamePool {
 
     }
 
-    public void startGame(Long userIdStarter, Long userIdSecond) {
+    public void startGame(Long userIdStarter, Long userIdSecond) throws GameException {
         JSONObject entryFirst = new JSONObject();
         JSONObject entrySecond = new JSONObject();
         JSONObject entryArgsFirst = new JSONObject();
@@ -93,8 +105,10 @@ public class GamePool {
             entryToStop.put("function", "check");
             entryToStop.put("args", new JSONObject());
 
+            entryMessageFirst.put("type", "startGame");
             entryMessageFirst.put("id", userIdStarter);
             entryMessageFirst.put("enemyId", userIdSecond);
+            entryMessageSecond.put("type", "startGame");
             entryMessageSecond.put("id", userIdSecond);
             entryMessageSecond.put("enemyId", userIdStarter);
 
@@ -109,6 +123,9 @@ public class GamePool {
             games.put(userIdStarter, gameSession);
 
         }
+        else {
+            throw new GameException("Unable to start game, improper condition.");
+        }
     }
 
     public JSONArray getFreeUsersArray() {
@@ -118,5 +135,7 @@ public class GamePool {
         }
         return res;
     }
+
+
 
 }

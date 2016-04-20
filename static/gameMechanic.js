@@ -94,9 +94,9 @@ var move = function() {
     condition.x += 5;
     condition.score += Math.random() * 10;
     var result = {
+            id : condition.myId,
             x : condition.x,
             score : condition.score,
-            message : "enemy movement",
             sendToEnemy : true
         };
     return JSON.stringify(result);

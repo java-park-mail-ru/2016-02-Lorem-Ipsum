@@ -26,6 +26,7 @@ public class InstanceOperator {
             Object res = entry.has("args") ?
                     invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString()) :
                     invoker.invokeFunction(entry.getString("function"), new JSONObject().toString());
+            LOGGER.debug("Res of performSet : {}", (String) res);
         }
         catch (Exception ex) {
             LOGGER.debug(ex.getMessage());
@@ -38,6 +39,7 @@ public class InstanceOperator {
             Object res = entry.has("args") ?
                     invoker.invokeFunction(entry.getString("function"), entry.getJSONObject("args").toString()) :
                     invoker.invokeFunction(entry.getString("function"), new JSONObject().toString());
+            LOGGER.debug("Res of performGet : {}", (String) res);
             return new JSONObject((String)res);
         }
         catch (Exception ex) {

@@ -7,12 +7,14 @@ import org.json.JSONObject;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
+import java.util.Date;
 
 /**
  * Created by Installed on 19.04.2016.
  */
 public class InstanceChecker implements Runnable {
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
+    private static final int SLEEP_PERIOD = 10000;
     private InstanceOperator instanceOperator;
     JSONObject entry;
     Thread thread;
@@ -29,10 +31,10 @@ public class InstanceChecker implements Runnable {
     public void run() {
         try {
             JSONObject res = instanceOperator.performGet(entry);
-            while (!res.getBoolean("res")) {
+            while (!res.getBoolean("res") && !thread.isInterrupted()) {
                 res = instanceOperator.performGet(entry);
-                thread.sleep(1000);
-                LOGGER.debug("Res of check " + String.valueOf(res));
+                Thread.sleep(SLEEP_PERIOD);
+                LOGGER.debug("Res of check " + String.valueOf(res) + ' ' + String.valueOf(new Date(System.currentTimeMillis())));
             }
             toStop.stop();
         }
@@ -43,5 +45,5 @@ public class InstanceChecker implements Runnable {
 
     public Thread getThread() {return thread;}
 
-    public void stop() { thread.stop(); }
+    public void stop() { thread.interrupt(); }
 }

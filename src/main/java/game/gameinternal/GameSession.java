@@ -89,7 +89,7 @@ public class GameSession {
     public void start(String pathToMechanic, String pathToOutput,
                       JSONObject entryStartFirst, JSONObject entryStartSecond,
                       JSONObject entryMessageFirst, JSONObject entryMessageSecond,
-                      JSONObject entryToStop) {
+                      JSONObject entryToStop) throws GameException {
         if(!isStarted && isInited) {
             isStarted = true;
             firstInstance = new Instance(String.valueOf(firstUserId), pathToMechanic, pathToOutput, entryStartFirst);
@@ -106,9 +106,12 @@ public class GameSession {
             LOGGER.debug("New game session. entryStartFirst: {}. entryStartSecond: {}, entryToStop: {}",
                     entryStartFirst.toString(), entryStartSecond.toString(), entryToStop.toString());
         }
+        else {
+            throw new GameException("Unable to start game, improper condition.");
+        }
     }
 
-    public Integer stop(JSONObject entryFirst, JSONObject entrySecond, IGame dbService) {
+    public Integer stop(JSONObject entryFirst, JSONObject entrySecond, IGame dbService) throws GameException {
         if(isStarted && isInited) {
             int winner = 0;
             Long scoreFirst = getScore(firstUserId);
@@ -123,18 +126,22 @@ public class GameSession {
                 entrySecond.put("win", false);
                 winner = 1;
             }
-            firstInstance.close();
-            secondInstance.close();
+            entryFirst.put("type", "stopGame");
+            entrySecond.put("type", "stopGame");
             firstWebSocket.sendMessage(entryFirst);
             secondWebSocket.sendMessage(entrySecond);
             dbService.saveGameResultByUserId(firstUserId, scoreFirst, secondUserId, scoreSecond);
             isStarted = false;
+            firstInstance.close();
+            secondInstance.close();
             return winner;
         }
-        return null;
+        else {
+            throw new GameException("Unable to stop game, improper condition.");
+        }
     }
 
-    public Long getScore(Long userId) {
+    public Long getScore(Long userId) throws GameException {
         JSONObject entry = new JSONObject();
         entry.put("function", "score");
         JSONObject res = performAction(userId, entry);
@@ -142,10 +149,10 @@ public class GameSession {
         return score;
     }
 
-    public JSONObject performAction(Long userId, JSONObject entry) {
-        try {
+    public JSONObject performAction(Long userId, JSONObject entry) throws GameException {
+
             if(!isInited || !isStarted) {
-                throw new Exception("bad game session");
+                throw new GameException("bad game session");
             }
             if (userId.equals(firstUserId)) {
                 return firstInstance.instanceOperator.performGet(entry);
@@ -153,12 +160,9 @@ public class GameSession {
                 if (userId.equals(secondUserId)) {
                     return secondInstance.instanceOperator.performGet(entry);
                 } else {
-                    throw new Exception("bad userId");
+                    throw new GameException("bad userId");
                 }
             }
-        }
-        catch (Exception ex) {
-            return new JSONObject("{\"error\" : \"failed to performAction\"}");
-        }
+
     }
 }
