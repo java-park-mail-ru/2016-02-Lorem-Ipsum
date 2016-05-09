@@ -1,6 +1,6 @@
 package game.websocket;
 
-import game.gameinternal.GamePool;
+import game.gameinternalold.GamePool;
 import main.IAccountService;
 import main.IGame;
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeRequest;
