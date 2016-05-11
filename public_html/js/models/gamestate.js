@@ -70,7 +70,6 @@ define([
             this.socket.send(JSON.stringify({
                 'action':action
             }));
-            this.socket.send(JSON.stringify(this);
         }
 
     });
