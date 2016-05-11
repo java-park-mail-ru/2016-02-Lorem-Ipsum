@@ -28,11 +28,12 @@ define([
                 console.log('socket open');
             };
             this.socket.onmessage = function (event) {
-                this.your_ball.copy(event.data.your_ball);
-                this.your_platform.copy(event.data.your_platform);
-                this.another_ball.copy( event.data.another_ball);
-                this.another_platform.copy(event.data.another_platform);
-                this.blocks.matrix = event.data.blocks;
+                var data = JSON.parse(event.data);
+                this.your_ball.copy(data.your_ball);
+                this.your_platform.copy(data.your_platform);
+                this.another_ball.copy(data.another_ball);
+                this.another_platform.copy(data.another_platform);
+                this.blocks.matrix = data.blocks;
             }.bind(this);
 
             this.intervalID = window.setInterval(
