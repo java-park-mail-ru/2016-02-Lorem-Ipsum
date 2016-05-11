@@ -42,6 +42,8 @@ define([//// 'underscore'
         return res;
     };
 
+    
+
     var BallObject = function(options){
         CanvasObject.apply(this, arguments);
         this.radius = options.radius;
