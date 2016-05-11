@@ -13,7 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.Console;
 import java.io.IOException;
+import java.util.Set;
 
 /**
  * Created by Installed on 17.04.2016.
@@ -71,6 +73,7 @@ public class GameWebSocket implements Stopable {
             if (enemyId != -1) {
                 handlers.gameStart(enemyId);
                 enemyFound = true;
+                enemySocket.setEnemyFound(true);
             }
         }
     }
@@ -97,11 +100,15 @@ public class GameWebSocket implements Stopable {
                 JSONArray matrix = input.getJSONArray("blocks");
                 JSONArray newMatrix = gameSession.changeGameState(matrix);
                 input.put("blocks", newMatrix);
+                JSONObject toEnemy = new JSONObject();
+                toEnemy.put("another_platform", input.getJSONObject("your_platform"));
+                toEnemy.put("another_ball", input.getJSONObject("your_ball"));
+                toEnemy.put("blocks", newMatrix);
                 sendMessage(input);
-                enemySocket.sendMessage(input);
+                enemySocket.sendMessage(toEnemy);
             }
             else {
-                throw new GameException("Unable to perform action, improper condition.");
+                sendMessage(input);;
             }
         }
 
