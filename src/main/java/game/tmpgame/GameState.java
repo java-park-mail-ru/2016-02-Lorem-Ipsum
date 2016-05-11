@@ -16,7 +16,7 @@ public class GameState {
         this.columns = c;
         matrix = new int[rows][columns];
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; i < columns; j++) {
+            for (int j = 0; j < columns; j++) {
                 matrix[i][j] = 1;
             }
         }
@@ -28,9 +28,9 @@ public class GameState {
 
     public JSONArray toJSON(int[][] inputMtr) {
         JSONArray mtrJSON = new JSONArray();
-        for (int i=0; i < rows; i++){
+        for (int i = 0; i < rows; i++){
             JSONArray row = new JSONArray();
-            for (int j=0; j < columns; j++){
+            for (int j = 0; j < columns; j++){
                 row.put(j, inputMtr[i][j]);
             }
             mtrJSON.put(i, row);

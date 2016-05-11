@@ -28,17 +28,20 @@ define([
                 console.log('socket open');
             };
             this.socket.onmessage = function (event) {
-                this.your_ball.copy(event.data.your_ball);
-                this.your_platform.copy(event.data.your_platform);
-                this.another_ball.copy( event.data.another_ball);
-                this.another_platform.copy(event.data.another_platform);
-                this.blocks.matrix = event.data.blocks;
+                var data = JSON.parse(event.data);
+                console.log(data);
+                //this.your_ball.copy(data.your_ball);
+                //this.your_platform.copy(data.your_platform);
+                this.another_ball.copy(data.another_ball);
+                this.another_platform.copy(data.another_platform);
+                this.blocks.matrix = data.blocks;
             }.bind(this);
 
             this.intervalID = window.setInterval(
                     function(){
-                        this.socket.send(JSON.stringify(this))
-                    }.bind(this), 1000/60
+                        this.socket.send(JSON.stringify(this));
+                        console.log('socket sends state');
+                    }.bind(this), 100
                 );
 
         },
@@ -46,9 +49,9 @@ define([
             return {
                 blocks: this.blocks.matrix,
                 your_ball: this.your_ball,
-                your_plaform: this.your_plaform,
+                your_platform: this.your_platform,
                 another_ball: this.another_ball,
-                another_plaform: this.another_plaform
+                another_platform: this.another_platform
             };
         },
         left: function () {
