@@ -1,6 +1,5 @@
-package game.websocket;
+package game.tmpgame;
 
-import game.gameinternalold.GamePool;
 import main.IAccountService;
 import main.IGame;
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeRequest;
@@ -16,13 +15,10 @@ public class GameWebSocketCreator implements WebSocketCreator {
 
     public GameWebSocketCreator(
             IAccountService accountService,
-            IGame dbService,
-            String pathToMechanic,
-            String pathToOutput
+            IGame dbService
     ) {
         this.accountService = accountService;
-        /*"static/gameMechanic.js", "static/output.txt"*/
-        this.gamePool = new GamePool(pathToMechanic, pathToOutput, dbService);
+        this.gamePool = new GamePool(dbService);
     }
 
     @Override

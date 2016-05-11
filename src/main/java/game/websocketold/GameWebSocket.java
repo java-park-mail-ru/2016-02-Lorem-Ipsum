@@ -1,11 +1,10 @@
-package game.websocket;
+package game.websocketold;
 
 import game.MessageConvention;
 import game.gameinternalold.GameException;
 import game.gameinternalold.GamePool;
 import game.gameinternalold.GameSession;
 import game.gameinternalold.instance.Stopable;
-import game.gameprimitives.physicalinstance.PhysicalInstance;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.websocket.api.Session;

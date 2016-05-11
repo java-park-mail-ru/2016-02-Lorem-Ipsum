@@ -3,7 +3,7 @@ package game.gameinternalold;
 import game.MessageConvention;
 import game.gameinternalold.instance.Instance;
 import game.gameinternalold.instance.InvocationConvention;
-import game.websocket.GameWebSocket;
+import game.websocketold.GameWebSocket;
 import main.IGame;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

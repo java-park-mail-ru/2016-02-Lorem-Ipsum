@@ -3,7 +3,7 @@ package main;
 import database.DbService;
 import database.utils.FakeDbGenerator;
 import frontend.RoutingServlet;
-import game.websocket.WebSocketGameServlet;
+import game.tmpgame.WebSocketGameServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.server.Handler;
@@ -79,8 +79,7 @@ public class Main {
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.addServlet(new ServletHolder(routingServlet), "/api/v1/*");
-        /*context.addServlet(new ServletHolder(new WebSocketGameServlet(accountService, accountService,
-                "static/gameMechanic.js", "static/output.txt")), "/gameplay");*/
+        context.addServlet(new ServletHolder(new WebSocketGameServlet(accountService, accountService)), "/gamesocket");
 
 
         ResourceHandler resourceHandler = new ResourceHandler();

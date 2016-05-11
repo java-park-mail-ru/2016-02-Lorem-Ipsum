@@ -18,7 +18,7 @@ define([
             'score': 0
         },
         initialize: function (wrapper) {
-            this.socket = new WebSocket("ws://127.0.0.1:8100");
+            this.socket = new WebSocket("ws://127.0.0.1:8090/gamesocket");
             this.blocks = blocks_initialize(wrapper);
             this.your_ball =  balls_initialize(wrapper,'your') ;
             this.your_platform = platforms_initialize(wrapper,'your');
@@ -34,6 +34,13 @@ define([
                 this.another_platform.copy(event.data.another_platform);
                 this.blocks.matrix = event.data.blocks;
             }.bind(this);
+
+            this.intervalID = window.setInterval(
+                    function(){
+                        this.socket.send(JSON.stringify(this))
+                    }.bind(this), 1000/60
+                );
+
         },
         toJSON: function () {
             return {
