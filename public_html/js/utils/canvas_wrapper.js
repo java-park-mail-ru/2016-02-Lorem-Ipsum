@@ -32,6 +32,15 @@ define([//// 'underscore'
         this.vx = vx;
         this.vy = vy;
     };
+    CanvasObject.prototype.toJSON = function(){
+        var res = {};
+        for(key in this){
+            if(this.hasOwnProperty(key) && key[0] != '_') {
+                res[key] = this[key];
+            }
+        }
+        return res;
+    };
 
     var BallObject = function(options){
         CanvasObject.apply(this, arguments);
