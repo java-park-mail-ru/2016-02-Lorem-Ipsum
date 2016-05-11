@@ -31,6 +31,7 @@ define( function() {
                 blocks.matrix[i][j] = 1;
             }
         }
+        return blocks;
     }
     return blocks_initialize;
 
