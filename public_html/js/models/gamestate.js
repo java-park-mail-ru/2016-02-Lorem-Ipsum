@@ -47,9 +47,9 @@ define([
             return {
                 blocks: this.blocks.matrix,
                 your_ball: this.your_ball,
-                your_plaform: this.your_plaform,
+                your_plaform: this.your_platform,
                 another_ball: this.another_ball,
-                another_plaform: this.another_plaform
+                another_plaform: this.another_platform
             };
         },
         left: function () {
