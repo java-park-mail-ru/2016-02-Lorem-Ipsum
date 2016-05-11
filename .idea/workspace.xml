@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04d10ad-3945-42ac-a7e3-c7c3e6aa1ca4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/js/models/gamestate.js" afterPath="$PROJECT_DIR$/public_html/js/models/gamestate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/tmpgame/GameState.java" afterPath="$PROJECT_DIR$/src/main/java/game/tmpgame/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/tmpgame/GameWebSocket.java" afterPath="$PROJECT_DIR$/src/main/java/game/tmpgame/GameWebSocket.java" />
     </list>
     <ignored path="L1.2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -200,8 +197,8 @@
       <file leaf-file-name="gamestate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_html/js/models/gamestate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4950495">
-              <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.05610561">
+              <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -2057,8 +2054,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/js/models/gamestate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4950495">
-          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.05610561">
+          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding />
         </state>
       </provider>
