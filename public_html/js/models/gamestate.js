@@ -29,9 +29,14 @@ define([
             };
             this.socket.onmessage = function (event) {
                 var data = JSON.parse(event.data);
+<<<<<<< HEAD
                 console.log(data);
                 //this.your_ball.copy(data.your_ball);
                 //this.your_platform.copy(data.your_platform);
+=======
+                this.your_ball.copy(data.your_ball);
+                this.your_platform.copy(data.your_platform);
+>>>>>>> origin/master
                 this.another_ball.copy(data.another_ball);
                 this.another_platform.copy(data.another_platform);
                 this.blocks.matrix = data.blocks;
@@ -49,9 +54,15 @@ define([
             return {
                 blocks: this.blocks.matrix,
                 your_ball: this.your_ball,
+<<<<<<< HEAD
                 your_platform: this.your_platform,
                 another_ball: this.another_ball,
                 another_platform: this.another_platform
+=======
+                your_plaform: this.your_platform,
+                another_ball: this.another_ball,
+                another_plaform: this.another_platform
+>>>>>>> origin/master
             };
         },
         left: function () {
@@ -70,6 +81,7 @@ define([
             this.socket.send(JSON.stringify({
                 'action':action
             }));
+            this.socket.send(JSON.stringify(this);
         }
 
     });
