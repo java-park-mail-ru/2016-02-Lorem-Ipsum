@@ -91,6 +91,10 @@ public class PhysicalInstance {
             return COLLISION_TYPE.UNKNOWN;
         }
 
+        private boolean isTimeToStop() {
+            return blocks.isDestroyed();
+        }
+
         @Override
         public void redirrectPlatform(NUM_PLAYER numPlayer, double vx) {
             if(numPlayer == NUM_PLAYER.FIRST)
@@ -126,7 +130,13 @@ public class PhysicalInstance {
         }
 
         @Override
-        public JSONObject getState() {
+        public void processStop(IStopProcessor stopProcessor) {
+            if(isTimeToStop())
+                stopProcessor.stop();
+        }
+
+        @Override
+        public void getState(IGetStateProcessor processor) {
             JSONObject res = new JSONObject();
 
             JSONObject toFirst = new JSONObject();
@@ -146,7 +156,7 @@ public class PhysicalInstance {
             res.put("toFirst", toFirst);
             res.put("toSecond", toSecond);
 
-            return res;
+            processor.process(res);
 
         }//func
 

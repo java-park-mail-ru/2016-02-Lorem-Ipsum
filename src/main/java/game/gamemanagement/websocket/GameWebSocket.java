@@ -1,7 +1,7 @@
-package game.tmpgame;
+package game.gamemanagement.websocket;
 
-import game.gameinternalold.GameException;
-import game.gameinternalold.instance.Stopable;
+import game.Stopable;
+import game.GameException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.websocket.api.Session;
@@ -13,38 +13,41 @@ import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.Console;
 import java.io.IOException;
-import java.util.Set;
 
 /**
  * Created by Installed on 17.04.2016.
  */
 @WebSocket
 public class GameWebSocket implements Stopable {
+
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
     private Long myId;
+    private String myLogin;
     private Session session;
     private GamePool gamePool;
     private GameSession gameSession;
     private GameWebSocket enemySocket;
-    private final Handlers handlers;
-    boolean enemyFound;
+    private Handlers handlers = new Handlers();
 
-    public GameWebSocket(Long myId, GamePool gamePool) {
+    public GameWebSocket(
+            Long myId,
+            String myLogin,
+            GamePool gamePool
+    ) {
         this.myId = myId;
+        this.myLogin = myLogin;
         this.gamePool = gamePool;
         this.gameSession = null;
         this.enemySocket = null;
-        this.handlers = new Handlers();
-        this.enemyFound = false;
     }
 
     @OnWebSocketConnect
-    public void onOpen(@SuppressWarnings("ParameterHidesMemberVariable") @NotNull Session session) {
+    public void onOpen(@SuppressWarnings("ParameterHidesMemberVariable")
+                           @NotNull Session session) {
         try {
             this.session = session;
-            this.gamePool.connectUser(myId, this);
+            this.gamePool.connectUser(this);
         }
         catch (GameException ex) {
             LOGGER.debug(ex.getMessage());
@@ -52,29 +55,41 @@ public class GameWebSocket implements Stopable {
     }
 
     @OnWebSocketMessage
-    public void onMessage(String data) {
-        JSONObject input = new JSONObject(data);
+    public void onMessage(String dataInput) {
+        JSONObject input = new JSONObject(dataInput);
         //noinspection OverlyBroadCatchBlock
         try {
-            tryToFindSomeEnemy();
-            handlers.gameAction(input);
+            String action = input.getString("action");
+            JSONObject data = input.getJSONObject("data");
+            switch (action) {
+                case "start" : {
+                    String enemyLogin = data.getString("enemy");
+                    handlers.gameStart(this, enemyLogin);
+                }
+                break;
+                case "left" : {
+                    handlers.gameAction(this, -5);
+                }
+                break;
+                case "right" : {
+                    handlers.gameAction(this, 5);
+                }
+                break;
+                case "stop" : {
+                    handlers.gameAction(this, 0);
+                }
+                break;
+                case "freeusers" : {
+                    handlers.gameGetFree();
+                }
+                break;
+            }
         }//try
         catch (GameException ex) {
             handlers.gameError(ex);
         }
         catch (Exception ex) {
             LOGGER.debug(ex.getMessage());
-        }
-    }
-
-    public void tryToFindSomeEnemy() throws GameException {
-        if(enemyFound == false) {
-            Long enemyId = gamePool.getSomeFreePlayer(myId);
-            if (enemyId != -1) {
-                handlers.gameStart(enemyId);
-                enemyFound = true;
-                enemySocket.setEnemyFound(true);
-            }
         }
     }
 
@@ -85,7 +100,7 @@ public class GameWebSocket implements Stopable {
             if(gameSession != null && gameSession.getStarted()) {
                 stop();
             }
-            gamePool.disconnectUser(myId);
+            gamePool.disconnectUser(this);
         }
         catch (GameException ex) {
             LOGGER.debug(ex.getMessage());
@@ -95,38 +110,35 @@ public class GameWebSocket implements Stopable {
     /***************************************************************/
     private class Handlers {
 
-        public void gameAction(JSONObject input) throws GameException {
+        public void gameAction(GameWebSocket player, double vx) throws GameException {
             if(gameSession != null && gameSession.getStarted()) {
-                JSONArray matrix = input.getJSONArray("blocks");
-                JSONArray newMatrix = gameSession.changeGameState(matrix);
-                input.put("blocks", newMatrix);
-                JSONObject toEnemy = new JSONObject();
-                toEnemy.put("another_platform", input.getJSONObject("your_platform"));
-                toEnemy.put("another_ball", input.getJSONObject("your_ball"));
-                toEnemy.put("blocks", newMatrix);
-                sendMessage(input);
-                enemySocket.sendMessage(toEnemy);
+                gameSession.performGameAction(player, vx);
             }
             else {
-                sendMessage(input);;
+                throw new GameException("Can not perform action. Bad game session.");
             }
         }
 
-        public void gameStart(Long enemyId) throws GameException {
-            gamePool.startGame(myId, enemyId);
+        public void gameStart(GameWebSocket mysocket, String enemyLogin) throws GameException {
+            GameWebSocket enemysocket = gamePool.getFreeUserByLogin(enemyLogin);
+            if(enemysocket != null)
+                gamePool.startGame(mysocket, enemysocket);
+            else
+                throw new GameException("User not found or not free.");
         }
 
-        public void gameInfo() {
-            JSONArray arr = gamePool.getFreeUsersArray();
-            JSONObject res = new JSONObject();
-            res.put("freeUsers", arr);
+        public void gameGetFree() {
+            JSONObject res = OutputJSONMessagesCreator.getMessageFreeUsers(gamePool);
             sendMessage(res);
         }
 
         public void gameError(GameException ex) {
             LOGGER.debug(ex.getMessage());
             JSONObject errJSON = new JSONObject();
-            errJSON.put("error", ex.getMessage());
+            errJSON.put("action", "error");
+            JSONObject data = new JSONObject();
+            data.put("message", ex.getMessage());
+            errJSON.put("data", data);
             sendMessage(errJSON);
         }
 
@@ -146,8 +158,7 @@ public class GameWebSocket implements Stopable {
 
     @Override
     public void stop() throws GameException {
-        @SuppressWarnings("CallToSimpleGetterFromWithinClass") Long enemyId = enemySocket.getMyId();
-        gamePool.stopGame(myId, enemyId);
+        gamePool.stopGame(this, enemySocket);
     }
 
     public void setGameSession(GameSession gameSession) {
@@ -182,6 +193,10 @@ public class GameWebSocket implements Stopable {
         this.myId = myId;
     }
 
+    public String getMyLogin() {return myLogin;}
+
+    public void setMyLogin(String login) { myLogin = login; }
+
     public void setSession(Session session) {this.session = session;}
 
     public Session getSession() {return session;}
@@ -190,7 +205,4 @@ public class GameWebSocket implements Stopable {
         sendMessageWithSession(session, output);
     }
 
-    public boolean getEnemyFound() {return enemyFound;}
-
-    public void setEnemyFound(boolean enemyFound) { this.enemyFound = enemyFound; }
 }

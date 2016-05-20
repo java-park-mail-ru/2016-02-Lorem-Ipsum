@@ -3,7 +3,7 @@ package main;
 import database.DbService;
 import database.utils.FakeDbGenerator;
 import frontend.RoutingServlet;
-import game.tmpgame.WebSocketGameServlet;
+import game.gamemanagement.websocket.WebSocketGameServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.server.Handler;

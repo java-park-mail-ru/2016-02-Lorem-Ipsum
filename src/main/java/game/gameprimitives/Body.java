@@ -39,7 +39,7 @@ public abstract class Body implements Comparable<Body> {
     }
 
     @Override
-    public int compareTo(@NotNull Body  other){ //Для сортировки по левому краю
+    public int compareTo(Body  other){ //Для сортировки по левому краю
         return  (int)(this.left() - other.left());
     }
 

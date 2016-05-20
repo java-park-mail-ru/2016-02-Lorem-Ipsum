@@ -1,4 +1,4 @@
-package game.gameinternalold;
+package game;
 
 /**
  * Created by Installed on 20.04.2016.

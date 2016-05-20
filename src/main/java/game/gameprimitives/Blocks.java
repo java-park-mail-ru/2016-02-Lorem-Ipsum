@@ -99,6 +99,16 @@ public class Blocks extends Rectangle {
 
     }
 
+    public boolean isDestroyed() {
+        int blockExists = 0;
+        for (int i = 0; i < rowsCount; i++){
+            for (int j = 0; j < columnsCount; j++){
+                blockExists |= hitPointMatrix[i][j];
+            }
+        }
+        return blockExists == 0;
+    }
+
     public Blocks (JSONObject blocks){
         super(blocks);
         try {

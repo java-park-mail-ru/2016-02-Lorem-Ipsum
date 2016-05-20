@@ -18,7 +18,7 @@ define([
             'score': 0
         },
         initialize: function (wrapper) {
-            this.socket = new WebSocket("ws://127.0.0.1:8090/gamesocket");
+            this.socket = new WebSocket("ws://1270.0.1:8090/gamesocket");
             this.blocks = blocks_initialize(wrapper);
             this.your_ball =  balls_initialize(wrapper,'your') ;
             this.your_platform = platforms_initialize(wrapper,'your');

@@ -1,4 +1,4 @@
-package game.tmpgame;
+package game.gamemanagement.websocket;
 
 import main.IAccountService;
 import main.IGame;

@@ -1,7 +1,8 @@
-package game.tmpgame;
+package game.gamemanagement.websocket;
 
 import main.IAccountService;
 import main.IGame;
+import main.UserProfile;
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeRequest;
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeResponse;
 import org.eclipse.jetty.websocket.servlet.WebSocketCreator;
@@ -25,7 +26,12 @@ public class GameWebSocketCreator implements WebSocketCreator {
     public GameWebSocket createWebSocket(ServletUpgradeRequest req, ServletUpgradeResponse resp) {
         String sessionId = req.getHttpServletRequest().getSession().getId();
         if(accountService.checkSessionExists(sessionId)) {
-            return new GameWebSocket(accountService.getSession(sessionId).getUserId(), gamePool);
+            UserProfile profile = accountService.getSession(sessionId);
+            return new GameWebSocket(
+                    profile.getUserId(),
+                    profile.getLogin(),
+                    gamePool
+            );
         }
         return null;
     }
