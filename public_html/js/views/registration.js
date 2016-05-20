@@ -27,25 +27,26 @@ define([
     var MUST_MATCH ={'password':'password2'};
 
     var RegistrationView = BaseView.extend({
-        className:'b-registration',
+        id: 'registration',
+        name: 'registration',
         template: tmpl,
         events: {
-            'submit':'submit_handler'
+            'submit': 'submit_handler'
         },
         error_templates: {//шаблоны соощений об ошибках
-            'INVALID':function(data) {
+            'INVALID': function(data) {
                 return 'Invalid ' + data['field_name'];
             },
-            'REQUIRED':function(data) {
+            'REQUIRED': function(data) {
                 return  data['field_name'] + ' is required';
             },
-            'MUST_MATCH':function() {
-                return "Password don't match"
+            'MUST_MATCH': function() {
+                return "Password don't match";
             },
-            'SERVER_ERROR':function() {
+            'SERVER_ERROR': function() {
                 return "Some error on server";
             },
-            'TOO LONG':function(data){
+            'TOO LONG': function(data){
                 return data['field'] +" max length is " + data['max_length'];
             },
             'TOO SHORT': function(data){
@@ -56,24 +57,23 @@ define([
             BaseView.prototype.initialize.call(this);
             _.bindAll(this,'registration_success','registration_error');
         },
-        name:'registration',
-        render: function () {
+        render: function(){
             BaseView.prototype.render.call(this);
             this.form = this.$('.js-signup-form')[0];
         },
-        show: function () {
+        show: function(){
             BaseView.prototype.show.call(this);
         },
-        hide: function () {
+        hide: function(){
             BaseView.prototype.hide.call(this);
         },
-        registration_success:function(){
+        registration_success: function(){
             this.hide();
             Backbone.history.navigate('main', true);
         },
-        registration_error:function(){
+        registration_error: function(error){
             error_message({
-                'validation_result': session.request_error,
+                'validation_result': error,
                 'error_templates': this.error_templates
             });
         },

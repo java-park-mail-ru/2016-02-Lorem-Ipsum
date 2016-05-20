@@ -10,14 +10,14 @@ define([
 
     var USER_URL = 'api/v1/user/';
     var UserModel = Backbone.Model.extend({
-         url:function(){
-            return (this.id)? (USER_URL+this.id) : USER_URL;
+         url: function(){
+            return (this.id) ? (USER_URL+this.id) : USER_URL;
          },
-         initialize:function(_id,_email, _login)
+         initialize: function(_id, _email, _login)
          {
-             this.id=_id;
-             this.email =_email;
-             this.login=_login;
+             this.id = _id;
+             this.email = _email;
+             this.login = _login;
          }
     });
 

@@ -12,40 +12,46 @@ define([
     UserModel,
     _
 ){
+    
+    var error_cb_wrapper = function (error_cb){
+        return function(){
+            if(error_cb) {
+                var request_error = new ValidationError('SERVER_ERROR', null);
+                error_cb(request_error);
+            } 
+        }
+    };
+
+    var success_cb_wrapper = function(success_cb){
+        return function(){
+            if(success_cb) {
+                success_cb();
+            }
+        }
+    };
+    
     var SessionModel = Backbone.Model.extend({
-        defaults:
-        {
-          'request_error':null
-        },
-        initialize:function()
-        {
+        initialize: function() {
             this.user = new UserModel();
         },
-        url:function(){
-            return 'api/v1/session'
+        url: function(){
+            return 'api/v1/session';
         },
         login: function(_login, _password, success_cb, error_cb) {
-            this.request_error=null;
             this.save({},{
-                 method:'PUT',
-                 attrs:{'login':_login,'password':_password},
-                 success:function(model,response){
-                     this.request_error = null;
+                 method: 'PUT',
+                 attrs: {'login': _login, 'password': _password},
+                 success: function(model,response){
                      this.user.id = response['id'];
-                     this.user.fetch();
-                     if(success_cb)
-                        success_cb();
+                     this.user.fetch({
+                         success: success_cb_wrapper(success_cb),
+                         error: error_cb_wrapper(error_cb)
+                     });
                  }.bind(this),
-                 error:function(){
-                     this.request_error= new ValidationError('SERVER_ERROR',null);
-                     if(error_cb)
-                        error_cb();
-                 }.bind(this)
+                 error: error_cb_wrapper(error_cb)
             });
-
         },
         logout: function(success_cb,error_cb) {
-            this.request_error=null;
             this.destroy({
                  success:function(){
                      this.id = null;
@@ -53,42 +59,34 @@ define([
                      if(success_cb)
                         success_cb();
                  }.bind(this),
-                 error:function(){
-                     if(error_cb)
-                        error_cb();
-                 }
+                 error:error_cb_wrapper(error_cb)
             });
         },
         register: function(_login, _password, _email, success_cb,error_cb) {
-            this.request_error=null;
             this.save({},{
                 method: 'PUT',
                 attrs: {'login':_login,'password':_password, 'email':_email},
                 url: 'api/v1/user',
                 success: function(model,response){
-                    this.request_error = null;
                     if(success_cb)
                         success_cb();
                 }.bind(this),
-                error: function(){
-                    this.request_error= new ValidationError('SERVER_ERROR',null);
-                    if(error_cb)
-                        error_cb();
-                }.bind(this)
+                error: error_cb_wrapper(error_cb)
             });
         },
-        is_authinficated:function(success_cb,error_cb){
+        is_authinficated: function(success_cb,error_cb){
             this.fetch({
-                 success:function(model,response){
+                 success: function(model,response){
                      this.user['id']=response['id'];
-                     this.user.fetch();
-                     success_cb();
+                     this.user.fetch({
+                         success: success_cb_wrapper(success_cb),
+                         error: error_cb_wrapper(error_cb)
+                     });
                  }.bind(this),
-                 error:function(){
-                     error_cb();
-                 }
+                 error: error_cb_wrapper(error_cb)
             });
         }
     });
+
     return new SessionModel();
 });

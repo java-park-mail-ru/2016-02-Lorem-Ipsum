@@ -8,8 +8,7 @@ define([
     'underscore',
     'game/collisions_handlers',
     'game/painters',
-    'utils/canvas_wrapper',
-
+    'utils/canvas_wrapper'
 
 ], function(
     Backbone,
@@ -29,47 +28,47 @@ define([
     var ARROW_RIGHT=39;
 
     var GameView = BaseView.extend({
-        className: 'b-game',
-        template: tmpl,
+        id: 'game',
         name:'game',
+        events: {
+            'click .b-scoreboard-table__elem' : 'start'
+        },
+        template: tmpl,
         initialize: function () {
             BaseView.prototype.initialize.call(this);
             _.bindAll(this, 'keyup_handler','keydown_handler');
         },
         render: function () {
-            this.$el.html(this.template());
-            BaseView.prototype.render.call(this);
-            this.wrapper = new Wrapper();
-            this.wrapper.canvas = this.$('.js-canvas')[0];
-            this.wrapper.context = this.wrapper.canvas.getContext('2d');
+            this.$el.html(this.template(this.game_state));
+            //BaseView.prototype.render.call(this);
+            console.log(this.game_state.is_running);
+            if(this.game_state.is_running){
+                this.wrapper = new Wrapper( this.$('.js-canvas')[0] );
+            }
         },
         show: function () {
-            BaseView.prototype.show.call(this);
+            //BaseView.prototype.show.call(this);
+            this.trigger('show', {}, {'view_name': this.name});
+            this.delegateEvents();
+            this.game_state = new GameState();
+            this.render();
+            this.$el.css('display', 'block');
+            this.listenTo(this.game_state,'gamestart',this.gamestart_handler);
 
-            $(document).on('keydown',this.keydown_handler);
-            $(document).on('keyup',this.keyup_handler);
-
-            this.wrapper.create_left_bound({'coord':0});
-            this.wrapper.create_right_bound({'coord':this.wrapper.canvas.width });
-            this.wrapper.create_top_bound({'coord':0});
-            this.wrapper.create_bottom_bound({'coord':this.wrapper.canvas.height});
-
-            this.game_state = new GameState(this.wrapper);
-            initialize_collision_handlers(this.wrapper);
-            initialize_painters(this.wrapper);
-
-            this.wrapper.run();
         },
         hide: function () {
-            $(document).off('keyup');
-            $(document).off('keydown');
+            $(document).off('keyup.game', this.keyup_handler);
+            $(document).off('keydown.game', this.keydown_handler);
+
             BaseView.prototype.hide.call(this);
+
             if(this.wrapper) {
                 this.wrapper.stop();
                 this.wrapper.clear();
             }
+
             if(this.game_state){
-                window.clearInterval(this.game_state.intervalID);
+                this.game_state.end_game();
             }
         },
         keydown_handler:function(event) {
@@ -82,7 +81,28 @@ define([
         },
         keyup_handler:function(event) {
             this.game_state.stop_platform();
+        },
+        start:function(event){
+            var enemy = event.target.textContent;
+            this.game_state.invite(enemy);
+            this.game_state.trigger_start();
+        },
+        gamestart_handler: function(){
+            this.game_state.is_running = true;
+            this.render();
+            this.wrapper.create_left_bound({'coord':0});
+            this.wrapper.create_right_bound({'coord':this.wrapper.canvas.width });
+            this.wrapper.create_top_bound({'coord':0});
+            this.wrapper.create_bottom_bound({'coord':this.wrapper.canvas.height});
+
+            $(document).on('keydown.game', this.keydown_handler);
+            $(document).on('keyup.game', this.keyup_handler);
+            this.game_state.start_game(this.wrapper);
+            initialize_collision_handlers(this.wrapper);
+            initialize_painters(this.wrapper);
+            this.wrapper.run();
         }
+
     });
     return new GameView();
 });

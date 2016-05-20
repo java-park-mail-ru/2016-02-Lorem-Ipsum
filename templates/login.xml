@@ -3,12 +3,12 @@
     <div class="b-header">
         <h1>SignIn</h1>
     </div>
-    <form class="b-login-form js-login-form" name="login" action="/api/v1/auth/signin" method="POST">
-        <input class="b-login-form__input b-login-form__input_position" name="nickname" type="text" size="25"
+    <form class="b-form b-form_position-centred js-login-form" name="login" action="/api/v1/auth/signin" method="POST">
+        <input class="b-form__input b-form__input_position" name="nickname" type="text" size="25"
                maxlength="30" value="" placeholder="Nickname" />
-        <input class="b-login-form__input b-login-form__input_position"  name="password" type="password"
+        <input class="b-form__input b-form__input_position"  name="password" type="password"
                size="25" maxlength="30" value="" placeholder="Password" />
-        <input class="b-login-form__submit b-login-form__submit_margin" type="submit" name="enter" value="Signin" />
+        <input class="b-form__submit b-form__submit_margin" type="submit" name="enter" value="Signin" />
         <div class="b-error-block">
         </div>
     </form>

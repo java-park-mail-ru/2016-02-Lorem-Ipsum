@@ -3,8 +3,8 @@
  */
 define( function() {
 
-    var BLOCK_ROWS =4;//6;
-    var BLOCK_COLUMNS =20;//20;
+    var BLOCK_ROWS =4;
+    var BLOCK_COLUMNS =20;
     function blocks_initialize(wrapper){
         var blocks = wrapper.create_rectangle({
             _group:'blocks',
@@ -18,7 +18,7 @@ define( function() {
         blocks.padding_x = 2;
         blocks.padding_y = 1;
         blocks.block_width = 15;
-        blocks.offset_x =(wrapper.canvas.width - blocks.width*BLOCK_COLUMNS)/3;
+        blocks.offset_x =(wrapper.canvas.width - blocks.block_width*BLOCK_COLUMNS)/3;
         blocks.offset_y = 15;
         blocks.columns = BLOCK_COLUMNS;
         blocks.rows = BLOCK_ROWS;

@@ -1,5 +1,4 @@
 require.config({
-    urlArgs: "_=" + (new Date()).getTime(),
     baseUrl: "js",
     paths: {
         jquery: "lib/jquery",
@@ -24,5 +23,12 @@ define([
     Backbone,
     router
 ){
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service_worker.js').then(function(reg) {
+            console.log('Registration succeeded. Scope is ' + reg.scope);
+        }).catch(function(error) {
+            console.log('Registration failed with ' + error);
+        });
+    }
     Backbone.history.start();
 });

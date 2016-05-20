@@ -2,40 +2,38 @@
     <div class="b-header">
         <h1>EpicArkanoid</h1>
     </div>
-    <!--<div class ="container">-->
+    <div class ="b-main-menu">
         <fest:if test="json.isAuth">
             <a class ="no-text-decoration" href="#scoreboard">
-                <div class="b-main__menu-elem b-main__menu-elem_position js-scoreboard">
+                <div class="b-main-menu__elem js-scoreboard">
                     Score board
                 </div>
             </a>
             <a href="#game">
-                <div  class="b-main__menu-elem b-main__menu-elem_position js-start-game">
+                <div  class="b-main-menu__elem js-start-game">
                     Start Game.
                 </div>
             </a>
-            <!--<a href="#logout">-->
-                <div class="b-main__menu-elem b-main__menu-elem_position js-logout">
+            <div class="b-main-menu__elem js-logout">
                     Logout
-                </div>
-            <!--</a>-->
+            </div>
         </fest:if>
         <fest:if test="!json.isAuth">
             <a href="#scoreboard">
-                <div class="b-main__menu-elem b-main__menu-elem_position js-scoreboard">
+                <div class="b-main-menu__elem js-scoreboard">
                     Score board
                 </div>
             </a>
             <a href="#login">
-                <div class="b-main__menu-elem b-main__menu-elem_position js-login">
+                <div class="b-main-menu__elem js-login">
                     Login
                 </div>
             </a>
             <a href="#registration">
-                <div class="b-main__menu-elem b-main__menu-elem_position js-registration">
+                <div class="b-main-menu__elem js-registration">
                     Registration
                 </div>
             </a>
         </fest:if>
-    <!--</div>-->
+    </div>
 </fest:template>

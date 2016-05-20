@@ -22,55 +22,56 @@ define([
 
 
     var LoginView = BaseView.extend({
-        className:'.b-login',
+        id:'login',
+        name: 'login',
         template: tmpl,
         events: {
-            'submit':'submit_handler'
+            'submit': 'submit_handler'
         },
-        name:'login',
         error_templates: {
-            'INVALID':function(field_name) {
+            'INVALID': function(field_name){
                 return 'Invalid ' + field_name;
             },
-            'REQUIRED':function(data) {
+            'REQUIRED': function(data){
                 return  data['field_name'] + ' is required';
             },
-            'SERVER_ERROR':function() {
+            'SERVER_ERROR': function(){
                 return "Invalid email or password";
             }
         },
-        initialize: function () {
+        initialize: function(){
             BaseView.prototype.initialize.call(this);
             _.bindAll(this,'login_fail','login_success');
         },
-        render: function () {
+        render: function(){
             BaseView.prototype.render.call(this);
             this.form = this.$('.js-login-form')[0];
         },
-        show: function () {
+        show: function(){
             BaseView.prototype.show.call(this);
         },
-        hide: function () {
+        hide: function(){
             BaseView.prototype.hide.call(this);
         },
-        login_success:function(){
+        login_success: function(){
             this.hide();
             Backbone.history.navigate('main', true);
         },
-        login_fail:function(){
+        login_fail: function(error){
             error_message({
-                'validation_result': session.request_error,
+                'validation_result': error,
                 'error_templates': this.error_templates
             })
         },
         submit_handler: function(event)
         {
             event.preventDefault();
-            if(!error_message({'validation_result':validate(this.form.elements,VALIDATED_FIELDS),
-                               'error_templates':this.error_templates})) {
+            if(!error_message({'validation_result': validate(this.form.elements, VALIDATED_FIELDS),
+                               'error_templates': this.error_templates})) {
                 session.login(this.form.elements['nickname'].value,
                               this.form.elements['password'].value,
-                              this.login_success,this.login_fail);
+                              this.login_success,
+                              this.login_fail);
             }
         }
     });

@@ -8,7 +8,7 @@ define([
 ){
 
     var BaseView = Backbone.View.extend({
-
+        className:'b-view-container',
         initialize: function () {
         },
         render: function (data) {

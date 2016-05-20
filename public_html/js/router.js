@@ -24,7 +24,7 @@ define([
                 login:LoginView,
                 registration:RegistrationView
     };
-    var manager = new ViewManager(views, '.b-page');
+    var manager = new ViewManager(views, '#page');
     var Router = Backbone.Router.extend({
         routes: {
             'main':'mainAction',

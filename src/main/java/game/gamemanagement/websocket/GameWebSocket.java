@@ -60,9 +60,9 @@ public class GameWebSocket implements Stopable {
         //noinspection OverlyBroadCatchBlock
         try {
             String action = input.getString("action");
-            JSONObject data = input.getJSONObject("data");
             switch (action) {
                 case "start" : {
+                    JSONObject data = input.getJSONObject("data");
                     String enemyLogin = data.getString("enemy");
                     handlers.gameStart(this, enemyLogin);
                 }
@@ -79,7 +79,8 @@ public class GameWebSocket implements Stopable {
                     handlers.gameAction(this, 0);
                 }
                 break;
-                case "freeusers" : {
+                case "freeusers" :
+                case "connect" : {
                     handlers.gameGetFree();
                 }
                 break;

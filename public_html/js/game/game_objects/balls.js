@@ -6,10 +6,10 @@ define( function(){
     function balls_initialize(wrapper, owner){
          var ball=  wrapper.create_ball({
             _group:owner + '_balls',
-            x:wrapper.canvas.width-50,
-            y:wrapper.canvas.height-30,
-            vy:2,
-            vx:3,
+            x:wrapper.canvas.width/2,
+            y:wrapper.canvas.height/2,
+            vy:-2,
+            vx:0,
             radius:5
         });
         return ball;

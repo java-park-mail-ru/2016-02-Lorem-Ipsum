@@ -10,15 +10,9 @@ define([
     Wrapper
 ){
 
-    var ball_png = new Image();
-    ball_png.src = 'ball.png';
-    var platform_png = new Image();
-    platform_png.src = 'platform.png';
-    var block_png = new Image();
-    block_png.src = 'block.png';
-    function painters_initialize(context){
+    function initialize(context){
 
     }
-    return painters_initialize;
+    return initialize;
 
 });
