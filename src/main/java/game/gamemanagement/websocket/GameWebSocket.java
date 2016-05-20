@@ -79,6 +79,10 @@ public class GameWebSocket implements Stopable {
                     handlers.gameAction(this, 0);
                 }
                 break;
+                case "disconnect" : {
+                    this.stop();
+                }
+                break;
                 case "freeusers" :
                 case "connect" : {
                     handlers.gameGetFree();
