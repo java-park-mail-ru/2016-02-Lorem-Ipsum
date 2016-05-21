@@ -10,7 +10,7 @@
                 <tr>
                     <td>
                         <div class="b-scoreboard-table__elem">
-                            <fest:value>v.login</fest:value>
+                            <fest:value> v </fest:value>
                         </div>
                     </td>
                 </tr>

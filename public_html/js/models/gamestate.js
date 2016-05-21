@@ -26,9 +26,8 @@ define([
             this.socket.onclose = function () {
                 console.log('Close game socket');
             }.bind(this);
-            this.free_users = [
-                {'login':'dummy', id:-1},
-            ]
+            this.free_users = [ 'dummy' ];
+
         },
         socket_message_handler: function(event){
             var data = JSON.parse(event.data);
@@ -47,7 +46,8 @@ define([
                 this.is_running = false;
             }.bind(this);
             handlers_map['freeusers'] = function(){
-                this.free_users = data.freeusers;
+                this.free_users = data.data;
+                console.log(this.free_users);
                 this.trigger('freeusers');
             }.bind(this);
             handlers_map['started'] = function(){

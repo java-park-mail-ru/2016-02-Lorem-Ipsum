@@ -102,9 +102,7 @@ public class GameWebSocket implements Stopable {
     @OnWebSocketClose
     public void onClose(int closeCode, String closeReason) {
         try {
-            if(gameSession != null && gameSession.getStarted()) {
-                stop();
-            }
+            this.stop();
             gamePool.disconnectUser(this);
         }
         catch (GameException ex) {
@@ -163,7 +161,9 @@ public class GameWebSocket implements Stopable {
 
     @Override
     public void stop() throws GameException {
-        gamePool.stopGame(this, enemySocket);
+        if(gameSession != null && gameSession.getStarted()) {
+            gamePool.stopGame(this, enemySocket);
+        }
     }
 
     public void setGameSession(GameSession gameSession) {

@@ -36,12 +36,11 @@ define([
         template: tmpl,
         initialize: function () {
             BaseView.prototype.initialize.call(this);
-            _.bindAll(this, 'keyup_handler','keydown_handler');
+            _.bindAll(this, 'keyup_handler','keydown_handler');//,'render','gamestart_handler');
         },
         render: function () {
-            this.$el.html(this.template(this.game_state));
-            //BaseView.prototype.render.call(this);
-            console.log(this.game_state.is_running);
+            console.log('In render free users:', this.game_state.free_users);
+            this.$el.html(this.template (this.game_state) );
             if(this.game_state.is_running){
                 this.wrapper = new Wrapper( this.$('.js-canvas')[0] );
             }
@@ -54,6 +53,7 @@ define([
             this.render();
             this.$el.css('display', 'block');
             this.listenTo(this.game_state,'gamestart',this.gamestart_handler);
+            this.listenTo(this.game_state,'freeusers',this.render);
 
         },
         hide: function () {
