@@ -51,7 +51,7 @@ define([
                 this.trigger('freeusers');
             }.bind(this);
             handlers_map['started'] = function(){
-                this.trigger('started');
+                this.trigger('gamestart');
             }.bind(this);
             if(data.action && handlers_map[data.action]){
                 handlers_map[ data.action ]();

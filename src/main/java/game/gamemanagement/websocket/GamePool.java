@@ -36,7 +36,8 @@ public class GamePool {
             gameWebSocket.setGamePool(this);
         }
         else {
-            throw new GameException("Cannot connect user, improper condition.");
+            throw new GameException("Cannot connect user. Websocket is null: " + (gameWebSocket == null)
+                                    + "Userid is null: " + (userId == null) );
         }
     }
 
@@ -57,7 +58,7 @@ public class GamePool {
             }
         }
         else {
-            throw new GameException("Cannot disconnect user, improper condition.");
+            throw new GameException("Cannot disconnect user. Websocket is null: " + (webSocket == null));
         }
     }
 
@@ -110,7 +111,11 @@ public class GamePool {
                 freeUsers.remove(secondSocket.getMyLogin());
                 games.put(userIdStarter, gameSession);
             } else {
-                throw new GameException("Unable to start game, improper condition.");
+                throw new GameException("Unable to start game. First user is connected: "+ connectedUsers.containsKey(userIdStarter)
+                        + " Second user is connetcted: " + connectedUsers.containsKey(userIdSecond) +
+                        " First user is free: " + freeUsers.containsKey(firstSocket.getMyLogin()) +
+                        " Second user is free:" + freeUsers.containsKey(secondSocket.getMyLogin()) +
+                        " Different users: " + !userIdStarter.equals(userIdSecond));
             }
         }
     }

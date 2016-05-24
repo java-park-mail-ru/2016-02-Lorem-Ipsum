@@ -2,6 +2,9 @@ package game.gamemanagement.websocket;
 
 import game.Stopable;
 import game.GameException;
+import game.gamemanagement.gamemessages.*;
+import messagesystem.Address;
+import messagesystem.IAbonent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.websocket.api.Session;
@@ -29,17 +32,20 @@ public class GameWebSocket implements Stopable {
     private GameSession gameSession;
     private GameWebSocket enemySocket;
     private Handlers handlers = new Handlers();
+    private GameMessageProcessor gameMessageProcessor;
 
     public GameWebSocket(
             Long myId,
             String myLogin,
-            GamePool gamePool
+            GamePool gamePool,
+            GameMessageProcessor gameMessageProcessor
     ) {
         this.myId = myId;
         this.myLogin = myLogin;
         this.gamePool = gamePool;
         this.gameSession = null;
         this.enemySocket = null;
+        this.gameMessageProcessor = gameMessageProcessor;
     }
 
     @OnWebSocketConnect
@@ -64,35 +70,72 @@ public class GameWebSocket implements Stopable {
                 case "start" : {
                     JSONObject data = input.getJSONObject("data");
                     String enemyLogin = data.getString("enemy");
-                    handlers.gameStart(this, enemyLogin);
+                    gameMessageProcessor.getMessageSystem().sendMessage(
+                            new MessageStart(
+                                    gameMessageProcessor.getAddress(),
+                                    gameMessageProcessor.getAddress(),
+                                    this,
+                                    enemyLogin
+                            )
+                    );
                 }
                 break;
                 case "left" : {
-                    handlers.gameAction(this, -5);
+                    gameMessageProcessor.getMessageSystem().sendMessage(
+                            new MessageMove(
+                                    gameMessageProcessor.getAddress(),
+                                    gameMessageProcessor.getAddress(),
+                                    this,
+                                    -5
+                            )
+                    );
                 }
                 break;
                 case "right" : {
-                    handlers.gameAction(this, 5);
+                    gameMessageProcessor.getMessageSystem().sendMessage(
+                            new MessageMove(
+                                    gameMessageProcessor.getAddress(),
+                                    gameMessageProcessor.getAddress(),
+                                    this,
+                                    5
+                            )
+                    );
                 }
                 break;
                 case "stop" : {
-                    handlers.gameAction(this, 0);
+                    gameMessageProcessor.getMessageSystem().sendMessage(
+                            new MessageMove(
+                                    gameMessageProcessor.getAddress(),
+                                    gameMessageProcessor.getAddress(),
+                                    this,
+                                    0
+                            )
+                    );
                 }
                 break;
                 case "disconnect" : {
-                    this.stop();
+                    gameMessageProcessor.getMessageSystem().sendMessage(
+                            new MessageDisconnect(
+                                    gameMessageProcessor.getAddress(),
+                                    gameMessageProcessor.getAddress(),
+                                    this
+                            )
+                    );
                 }
                 break;
                 case "freeusers" :
                 case "connect" : {
-                    handlers.gameGetFree();
+                    gameMessageProcessor.getMessageSystem().sendMessage(
+                            new MessageListFree(
+                                    gameMessageProcessor.getAddress(),
+                                    gameMessageProcessor.getAddress(),
+                                    this
+                            )
+                    );
                 }
                 break;
             }
         }//try
-        catch (GameException ex) {
-            handlers.gameError(ex);
-        }
         catch (Exception ex) {
             LOGGER.debug(ex.getMessage());
         }
@@ -110,8 +153,8 @@ public class GameWebSocket implements Stopable {
         }
     }
 
-    /***************************************************************/
-    private class Handlers {
+    /*************************************************************************************************/
+    public class Handlers {
 
         public void gameAction(GameWebSocket player, double vx) throws GameException {
             if(gameSession != null && gameSession.getStarted()) {
@@ -146,7 +189,7 @@ public class GameWebSocket implements Stopable {
         }
 
     }
-    /***************************************************************/
+    /**************************************************************************************************/
     public void sendMessageWithSession(@SuppressWarnings("ParameterHidesMemberVariable") Session session, JSONObject output) {
         if(output == null)
             return;
@@ -157,6 +200,10 @@ public class GameWebSocket implements Stopable {
         } catch (IOException e) {
             LOGGER.debug(e.getMessage());
         }
+    }
+
+    public void sendMessage(JSONObject output) {
+        sendMessageWithSession(session, output);
     }
 
     @Override
@@ -206,8 +253,6 @@ public class GameWebSocket implements Stopable {
 
     public Session getSession() {return session;}
 
-    public void sendMessage(JSONObject output) {
-        sendMessageWithSession(session, output);
-    }
+    public Handlers getHandlers() { return this.handlers; }
 
 }

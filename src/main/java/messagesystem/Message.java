@@ -17,5 +17,5 @@ public abstract class Message {
         return to;
     }
 
-    public abstract void exec(IAbonent abonent);
+    public abstract void exec(IAbonent abonent) throws Exception;
 }

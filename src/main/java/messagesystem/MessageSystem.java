@@ -21,7 +21,7 @@ public final class MessageSystem {
         messages.get(message.getTo()).add(message);
     }
 
-    public void execForAbonent(IAbonent abonent) {
+    public void execForAbonent(IAbonent abonent) throws Exception {
         ConcurrentLinkedQueue<Message> queue = messages.get(abonent.getAddress());
         while (!queue.isEmpty()) {
             Message message = queue.poll();

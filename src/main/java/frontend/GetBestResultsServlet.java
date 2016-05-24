@@ -49,8 +49,8 @@ public class GetBestResultsServlet extends HttpServlet {
             response.getWriter().println(bestResultsArray.toString());
             LOGGER.debug("Success.");
         }
-        catch (Exception e) {
-            statusCode = HttpServletResponse.SC_FORBIDDEN;
+        catch (RuntimeException e) {
+            statusCode = HttpServletResponse.SC_SERVICE_UNAVAILABLE;
             LOGGER.debug("Failed to get best game results. SessionId: {}. Reason: {}", sessionId, e.getMessage());
         }
 

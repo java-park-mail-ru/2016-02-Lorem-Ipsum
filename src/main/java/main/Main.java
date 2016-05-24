@@ -4,6 +4,7 @@ import database.DbService;
 import database.utils.FakeDbGenerator;
 import frontend.RoutingServlet;
 import game.gamemanagement.websocket.WebSocketGameServlet;
+import messagesystem.MessageSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.server.Handler;
@@ -75,11 +76,18 @@ public class Main {
             return;
         }
 
+        MessageSystem messageSystem = new MessageSystem();
+
         Servlet routingServlet = new RoutingServlet(accountService);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.addServlet(new ServletHolder(routingServlet), "/api/v1/*");
-        context.addServlet(new ServletHolder(new WebSocketGameServlet(accountService, accountService)), "/gamesocket");
+        context.addServlet(
+                new ServletHolder(
+                    new WebSocketGameServlet(accountService, accountService, messageSystem)
+                ),
+                "/gamesocket"
+        );
 
 
         ResourceHandler resourceHandler = new ResourceHandler();

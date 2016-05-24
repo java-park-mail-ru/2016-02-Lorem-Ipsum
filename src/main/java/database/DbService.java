@@ -295,14 +295,9 @@ public class DbService implements IDbService, IGame {
             transaction.commit();
         }
         catch (HibernateException e) {
-            try {
-                if(transaction != null)
-                    transaction.rollback();
-                LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
-            }
-            catch (NullPointerException e2) {
-                LOGGER.debug("Failed db operation. Failed to roll back. Reason: {}" , e2.getMessage());
-            }
+            if(transaction != null)
+                transaction.rollback();
+            LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
         }
     }
 

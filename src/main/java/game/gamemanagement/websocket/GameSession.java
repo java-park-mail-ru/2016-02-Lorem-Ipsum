@@ -107,7 +107,7 @@ public class GameSession {
             );
         }
         else {
-            throw new GameException("Unable to start game, improper condition.");
+            throw new GameException("Unable to start game, already started.");
         }
     }
 
@@ -126,7 +126,7 @@ public class GameSession {
             );
         }
         else {
-            throw new GameException("Unable to stop game, improper condition.");
+            throw new GameException("Unable to stop game, not started.");
         }
     }
 

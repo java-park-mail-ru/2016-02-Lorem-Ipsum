@@ -32,6 +32,7 @@ public class PhysicalInstance {
 
     public PhysicalInstance(double canvasWidth, double canvasHeight) {
         IPrimitivesFactory primitivesFactory = new PrimitivesFactory(canvasWidth, canvasHeight);
+        physicalInstanceProcessor = new PhysicalInstanceProcessor();
         blocks = primitivesFactory.getStandartBlocks();
         canvas = primitivesFactory.getStandartCanvas();
         ballFirst = primitivesFactory.getStandartCircle();
@@ -44,11 +45,13 @@ public class PhysicalInstance {
         collisionsFirst.add( new BodyPair(ballFirst, blocks, collisionHandler) ); //мяч-блоки
         collisionsFirst.add( new BodyPair(ballFirst, canvas, collisionHandler) ); //мяч-граница_канваса
         collisionsFirst.add( new BodyPair(ballFirst, platformFirst, collisionHandler) ); //мяч-платформа
+        collisionsFirst.add( new BodyPair(platformFirst, canvas, collisionHandler) ); //платформа-граница_канваса
 
         collisionsSecond = new HashSet<>();
         collisionsSecond.add( new BodyPair(ballSecond, blocks, collisionHandler) ); //мяч-блоки
         collisionsSecond.add( new BodyPair(ballSecond, canvas, collisionHandler) ); //мяч-граница_канваса
         collisionsSecond.add( new BodyPair(ballSecond, platformSecond, collisionHandler) ); //мяч-платформа
+        collisionsFirst.add( new BodyPair(platformSecond, canvas, collisionHandler) ); //платформа-граница_канваса
     }
 
     public IPhysicalInstanceProcessor getProcessor() {
