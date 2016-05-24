@@ -1,0 +1,20 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="gamestate">
+    <fest:include src="./back_button.xml"/>
+    <fest:if test='gamestate.is_running'>
+        <canvas class="b-canvas js-canvas">
+        </canvas>
+    </fest:if>
+    <fest:if test='!gamestate.is_running'>
+        <table class="b-free-list">
+            <fest:for iterate="gamestate.free_users" index="i" value="v">
+                <tr>
+                    <td>
+                        <div class="b-scoreboard-table__elem">
+                            <fest:value> v </fest:value>
+                        </div>
+                    </td>
+                </tr>
+            </fest:for>
+        </table>
+    </fest:if>
+</fest:template>

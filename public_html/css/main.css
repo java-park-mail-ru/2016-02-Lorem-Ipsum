@@ -1,0 +1,133 @@
+.b-back {
+  float: left; }
+
+.b-canvas {
+  border-color: #E9DC51;
+  border-style: solid;
+  border-width: 2px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 90%;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  position: absolute;
+  display: block; }
+
+.b-error-block {
+  margin-top: 2%;
+  min-height: 100px;
+  width: 30vw;
+  height: 16vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000000;
+  visibility: hidden;
+  font-size: 5vh;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  text-align: center; }
+
+.b-form {
+  width: 70%;
+  height: 70%; }
+  .b-form_position-centred {
+    margin-left: 15%;
+    margin-right: 15%; }
+  .b-form__input {
+    background-color: rgba(60, 63, 65, 0.23);
+    color: #e6f8ff;
+    width: 80%;
+    height: 15%;
+    font-size: 7vh;
+    border-radius: 20px;
+    text-align: center; }
+    .b-form__input_position {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 2%; }
+  .b-form__submit {
+    outline: 0;
+    height: 15%;
+    font-size: 7vh;
+    width: 80%;
+    background-color: rgba(80, 200, 120, 0.4);
+    border-radius: 20px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627; }
+    .b-form__submit_margin {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 3%; }
+    .b-form__submit:hover {
+      background-color: rgba(92, 191, 42, 0.4); }
+
+a {
+  text-decoration: none;
+  outline: none; }
+
+.b-header {
+  width: 70%;
+  color: white;
+  text-align: center;
+  height: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 5.5vh; }
+
+.b-main-menu {
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%; }
+  .b-main-menu__elem {
+    background-color: rgba(60, 63, 65, 0.23);
+    width: 100%;
+    color: #e6f8ff;
+    margin-top: 1%;
+    border-color: #f1ffe6;
+    border: medium;
+    border-style: solid;
+    height: 20%;
+    text-align: center;
+    font-size: 5vw;
+    border-radius: 4vh;
+    vertical-align: middle;
+    overflow: hidden;
+    line-height: 16vh;
+    font-style: normal; }
+    .b-main-menu__elem:hover {
+      cursor: pointer;
+      background-color: rgba(68, 85, 136, 0.31); }
+
+.b-scoreboard-table {
+  width: 80%; }
+  .b-scoreboard-table_position-centred {
+    left: 10%;
+    right: 10%;
+    position: absolute; }
+  .b-scoreboard-table__elem {
+    background-color: rgba(60, 63, 65, 0.23);
+    color: #e6f8ff;
+    border-color: #f1ffe6;
+    border: medium;
+    border-style: solid;
+    height: 20%;
+    text-align: center;
+    font-size: 5vh;
+    vertical-align: middle;
+    overflow: hidden; }
+
+.b-view-container {
+  /*background: url("../img/background.png");*/
+  -moz-background-size: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover; }

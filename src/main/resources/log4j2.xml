@@ -40,6 +40,15 @@
             <DefaultRolloverStrategy max="20"/>
         </RollingFile>
 
+        <RollingFile name="ROLLING_FILE_GAME" fileName="${LOG_DIR}/game.log"
+                     filePattern="${ARCHIVE}/test/game.log.%d{yyyy-MM-dd-hh-mm}.gz">
+            <PatternLayout pattern="${PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
         <Async name="ASYNC_FILE">
             <AppenderRef ref="ROLLING_FILE"/>
         </Async>
@@ -50,6 +59,10 @@
 
         <Async name="ASYNC_FILE_DB">
             <AppenderRef ref="ROLLING_FILE_DB"/>
+        </Async>
+
+        <Async name="ASYNC_FILE_GAME">
+            <AppenderRef ref="ROLLING_FILE_GAME"/>
         </Async>
 
         <Async name="ASYNC_CONSOLE">
@@ -70,6 +83,10 @@
 
         <Logger name="DbLogger" level="DEBUG" additivity="false">
             <AppenderRef ref="ASYNC_FILE_DB"/>
+        </Logger>
+
+        <Logger name="GameLogger" level="DEBUG" additivity="false">
+            <AppenderRef ref="ASYNC_FILE_GAME"/>
         </Logger>
 
     </Loggers>

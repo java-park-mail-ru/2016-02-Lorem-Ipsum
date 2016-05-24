@@ -1,0 +1,22 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="best_players">
+    <fest:include  src="./back_button.xml"/>
+    <div class="b-header">
+        <h1>Scoreboard</h1>
+    </div>
+    <table class="b-scoreboard-table b-scoreboard-table_position-centred">
+        <fest:for iterate="best_players" index="i" value="v">
+             <tr>
+                 <td>
+                     <div class="b-scoreboard-table__elem">
+                        <fest:value>v.login</fest:value>
+                     </div>
+                 </td>
+                 <td>
+                     <div class="b-scoreboard-table__elem">
+                        <fest:value>v.score</fest:value>
+                     </div>
+                 </td>
+             </tr>
+        </fest:for>
+        </table>
+</fest:template>

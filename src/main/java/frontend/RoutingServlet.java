@@ -1,6 +1,6 @@
 package frontend;
 
-import main.IAccountService;
+import database.DbService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,19 +13,21 @@ public class RoutingServlet extends HttpServlet {
     private final SignInServlet signInServlet;
     private final SignUpServlet signUpServlet;
     private final IsAuthenticatedServlet isAuthenticatedServlet;
-    private final GetUserProfileServlet getUserProgileServlet;
+    private final GetUserProfileServlet getUserProfileServlet;
     private final ChangeUserServlet changeUserServlet;
     private final DeleteUserServlet deleteUserServlet;
     private final LogOutServlet logOutServlet;
+    private final GetBestResultsServlet getBestResultsServlet;
 
-    public RoutingServlet(IAccountService accountService) {
+    public RoutingServlet(DbService accountService) {
         signInServlet = new SignInServlet(accountService);
         signUpServlet = new SignUpServlet(accountService);
         isAuthenticatedServlet = new IsAuthenticatedServlet(accountService);
-        getUserProgileServlet = new GetUserProfileServlet(accountService);
+        getUserProfileServlet = new GetUserProfileServlet(accountService);
         changeUserServlet = new ChangeUserServlet(accountService);
         deleteUserServlet = new DeleteUserServlet(accountService);
         logOutServlet = new LogOutServlet(accountService);
+        getBestResultsServlet = new GetBestResultsServlet(accountService);
     }
 
     @Override
@@ -33,17 +35,29 @@ public class RoutingServlet extends HttpServlet {
                       HttpServletResponse response) throws ServletException, IOException {
         String sId = request.getRequestURI();
         sId = sId.substring(sId.lastIndexOf('/') + 1, sId.length());
-        if(sId.equals("session")) {
-            isAuthenticatedServlet.doGet(request, response);
-        } else {
-            getUserProgileServlet.doGet(request, response);
+        switch (sId) {
+            case "session":
+                isAuthenticatedServlet.doGet(request, response);
+                break;
+            case "score":
+                getBestResultsServlet.doGet(request, response);
+                break;
+            default:
+                getUserProfileServlet.doGet(request, response);
+                break;
         }
     }
 
     @Override
     public void doPost(HttpServletRequest request,
                       HttpServletResponse response) throws ServletException, IOException {
-        changeUserServlet.doPost(request, response);
+        String sId = request.getRequestURI();
+        sId = sId.substring(sId.lastIndexOf('/') + 1, sId.length());
+        if(sId.equals("session")) {
+            signInServlet.doPost(request, response);
+        } else {
+            changeUserServlet.doPost(request, response);
+        }
     }
 
     @Override
