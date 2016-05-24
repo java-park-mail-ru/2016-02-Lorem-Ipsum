@@ -1,11 +1,15 @@
 package game.gamemanagement.websocket;
 
 import game.GameException;
+import game.gamemanagement.gamemessages.GameMessageProcessor;
+import game.gamemanagement.gamemessages.MessageDisconnect;
+import game.gamemanagement.gamemessages.MessageListFree;
 import main.IGame;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.util.ConcurrentHashSet;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.Map;
 import java.util.Set;
@@ -133,6 +137,22 @@ public class GamePool {
             return freeUsers.get(login);
         else
             return null;
+    }
+
+    //new
+    public void notifyAboutNewcome() {
+        JSONArray result = getFreeUsersArray();
+        for(String login : freeUsers.keySet()) {
+            GameWebSocket socket = freeUsers.get(login);
+            GameMessageProcessor gameMessageProcessor = socket.getGameMessageProcessor();
+            gameMessageProcessor.getMessageSystem().sendMessage(
+                    new MessageListFree(
+                            gameMessageProcessor.getAddress(),
+                            gameMessageProcessor.getAddress(),
+                            socket
+                    )
+            );
+        }
     }
 
 }

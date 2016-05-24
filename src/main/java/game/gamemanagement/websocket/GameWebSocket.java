@@ -132,6 +132,7 @@ public class GameWebSocket implements Stopable {
                                     this
                             )
                     );
+                    gamePool.notifyAboutNewcome();
                 }
                 break;
             }
@@ -254,5 +255,8 @@ public class GameWebSocket implements Stopable {
     public Session getSession() {return session;}
 
     public Handlers getHandlers() { return this.handlers; }
+
+    //new
+    public GameMessageProcessor getGameMessageProcessor() { return gameMessageProcessor; }
 
 }

@@ -123,7 +123,7 @@ a {
     overflow: hidden; }
 
 .b-view-container {
-  background: url("../img/background.png");
+  /*background: url("../img/background.png");*/
   -moz-background-size: 100%;
   position: fixed;
   top: 0;

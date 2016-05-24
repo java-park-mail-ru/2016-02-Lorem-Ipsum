@@ -150,11 +150,11 @@ public class PhysicalInstance {
             toFirst.put("blocks_matrix", blocks.toJSONArray());
 
             JSONObject toSecond = new JSONObject();
-            toFirst.put("your_ball", ballSecond.toJSON());
-            toFirst.put("your_platform", platformSecond.toJSON());
-            toFirst.put("another_ball", ballFirst.toJSON());
-            toFirst.put("another_platform", platformFirst.toJSON());
-            toFirst.put("blocks_matrix", blocks.toJSONArray());
+            toSecond.put("your_ball", ballSecond.toJSON());
+            toSecond.put("your_platform", platformSecond.toJSON());
+            toSecond.put("another_ball", ballFirst.toJSON());
+            toSecond.put("another_platform", platformFirst.toJSON());
+            toSecond.put("blocks_matrix", blocks.toJSONArray());
 
             res.put("toFirst", toFirst);
             res.put("toSecond", toSecond);

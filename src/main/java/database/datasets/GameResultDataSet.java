@@ -67,11 +67,15 @@ public class GameResultDataSet {
     public JSONObject toJSONObject() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("id", this.id);
-        jsonObject.put("userIdFirst", this.userFirst.getId());
-        jsonObject.put("userIdSecond", this.userSecond.getId());
+        jsonObject.put("userLoginFirst", this.userFirst.getLogin());
+        jsonObject.put("userLoginSecond", this.userSecond.getLogin());
         jsonObject.put("scoreWinner", this.scoreWinner);
         jsonObject.put("scoreFirst", this.scoreFirst);
         jsonObject.put("scoreSecond", this.scoreSecond);
+        jsonObject.put("login",
+                this.scoreFirst == this.scoreWinner ?
+                        this.userFirst.getLogin() : this.userSecond.getLogin());
+        jsonObject.put("score", this.scoreWinner);
         return jsonObject;
     }
 

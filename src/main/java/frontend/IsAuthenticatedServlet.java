@@ -59,6 +59,6 @@ public class IsAuthenticatedServlet extends HttpServlet {
         pageVariables.put("data", dataToSend);
         String responseContent = PageGenerator.getPage("Response", pageVariables);
         response.getWriter().println(responseContent);
-        LOGGER.debug("Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));
+        LOGGER.debug(   "Servlet finished with code {}, response body: {}", statusCode, responseContent.replace("\r\n", ""));
     }
 }
