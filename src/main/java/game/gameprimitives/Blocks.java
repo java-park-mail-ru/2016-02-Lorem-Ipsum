@@ -1,6 +1,7 @@
 package game.gameprimitives;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Blocks extends Rectangle {
@@ -121,7 +122,7 @@ public class Blocks extends Rectangle {
             offsetX = blocks.has("offsetX") ? blocks.getDouble("offsetX") : 0;
             offsetY = blocks.has("offsetY") ? blocks.getDouble("offsetY") : 0;
         }
-        catch(Exception err){
+        catch(JSONException err){
             LOGGER.debug(err.getMessage());
         }
     }
@@ -138,6 +139,7 @@ public class Blocks extends Rectangle {
         return rows;
     }
 
+    @SuppressWarnings("CloneDoesntCallSuperClone")
     @Override
     public Body clone() {
         Blocks blocks = new Blocks(
@@ -157,7 +159,7 @@ public class Blocks extends Rectangle {
                 offsetY
         );
         int[][] hitPointMatrixCopy = hitPointMatrix.clone();
-        blocks.setHitPoints(hitPointMatrixCopy);
+        blocks.hitPointMatrix = hitPointMatrixCopy;
         return blocks;
     }
 

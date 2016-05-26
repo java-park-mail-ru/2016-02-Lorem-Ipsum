@@ -6,5 +6,5 @@ package game.gamemanagement;
 public interface IGameThreadSettings {
     int GAME_RUNNER_SLEEP = 10000;
     int GAME_OPERATOR_SLEEP = 25;
-    int SERVICE_SLEEP_TIME = 100;
+    int SERVICE_SLEEP_TIME = 10000;
 }

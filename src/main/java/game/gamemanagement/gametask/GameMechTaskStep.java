@@ -8,6 +8,7 @@ import game.gameprimitives.physicalinstance.IStopProcessor;
 /**
  * Created by Installed on 20.05.2016.
  */
+@SuppressWarnings("CanBeFinal")
 public class GameMechTaskStep implements IGameMechTask {
 
     IPhysicalInstanceProcessor physicalInstanceProcessor;

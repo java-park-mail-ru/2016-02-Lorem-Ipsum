@@ -3,29 +3,35 @@ package game.gamemanagement.gamemessages;
 import game.GameException;
 import game.gamemanagement.websocket.GameWebSocket;
 import messagesystem.Address;
+import org.json.JSONObject;
 
 /**
  * Created by Installed on 24.05.2016.
  */
-public class MessageError extends MessageToGame {
+@SuppressWarnings({"CanBeFinal", "InstanceVariableNamingConvention"})
+public class OutputMessageError extends MessageGame {
 
     private GameWebSocket socket;
     private GameException ex;
 
-    public MessageError(
+    public OutputMessageError(
             Address from,
             Address to,
-            GameWebSocket socket,
             GameException ex
     ) {
         super(from, to);
-        this.socket = socket;
         this.ex = ex;
+        this.socket = ex.getSocket();
     }
 
     @Override
     protected void execInternal(GameMessageProcessor processor) throws GameException {
-        socket.getHandlers().gameError(ex);
+        JSONObject errJSON = new JSONObject();
+        errJSON.put("action", "error");
+        JSONObject data = new JSONObject();
+        data.put("message", ex.getMessage());
+        errJSON.put("data", data);
+        socket.sendMessage(errJSON);
     }
 
 }

@@ -5,6 +5,7 @@ import game.gameprimitives.physicalinstance.IPhysicalInstanceProcessor;
 /**
  * Created by Installed on 20.05.2016.
  */
+@SuppressWarnings({"CanBeFinal", "InstanceVariableNamingConvention"})
 public class GameMechTaskRedirrectPlatform implements IGameMechTask {
 
     IPhysicalInstanceProcessor physicalInstanceProcessor;

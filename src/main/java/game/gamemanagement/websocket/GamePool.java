@@ -1,23 +1,21 @@
 package game.gamemanagement.websocket;
 
 import game.GameException;
-import game.gamemanagement.gamemessages.GameMessageProcessor;
-import game.gamemanagement.gamemessages.MessageDisconnect;
-import game.gamemanagement.gamemessages.MessageListFree;
+import game.gamemanagement.gamemessages.OutputMessageListFree;
 import main.IGame;
+import messagesystem.Address;
+import messagesystem.MessageSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.eclipse.jetty.util.ConcurrentHashSet;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by Installed on 17.04.2016.
  */
+@SuppressWarnings({"FieldCanBeLocal", "ConstantConditions"})
 public class GamePool {
 
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
@@ -40,7 +38,7 @@ public class GamePool {
             gameWebSocket.setGamePool(this);
         }
         else {
-            throw new GameException("Cannot connect user. Websocket is null: " + (gameWebSocket == null)
+            throw new GameException(gameWebSocket, "Cannot connect user. Websocket is null: " + (gameWebSocket == null)
                                     + "Userid is null: " + (userId == null) );
         }
     }
@@ -57,12 +55,12 @@ public class GamePool {
                 freeUsers.remove(login);
 
             if(games.containsKey(userId)) {
-                games.get(userId).stop();
+                games.get(userId).stop(webSocket);
                 games.remove(userId);
             }
         }
         else {
-            throw new GameException("Cannot disconnect user. Websocket is null: " + (webSocket == null));
+            throw new GameException(webSocket, "Cannot disconnect user. Websocket is null: " + (webSocket == null));
         }
     }
 
@@ -84,7 +82,7 @@ public class GamePool {
                 games.remove(starterId);
                 freeUsers.put(firstSocket.getMyLogin(), firstSocket);
                 freeUsers.put(secondSocket.getMyLogin(), secondSocket);
-                gameSession.stop();
+                gameSession.stop(firstSocket);
             }
         }
 
@@ -110,12 +108,13 @@ public class GamePool {
                         firstSocket,
                         secondSocket
                 );
-                gameSession.start();
+                gameSession.start(firstSocket);
                 freeUsers.remove(firstSocket.getMyLogin());
                 freeUsers.remove(secondSocket.getMyLogin());
                 games.put(userIdStarter, gameSession);
             } else {
-                throw new GameException("Unable to start game. First user is connected: "+ connectedUsers.containsKey(userIdStarter)
+                throw new GameException(firstSocket,
+                        "Unable to start game. First user is connected: "+ connectedUsers.containsKey(userIdStarter)
                         + " Second user is connetcted: " + connectedUsers.containsKey(userIdSecond) +
                         " First user is free: " + freeUsers.containsKey(firstSocket.getMyLogin()) +
                         " Second user is free:" + freeUsers.containsKey(secondSocket.getMyLogin()) +
@@ -126,9 +125,7 @@ public class GamePool {
 
     public JSONArray getFreeUsersArray() {
         JSONArray res = new JSONArray();
-        for( String login : freeUsers.keySet() ) {
-            res.put(login);
-        }
+        freeUsers.keySet().forEach(res::put);
         return res;
     }
 
@@ -140,15 +137,14 @@ public class GamePool {
     }
 
     //new
-    public void notifyAboutNewcome() {
-        JSONArray result = getFreeUsersArray();
+    public void notifyAllFreeUsers() {
         for(String login : freeUsers.keySet()) {
             GameWebSocket socket = freeUsers.get(login);
-            GameMessageProcessor gameMessageProcessor = socket.getGameMessageProcessor();
-            gameMessageProcessor.getMessageSystem().sendMessage(
-                    new MessageListFree(
-                            gameMessageProcessor.getAddress(),
-                            gameMessageProcessor.getAddress(),
+            Address address = MessageSystem.getInstance().getAddressService().getOutputProcessorAddress();
+            MessageSystem.getInstance().sendMessage(
+                    new OutputMessageListFree(
+                            address,
+                            address,
                             socket
                     )
             );

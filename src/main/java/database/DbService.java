@@ -31,7 +31,6 @@ public class DbService implements IDbService, IGame {
 
     public static final Logger LOGGER = LogManager.getLogger("DbLogger");
 
-    @SuppressWarnings("SameParameterValue")
     public DbService(String hostname, String port, String dbName, String driverName,
                      String login, String password) {
 

@@ -8,6 +8,7 @@ import game.gameprimitives.physicalinstance.IStopProcessor;
 /**
  * Created by Installed on 20.05.2016.
  */
+@SuppressWarnings("CanBeFinal")
 public class TaskFactory implements ITaskFactory {
 
     IPhysicalInstanceProcessor physicalInstanceProcessor;

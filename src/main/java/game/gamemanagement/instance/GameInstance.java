@@ -9,6 +9,7 @@ import game.gameprimitives.physicalinstance.*;
 /**
  * Created by Installed on 20.05.2016.
  */
+@SuppressWarnings("CanBeFinal")
 public class GameInstance implements IGameInstance {
 
     PhysicalInstance physicalInstance;

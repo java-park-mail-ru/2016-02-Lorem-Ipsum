@@ -6,6 +6,7 @@ import game.gameprimitives.physicalinstance.IScoreProcessor;
 /**
  * Created by Installed on 20.05.2016.
  */
+@SuppressWarnings({"CanBeFinal", "InstanceVariableNamingConvention", "NonConstantFieldWithUpperCaseName"})
 public class ScoreProcessor implements IScoreProcessor {
 
     private GameSession gameSession;

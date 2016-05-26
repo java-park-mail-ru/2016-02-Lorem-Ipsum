@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * Created by Installed on 20.05.2016.
  */
+@SuppressWarnings("CanBeFinal")
 public class GameRunner implements Runnable, Stopable {
 
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");

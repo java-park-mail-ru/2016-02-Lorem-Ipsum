@@ -7,6 +7,7 @@ import game.gameprimitives.*;
  */
 public class GlobalCollisionHandler implements CollisionHandler {
 
+    @Override
     public void handleCollision(Body first, Body second) {
 
         if (first instanceof Rectangle) {
@@ -47,6 +48,7 @@ public class GlobalCollisionHandler implements CollisionHandler {
             ball.setVX(ball.getVX() * (-1));
     }
 
+    @SuppressWarnings("UnusedParameters")
     public static void handleCollisionBoundPlatform(Rectangle platform, double canvasWidth, double canvasHeight) {
         if(platform.getX() <= 0)
             platform.setX(0);

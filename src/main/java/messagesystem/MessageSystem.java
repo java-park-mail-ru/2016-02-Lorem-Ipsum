@@ -1,5 +1,7 @@
 package messagesystem;
 
+import game.gamemanagement.gamemessages.GameMessageProcessor;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -9,8 +11,34 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 public final class MessageSystem {
     private final Map<Address, ConcurrentLinkedQueue<Message>> messages = new HashMap<>();
+    private final AddressService addressService = new AddressService();
 
-    public MessageSystem() {
+    @SuppressWarnings("RedundantNoArgConstructor")
+    private MessageSystem() {
+        GameMessageProcessor messageInputProcessor = new GameMessageProcessor(this);
+        GameMessageProcessor messageOuputProcessor = new GameMessageProcessor(this);
+        addressService.registerInputProcessor(messageInputProcessor);
+        addressService.registerOutputProcessor(messageOuputProcessor);
+        Thread messageInputProcessorThread = new Thread(messageInputProcessor);
+        Thread messageOutputProcessorThread = new Thread(messageOuputProcessor);
+        messageInputProcessorThread.setDaemon(true);
+        messageOutputProcessorThread.setDaemon(true);
+        messageInputProcessorThread.setName("GameInputMessageProcessor");
+        messageOutputProcessorThread.setName("GameOutputMessageProcessor");
+        messageInputProcessorThread.start();
+        messageOutputProcessorThread.start();
+    }
+
+    private static class MessageSystemHolder {
+        private static final MessageSystem INSTANCE = new MessageSystem();
+    }
+
+    public static MessageSystem getInstance() {
+        return MessageSystemHolder.INSTANCE;
+    }
+
+    public AddressService getAddressService() {
+        return addressService;
     }
 
     public void addService(IAbonent abonent) {

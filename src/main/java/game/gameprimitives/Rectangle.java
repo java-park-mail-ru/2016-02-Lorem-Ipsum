@@ -1,5 +1,6 @@
 package game.gameprimitives;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Rectangle extends Body {
@@ -58,7 +59,7 @@ public class Rectangle extends Body {
             width = rect.has("width")?rect.getDouble("width"):0;
             height = rect.has("height")?rect.getDouble("height"):0;
         }
-        catch (Exception err) {
+        catch (JSONException err) {
             LOGGER.debug(err.getMessage());
         }
     }
@@ -71,6 +72,7 @@ public class Rectangle extends Body {
         return rect;
     }
 
+    @SuppressWarnings("CloneDoesntCallSuperClone")
     @Override
     public Body clone() {
         return new Rectangle(this.toJSON());

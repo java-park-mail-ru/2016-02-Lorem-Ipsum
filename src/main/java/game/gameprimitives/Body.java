@@ -3,8 +3,10 @@ package game.gameprimitives;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+@SuppressWarnings("ComparableImplementedButEqualsNotOverridden")
 public abstract class Body implements Comparable<Body> {
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
     protected double xPos;//позиция по x
@@ -39,7 +41,7 @@ public abstract class Body implements Comparable<Body> {
     }
 
     @Override
-    public int compareTo(Body  other){ //Для сортировки по левому краю
+    public int compareTo(@NotNull Body  other){ //Для сортировки по левому краю
         return  (int)(this.left() - other.left());
     }
 
@@ -68,7 +70,7 @@ public abstract class Body implements Comparable<Body> {
             xVel = body.has("vx") ? body.getDouble("vx") : 0;
             yVel = body.has("vy") ? body.getDouble("vy") : 0;
         }
-        catch(Exception err){
+        catch(JSONException err){
             LOGGER.debug(err.getMessage());
         }
     }
@@ -82,6 +84,7 @@ public abstract class Body implements Comparable<Body> {
         return  body;
     }
 
+    @Override
     public abstract Body clone();
 
 }

@@ -8,6 +8,7 @@ import game.gameprimitives.Rectangle;
 /**
  * Created by Installed on 09.05.2016.
  */
+@SuppressWarnings({"CanBeFinal", "MagicNumber", "FieldCanBeLocal", "InstanceVariableNamingConvention", "NonConstantFieldWithUpperCaseName"})
 public class PrimitivesFactory implements IPrimitivesFactory {
 
     private double canvasWidth;
@@ -32,14 +33,17 @@ public class PrimitivesFactory implements IPrimitivesFactory {
         );
     }
 
+    @Override
     public Rectangle getStandartPlatform() {
         return getStandartRectangle();
     }
 
+    @Override
     public Canvas getStandartCanvas() {
         return new Canvas(0, 0, canvasWidth, canvasHeight);
     }
 
+    @Override
     public Circle getStandartCircle() {
         return new Circle(
                 canvasWidth - 50,
@@ -54,6 +58,7 @@ public class PrimitivesFactory implements IPrimitivesFactory {
     private final int BLOCK_ROWS = 4;
     private final int BLOCK_COLUMNS = 20;
 
+    @Override
     public Blocks getStandartBlocks() {
         return new Blocks(
                 0,

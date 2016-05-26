@@ -3,26 +3,30 @@ package game.gamemanagement.gamemessages;
 import game.GameException;
 import game.gamemanagement.websocket.GameWebSocket;
 import messagesystem.Address;
+import org.json.JSONObject;
 
 /**
- * Created by Installed on 24.05.2016.
+ * Created by Installed on 26.05.2016.
  */
-public class MessageListFree extends MessageToGame {
+public class OutputMessageGetState extends MessageGame {
 
-    private GameWebSocket socket;
+    private final GameWebSocket socket;
+    private final JSONObject messageJSON;
 
-    public MessageListFree(
+    public OutputMessageGetState(
             Address from,
             Address to,
-            GameWebSocket socket
+            GameWebSocket socket,
+            JSONObject messageJSON
     ) {
         super(from, to);
         this.socket = socket;
+        this.messageJSON = messageJSON;
     }
 
     @Override
     protected void execInternal(GameMessageProcessor processor) throws GameException {
-        socket.getHandlers().gameGetFree();
+        socket.sendMessage(messageJSON);
     }
 
 }

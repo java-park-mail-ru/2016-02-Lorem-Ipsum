@@ -4,7 +4,7 @@ import game.Stopable;
 import game.GameException;
 import game.gamemanagement.gamemessages.*;
 import messagesystem.Address;
-import messagesystem.IAbonent;
+import messagesystem.MessageSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.websocket.api.Session;
@@ -13,7 +13,6 @@ import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import org.jetbrains.annotations.NotNull;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -31,21 +30,17 @@ public class GameWebSocket implements Stopable {
     private GamePool gamePool;
     private GameSession gameSession;
     private GameWebSocket enemySocket;
-    private Handlers handlers = new Handlers();
-    private GameMessageProcessor gameMessageProcessor;
 
     public GameWebSocket(
             Long myId,
             String myLogin,
-            GamePool gamePool,
-            GameMessageProcessor gameMessageProcessor
+            GamePool gamePool
     ) {
         this.myId = myId;
         this.myLogin = myLogin;
         this.gamePool = gamePool;
         this.gameSession = null;
         this.enemySocket = null;
-        this.gameMessageProcessor = gameMessageProcessor;
     }
 
     @OnWebSocketConnect
@@ -66,14 +61,21 @@ public class GameWebSocket implements Stopable {
         //noinspection OverlyBroadCatchBlock
         try {
             String action = input.getString("action");
+            Address addressInput = MessageSystem.getInstance().
+                    getAddressService().
+                    getInputProcessorAddress();
+            Address addressOutput = MessageSystem.getInstance().
+                    getAddressService().
+                    getOutputProcessorAddress();
+            MessageSystem messageSystem = MessageSystem.getInstance();
             switch (action) {
                 case "start" : {
                     JSONObject data = input.getJSONObject("data");
                     String enemyLogin = data.getString("enemy");
-                    gameMessageProcessor.getMessageSystem().sendMessage(
-                            new MessageStart(
-                                    gameMessageProcessor.getAddress(),
-                                    gameMessageProcessor.getAddress(),
+                    messageSystem.sendMessage(
+                            new InputMessageStart(
+                                    addressInput,
+                                    addressInput,
                                     this,
                                     enemyLogin
                             )
@@ -81,10 +83,10 @@ public class GameWebSocket implements Stopable {
                 }
                 break;
                 case "left" : {
-                    gameMessageProcessor.getMessageSystem().sendMessage(
-                            new MessageMove(
-                                    gameMessageProcessor.getAddress(),
-                                    gameMessageProcessor.getAddress(),
+                    messageSystem.sendMessage(
+                            new InputMessageMove(
+                                    addressInput,
+                                    addressInput,
                                     this,
                                     -5
                             )
@@ -92,10 +94,10 @@ public class GameWebSocket implements Stopable {
                 }
                 break;
                 case "right" : {
-                    gameMessageProcessor.getMessageSystem().sendMessage(
-                            new MessageMove(
-                                    gameMessageProcessor.getAddress(),
-                                    gameMessageProcessor.getAddress(),
+                    messageSystem.sendMessage(
+                            new InputMessageMove(
+                                    addressInput,
+                                    addressInput,
                                     this,
                                     5
                             )
@@ -103,10 +105,10 @@ public class GameWebSocket implements Stopable {
                 }
                 break;
                 case "stop" : {
-                    gameMessageProcessor.getMessageSystem().sendMessage(
-                            new MessageMove(
-                                    gameMessageProcessor.getAddress(),
-                                    gameMessageProcessor.getAddress(),
+                    messageSystem.sendMessage(
+                            new InputMessageMove(
+                                    addressInput,
+                                    addressInput,
                                     this,
                                     0
                             )
@@ -114,27 +116,37 @@ public class GameWebSocket implements Stopable {
                 }
                 break;
                 case "disconnect" : {
-                    gameMessageProcessor.getMessageSystem().sendMessage(
-                            new MessageDisconnect(
-                                    gameMessageProcessor.getAddress(),
-                                    gameMessageProcessor.getAddress(),
+                    messageSystem.sendMessage(
+                            new InputMessageDisconnect(
+                                    addressInput,
+                                    addressInput,
                                     this
                             )
                     );
                 }
                 break;
-                case "freeusers" :
+                case "freeusers" : {
+                    messageSystem.sendMessage(
+                            new OutputMessageListFree(
+                                    addressInput,
+                                    addressOutput,
+                                    this
+                            )
+                    );
+                }
+                break;
                 case "connect" : {
-                    gameMessageProcessor.getMessageSystem().sendMessage(
-                            new MessageListFree(
-                                    gameMessageProcessor.getAddress(),
-                                    gameMessageProcessor.getAddress(),
+                    messageSystem.sendMessage(
+                            new OutputMessageListFree(
+                                    addressInput,
+                                    addressOutput,
                                     this
                             )
                     );
-                    gamePool.notifyAboutNewcome();
+                    gamePool.notifyAllFreeUsers();
                 }
                 break;
+                default: {}
             }
         }//try
         catch (Exception ex) {
@@ -154,43 +166,6 @@ public class GameWebSocket implements Stopable {
         }
     }
 
-    /*************************************************************************************************/
-    public class Handlers {
-
-        public void gameAction(GameWebSocket player, double vx) throws GameException {
-            if(gameSession != null && gameSession.getStarted()) {
-                gameSession.performGameAction(player, vx);
-            }
-            else {
-                throw new GameException("Can not perform action. Bad game session.");
-            }
-        }
-
-        public void gameStart(GameWebSocket mysocket, String enemyLogin) throws GameException {
-            GameWebSocket enemysocket = gamePool.getFreeUserByLogin(enemyLogin);
-            if(enemysocket != null)
-                gamePool.startGame(mysocket, enemysocket);
-            else
-                throw new GameException("User not found or not free.");
-        }
-
-        public void gameGetFree() {
-            JSONObject res = OutputJSONMessagesCreator.getMessageFreeUsers(gamePool);
-            sendMessage(res);
-        }
-
-        public void gameError(GameException ex) {
-            LOGGER.debug(ex.getMessage());
-            JSONObject errJSON = new JSONObject();
-            errJSON.put("action", "error");
-            JSONObject data = new JSONObject();
-            data.put("message", ex.getMessage());
-            errJSON.put("data", data);
-            sendMessage(errJSON);
-        }
-
-    }
-    /**************************************************************************************************/
     public void sendMessageWithSession(@SuppressWarnings("ParameterHidesMemberVariable") Session session, JSONObject output) {
         if(output == null)
             return;
@@ -253,10 +228,5 @@ public class GameWebSocket implements Stopable {
     public void setSession(Session session) {this.session = session;}
 
     public Session getSession() {return session;}
-
-    public Handlers getHandlers() { return this.handlers; }
-
-    //new
-    public GameMessageProcessor getGameMessageProcessor() { return gameMessageProcessor; }
 
 }

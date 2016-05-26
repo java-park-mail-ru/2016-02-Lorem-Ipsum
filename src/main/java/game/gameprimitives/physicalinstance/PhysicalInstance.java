@@ -6,17 +6,15 @@ import game.gameprimitives.collisions.CollisionHandler;
 import game.gameprimitives.collisions.GlobalCollisionHandler;
 import game.gameprimitives.factories.IPrimitivesFactory;
 import game.gameprimitives.factories.PrimitivesFactory;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashSet;
-import java.util.Queue;
 import java.util.Set;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Created by Installed on 09.05.2016.
  */
+@SuppressWarnings({"FieldCanBeLocal", "CanBeFinal"})
 public class PhysicalInstance {
 
     private Blocks blocks;
@@ -30,6 +28,7 @@ public class PhysicalInstance {
     private PhysicalInstanceProcessor physicalInstanceProcessor;
 
 
+    @SuppressWarnings("SameParameterValue")
     public PhysicalInstance(double canvasWidth, double canvasHeight) {
         IPrimitivesFactory primitivesFactory = new PrimitivesFactory(canvasWidth, canvasHeight);
         physicalInstanceProcessor = new PhysicalInstanceProcessor();
@@ -116,6 +115,7 @@ public class PhysicalInstance {
 
         @Override
         public void processCollisions(IScoreProcessor scoreProcessor) {
+            //noinspection Convert2streamapi
             for (BodyPair bp : collisionsFirst) {
                 if(bp.onCollision()) {
                     COLLISION_TYPE collisionType = getCollisionType(bp);
@@ -123,6 +123,7 @@ public class PhysicalInstance {
                         scoreProcessor.scoresFirst();
                 }
             }
+            //noinspection Convert2streamapi
             for (BodyPair bp : collisionsSecond) {
                 if(bp.onCollision()) {
                     COLLISION_TYPE collisionType = getCollisionType(bp);

@@ -4,7 +4,6 @@ import database.DbService;
 import database.utils.FakeDbGenerator;
 import frontend.RoutingServlet;
 import game.gamemanagement.websocket.WebSocketGameServlet;
-import messagesystem.MessageSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.server.Handler;
@@ -32,9 +31,12 @@ public class Main {
 
     @SuppressWarnings("OverlyComplexMethod")
     public static void main(String[] args) throws InterruptedException {
-        int port;
+
         Properties serverProperties = readProperties("cfg/server.properties");
         Properties dbProperties = readProperties("cfg/db.properties");
+
+        assert serverProperties != null;
+        int port;
         if (!serverProperties.containsKey("port")) {
             port = STANDART_PORT;
             System.out.append("Target port argument missed.\n");
@@ -76,15 +78,13 @@ public class Main {
             return;
         }
 
-        MessageSystem messageSystem = new MessageSystem();
-
         Servlet routingServlet = new RoutingServlet(accountService);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.addServlet(new ServletHolder(routingServlet), "/api/v1/*");
         context.addServlet(
                 new ServletHolder(
-                    new WebSocketGameServlet(accountService, accountService, messageSystem)
+                    new WebSocketGameServlet(accountService, accountService)
                 ),
                 "/gamesocket"
         );

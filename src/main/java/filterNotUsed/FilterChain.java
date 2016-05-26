@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Created by Installed on 20.05.2016.
  */
+@SuppressWarnings("CanBeFinal")
 public class FilterChain implements IFilterChain {
 
     private List<IFilter> filters = new LinkedList<>();

@@ -39,7 +39,7 @@ public class GameOperator implements Runnable, Stopable {
             try {
                 Thread.sleep(IGameThreadSettings.GAME_RUNNER_SLEEP);
             }
-            catch (InterruptedException e) {
+            catch (InterruptedException ignored) {
 
             }
         }

@@ -38,7 +38,6 @@ public class GetBestResultsServlet extends HttpServlet {
         int statusCode;
         JSONArray bestResultsArray = null;
 
-        //noinspection OverlyBroadCatchBlock
         try {
             List<GameResultDataSet> gameResultDataSets = gameService.getBestResults(7);
             bestResultsArray = new JSONArray();

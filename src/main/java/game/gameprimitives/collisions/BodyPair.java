@@ -5,6 +5,7 @@ import game.gameprimitives.Canvas;
 import game.gameprimitives.Circle;
 import game.gameprimitives.Rectangle;
 
+@SuppressWarnings("CanBeFinal")
 public class BodyPair {
     private Body first;
     private Body second;

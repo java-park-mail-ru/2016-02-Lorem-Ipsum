@@ -11,11 +11,11 @@ import game.gameprimitives.physicalinstance.IPhysicalInstanceProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.json.JSONObject;
 
 /**
  * Created by Installed on 17.04.2016.
  */
+@SuppressWarnings("CanBeFinal")
 public class GameSession {
     public static final Logger LOGGER = LogManager.getLogger("GameLogger");
 
@@ -78,7 +78,7 @@ public class GameSession {
 
     public GamePool getGamePool() {return gamePool;}
 
-    public void start() throws GameException {
+    public void start(GameWebSocket initiator) throws GameException {
 
         if(!isStarted) {
 
@@ -87,13 +87,6 @@ public class GameSession {
             secondWebSocket.setGameSession(this);
             firstWebSocket.setEnemySocket(secondWebSocket);
             secondWebSocket.setEnemySocket(firstWebSocket);
-            JSONObject toSend = OutputJSONMessagesCreator.getMessageToStarted(this);
-            firstWebSocket.sendMessage(
-                    toSend.getJSONObject("toFirst")
-            );
-            secondWebSocket.sendMessage(
-                    toSend.getJSONObject("toSecond")
-            );
             gameInstance = new GameInstance(
                     new ScoreProcessor(this),
                     new GetStateProcessor(this),
@@ -107,26 +100,19 @@ public class GameSession {
             );
         }
         else {
-            throw new GameException("Unable to start game, already started.");
+            throw new GameException(initiator, "Unable to start game, already started.");
         }
     }
 
-    public void stop() throws GameException {
+    public void stop(GameWebSocket initiator) throws GameException {
         if(isStarted) {
 
             firstWebSocket.setGameSession(null);
             secondWebSocket.setGameSession(null);
             gameInstance.performStop();
-            JSONObject toSend = OutputJSONMessagesCreator.getMessageToStop(this);
-            firstWebSocket.sendMessage(
-                    toSend.getJSONObject("toFirst")
-            );
-            secondWebSocket.sendMessage(
-                    toSend.getJSONObject("toSecond")
-            );
         }
         else {
-            throw new GameException("Unable to stop game, not started.");
+            throw new GameException(initiator, "Unable to stop game, not started.");
         }
     }
 
@@ -145,7 +131,7 @@ public class GameSession {
                     IPhysicalInstanceProcessor.NUM_PLAYER.SECOND,
                     vx
             );
-        else throw new GameException("Unable to determine the message detination");
+        else throw new GameException(player, "Unable to determine the message detination");
     }
 
 }

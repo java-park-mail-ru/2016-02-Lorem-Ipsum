@@ -1,10 +1,8 @@
 package game.gamemanagement.websocket;
 
-import game.gamemanagement.gamemessages.GameMessageProcessor;
 import main.IAccountService;
 import main.IGame;
 import main.UserProfile;
-import messagesystem.MessageSystem;
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeRequest;
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeResponse;
 import org.eclipse.jetty.websocket.servlet.WebSocketCreator;
@@ -15,23 +13,13 @@ import org.eclipse.jetty.websocket.servlet.WebSocketCreator;
 public class GameWebSocketCreator implements WebSocketCreator {
     private final IAccountService accountService;
     private final GamePool gamePool;
-    private final MessageSystem messageSystem;
-    private final GameMessageProcessor messageProcessor;
-    private final Thread messageProcessorThread;
 
     public GameWebSocketCreator(
             IAccountService accountService,
-            IGame dbService,
-            MessageSystem messageSystem
+            IGame dbService
     ) {
         this.accountService = accountService;
         this.gamePool = new GamePool(dbService);
-        this.messageSystem = messageSystem;
-        this.messageProcessor = new GameMessageProcessor(this.messageSystem);
-        messageProcessorThread = new Thread(messageProcessor);
-        messageProcessorThread.setDaemon(true);
-        messageProcessorThread.setName("GameMessageProcessor");
-        messageProcessorThread.start();
     }
 
     @Override
@@ -42,8 +30,7 @@ public class GameWebSocketCreator implements WebSocketCreator {
             return new GameWebSocket(
                     profile.getUserId(),
                     profile.getLogin(),
-                    gamePool,
-                    messageProcessor
+                    gamePool
             );
         }
         return null;
