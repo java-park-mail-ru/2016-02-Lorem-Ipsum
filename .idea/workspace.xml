@@ -7,57 +7,127 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04d10ad-3945-42ac-a7e3-c7c3e6aa1ca4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageError.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageDisconnect.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageGetState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageStart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/messagesystem/AddressService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/DbServiceException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/GameResultsException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/SessionException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/UserException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/gmrsexceptions/GetBestResultsException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/gmrsexceptions/SaveGameException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/sesexceptions/AddSessionException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/sesexceptions/DeleteSessionException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/sesexceptions/GetSessionException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/sesexceptions/SessionExistsException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/AddUserException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/ChangeUserException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/DeleteUserException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/GetUserException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/UserExistsException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/exceptions/ForbiddenException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/exceptions/ServletException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/ChangeUserProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/DeleteUserProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/GetBestResultsProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/GetUserProfileProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/IsAuthenticatedProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/LogOutProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/RequestProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/SignInProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/SignUpProcessor.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/filterNotUsed/FilterChain.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/filterNotUsed/IFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/filterNotUsed/IFilterChain.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/frontend/DeleteUserServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/frontend/GetBestResultsServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/frontend/GetUserProfileServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/frontend/SignUpServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/GameException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/Stopable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/IGameSettings.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/IGameThreadSettings.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/GameMessageProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageDisconnect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageMove.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageStart.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageGame.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageDisconnect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageError.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageGetState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageListFree.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageStart.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskRedirrectPlatform.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskStep.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/IGameMechTask.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/ITaskFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/TaskFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameInstance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameOperator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameRunner.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/IGameInstance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GamePool.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameSession.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocket.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocketCreator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/OutputJSONMessagesCreator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/WebSocketGameServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/GetStateProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/ScoreProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/StopProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Blocks.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Body.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Canvas.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Rectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/BodyPair.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/CollisionHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/GlobalCollisionHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/factories/IPrimitivesFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/factories/PrimitivesFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/IGetStateProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/IPhysicalInstanceProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/IScoreProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/IStopProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/PhysicalInstance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/messagesystem/Address.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/messagesystem/AddressService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/messagesystem/IAbonent.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/messagesystem/Message.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/messagesystem/MessageSystem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/frontend/ChangeUserServletTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/frontend/DeleteUserServletTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/frontend/GetUserProfileServletTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/frontend/IsAuthenticatedServletTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/frontend/LogOutServletTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/frontend/SignInServletTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/frontend/SignUpServletTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/runners/RunFrontendTests.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/back_button.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/game.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/login.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/registration.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/scoreboard.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cfg/server.properties" afterPath="$PROJECT_DIR$/cfg/server.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/DbService.java" afterPath="$PROJECT_DIR$/src/main/java/database/DbService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/filterNotUsed/FilterChain.java" afterPath="$PROJECT_DIR$/src/main/java/filterNotUsed/FilterChain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/filterNotUsed/IFilter.java" afterPath="$PROJECT_DIR$/src/main/java/filterNotUsed/IFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/GetBestResultsServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/GetBestResultsServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/GameException.java" afterPath="$PROJECT_DIR$/src/main/java/game/GameException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/IGameThreadSettings.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/IGameThreadSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/GameMessageProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/GameMessageProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskRedirrectPlatform.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskRedirrectPlatform.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskState.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskStep.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskStep.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/TaskFactory.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/TaskFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameInstance.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameInstance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameOperator.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameOperator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameRunner.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameRunner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GamePool.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GamePool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameSession.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocket.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocketCreator.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocketCreator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/WebSocketGameServlet.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/WebSocketGameServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/GetStateProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/GetStateProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/ScoreProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/ScoreProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/StopProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/StopProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Blocks.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Blocks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Body.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Body.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Canvas.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Canvas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Circle.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Circle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Rectangle.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/Rectangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/BodyPair.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/BodyPair.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/CollisionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/CollisionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/GlobalCollisionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/GlobalCollisionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/factories/PrimitivesFactory.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/factories/PrimitivesFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/IPhysicalInstanceProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/IPhysicalInstanceProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/PhysicalInstance.java" afterPath="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/PhysicalInstance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/datasets/GameResultDataSet.java" afterPath="$PROJECT_DIR$/src/main/java/database/datasets/GameResultDataSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/IAccountService.java" afterPath="$PROJECT_DIR$/src/main/java/main/IAccountService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/IGame.java" afterPath="$PROJECT_DIR$/src/main/java/main/IGame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messagesystem/Address.java" afterPath="$PROJECT_DIR$/src/main/java/messagesystem/Address.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messagesystem/Message.java" afterPath="$PROJECT_DIR$/src/main/java/messagesystem/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messagesystem/MessageSystem.java" afterPath="$PROJECT_DIR$/src/main/java/messagesystem/MessageSystem.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageDisconnect.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageDisconnect.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageError.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageError.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageListFree.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageListFree.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageMove.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageMove.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageStart.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageStart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageToGame.java" afterPath="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java" afterPath="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" afterPath="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/runners/RunAllTests.java" afterPath="$PROJECT_DIR$/src/main/test/runners/RunAllTests.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/frontend/utils/RequestParser.java" afterPath="$PROJECT_DIR$/src/main/java/frontend/utils/RequestBodyParser.java" />
     </list>
     <ignored path="L1.2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -155,11 +225,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Blocks.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Blocks.java">
+      <file leaf-file-name="AccountServiceGettersTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="160" column="8" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
+              <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FakeRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.4482758">
+              <caret line="54" column="38" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+              <folding>
+                <element signature="e#1351#1352#0" expanded="true" />
+                <element signature="e#1389#1390#0" expanded="true" />
+                <element signature="e#1646#1647#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log4j2.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameResultDataSet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/database/datasets/GameResultDataSet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+              <folding>
+                <element signature="e#2399#2400#0" expanded="true" />
+                <element signature="e#2427#2428#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IGame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/IGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templater/PageGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -169,104 +296,28 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageSystem.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/messagesystem/MessageSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8004926">
-              <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+              <caret line="82" column="42" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Body.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Body.java">
+      <file leaf-file-name="server.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cfg/server.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-              <folding>
-                <element signature="e#1115#1116#0" expanded="true" />
-                <element signature="e#1204#1205#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Canvas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-              <folding>
-                <element signature="e#76#115#0" expanded="true" />
-                <element signature="e#189#190#0" expanded="true" />
-                <element signature="e#243#244#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameMessageProcessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/GameMessageProcessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Circle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Circle.java">
+      <file leaf-file-name="RoutingServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#587#626#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GamePool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GamePool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="38" selection-start-line="139" selection-start-column="38" selection-end-line="139" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetBestResultsServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frontend/GetBestResultsServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.9459459">
+              <caret line="81" column="28" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameWebSocketCreator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocketCreator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -290,57 +341,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageDisconnect.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageListFree.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageStart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/TaskFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageToGame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskRedirrectPlatform.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messagesystem/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageError.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageMove.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/ScoreProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messagesystem/Address.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/GlobalCollisionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/factories/PrimitivesFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameOperator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/CollisionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/filterNotUsed/IFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageDisconnectInput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageListFree.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageGame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageDisconnect.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageListFree.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageStart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageMove.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameSession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageError.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/IGameThreadSettings.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/IPhysicalInstanceProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/GameException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageDisconnect.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/StopProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/Rectangle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messagesystem/AddressService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/GetStateProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageGetState.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageStart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/WebSocketGameServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/PhysicalInstance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageError.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messagesystem/MessageSystem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/IAccountService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/DbServiceException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/GameResultsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/SessionException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/UserException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/UserExistsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/GetUserException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/DeleteUserException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/ChangeUserException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/AddUserException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/sessionexceptions/SessionExistsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/sessionexceptions/GetSessionException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/sessionexceptions/DeleteSessionException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/sessionexceptions/AddSessionException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/gameresultsexceptions/SaveGameException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/exceptions/gameresultsexceptions/GetBestResultsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/database/DbService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/ServletException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/ServletException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/exceptions/ServletException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/exceptions/ForbiddenException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/LogOutProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/DeleteUserServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/SignUpServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/GetUserProfileServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/frontend/GetBestResultsServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocketCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/Canvas.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/Circle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/Body.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/GameMessageProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GamePool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/ChangeUserProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/GetBestResultsProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/SignInProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/SignUpProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/test/runners/RunAllTests.java" />
+        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/DeleteUserProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/GetUserProfileProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/IsAuthenticatedProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/requestprocessors/RequestProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/RequestProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/gameprimitives/Blocks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/templater/PageGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/datasets/GameResultDataSet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/IGame.java" />
+        <option value="$PROJECT_DIR$/cfg/server.properties" />
       </list>
     </option>
   </component>
@@ -518,20 +569,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="L1.2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -553,6 +590,158 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="runners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fakeclasses" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templater" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -598,32 +787,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="messagesystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="L1.2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -650,7 +813,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
+              <option name="myItemId" value="frontend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -676,45 +839,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
+              <option name="myItemId" value="frontend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gamemanagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="L1.2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gamemanagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="websocket" />
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -740,19 +869,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
+              <option name="myItemId" value="frontend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gamemanagement" />
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="websocket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameprocessors" />
+              <option name="myItemId" value="reqproc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -778,15 +903,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
+              <option name="myItemId" value="frontend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gamemanagement" />
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gamemessages" />
+              <option name="myItemId" value="exceptions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -826,14 +951,138 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gmrsexceptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datasets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="L1.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016-02-Lorem-Ipsum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="cfg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -842,12 +1091,15 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../updated/tp_java-master/L1.4" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="fakeclasses" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="database.dao" />
       <recent name="main" />
@@ -859,10 +1111,8 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\books\mail\Sem2\2016-02-Lorem-Ipsum\src\main\resources" />
-      <recent name="D:\books\mail\Sem2\2016-02-Lorem-Ipsum\src\test\resources" />
-      <recent name="D:\books\mail\Sem2\2016-02-Lorem-Ipsum\testData\artificialTests" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="frontend" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="game.tmpgame" />
@@ -874,8 +1124,10 @@
       <recent name="D:\books\mail\Sem2\2016-02-Lorem-Ipsum\static" />
       <recent name="D:\books\mail\Sem2\2016-02-Lorem-Ipsum" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="fakeclasses" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\books\mail\Sem2\2016-02-Lorem-Ipsum\src\main\resources" />
+      <recent name="D:\books\mail\Sem2\2016-02-Lorem-Ipsum\src\test\resources" />
+      <recent name="D:\books\mail\Sem2\2016-02-Lorem-Ipsum\testData\artificialTests" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -930,7 +1182,7 @@
           <option name="ENABLED" value="true" />
         </pattern>
         <pattern>
-          <option name="PATTERN" value="frontend.*" />
+          <option name="PATTERN" value="frontend.utils.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -944,32 +1196,6 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="AccountServiceDelTest.testDeleteSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="2016-02-Lorem-Ipsum" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="main" />
-      <option name="MAIN_CLASS_NAME" value="main.AccountServiceDelTest" />
-      <option name="METHOD_NAME" value="testDeleteSession" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -993,6 +1219,32 @@
       <option name="MAIN_CLASS_NAME" value="runners.RunFrontendTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ChangeUserServletTest.testDoPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="frontend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="2016-02-Lorem-Ipsum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="frontend" />
+      <option name="MAIN_CLASS_NAME" value="frontend.ChangeUserServletTest" />
+      <option name="METHOD_NAME" value="testDoPost" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1208,20 +1460,47 @@
       <listeners />
       <method />
     </configuration>
-    <list size="5">
+    <configuration default="false" name="frontend.utils.reqproc in 2016-02-Lorem-Ipsum" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="frontend.utils.reqproc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="2016-02-Lorem-Ipsum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="frontend.utils.reqproc" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="Application.TestGenerator" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.RunAllTests" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AccountServiceDelTest.testDeleteSession" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RunFrontendTests" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RunFrontendTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ChangeUserServletTest.testDoPost" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.frontend.utils.reqproc in 2016-02-Lorem-Ipsum" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.TestGenerator" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RunAllTests" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RunFrontendTests" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AccountServiceDelTest.testDeleteSession" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RunAllTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ChangeUserServletTest.testDoPost" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TestGenerator" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RunFrontendTests" />
       </list>
     </recent_temporary>
   </component>
@@ -1236,35 +1515,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RunAllTests - 2016.03.28 at 20h 19m 57s.xml">
+    <history-entry file="ChangeUserServletTest_testDoPost - 2016.05.29 at 22h 20m 28s.xml">
+      <configuration name="ChangeUserServletTest.testDoPost" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ChangeUserServletTest_testDoPost - 2016.05.29 at 22h 25m 10s.xml">
+      <configuration name="ChangeUserServletTest.testDoPost" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ChangeUserServletTest_testDoPost - 2016.05.29 at 22h 34m 10s.xml">
+      <configuration name="ChangeUserServletTest.testDoPost" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RunAllTests - 2016.05.29 at 22h 18m 06s.xml">
       <configuration name="RunAllTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.28 at 21h 31m 43s.xml">
+    <history-entry file="RunAllTests - 2016.05.29 at 22h 51m 42s.xml">
       <configuration name="RunAllTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.28 at 22h 21m 27s.xml">
+    <history-entry file="RunAllTests - 2016.05.29 at 22h 53m 04s.xml">
       <configuration name="RunAllTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.31 at 16h 54m 37s.xml">
+    <history-entry file="RunAllTests - 2016.05.29 at 23h 17m 40s.xml">
       <configuration name="RunAllTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests - 2016.03.31 at 22h 43m 24s.xml">
+    <history-entry file="RunAllTests - 2016.05.29 at 23h 19m 42s.xml">
       <configuration name="RunAllTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests_(1) - 2016.03.26 at 23h 39m 52s.xml">
-      <configuration name="RunAllTests (1)" configurationId="JUnit" />
+    <history-entry file="RunAllTests - 2016.05.29 at 23h 21m 54s.xml">
+      <configuration name="RunAllTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunAllTests_(1) - 2016.03.28 at 20h 17m 06s.xml">
-      <configuration name="RunAllTests (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RunFrontendTests - 2016.03.26 at 23h 41m 28s.xml">
-      <configuration name="RunFrontendTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RunFrontendTests - 2016.03.27 at 00h 17m 01s.xml">
-      <configuration name="RunFrontendTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RunFrontendTests - 2016.03.27 at 00h 30m 02s.xml">
-      <configuration name="RunFrontendTests" configurationId="JUnit" />
+    <history-entry file="frontend_utils_requestprocessors_in_2016-02-Lorem-Ipsum - 2016.05.29 at 22h 48m 59s.xml">
+      <configuration name="frontend.utils.requestprocessors in 2016-02-Lorem-Ipsum" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1278,21 +1557,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6416382" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63993174" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37201366" sideWeight="0.51134646" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33888048" sideWeight="0.47089946" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6405451" sideWeight="0.5030257" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33854166" sideWeight="0.47089946" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53583616" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25938568" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.334471" sideWeight="0.49016643" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24810892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.49092284" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24508321" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32593855" sideWeight="0.48487142" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1302,7 +1582,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1452345" sideWeight="0.52910054" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1321,20 +1600,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/frontend/DeleteUserServlet.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/frontend/ChangeUserServlet.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java</url>
-          <line>60</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -1375,40 +1642,16 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/frontend/LogOutServlet.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/frontend/IsAuthenticatedServlet.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java</url>
-          <line>66</line>
+          <line>74</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java</url>
-          <line>53</line>
+          <line>61</line>
           <properties />
           <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint suspend="NONE" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/frontend/SignUpServlet.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/frontend/GetBestResultsServlet.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/game/websocketold/WebSocketGameServlet.java</url>
@@ -1499,12 +1742,6 @@
           <line>29</line>
           <properties />
           <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/frontend/SignInServlet.java</url>
-          <line>85</line>
-          <properties />
-          <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/game/gameinternalold/instance/InstanceChecker.java</url>
@@ -1692,166 +1929,283 @@
           <properties />
           <option name="timeStamp" value="147" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="148" />
+      <option name="time" value="174" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/TaskFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gametask/GameMechTaskRedirrectPlatform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messagesystem/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding>
-            <element signature="e#75#128#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/GlobalCollisionHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/SessionException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/factories/PrimitivesFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding>
-            <element signature="e#231#371#0" expanded="false" />
-            <element signature="e#1039#1040#0" expanded="false" />
-            <element signature="e#1084#1085#0" expanded="false" />
+            <element signature="e#230#231#0" expanded="false" />
+            <element signature="e#255#256#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameOperator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/GameResultsException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-          <folding />
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="53" />
+          <folding>
+            <element signature="e#238#239#0" expanded="false" />
+            <element signature="e#263#264#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/collisions/CollisionHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/DbServiceException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="e#234#235#0" expanded="false" />
+            <element signature="e#259#260#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filterNotUsed/IFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/GetUserException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/IDbService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/DeleteUserException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/utils/FakeDbGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/ChangeUserException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+          <caret line="10" column="66" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/DbConnector.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/AddUserException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/ScoreProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/sesexceptions/SessionExistsException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageDisconnect.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/sesexceptions/GetSessionException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-          <folding />
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageMove.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/sesexceptions/DeleteSessionException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
-          <folding />
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameSession.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/sesexceptions/AddSessionException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="4" />
-          <folding />
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageStart.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/gmrsexceptions/SaveGameException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="10" selection-start-line="41" selection-start-column="8" selection-end-line="53" selection-end-column="10" />
-          <folding />
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.0.M0/websocket-common-9.2.0.M0.jar!/org/eclipse/jetty/websocket/common/events/AbstractEventDriver.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/gmrsexceptions/GetBestResultsException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.185185">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/IAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/exceptions/ServletException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#178#179#0" expanded="false" />
+            <element signature="e#208#209#0" expanded="false" />
+            <element signature="e#253#254#0" expanded="false" />
+            <element signature="e#278#279#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/exceptions/ForbiddenException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#189#190#0" expanded="false" />
+            <element signature="e#219#220#0" expanded="false" />
+            <element signature="e#266#267#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/exceptions/userexceptions/UserExistsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.0.M0/websocket-common-9.2.0.M0.jar!/org/eclipse/jetty/websocket/common/events/annotated/CallableMethod.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/DbService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0689654">
+          <caret line="85" column="73" selection-start-line="85" selection-start-column="67" selection-end-line="85" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/HttpServletResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.888889">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/utils/TestGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/UserProfileTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.185185">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/MessageGame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/RequestBodyParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -1859,177 +2213,192 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageListFree.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/IGameThreadSettings.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeAccountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/OutputJSONMessagesCreator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/SignInProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/instance/GameRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/IPhysicalInstanceProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="89" selection-start-line="7" selection-start-column="89" selection-end-line="7" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/GameException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageDisconnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageError.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/GetBestResultsProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/StopProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Rectangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messagesystem/AddressService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/LogOutProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/gameprocessors/GetStateProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageGetState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/OutputMessageStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/WebSocketGameServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/physicalinstance/PhysicalInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/InputMessageError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#494#547#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messagesystem/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/ChangeUserProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5517242">
+          <caret line="80" column="15" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/SignUpProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/runners/RunAllTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeResponseImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8275862">
+          <caret line="97" column="18" selection-start-line="97" selection-start-column="15" selection-end-line="97" selection-end-column="18" />
+          <folding>
+            <element signature="e#363#409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequestImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/DeleteUserProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/GetUserProfileProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/IsAuthenticatedProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/utils/reqproc/RequestProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/DbService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceAddTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+          <caret line="73" column="100" selection-start-line="73" selection-start-column="100" selection-end-line="73" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceDelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/main/AccountServiceGettersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/fakeclasses/FakeRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4482758">
+          <caret line="54" column="38" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+          <folding>
+            <element signature="e#1351#1352#0" expanded="true" />
+            <element signature="e#1389#1390#0" expanded="true" />
+            <element signature="e#1646#1647#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templater/PageGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -2039,105 +2408,40 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
           <folding>
-            <element signature="e#2379#2416#1" expanded="true" />
-            <element signature="e#2437#2438#0" expanded="true" />
-            <element signature="e#2465#2466#0" expanded="true" />
+            <element signature="e#2399#2400#0" expanded="true" />
+            <element signature="e#2427#2428#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/GetBestResultsServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/IGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GameWebSocketCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Canvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="e#76#115#0" expanded="true" />
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Circle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#587#626#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Body.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-          <folding>
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/websocket/GamePool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="38" selection-start-line="139" selection-start-column="38" selection-end-line="139" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gameprimitives/Blocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="160" column="8" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
+          <caret line="82" column="42" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/gamemanagement/gamemessages/GameMessageProcessor.java">
+    <entry file="file://$PROJECT_DIR$/cfg/server.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messagesystem/MessageSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/RoutingServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8004926">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.9459459">
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="28" />
           <folding />
         </state>
       </provider>

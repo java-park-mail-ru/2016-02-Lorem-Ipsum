@@ -79,7 +79,7 @@ public class GameResultDataSet {
         return jsonObject;
     }
 
-    public GameResultDataSet(@SuppressWarnings("UnusedParameters") JSONObject initObj) {
+    public GameResultDataSet(JSONObject initObj) {
         this.id = -1;
     }
 

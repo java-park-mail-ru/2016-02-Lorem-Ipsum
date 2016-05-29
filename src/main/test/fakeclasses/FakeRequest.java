@@ -1,8 +1,10 @@
 package fakeclasses;
 
 
+import org.json.JSONObject;
 import org.json.JSONStringer;
 
+import java.io.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -11,6 +13,7 @@ public class FakeRequest {
     private final ConcurrentMap<String, String> params = new ConcurrentHashMap<>();
     private FakeSessionImpl session;
     private String requestURI;
+    private BufferedReader reader;
 
     public FakeRequest(String login, String password, String email, String sessionId, String reqURI) {
         setParameter("login", login);
@@ -18,6 +21,17 @@ public class FakeRequest {
         setParameter("email", email);
         setSession(sessionId);
         this.requestURI = reqURI;
+
+        JSONObject data = new JSONObject();
+        data.put("login", login);
+        data.put("password", password);
+        data.put("email", email);
+        try(InputStream inputStream = new ByteArrayInputStream(data.toString().getBytes())) {
+            reader = new BufferedReader(new InputStreamReader(inputStream));
+        }
+        catch (IOException e) {
+            reader = null;
+        }
     }
 
     public FakeSessionImpl getSession() {return session;}
@@ -36,6 +50,10 @@ public class FakeRequest {
 
     public void setRequestURI(String reqURI) {
         requestURI = reqURI;
+    }
+
+    public BufferedReader getReader() {
+        return reader;
     }
 
     public String toJSON() {

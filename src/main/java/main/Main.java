@@ -3,7 +3,6 @@ package main;
 import database.DbService;
 import database.utils.FakeDbGenerator;
 import frontend.RoutingServlet;
-import game.gamemanagement.websocket.WebSocketGameServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.server.Handler;
@@ -49,6 +48,7 @@ public class Main {
         DbService accountService;
 
         try {
+            assert dbProperties != null;
             String dbHost = dbProperties.contains("host") ?
                     dbProperties.getProperty("host") : Main.STANDART_MYSQL_HOST;
             String dbPort = dbProperties.contains("port") ?
@@ -82,13 +82,6 @@ public class Main {
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.addServlet(new ServletHolder(routingServlet), "/api/v1/*");
-        context.addServlet(
-                new ServletHolder(
-                    new WebSocketGameServlet(accountService, accountService)
-                ),
-                "/gamesocket"
-        );
-
 
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setDirectoriesListed(true);
