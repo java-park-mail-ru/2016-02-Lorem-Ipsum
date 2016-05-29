@@ -1,6 +1,7 @@
 package frontend;
 
-import main.IAccountService;
+import database.DbService;
+import frontend.utils.reqproc.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,22 +11,59 @@ import java.io.IOException;
 
 public class RoutingServlet extends HttpServlet {
 
-    private final SignInServlet signInServlet;
-    private final SignUpServlet signUpServlet;
-    private final IsAuthenticatedServlet isAuthenticatedServlet;
-    private final GetUserProfileServlet getUserProgileServlet;
-    private final ChangeUserServlet changeUserServlet;
-    private final DeleteUserServlet deleteUserServlet;
-    private final LogOutServlet logOutServlet;
+    private final DbService accountService;
 
-    public RoutingServlet(IAccountService accountService) {
-        signInServlet = new SignInServlet(accountService);
-        signUpServlet = new SignUpServlet(accountService);
-        isAuthenticatedServlet = new IsAuthenticatedServlet(accountService);
-        getUserProgileServlet = new GetUserProfileServlet(accountService);
-        changeUserServlet = new ChangeUserServlet(accountService);
-        deleteUserServlet = new DeleteUserServlet(accountService);
-        logOutServlet = new LogOutServlet(accountService);
+    public RoutingServlet(DbService accountService) {
+        this.accountService = accountService;
+    }
+
+    private void changeUser(HttpServletRequest request,
+                            HttpServletResponse response) throws IOException {
+        ChangeUserProcessor changeUserProcessor = new ChangeUserProcessor(request, response, accountService);
+        changeUserProcessor.execute(HttpServletResponse.SC_FORBIDDEN);
+    }
+
+    private void deleteUser(HttpServletRequest request,
+                            HttpServletResponse response) {
+        DeleteUserProcessor deleteUserProcessor = new DeleteUserProcessor(request, response, accountService);
+        deleteUserProcessor.execute(HttpServletResponse.SC_UNAUTHORIZED);
+    }
+
+    private void getBestResults(HttpServletRequest request,
+                                HttpServletResponse response) {
+        GetBestResultsProcessor getBestResultsProcessor = new GetBestResultsProcessor(request, response,
+                accountService, accountService);
+        getBestResultsProcessor.execute(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
+    }
+
+    private void getUserProfile(HttpServletRequest request,
+                                HttpServletResponse response){
+        GetUserProfileProcessor getUserProfileProcessor = new GetUserProfileProcessor(request, response, accountService);
+        getUserProfileProcessor.execute(HttpServletResponse.SC_UNAUTHORIZED);
+    }
+
+    private void isAuthenticated(HttpServletRequest request,
+                                 HttpServletResponse response) {
+        IsAuthenticatedProcessor isAuthenticatedProcessor = new IsAuthenticatedProcessor(request, response, accountService);
+        isAuthenticatedProcessor.execute(HttpServletResponse.SC_UNAUTHORIZED);
+    }
+
+    private void logOut(HttpServletRequest request,
+                        HttpServletResponse response) {
+        LogOutProcessor logOutProcessor = new LogOutProcessor(request, response, accountService);
+        logOutProcessor.execute(HttpServletResponse.SC_FORBIDDEN);
+    }
+
+    private void signIn(HttpServletRequest request,
+                        HttpServletResponse response) throws IOException {
+        SignInProcessor signInProcessor = new SignInProcessor(request, response, accountService);
+        signInProcessor.execute(HttpServletResponse.SC_FORBIDDEN);
+    }
+
+    private void signUp(HttpServletRequest request,
+                        HttpServletResponse response) throws IOException {
+        SignUpProcessor signUpProcessor = new SignUpProcessor(request, response, accountService);
+        signUpProcessor.execute(HttpServletResponse.SC_FORBIDDEN);
     }
 
     @Override
@@ -33,17 +71,23 @@ public class RoutingServlet extends HttpServlet {
                       HttpServletResponse response) throws ServletException, IOException {
         String sId = request.getRequestURI();
         sId = sId.substring(sId.lastIndexOf('/') + 1, sId.length());
-        if(sId.equals("session")) {
-            isAuthenticatedServlet.doGet(request, response);
-        } else {
-            getUserProgileServlet.doGet(request, response);
+        switch (sId) {
+            case "session":
+                isAuthenticated(request, response);
+                break;
+            case "score":
+                getBestResults(request, response);
+                break;
+            default:
+                getUserProfile(request, response);
+                break;
         }
     }
 
     @Override
     public void doPost(HttpServletRequest request,
                       HttpServletResponse response) throws ServletException, IOException {
-        changeUserServlet.doPost(request, response);
+        changeUser(request, response);
     }
 
     @Override
@@ -52,9 +96,9 @@ public class RoutingServlet extends HttpServlet {
         String sId = request.getRequestURI();
         sId = sId.substring(sId.lastIndexOf('/') + 1, sId.length());
         if(sId.equals("user")) {
-            signUpServlet.doPut(request, response);
+            signUp(request, response);
         } else if(sId.equals("session")) {
-            signInServlet.doPut(request, response);
+            signIn(request, response);
         }
     }
 
@@ -64,9 +108,9 @@ public class RoutingServlet extends HttpServlet {
         String sId = request.getRequestURI();
         sId = sId.substring(sId.lastIndexOf('/') + 1, sId.length());
         if(sId.equals("session")) {
-            logOutServlet.doDelete(request, response);
+            logOut(request, response);
         } else {
-            deleteUserServlet.doDelete(request, response);
+            deleteUser(request, response);
         }
     }
 

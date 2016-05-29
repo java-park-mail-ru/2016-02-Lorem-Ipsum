@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <org.eclipse.jetty.version>9.3.0.M1</org.eclipse.jetty.version>
+        <org.eclipse.jetty.version>9.2.0.M0</org.eclipse.jetty.version>
         <org.freemarker.version>2.3.20</org.freemarker.version>
     </properties>
 
@@ -61,19 +61,31 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>9.3.0.M0</version>
+            <version>${org.eclipse.jetty.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
-            <version>9.3.0.M0</version>
+            <version>${org.eclipse.jetty.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-rewrite</artifactId>
-            <version>9.3.0.M0</version>
+            <version>${org.eclipse.jetty.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-servlet</artifactId>
+            <version>${org.eclipse.jetty.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-server</artifactId>
+            <version>${org.eclipse.jetty.version}</version>
         </dependency>
 
         <dependency>
@@ -129,6 +141,13 @@
             <artifactId>json</artifactId>
             <version>20151123</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>13.0</version>
+        </dependency>
+
 
     </dependencies>
 

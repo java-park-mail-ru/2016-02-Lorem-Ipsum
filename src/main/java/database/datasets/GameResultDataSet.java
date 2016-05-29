@@ -1,5 +1,7 @@
 package database.datasets;
 
+import org.json.JSONObject;
+
 import javax.persistence.*;
 
 /**
@@ -15,12 +17,22 @@ public class GameResultDataSet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
-    private UserDataSet user;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "userIdFirst")
+    private UserDataSet userFirst;
 
-    @Column(name = "score")
-    private long score;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "userIdSecond")
+    private UserDataSet userSecond;
+
+    @Column(name = "scoreFirst")
+    private long scoreFirst;
+
+    @Column(name = "scoreSecond")
+    private long scoreSecond;
+
+    @Column(name = "scoreWinner")
+    private long scoreWinner;
 
     public GameResultDataSet() { this.id = -1; }
 
@@ -28,9 +40,47 @@ public class GameResultDataSet {
 
     public void setId(long id) { this.id = id; }
 
-    public UserDataSet getUser() { return user; }
+    public UserDataSet getUserFirst() { return userFirst; }
 
-    public long getScore() { return score; }
+    public UserDataSet getUserSecond() { return userSecond; }
 
-    public void setScore(long score) { this.score = score; }
+    public void setUserFirst(UserDataSet user) {
+        this.userFirst = user;
+    }
+
+    public void setUserSecond(UserDataSet user) {
+        this.userSecond = user;
+    }
+
+    public long getScoreFirst() { return scoreFirst; }
+
+    public long getScoreSecond() { return scoreSecond; }
+
+    public long getScoreWinner() { return scoreWinner; }
+
+    public void setScoreFirst(long score) { this.scoreFirst = score; }
+
+    public void setScoreSecond(long score) { this.scoreSecond = score; }
+
+    public void setScoreWinner(long score) { this.scoreWinner = score; }
+
+    public JSONObject toJSONObject() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("id", this.id);
+        jsonObject.put("userLoginFirst", this.userFirst.getLogin());
+        jsonObject.put("userLoginSecond", this.userSecond.getLogin());
+        jsonObject.put("scoreWinner", this.scoreWinner);
+        jsonObject.put("scoreFirst", this.scoreFirst);
+        jsonObject.put("scoreSecond", this.scoreSecond);
+        jsonObject.put("login",
+                this.scoreFirst == this.scoreWinner ?
+                        this.userFirst.getLogin() : this.userSecond.getLogin());
+        jsonObject.put("score", this.scoreWinner);
+        return jsonObject;
+    }
+
+    public GameResultDataSet(JSONObject initObj) {
+        this.id = -1;
+    }
+
 }

@@ -2,6 +2,11 @@ package main;
 
 import database.DbService;
 import database.IDbService;
+import database.exceptions.sesexceptions.AddSessionException;
+import database.exceptions.sesexceptions.SessionExistsException;
+import database.exceptions.userexceptions.AddUserException;
+import database.exceptions.userexceptions.GetUserException;
+import database.exceptions.userexceptions.UserExistsException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -50,7 +55,10 @@ public class AccountServiceAddTest {
     }
 
     @Test
-    public void testAddUser() throws Exception {
+    public void testAddUser() throws AddUserException,
+            AddSessionException,
+            UserExistsException,
+            GetUserException {
         idOfNotAuthorizedUser = accountService.addUser(userProfileOfNotAuthorizedUser);
         idOfAuthorizedUser = accountService.addUser(userProfileOfAuthorizedUser);
         userProfileOfNotAuthorizedUser.setUserId(idOfNotAuthorizedUser);
@@ -63,7 +71,7 @@ public class AccountServiceAddTest {
     }
 
     @Test
-    public void testAddSession() throws Exception {
+    public void testAddSession() throws AddUserException, AddSessionException, UserExistsException, SessionExistsException {
         idOfAuthorizedUser = accountService.addUser(userProfileOfAuthorizedUser);
         userProfileOfAuthorizedUser.setUserId(idOfAuthorizedUser);
         accountService.addSession(SESSION_OF_AUTHORIZED_USER, userProfileOfAuthorizedUser);

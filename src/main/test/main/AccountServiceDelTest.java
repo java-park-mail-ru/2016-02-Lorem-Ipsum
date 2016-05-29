@@ -2,6 +2,10 @@ package main;
 
 import database.DbService;
 import database.IDbService;
+import database.exceptions.sesexceptions.DeleteSessionException;
+import database.exceptions.sesexceptions.SessionExistsException;
+import database.exceptions.userexceptions.DeleteUserException;
+import database.exceptions.userexceptions.UserExistsException;
 import fakeclasses.FakeAccountService;
 import org.junit.After;
 import org.junit.Before;
@@ -58,7 +62,7 @@ public class AccountServiceDelTest {
     }
 
     @Test
-    public void testDeleteUser() throws Exception {
+    public void testDeleteUser() throws DeleteUserException, SessionExistsException, UserExistsException {
         for (String sId : fakeSessionIds) {
             UserProfile userFake = fakeAccountService.getSession(sId);
             UserProfile userToDelete = userFake.clone();
@@ -72,7 +76,7 @@ public class AccountServiceDelTest {
     }
 
     @Test
-    public void testDeleteSession() throws Exception {
+    public void testDeleteSession() throws DeleteSessionException, SessionExistsException, UserExistsException {
         for (String sId : fakeSessionIds) {
             UserProfile user = fakeAccountService.getSession(sId);
             accountService.deleteSession(sId);

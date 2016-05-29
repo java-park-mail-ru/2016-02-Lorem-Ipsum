@@ -47,7 +47,7 @@ public class UserDataSet implements Serializable {
     @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "user")
     private UserStatusDataSet currentSatus;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="userFirst")
     private List<GameResultDataSet> gameResults;
 
     public UserDataSet() {

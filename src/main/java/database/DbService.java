@@ -1,10 +1,18 @@
 package database;
 
+import database.dao.GameResultDataSetDAO;
 import database.dao.StatusDataSetDAO;
 import database.dao.UserDataSetDAO;
 import database.datasets.GameResultDataSet;
 import database.datasets.UserDataSet;
 import database.datasets.UserStatusDataSet;
+import database.exceptions.gmrsexceptions.GetBestResultsException;
+import database.exceptions.gmrsexceptions.SaveGameException;
+import database.exceptions.sesexceptions.AddSessionException;
+import database.exceptions.sesexceptions.GetSessionException;
+import database.exceptions.sesexceptions.SessionExistsException;
+import database.exceptions.userexceptions.*;
+import main.IGame;
 import main.UserProfile;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,23 +26,24 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Installed on 26.03.2016.
  */
-public class DbService implements IDbService {
+public class DbService implements IDbService, IGame {
 
     private SessionFactory sessionFactory;
 
     public static final Logger LOGGER = LogManager.getLogger("DbLogger");
 
-    @SuppressWarnings("SameParameterValue")
     public DbService(String hostname, String port, String dbName, String driverName,
                      String login, String password) {
 
         try {
             Configuration configuration = new Configuration();
 
+            //noinspection StringBufferReplaceableByString
             StringBuilder url = new StringBuilder();
             url.
                     append("jdbc:mysql://").
@@ -74,43 +83,43 @@ public class DbService implements IDbService {
     }
 
     @Override
-    public boolean checkUserExistsByLogin(String userLogin) {
+    public boolean checkUserExistsByLogin(String userLogin) throws UserExistsException {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
             return userDataSetDAO.checkUserExistsByLogin(userLogin);
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
-            return false;
+            throw new UserExistsException(e);
         }
     }
 
     @Override
-    public boolean checkSessionExists(String sessionId) {
+    public boolean checkSessionExists(String sessionId) throws SessionExistsException {
         try(Session session = sessionFactory.openSession()) {
             StatusDataSetDAO statusDataSetDAO = new StatusDataSetDAO(session);
             return statusDataSetDAO.checkIfUserIsActiveBySessionId(sessionId);
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
-            return false;
+            throw new SessionExistsException(e);
         }
     }
 
     @Override
-    public boolean checkUserExistsById(Long userId) {
+    public boolean checkUserExistsById(Long userId) throws UserExistsException {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
             return userDataSetDAO.checkUserExistsById(userId);
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
-            return false;
+            throw new UserExistsException(e);
         }
     }
 
     @Override
-    public long addUser(UserProfile userProfile) {
+    public long addUser(UserProfile userProfile) throws AddUserException {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -135,17 +144,16 @@ public class DbService implements IDbService {
                 if(transaction != null)
                     transaction.rollback();
                 LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
-                return -1;
             }
             catch (NullPointerException e2) {
                 LOGGER.debug("Failed db operation. Failed to roll back. Reason: {}" , e2.getMessage());
-                return  -1;
             }
+            throw new AddUserException(e);
         }
     }
 
     @Override
-    public void deleteUser(String sessionId, UserProfile userProfile) {
+    public void deleteUser(String sessionId, UserProfile userProfile) throws DeleteUserException {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -162,11 +170,12 @@ public class DbService implements IDbService {
             catch (NullPointerException e2) {
                 LOGGER.debug("Failed db operation. Failed to roll back. Reason: {}" , e2.getMessage());
             }
+            throw new DeleteUserException(e);
         }
     }
 
     @Override
-    public void changeUser(UserProfile userProfile) {
+    public void changeUser(UserProfile userProfile) throws ChangeUserException {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -191,11 +200,12 @@ public class DbService implements IDbService {
             catch (NullPointerException e2) {
                 LOGGER.debug("Failed db operation. Failed to roll back. Reason: {}" , e2.getMessage());
             }
+            throw new ChangeUserException(e);
         }
     }
 
     @Override
-    public void deleteSession(String sessionId) {
+    public void deleteSession(String sessionId) throws DeleteUserException {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -213,11 +223,12 @@ public class DbService implements IDbService {
             catch (NullPointerException e2) {
                 LOGGER.debug("Failed db operation. Failed to roll back. Reason: {}" , e2.getMessage());
             }
+            throw new DeleteUserException(e);
         }
     }
 
     @Override
-    public void addSession(String sessionId, UserProfile userProfile) {
+    public void addSession(String sessionId, UserProfile userProfile) throws AddSessionException {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -236,11 +247,12 @@ public class DbService implements IDbService {
             catch (NullPointerException e2) {
                 LOGGER.debug("Failed db operation. Failed to roll back. Reason: {}" , e2.getMessage());
             }
+            throw new AddSessionException(e);
         }
     }
 
     @Override
-    public UserProfile getUserByLogin(String userLogin) {
+    public UserProfile getUserByLogin(String userLogin) throws GetUserException {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
             UserDataSet userDataSet = userDataSetDAO.getUserByLogin(userLogin);
@@ -248,12 +260,12 @@ public class DbService implements IDbService {
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
-            return null;
+            throw new GetUserException(e);
         }
     }
 
     @Override
-    public UserProfile getUserById(Long userId) {
+    public UserProfile getUserById(Long userId) throws GetUserException {
         try(Session session = sessionFactory.openSession()) {
             UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
             UserDataSet userDataSet = userDataSetDAO.getUserById(userId);
@@ -261,12 +273,12 @@ public class DbService implements IDbService {
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
-            return null;
+            throw new GetUserException(e);
         }
     }
 
     @Override
-    public UserProfile getSession(String sessionId) {
+    public UserProfile getSession(String sessionId) throws GetSessionException {
         try(Session session = sessionFactory.openSession()) {
             StatusDataSetDAO statusDataSetDAO = new StatusDataSetDAO(session);
             UserDataSet userDataSet = statusDataSetDAO.getUserDataSetBySessionId(sessionId);
@@ -274,8 +286,62 @@ public class DbService implements IDbService {
         }
         catch (HibernateException e) {
             LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
-            return null;
+            throw new GetSessionException(e);
         }
     }
+
+    @Override
+    public void saveGameResultByUserId(long userIdFirst, long scoreFirst,
+                                       long userIdSecond, long scoreSecond)
+    throws SaveGameException
+    {
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+            UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
+            GameResultDataSetDAO gameResultDataSetDAO = new GameResultDataSetDAO(session);
+            UserDataSet userDataSetFirst = userDataSetDAO.getUserById(userIdFirst);
+            UserDataSet userDataSetSecond = userDataSetDAO.getUserById(userIdSecond);
+            gameResultDataSetDAO.saveGameResult(userDataSetFirst, userDataSetSecond, scoreFirst, scoreSecond);
+            transaction.commit();
+        }
+        catch (HibernateException e) {
+            if(transaction != null)
+                transaction.rollback();
+            LOGGER.debug("Failed db operation. Rolled back. Reason: {}" , e.getMessage());
+            throw new SaveGameException(e);
+        }
+    }
+
+    public void saveGameResultByUserLogin(String userLoginFirst, long scoreFirst,
+                                          String userLoginSecond, long scoreSecond)
+    throws SaveGameException
+    {
+        try(Session session = sessionFactory.openSession()) {
+            UserDataSetDAO userDataSetDAO = new UserDataSetDAO(session);
+            UserDataSet userDataSetFirst = userDataSetDAO.getUserByLogin(userLoginFirst);
+            UserDataSet userDataSetSecond = userDataSetDAO.getUserByLogin(userLoginSecond);
+            GameResultDataSetDAO gameResultDataSetDAO = new GameResultDataSetDAO(session);
+            gameResultDataSetDAO.saveGameResult(userDataSetFirst, userDataSetSecond, scoreFirst, scoreSecond);
+        }
+        catch (HibernateException e) {
+            LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
+            throw new SaveGameException(e);
+        }
+    }
+
+    @Override
+    public List<GameResultDataSet> getBestResults(int limit) throws GetBestResultsException {
+        try(Session session = sessionFactory.openSession()) {
+            GameResultDataSetDAO gameResultDataSetDAO = new GameResultDataSetDAO(session);
+            return gameResultDataSetDAO.getBestResults(limit);
+        }
+        catch (HibernateException e) {
+            LOGGER.debug("Failed db operation. Reason: {}" , e.getMessage());
+            throw new GetBestResultsException(e);
+        }
+    }
+
+
 
 }

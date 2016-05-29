@@ -2,7 +2,6 @@ package fakeclasses;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.Principal;
@@ -115,6 +114,7 @@ public class FakeRequestImpl extends FakeRequest implements HttpServletRequest {
     }
 
 
+    //@Override
     @Override
     public String changeSessionId() {
         return null;
@@ -165,6 +165,7 @@ public class FakeRequestImpl extends FakeRequest implements HttpServletRequest {
         return null;
     }
 
+    //@Override
     @Override
     public <T extends HttpUpgradeHandler> T upgrade(Class<T> aClass) throws IOException, ServletException {
         return null;
@@ -195,6 +196,7 @@ public class FakeRequestImpl extends FakeRequest implements HttpServletRequest {
         return 0;
     }
 
+    //@Override
     @Override
     public long getContentLengthLong() {
         return 0;
@@ -243,11 +245,6 @@ public class FakeRequestImpl extends FakeRequest implements HttpServletRequest {
     @Override
     public int getServerPort() {
         return 0;
-    }
-
-    @Override
-    public BufferedReader getReader() throws IOException {
-        return null;
     }
 
     @Override

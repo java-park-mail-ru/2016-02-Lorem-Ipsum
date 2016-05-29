@@ -1,6 +1,7 @@
 package main;
 
 import database.DbService;
+import database.utils.FakeDbGenerator;
 import frontend.RoutingServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,10 +13,8 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
 import javax.servlet.Servlet;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Properties;
 
 public class Main {
 
@@ -29,34 +28,50 @@ public class Main {
 
     public static final Logger MAIN_LOGGER = LogManager.getLogger(Main.class);
 
+    @SuppressWarnings("OverlyComplexMethod")
     public static void main(String[] args) throws InterruptedException {
-        int port;
 
-        if (args.length != 1) {
+        Properties serverProperties = readProperties("cfg/server.properties");
+        Properties dbProperties = readProperties("cfg/db.properties");
+
+        assert serverProperties != null;
+        int port;
+        if (!serverProperties.containsKey("port")) {
             port = STANDART_PORT;
             System.out.append("Target port argument missed.\n");
             MAIN_LOGGER.warn("Target port argument missed. Start at port: {}", STANDART_PORT);
         }
         else {
-            try{
-                port = Integer.parseInt(args[0]);
-            } catch (NumberFormatException e) {
-                port = STANDART_PORT;
-                System.out.append("Incorrect value of target port.");
-                MAIN_LOGGER.warn("Unable to get the vslue of port. Start at port: {}", STANDART_PORT);
-            }
+            port = Integer.valueOf(serverProperties.getProperty("port"));
         }
 
-        IAccountService accountService;
+        DbService accountService;
+
         try {
+            assert dbProperties != null;
+            String dbHost = dbProperties.contains("host") ?
+                    dbProperties.getProperty("host") : Main.STANDART_MYSQL_HOST;
+            String dbPort = dbProperties.contains("port") ?
+                    dbProperties.getProperty("port") : Main.STANDART_MYSQL_PORT;
+            String dbName = dbProperties.contains("name") ?
+                    dbProperties.getProperty("name") : Main.STANDART_MYSQL_DB_NAME;
+            String dbLogin = dbProperties.contains("login") ?
+                    dbProperties.getProperty("login") : Main.STANDART_MYSQL_LOGIN;
+            String dbPassword = dbProperties.contains("password") ?
+                    dbProperties.getProperty("password") : Main.STANDART_MYSQL_PASSWORD;
+            String dbDriver = dbProperties.contains("driver")
+                    ? dbProperties.getProperty("driver") : Main.STANDART_MYSQL_DRIVER;
             accountService = new DbService(
-                    Main.STANDART_MYSQL_HOST,
-                    Main.STANDART_MYSQL_PORT,
-                    Main.STANDART_MYSQL_DB_NAME,
-                    Main.STANDART_MYSQL_DRIVER,
-                    Main.STANDART_MYSQL_LOGIN,
-                    Main.STANDART_MYSQL_PASSWORD
+                    dbHost,
+                    dbPort,
+                    dbName,
+                    dbDriver,
+                    dbLogin,
+                    dbPassword
             );
+            if(dbProperties.containsKey("fake") && dbProperties.getProperty("fake").equals("yes")) {
+                FakeDbGenerator.generateDb(accountService);
+            }
         }
         catch (RuntimeException e) {
             MAIN_LOGGER.error("Unable to init dbService. Reason: {}", e.getMessage());
@@ -87,6 +102,18 @@ public class Main {
             return;
         }
         server.join();
+    }
+
+    public static Properties readProperties(String path) {
+        //noinspection OverlyBroadCatchBlock
+        try (final FileInputStream fis = new FileInputStream(path)) {
+            final Properties properties = new Properties();
+            properties.load(fis);
+            return properties;
+        } catch (IOException e) {
+            MAIN_LOGGER.warn("Unable to get properties : {}", path);
+            return null;
+        }
     }
 
     public static String readFromFile(String filePath) {

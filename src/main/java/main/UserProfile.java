@@ -1,5 +1,6 @@
 package main;
 
+import org.json.JSONObject;
 import org.json.JSONStringer;
 
 public class UserProfile {
@@ -64,6 +65,12 @@ public class UserProfile {
                 .key("email").value(this.email);
         jsonStringer.endObject();
         return jsonStringer.toString();
+    }
+
+    public UserProfile(JSONObject initObj) {
+        this.login = initObj.getString("login");
+        this.password = initObj.getString("password");
+        this.email = initObj.getString("email");
     }
 
 }

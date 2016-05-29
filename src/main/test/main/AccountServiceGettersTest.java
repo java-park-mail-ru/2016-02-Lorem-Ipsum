@@ -2,6 +2,10 @@ package main;
 
 import database.DbService;
 import database.IDbService;
+import database.exceptions.sesexceptions.GetSessionException;
+import database.exceptions.sesexceptions.SessionExistsException;
+import database.exceptions.userexceptions.GetUserException;
+import database.exceptions.userexceptions.UserExistsException;
 import fakeclasses.FakeAccountService;
 import org.junit.After;
 import org.junit.Before;
@@ -57,7 +61,7 @@ public class AccountServiceGettersTest {
     }
 
     @Test
-    public void testCheckUserExistsByLogin() throws Exception {
+    public void testCheckUserExistsByLogin() throws UserExistsException {
         for (Long uId : fakeUsersIds) {
             String login = fakeAccountService.getUserById(uId).getLogin();
             assertTrue("Login from fakeAccountService must be in accountService", accountService.checkUserExistsByLogin(login));
@@ -66,7 +70,7 @@ public class AccountServiceGettersTest {
     }
 
     @Test
-    public void testCheckSessionExists() throws Exception {
+    public void testCheckSessionExists() throws SessionExistsException {
         for (String sId : fakeSessionIds) {
             assertTrue(accountService.checkSessionExists(sId));
         }
@@ -74,7 +78,7 @@ public class AccountServiceGettersTest {
     }
 
     @Test
-    public void testCheckUserExistsById() throws Exception {
+    public void testCheckUserExistsById() throws UserExistsException {
         for (Long uId : fakeUsersIds) {
             assertTrue(accountService.checkUserExistsById(generatedIds.get(uId)));
         }
@@ -82,7 +86,7 @@ public class AccountServiceGettersTest {
     }
 
     @Test
-    public void testGetUserByLogin() throws Exception {
+    public void testGetUserByLogin() throws GetUserException {
         for (Long uId : fakeUsersIds) {
             UserProfile userFromAccountService = accountService.getUserByLogin(
                     fakeAccountService.getUserById(uId).getLogin());
@@ -92,7 +96,7 @@ public class AccountServiceGettersTest {
     }
 
     @Test
-    public void testGetUserById() throws Exception {
+    public void testGetUserById() throws GetUserException {
         for (Long uId : fakeUsersIds) {
             UserProfile userFromAccountService = accountService.getUserById(generatedIds.get(uId));
             UserProfile userFromFakeAccountService = fakeAccountService.getUserById(uId);
@@ -101,7 +105,7 @@ public class AccountServiceGettersTest {
     }
 
     @Test
-    public void testGetSession() throws Exception {
+    public void testGetSession() throws GetSessionException {
         for (String sId : fakeSessionIds) {
             UserProfile userFromAccountService = accountService.getSession(sId);
             UserProfile userFromFakeAccountService = fakeAccountService.getSession(sId);
